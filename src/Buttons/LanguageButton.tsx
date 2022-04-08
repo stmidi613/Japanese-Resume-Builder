@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import USF from "../images/USflag.png";
 import JPF from "../images/JPflag.png";
 import { Menu, Transition } from "@headlessui/react";
@@ -8,13 +8,24 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
+
+interface Language {
+  country: any;
+}
+
+// const handleChange = () => {
+//   setLangauge(() => language = JPF)
+// }
+
 const LanguageButton: React.FC = () => {
+  const [language, setLanguage] = useState<any>(USF);
+  
   return (
     <Menu as="div" className="ml-24 relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
-          <img src={USF} alt="language" />
-          <ChevronDownIcon className="bg-gray text-red-300 ml-2 h-5 w-8" aria-hidden="true" />
+        <Menu.Button className="inline-flex justify-center w-full border-[1px] border-gray hover:border-orange rounded-md shadow-sm pl-2 bg-white text-sm font-medium">
+          <img src={language} alt="language" className="py-1 h-9 w-12" />
+          <ChevronDownIcon className="bg-gray text-orange hover:border-[1px] rounded-r-md ml-2 h-10 w-9" aria-hidden="true" />
         </Menu.Button>
       </div>
 
@@ -34,8 +45,8 @@ const LanguageButton: React.FC = () => {
                 <a
                   href="#"
                   className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                    "block px-3 py-2 text-lg"
+                    active ? "bg-gray" : "text-gray-700",
+                    "block px-2 py-2 text-lg"
                   )}
                 >
                   <img src={USF} alt="US flag" className="float-left mr-2" />
@@ -48,11 +59,11 @@ const LanguageButton: React.FC = () => {
                 <a
                   href="#"
                   className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                    "block px-3 py-2 mb-2 text-lg"
+                    active ? "bg-gray" : "text-gray-700",
+                    "block pl-2 py-2 text-lg"
                   )}
                 >
-                    <img src={JPF} alt="Japan Flag" className="float-left mr-2" />
+                    <img src={JPF} alt="Japan Flag" className="float-left h-7 w-10 mr-2" />
                 日本
                 </a>
               )}
