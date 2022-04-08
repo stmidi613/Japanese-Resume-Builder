@@ -1,1 +1,7 @@
+.button-animation {
+  background: linear-gradient(104.65deg, #874ed2 -2.69%, #fd705e 10.8%);
+}
 
+.button-animation:hover {
+  background: linear-gradient(104.65deg, #874ed2 70.38%, #fd705e 105.23%);
+}

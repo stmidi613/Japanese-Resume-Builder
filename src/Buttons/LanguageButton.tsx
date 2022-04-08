@@ -8,24 +8,15 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-
-interface Language {
-  country: any;
-}
-
-// const handleChange = () => {
-//   setLangauge(() => language = JPF)
-// }
-
 const LanguageButton: React.FC = () => {
   const [language, setLanguage] = useState<any>(USF);
   
   return (
-    <Menu as="div" className="ml-24 relative inline-block text-left">
+    <Menu as="div" className="m-8 relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex justify-center w-full border-[1px] border-gray hover:border-orange rounded-md shadow-sm pl-2 bg-white text-sm font-medium">
-          <img src={language} alt="language" className="py-1 h-9 w-12" />
-          <ChevronDownIcon className="bg-gray text-orange hover:border-[1px] rounded-r-md ml-2 h-10 w-9" aria-hidden="true" />
+        <Menu.Button className="inline-flex items-center justify-center w-full border-[1px] border-gray hover:border-orange rounded-md shadow-sm pl-2 bg-white text-sm font-medium">
+          <img src={language} alt="language" className="h-8 w-12" />
+          <ChevronDownIcon className="bg-gray text-orange rounded-r-md ml-2 h-11 w-9" aria-hidden="true" />
         </Menu.Button>
       </div>
 
@@ -40,7 +31,7 @@ const LanguageButton: React.FC = () => {
       >
         <Menu.Items className="origin-top-right absolute right-0 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
-            <Menu.Item>
+            <Menu.Item onClick={() => setLanguage(USF)}>
               {({ active }) => (
                 <a
                   href="#"
@@ -54,7 +45,7 @@ const LanguageButton: React.FC = () => {
                 </a>
               )}
             </Menu.Item>
-            <Menu.Item>
+            <Menu.Item onClick={() => setLanguage(JPF)}>
               {({ active }) => (
                 <a
                   href="#"
