@@ -3,9 +3,11 @@ import React from 'react';
 const LargeButton: React.FC = () => {
   return (
     <>
-        <button className='large-button button-animation'>
+      <div className='flex justify-center'>
+        <button className='large-button button-animation relative top-64 md:top-56'>
             Try For Free
         </button>
+      </div>
     </>
   )
 }
