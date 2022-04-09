@@ -12,7 +12,7 @@ const LanguageButton: React.FC = () => {
   const [language, setLanguage] = useState<any>(USF);
   
   return (
-    <Menu as="div" className="m-8 relative inline-block text-left">
+    <Menu as="div" className="m-6 relative inline-block text-left">
       <div>
         <Menu.Button className="inline-flex items-center justify-center w-full border-[1px] border-gray hover:border-orange rounded-md shadow-sm pl-2 bg-white text-sm font-medium">
           <img src={language} alt="language" className="h-8 w-12" />

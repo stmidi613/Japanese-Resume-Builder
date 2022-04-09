@@ -1,10 +1,6 @@
-import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMobilePhone, fas } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { faMobilePhone } from '@fortawesome/free-solid-svg-icons';
 import './button.css';
-
-library.add(fas, faMobilePhone)
 
 const MobileButton = () => {
   return (
