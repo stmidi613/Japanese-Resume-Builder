@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
-import USF from "../images/USflag.png";
-import JPF from "../images/JPflag.png";
+import USF from "../../images/USflag.png";
+import JPF from "../../images/JPflag.png";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 

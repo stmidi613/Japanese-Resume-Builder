@@ -9,7 +9,7 @@ import {
 const HomeSubSection: React.FC = () => {
   return (
     <>
-      <div className="fixed bottom-0 w-full grid place-content-center grid-col-3 grid-flow-col gap-16 md:gap-48 bg-white py-8 md:py-5">
+      <div className="fixed bottom-0 w-full grid place-content-center grid-col-3 grid-flow-col gap-16 md:gap-48 bg-white pt-6 pb-12">
         <div>
           <FontAwesomeIcon
             icon={faFileCirclePlus}
@@ -31,6 +31,9 @@ const HomeSubSection: React.FC = () => {
           />
           <p className="text-purple text-center md:text-2xl">Print</p>
         </div>
+        <footer className="absolute bottom-0 py-2 w-full">
+          <p className="text-purple text-center">Created By Stephen Dilks</p>
+        </footer>
       </div>
     </>
   );
