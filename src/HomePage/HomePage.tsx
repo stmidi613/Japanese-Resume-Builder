@@ -8,7 +8,7 @@ import "./HomePage.css";
 const HomePage: React.FC = () => {
   return (
     <>
-      <main className="background bg-cover bg-center h-screen">
+      <main className="background bg-cover bg-center w-full h-screen">
         <LanguageButton />
         <MobileButton />
         <div>

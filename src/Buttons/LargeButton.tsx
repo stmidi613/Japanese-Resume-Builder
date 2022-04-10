@@ -4,7 +4,7 @@ const LargeButton: React.FC = () => {
   return (
     <>
       <div className='flex justify-center'>
-        <button className='large-button button-animation relative top-64 md:top-56'>
+        <button className='large-button button-animation relative top-60 md:top-56'>
             Try For Free
         </button>
       </div>
