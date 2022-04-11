@@ -57,7 +57,9 @@ const HomePage: React.FC = () => {
         <h3 className="text-purple w-56 sm:text-xl md:text-2xl absolute bottom-80 md:bottom-88 left-1/3 md:left-1/2">
           {lang.text}
         </h3>
+        <div className="absolute bottom-48 md:bottom-48 grid place-content-center w-full">
         <LargeButton largeButtonText={lang.largeButtonText} />
+        </div>
       </main>
       <HomeSubSection
         sub1Text={lang.sub1Text}

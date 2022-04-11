@@ -8,7 +8,7 @@ const LargeButton: React.FC<Props> = ({largeButtonText}) => {
   return (
     <>
       <div className='flex justify-center'>
-        <button className='large-button button-animation absolute bottom-48 md:bottom-48'>
+        <button className='large-button button-animation'>
             {largeButtonText}
         </button>
       </div>

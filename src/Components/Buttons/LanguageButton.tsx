@@ -14,7 +14,6 @@ interface Props {
 }
 
 const LanguageButton: React.FC<Props> = ({USF, language, setLanguage}: Props) => {
-  // const [language, setLanguage] = useState<any>(USF)
   return (
     <Menu as="div" id="language" className="m-6 relative inline-block text-left z-10">
       <div>
