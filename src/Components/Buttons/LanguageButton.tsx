@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from "react";
-import USF from "../../images/USflag.png";
 import JPF from "../../images/JPflag.png";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
@@ -8,13 +7,18 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-const LanguageButton: React.FC = () => {
-  const [language, setLanguage] = useState<any>(USF);
-  
+interface Props {
+  USF: string,
+  language: string,
+  setLanguage: React.Dispatch<string>,
+}
+
+const LanguageButton: React.FC<Props> = ({USF, language, setLanguage}: Props) => {
+  // const [language, setLanguage] = useState<any>(USF)
   return (
-    <Menu as="div" className="m-6 relative inline-block text-left z-10">
+    <Menu as="div" id="language" className="m-6 relative inline-block text-left z-10">
       <div>
-        <Menu.Button className="inline-flex items-center justify-center w-full border-[1px] border-gray hover:border-orange rounded-md shadow-sm pl-2 bg-white text-sm font-medium">
+        <Menu.Button id="language-button" className="inline-flex items-center justify-center w-full border-[1px] border-gray hover:border-orange rounded-md shadow-sm pl-2 bg-white text-sm font-medium">
           <img src={language} alt="language" className="h-8 w-12" />
           <ChevronDownIcon className="bg-gray text-orange rounded-r-md ml-2 h-11 w-9" aria-hidden="true" />
         </Menu.Button>
