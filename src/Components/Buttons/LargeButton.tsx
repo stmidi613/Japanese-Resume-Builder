@@ -2,18 +2,14 @@ import React from 'react';
 
 interface Props {
   largeButtonText: string;
+  setShowPopup: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const handleClick = () => {
-  let popup = document.getElementById("popup");
-  if (popup) popup.style.display = "block";
-}
-
-const LargeButton: React.FC<Props> = ({largeButtonText}) => {
+const LargeButton: React.FC<Props> = ({setShowPopup, largeButtonText}) => {
   return (
     <>
       <div className='flex justify-center'>
-        <button className='large-button button-animation' onClick={handleClick}>
+        <button className='button button-animation text-5xl p-7' onClick={() => setShowPopup(true)}>
             {largeButtonText}
         </button>
       </div>

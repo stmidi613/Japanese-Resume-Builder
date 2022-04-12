@@ -39,12 +39,13 @@ let lang = US;
 
 const HomePage: React.FC = () => {
   const [language, setLanguage] = useState<string>(USF);
+  const [showPopup, setShopPopup] = useState<boolean>(false);
   {
     language === USF ? (lang = US) : (lang = JP);
   }
   return (
     <>
-    <Popup resumeButtonText={lang.resumeButtonText} skillSheetButtonText={lang.skillSheetButtonText} />
+    {showPopup && <Popup setShowPopup={setShopPopup} resumeButtonText={lang.resumeButtonText} skillSheetButtonText={lang.skillSheetButtonText} />}
       <main className="background bg-cover bg-center w-full h-screen">
         <LanguageButton
           USF={USF}
@@ -62,7 +63,7 @@ const HomePage: React.FC = () => {
           {lang.text}
         </h3>
         <div className="absolute bottom-48 md:bottom-48 grid place-content-center w-full">
-        <LargeButton largeButtonText={lang.largeButtonText} />
+        <LargeButton setShowPopup={setShopPopup} largeButtonText={lang.largeButtonText} />
         </div>
       </main>
       <HomeSubSection

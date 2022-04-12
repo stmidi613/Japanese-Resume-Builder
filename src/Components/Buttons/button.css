@@ -6,14 +6,12 @@
   background: linear-gradient(105.89deg, #874ED2 -3.72%, #FD705E 95.79%);
 }
 
-.large-button{
-  padding: .5rem;
-  font-size: 42px;
+.button{
   border-radius: 1rem;
   color: white;
   box-shadow: 0px 24px 20px 5px rgba(0, 0, 0, 0.15);
 }
 
-.large-button:hover{
+.button:hover{
   box-shadow: none;
 }
