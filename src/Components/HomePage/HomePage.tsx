@@ -17,6 +17,8 @@ const US = {
   sub2Text: "Preview",
   sub3Text: "Print",
   footerText: "Created By Stephen Dilks",
+  resumeButtonText: "Resume",
+  skillSheetButtonText: "Skill Sheet",
 };
 
 const JP = {
@@ -29,6 +31,8 @@ const JP = {
   sub2Text: "プレビュー",
   sub3Text: "印刷",
   footerText: "ディルクス・スティーブンによりお作りしました。",
+  resumeButtonText: "履歴書",
+  skillSheetButtonText: "スキルシート",
 };
 
 let lang = US;
@@ -40,7 +44,7 @@ const HomePage: React.FC = () => {
   }
   return (
     <>
-    <Popup />
+    <Popup resumeButtonText={lang.resumeButtonText} skillSheetButtonText={lang.skillSheetButtonText} />
       <main className="background bg-cover bg-center w-full h-screen">
         <LanguageButton
           USF={USF}
