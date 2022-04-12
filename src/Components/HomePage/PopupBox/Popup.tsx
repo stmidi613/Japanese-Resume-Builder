@@ -1,21 +1,40 @@
+import { useEffect } from "react";
 import resume from "../../../images/resume.png";
 import skillsheet from "../../../images/skillsheet.png";
 import ResumeButton from "../../Buttons/ResumeButton";
 import SkillSheetButton from "../../Buttons/SkillSheetButton";
 
-
 interface Props {
   resumeButtonText: string;
   skillSheetButtonText: string;
-  setShowPopup: React.Dispatch<React.SetStateAction<boolean>>,
+  showPopup: boolean;
+  setShowPopup: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Popup: React.FC<Props> = ({setShowPopup, resumeButtonText, skillSheetButtonText}) => {
+const Popup: React.FC<Props> = ({
+  showPopup,
+  setShowPopup,
+  resumeButtonText,
+  skillSheetButtonText,
+}) => {
+  useEffect(() => {
+    let popup = document.getElementById("popup");
+    if (popup) popup.style.boxShadow = "0 0 10px 1000px rgba(0, 0, 0, 0.6)";
+  }, [showPopup]);
+
   return (
     <>
-      <div id="popup" className="z-30 p-3 absolute top-24 left-[5%] w-[90%] bg-white border-2 border-purple rounded-md">
+      <div
+        id="popup"
+        className="focus:outline-none z-30 p-3 absolute top-24 left-[5%] w-[90%] bg-white border-2 border-purple rounded-md"
+      >
         <div className="flex justify-end">
-        <button className="text-orange border-2 border-orange bg-gray rounded-md py-1 px-2" onClick={() => setShowPopup(false)}>X</button>
+          <button
+            className="text-orange border-2 border-orange bg-gray rounded-md py-1 px-2"
+            onClick={() => setShowPopup(false)}
+          >
+            X
+          </button>
         </div>
         <div className="flex justify-evenly flex-col md:flex-row items-center">
           <div className="p-2 h-1/3">
@@ -24,7 +43,7 @@ const Popup: React.FC<Props> = ({setShowPopup, resumeButtonText, skillSheetButto
           </div>
           <div className="h-1/3 px-5">
             <img className="w-7/8 pb-2" src={skillsheet} alt="skillsheet" />
-            <SkillSheetButton skillSheetButtonText={skillSheetButtonText}  />
+            <SkillSheetButton skillSheetButtonText={skillSheetButtonText} />
           </div>
         </div>
       </div>
