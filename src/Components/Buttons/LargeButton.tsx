@@ -1,17 +1,13 @@
-import React, { useRef } from "react";
+import React from "react";
 
 interface Props {
-  largeButtonText: string;
-  showPopup: boolean;
-  setShowPopup: React.Dispatch<React.SetStateAction<boolean>>;
-  handleClick: (e: React.FormEvent) => void;
+  largeButtonText: string,
+  setShowPopup: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 const LargeButton: React.FC<Props> = ({
-  showPopup,
   setShowPopup,
   largeButtonText,
-  handleClick,
 }) => {
 
   return (

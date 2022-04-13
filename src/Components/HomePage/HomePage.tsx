@@ -41,23 +41,28 @@ const HomePage: React.FC = () => {
   const [language, setLanguage] = useState<string>(USF);
   const [showPopup, setShopPopup] = useState<boolean>(false);
 
-  const handleClick = (e: React.FormEvent) => {
-    e.preventDefault();
-  }
-
   {
     language === USF ? (lang = US) : (lang = JP);
   }
   return (
     <>
-    {showPopup && <Popup showPopup={showPopup} setShowPopup={setShopPopup} resumeButtonText={lang.resumeButtonText} skillSheetButtonText={lang.skillSheetButtonText} />}
-      <main className="background bg-cover bg-center w-full h-screen">
-        <LanguageButton
-          USF={USF}
-          language={language}
-          setLanguage={setLanguage}
+      {showPopup && (
+        <Popup
+          showPopup={showPopup}
+          setShowPopup={setShopPopup}
+          resumeButtonText={lang.resumeButtonText}
+          skillSheetButtonText={lang.skillSheetButtonText}
         />
+      )}
+      <main className="background bg-cover bg-center w-full h-screen">
+        <div className="flex justify-between md:justify-start gap-4 p-4">
+          <LanguageButton
+            USF={USF}
+            language={language}
+            setLanguage={setLanguage}
+          />
         <MobileButton mobileButtonText={lang.mobileButtonText} />
+        </div>
         <h1 className="text-purple w-fit text-xl sm:text-3xl md:text-5xl relative bottom-3 lg:bottom-8 left-1/4">
           {lang.title}
         </h1>
@@ -68,7 +73,10 @@ const HomePage: React.FC = () => {
           {lang.text}
         </h3>
         <div className="absolute bottom-48 md:bottom-48 grid place-content-center w-full">
-        <LargeButton handleClick={handleClick} showPopup={showPopup} setShowPopup={setShopPopup} largeButtonText={lang.largeButtonText} />
+          <LargeButton
+            setShowPopup={setShopPopup}
+            largeButtonText={lang.largeButtonText}
+          />
         </div>
       </main>
       <HomeSubSection

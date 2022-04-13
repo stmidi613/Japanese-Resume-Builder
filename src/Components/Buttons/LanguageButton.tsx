@@ -15,7 +15,7 @@ interface Props {
 
 const LanguageButton: React.FC<Props> = ({USF, language, setLanguage}: Props) => {
   return (
-    <Menu as="div" id="language" className="m-6 relative inline-block text-left z-10">
+    <Menu as="div" id="language" className="relative inline-block text-left z-10">
       <div>
         <Menu.Button id="language-button" className="inline-flex items-center justify-center w-full border-[1px] border-gray hover:border-orange rounded-md shadow-sm pl-2 bg-white text-sm font-medium">
           <img src={language} alt="language" className="h-8 w-12" />
