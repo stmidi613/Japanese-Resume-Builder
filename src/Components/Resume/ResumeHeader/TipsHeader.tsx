@@ -1,10 +1,11 @@
 import React from "react";
+import '../../Buttons/button.css'
 
 const TipsHeader: React.FC = () => {
   return (
     <>
       <div className="grid grid-flow-col place-content-center w-fit">
-        <div className="bg-orange rounded-full p-1.5 w-12">
+        <div className="button-animation rounded-full p-1.5 w-12">
           <p className="text-white text-3xl font-extrabold grid place-content-center">
             ?
           </p>

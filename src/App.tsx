@@ -1,13 +1,13 @@
 import React from 'react';
 import './tailwind.css';
 import HomePage from './Components/HomePage/HomePage';
-import ResumeHeader from './Components/Resume/ResumeHeader/ResumeHeader';
+import Resume from './Components/Resume/Resume';
 
 
 const App: React.FC = () => {
   return (
     <>
-    <ResumeHeader />
+    <Resume />
     </>
   )
 }
