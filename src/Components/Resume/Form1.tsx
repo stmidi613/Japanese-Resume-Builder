@@ -3,8 +3,9 @@ import photo from "../../images/photo.png";
 import UploadButton from "../Buttons/UploadButton";
 import TipsIcon from "./TipsIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./resume.css";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
+import NextButton from "../Buttons/NextButton";
+import "./resume.css";
 
 const Form1: React.FC = () => {
   return (
@@ -35,7 +36,7 @@ const Form1: React.FC = () => {
               aria-required
             />
             <input
-              className="input focus:outline-none mt-2"
+              className="input input-lower focus:outline-none"
               placeholder="Full Name"
               type="text"
               aria-required
@@ -75,7 +76,7 @@ const Form1: React.FC = () => {
               aria-required
             />
             <input
-              className="input focus:outline-none mt-2"
+              className="input input-lower focus:outline-none"
               placeholder="Address"
               type="text"
               aria-required
@@ -105,12 +106,26 @@ const Form1: React.FC = () => {
           </div>
           <div className="flex gap-6">
             <div>
-              <input className="input mr-2" type="radio" name="gender" value="Male" />
-              <label className="text-purple" htmlFor="male">Male</label>
+              <input
+                className="input mr-2"
+                type="radio"
+                name="gender"
+                value="Male"
+              />
+              <label className="text-purple" htmlFor="male">
+                Male
+              </label>
             </div>
             <div>
-              <input className="input mr-2" type="radio" name="gender" value="Female" />
-              <label className="text-purple" htmlFor="female">Female</label>
+              <input
+                className="input mr-2"
+                type="radio"
+                name="gender"
+                value="Female"
+              />
+              <label className="text-purple" htmlFor="female">
+                Female
+              </label>
             </div>
           </div>
         </section>
@@ -129,7 +144,7 @@ const Form1: React.FC = () => {
               aria-required
             />
             <input
-              className="input focus:outline-none mt-2"
+              className="input input-lower focus:outline-none"
               placeholder="Cell Phone"
               type="tel"
               pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
@@ -151,20 +166,21 @@ const Form1: React.FC = () => {
               aria-required
             />
             <input
-              className="input focus:outline-none mt-2"
+              className="input input-lower focus:outline-none"
               placeholder="Contact's Address"
               type="text"
               aria-required
             />
-          </div>
           <input
-              className="input focus:outline-none mt-2"
-              placeholder="Contact's Phone Number"
-              type="tel"
-              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-              aria-required
+            className="input input-lower focus:outline-none"
+            placeholder="Contact's Phone Number"
+            type="tel"
+            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+            aria-required
             />
+            </div>
         </section>
+        <NextButton />
       </form>
     </>
   );

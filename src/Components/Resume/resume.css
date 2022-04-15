@@ -34,6 +34,10 @@
     border-radius: 0.125rem;
 }
 
+.input-lower{
+    margin-top: .75rem;
+}
+
 .input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #874ed2;
     opacity: 1; /* Firefox */
