@@ -29,7 +29,7 @@ const ResumeHeader: React.FC = () => {
       <div className="h-3 w-full bg-gray">
         <div className="h-3 rounded-r-lg w-[14.3%] bg-purple"></div>
       </div>
-      <div className="md:hidden my-2 text-purple flex justify-around">
+      <div className="lg:hidden my-2 text-sm md:text-lg text-purple flex justify-around">
         <p>{headerTitle}:</p>
         <p>Step {step} of 7</p>
       </div>

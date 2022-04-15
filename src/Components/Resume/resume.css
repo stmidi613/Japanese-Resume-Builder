@@ -1,5 +1,6 @@
 .form{
     display: grid;
+    place-content: center;
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
 }
@@ -7,6 +8,10 @@
 .section{
     display: grid;
     place-content: center;
+}
+
+.section-rows{
+    grid-row: span 4 / span 3;
 }
 
 .section-div{

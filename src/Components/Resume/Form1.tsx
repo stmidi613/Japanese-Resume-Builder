@@ -10,9 +10,9 @@ import "./resume.css";
 const Form1: React.FC = () => {
   return (
     <>
-      <form className="form">
+      <form className="form md:grid-cols-2 md:grid-rows-7">
         {/* Photo Section */}
-        <section className="section">
+        <section className="section md:order-2 md:row-span-4">
           <div className="mb-1 flex justify-center">
             <TipsIcon />
             <h2 className="h2">Photo</h2>
@@ -23,7 +23,7 @@ const Form1: React.FC = () => {
           </div>
         </section>
         {/* Name Section */}
-        <section className="section">
+        <section className="section md:order-1 md:row-span-2 md:row-start-1">
           <div className="section-div">
             <TipsIcon />
             <h2 className="h2">Name</h2>
@@ -44,7 +44,7 @@ const Form1: React.FC = () => {
           </div>
         </section>
         {/* Date of Birth Section */}
-        <section className="section">
+        <section className="section md:order-3 md:row-span-1">
           <div className="section-div">
             <TipsIcon />
             <h2 className="h2">Date of Birth</h2>
@@ -63,7 +63,7 @@ const Form1: React.FC = () => {
           </div>
         </section>
         {/* Address Section */}
-        <section className="section">
+        <section className="section md:order-4 md:row-span-2">
           <div className="section-div">
             <TipsIcon />
             <h2 className="h2">Address</h2>
@@ -84,7 +84,7 @@ const Form1: React.FC = () => {
           </div>
         </section>
         {/* Email Section */}
-        <section className="section">
+        <section className="section md:order-6">
           <div className="section-div">
             <TipsIcon />
             <h2 className="h2">Email</h2>
@@ -99,12 +99,12 @@ const Form1: React.FC = () => {
           </div>
         </section>
         {/* Gender Section */}
-        <section className="flex section">
+        <section className="section grid-flow-col gap-8 md:order-5 md:row-span-1">
           <div className="section-div">
             <TipsIcon />
             <h2 className="h2">Gender</h2>
           </div>
-          <div className="flex gap-6">
+          <div className="grid place-content-center relative top-4">
             <div>
               <input
                 className="input mr-2"
@@ -130,10 +130,10 @@ const Form1: React.FC = () => {
           </div>
         </section>
         {/* Phone Section */}
-        <section className="section">
+        <section className="section md:order-7 md:row-span-3">
           <div className="section-div">
             <TipsIcon />
-            <h2 className="h2">Home Phone</h2>
+            <h2 className="h2">Phone</h2>
           </div>
           <div className="input-div">
             <input
@@ -153,7 +153,7 @@ const Form1: React.FC = () => {
           </div>
         </section>
         {/* Contact's Information Section */}
-        <section className="section">
+        <section className="section md:row-span-3 md:order-8">
           <div className="section-div">
             <TipsIcon />
             <h2 className="h2">Contact's Information</h2>
