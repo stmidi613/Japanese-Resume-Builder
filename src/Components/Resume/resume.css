@@ -1,6 +1,7 @@
 .form{
     display: grid;
     margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
 }
 
 .section{
@@ -41,4 +42,14 @@
 .input:focus{
     outline-offset: 2px;
     outline-color:#fd705e;
+}
+
+.input[type="date"]{
+    color:#874ed2;
+    padding-left: 1.5rem;
+}
+
+.input[type="radio"]:checked{
+    background-color: #874ed2;
+    
 }
