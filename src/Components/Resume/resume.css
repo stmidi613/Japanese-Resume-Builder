@@ -62,3 +62,55 @@
     background-color: #874ed2;   
 }
 
+.page-div{
+    margin: 2rem;
+    background-color: white;
+    height: 90%;
+}
+
+.resume-section{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.resume-history-div{
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    border-top-width: 2px;
+}
+
+.resume-history-year-div{
+    border-right-width: 1px;
+    display: grid;
+    grid-column: span 2 / span 2;
+    place-content: center;
+}
+
+.resume-history-month-div{
+    border-right-width: 1px;
+    display: grid;
+    grid-column: span 1 / span 1;
+    place-content: center;
+}
+
+.resume-history-title-div{
+    display: grid;
+    grid-column: span 9 / span 9;
+    place-content: center;
+}
+
+.resume-history-text-div{
+    display: grid;
+    grid-column: span 9 / span 9;
+    padding-left: .75rem;
+    color: white;
+}
+
+.resume-history-last-div{
+    display: grid;
+    place-content: end;
+    padding-right: 1rem;
+    grid-column: span 9 / span 9;
+}
