@@ -10,6 +10,13 @@ module.exports = {
         purple: "#874ed2",
       }
     },
+    theme: {
+      extend: {
+        screens: {
+          xl: '1280px',
+        }
+      }
+    }
   },
   plugins: [],
 }

@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import NextButton from "../Buttons/NextButton";
 import "./resume.css";
+import ResumePage1 from "./ResumePage1";
 
 const Form1: React.FC = () => {
   return (
