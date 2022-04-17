@@ -3,6 +3,7 @@
     place-content: center;
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
+    padding-bottom: 2rem;
 }
 
 .section{
@@ -110,6 +111,7 @@
 
 .resume-history-last-div{
     display: grid;
+    border-top: 1px;
     place-content: end;
     padding-right: 1rem;
     grid-column: span 9 / span 9;
