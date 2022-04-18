@@ -1,6 +1,6 @@
 import React from "react";
 import photo from "../../../images/photo.png";
-import post from "../../../images/postnumber.svg";
+import AddressBox from "./AddressBox";
 import EmailBox from "./EmailBox";
 import HistoryInput from "./HistoryInput";
 import HistoryTitle from "./HistoryTitle";
@@ -42,6 +42,10 @@ const ResumePage1: React.FC<Props> = ({
   const year = d.getFullYear() - 2018;
   const month = d.getMonth() + 1;
   const date = d.getDate();
+  
+  const birthyear = +dob.slice(0, 4) - 1925;
+  const birthmonth = dob.slice(5, 7);
+  const birthdate = dob.slice(8);
 
   return (
     <>
@@ -64,16 +68,30 @@ const ResumePage1: React.FC<Props> = ({
                 <p className="text-3xl py-7 px-3">
                   氏名 <span>{name}</span>
                 </p>
-                <div className="grid grid-flow-col text-xs border-t-2">
+                <div className="grid grid-flow-col col-span-2 text-xs border-t-2">
                   <div className="flex flex-col">
                     <p className="px-2 pt-2 pb-1">生年月日</p>
                     <p className="px-2 pb-2 text-right">
-                      昭和・平成　０年００月００日<span>{dob}</span>
+                      昭和・平成　{birthyear > -1 ? birthyear : "00"}年{birthmonth ? birthmonth : "00"}月{birthdate ? birthdate : "00"}日
                     </p>
                   </div>
-                  <p className="grid border-l-[1px] place-content-center">
-                    男 ・ 女
-                  </p>
+                  <div className="grid grid-flow-col col-span-1 border-l-[1px] place-content-center">
+                    <span
+                      className={`${
+                        gender ? "border-[1px] rounded-full p-1" : "p-1"
+                      }`}
+                    >
+                      男
+                    </span>
+                    <span className="px-2 py-1">・</span>
+                    <span
+                      className={`${
+                        !gender ? "border-[1px] rounded-full p-1" : "p-1"
+                      }`}
+                    >
+                      女
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -85,19 +103,11 @@ const ResumePage1: React.FC<Props> = ({
           {/* End of Name to Gender Section */}
           {/* Start of Address Section */}
           <section className="resume-section">
-            <div className="col-span-3">
-              <div className="col-span-3 border-2">
-                <p className="w-full px-3 border-b-[1px] border-dashed text-xs">
-                  ふりがな <span>{furiAddress}</span>
-                </p>
-                <div className="flex pt-1 pb-3 px-3 h-16">
-                  <p className="text-xs">
-                    現在住所 <span>{address}</span>
-                    <img className="float-right w-2 mt-0.5" src={post} alt="" />
-                  </p>
-                </div>
-              </div>
-            </div>
+            <AddressBox
+              text=""
+              val={address}
+              furival={furiAddress}
+            />
             <EmailBox
               email={email}
               homePhone={homePhone}
@@ -107,31 +117,21 @@ const ResumePage1: React.FC<Props> = ({
           {/* End of Address Section */}
           {/* Start of Contact Address Section */}
           <section className="resume-section mb-2">
-            <div className="col-span-3">
-              <div className="col-span-3 border-2">
-                <p className="w-full px-3 border-b-[1px] border-dashed text-xs">
-                  ふりがな <span>{furiContactAddress}</span>
-                </p>
-                <div className="flex pt-1 pb-3 px-3 h-16">
-                  <p className="text-xs">
-                    現在住所 <span>{contactAddress}</span>
-                    <img
-                      className="float-right w-2 mt-0.5"
-                      src={post}
-                      alt="post number symbol"
-                    />
-                  </p>
-                  <p className="text-xs pl-10">
-                    （現住所以外に連絡を希望する場合のみ記入）
-                  </p>
-                </div>
-              </div>
-            </div>
-            <EmailBox email={contactEmail} homePhone={contactPhone} cellPhone={contactCellPhone} />
+            <AddressBox
+              text="（現住所以外に連絡を希望する場合のみ記入）"
+              val={contactAddress}
+              furival={furiContactAddress}
+            />
+            <EmailBox
+              email={contactEmail}
+              homePhone={contactPhone}
+              cellPhone={contactCellPhone}
+            />
           </section>
           {/* End of Contact Address Section */}
+
           {/* Start of Education and Work History */}
-          <section className="mx-[5%] border-2">
+          <section className="mx-[5%] mt-5 border-2">
             <div className="grid grid-cols-12">
               <div className="resume-history-year-div">年（西暦）</div>
               <div className="resume-history-month-div">月</div>

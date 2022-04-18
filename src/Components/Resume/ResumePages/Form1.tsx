@@ -1,11 +1,14 @@
 import React from "react";
 import photo from "../../../images/photo.png";
 import UploadButton from "../../Buttons/UploadButton";
-import TipsIcon from "../TipsIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import NextButton from "../../Buttons/NextButton";
+import InputTitle from "../InputTitle";
 import "../resume.css";
+import TextInput from "../TextInput";
+import EmailInput from "../EmailInput";
+import PhoneInput from "../PhoneInput";
 
 interface Props {
   furiName: string;
@@ -73,47 +76,27 @@ const Form1: React.FC<Props> = ({
       <form className="form md:grid-cols-2 md:grid-rows-7">
         {/* Photo Section */}
         <section className="section md:order-2 md:row-span-4">
-          <div className="mb-1 flex justify-center">
-            <TipsIcon />
-            <h2 className="h2">Photo</h2>
-          </div>
-          <div className="flex w-48 flex-col justify-center">
+          <InputTitle fieldName="Photo" />
+          <div className="flex w-48 mb-5 flex-col justify-center">
             <img src={photo} alt="photo" />
             <UploadButton />
           </div>
         </section>
         {/* Name Section */}
         <section className="section md:order-1 md:row-span-2 md:row-start-1">
-          <div className="section-div">
-            <TipsIcon />
-            <h2 className="h2">Name</h2>
-          </div>
+          <InputTitle fieldName="Name" />
           <div className="input-div">
-            <input
-              className="input focus:outline-none"
-              placeholder="Name Furigana"
-              type="text"
-              value={furiName}
-              onChange={(e) => setFuriName(e.target.value)}
-              aria-required
+            <TextInput
+              place="Name Furigana"
+              val={furiName}
+              change={setFuriName}
             />
-            <input
-              className="input input-lower focus:outline-none"
-              placeholder="Full Name"
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-
-              aria-required
-            />
+            <TextInput place="Name" val={name} change={setName} />
           </div>
         </section>
         {/* Date of Birth Section */}
         <section className="section md:order-3 md:row-span-1">
-          <div className="section-div">
-            <TipsIcon />
-            <h2 className="h2">Date of Birth</h2>
-          </div>
+          <InputTitle fieldName="Date of Birth" />
           <div className="input-div">
             <input
               className="input focus:outline-none"
@@ -124,60 +107,33 @@ const Form1: React.FC<Props> = ({
             />
             <FontAwesomeIcon
               id="date"
-              className="relative bottom-6 left-2 text-purple"
+              className="relative bottom-10 left-2 text-purple"
               icon={faCalendarDays}
             />
           </div>
         </section>
         {/* Address Section */}
         <section className="section md:order-4 md:row-span-2">
-          <div className="section-div">
-            <TipsIcon />
-            <h2 className="h2">Address</h2>
-          </div>
-          <div className="input-div">
-            <input
-              className="input focus:outline-none"
-              placeholder="Address Furigana"
-              value={furiAddress}
-              onChange={(e) => setFuriAddress(e.target.value)}
-              type="text"
-              aria-required
-            />
-            <input
-              className="input input-lower focus:outline-none"
-              placeholder="Address"
-              type="text"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
+          <InputTitle fieldName="Address" />
 
-              aria-required
+          <div className="input-div">
+            <TextInput
+              place="Address Furigana"
+              val={furiAddress}
+              change={setFuriAddress}
             />
+            <TextInput place="Address" val={address} change={setAddress} />
           </div>
         </section>
         {/* Email Section */}
         <section className="section md:order-6">
-          <div className="section-div">
-            <TipsIcon />
-            <h2 className="h2">Email</h2>
-          </div>
-          <div className="input-div">
-            <input
-              className="input focus:outline-none"
-              placeholder="Address Furigana"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              aria-required
-            />
-          </div>
+          <InputTitle fieldName="Email" />
+          <EmailInput place="Email" val={email} change={setEmail} />
         </section>
         {/* Gender Section */}
         <section className="section grid-flow-col gap-8 md:order-5 md:row-span-1">
-          <div className="section-div">
-            <TipsIcon />
-            <h2 className="h2">Gender</h2>
-          </div>
+          <InputTitle fieldName="Gender" />
+
           <div className="grid place-content-center relative top-4">
             <div>
               <input
@@ -185,6 +141,7 @@ const Form1: React.FC<Props> = ({
                 type="radio"
                 name="gender"
                 value="Male"
+                onChange={() => setGender(true)}
               />
               <label className="text-purple" htmlFor="male">
                 Male
@@ -196,6 +153,7 @@ const Form1: React.FC<Props> = ({
                 type="radio"
                 name="gender"
                 value="Female"
+                onChange={() => setGender(false)}
               />
               <label className="text-purple" htmlFor="female">
                 Female
@@ -204,80 +162,51 @@ const Form1: React.FC<Props> = ({
           </div>
         </section>
         {/* Phone Section */}
-        <section className="section md:order-7 md:row-span-3">
-          <div className="section-div">
-            <TipsIcon />
-            <h2 className="h2">Phone</h2>
-          </div>
+        <section className="section md:order-8 md:row-span-2">
+          <InputTitle fieldName="Phone" />
+
           <div className="input-div">
-            <input
-              className="input focus:outline-none"
-              placeholder="Home Phone"
-              type="tel"
-              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-              value={homePhone}
-              onChange={(e) => setHomePhone(e.target.value)}
-              aria-required
+            <PhoneInput
+              place="Home Phone"
+              val={homePhone}
+              change={setHomePhone}
             />
-            <input
-              className="input input-lower focus:outline-none"
-              placeholder="Cell Phone"
-              type="tel"
-              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-              value={cellPhone}
-              onChange={(e) => setCellPhone(e.target.value)}
-              aria-required
+            <PhoneInput
+              place="Cell Phone"
+              val={cellPhone}
+              change={setCellPhone}
             />
           </div>
         </section>
         {/* Contact's Information Section */}
-        <section className="section md:row-span-3 md:order-8">
-          <div className="section-div">
-            <TipsIcon />
-            <h2 className="h2">Contact's Information</h2>
-          </div>
+        <section className="section md:row-span-3 md:order-7">
+          <InputTitle fieldName="Contact Information" />
+
           <div className="input-div">
-            <input
-              className="input focus:outline-none"
-              placeholder="Contact's Address Furigana"
-              type="text"
-              value={furiContactAddress}
-              onChange={(e) => setFuriContactAddress(e.target.value)}
-              aria-required
+            <TextInput
+              place="Contact's Address Furigana"
+              val={furiContactAddress}
+              change={setFuriContactAddress}
             />
-            <input
-              className="input input-lower focus:outline-none"
-              placeholder="Contact's Address"
-              type="text"
-              value={contactAddress}
-              onChange={(e) => setContactAddress(e.target.value)}
-              aria-required
+            <TextInput
+              place="Contact's Address"
+              val={contactAddress}
+              change={setContactAddress}
             />
-            <input
-              className="input input-lower focus:outline-none"
-              placeholder="Contact's Phone Number"
-              type="tel"
-              value={contactPhone}
-              onChange={(e) => setContactPhone(e.target.value)}
-              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-              aria-required
+            <PhoneInput
+              place="Contact's Phone Number"
+              val={contactPhone}
+              change={setContactPhone}
             />
-            <input
-              className="input input-lower focus:outline-none"
-              placeholder="Contact's Cell Phone Number"
-              type="tel"
-              value={contactCellPhone}
-              onChange={(e) => setContactCellPhone(e.target.value)}
-              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-              aria-required
+            <PhoneInput
+              place="Contact's Cell Phone Number"
+              val={contactCellPhone}
+              change={setContactCellPhone}
             />
-            <input
-              className="input input-lower focus:outline-none"
-              placeholder="Contact's Email"
-              type="email"
-              value={contactEmail}
-              onChange={(e) => setContactEmail(e.target.value)}
-              aria-required
+            <EmailInput
+              place="Contact's Email"
+              val={contactEmail}
+              change={setContactEmail}
             />
           </div>
         </section>
