@@ -39,13 +39,14 @@ const ResumePage1: React.FC<Props> = ({
   contactEmail,
 }) => {
   const d = new Date();
-  const year = d.getFullYear() - 2018;
+  const year = d.getFullYear();
   const month = d.getMonth() + 1;
   const date = d.getDate();
   
-  const birthyear = +dob.slice(0, 4) - 1925;
+  const birthyear = +dob.slice(0, 4);
   const birthmonth = dob.slice(5, 7);
   const birthdate = dob.slice(8);
+  const age = () => {return +month >= +birthmonth && +date >= +birthdate ? year - birthyear : year - birthyear - 1};
 
   return (
     <>
@@ -55,7 +56,7 @@ const ResumePage1: React.FC<Props> = ({
           <section className="flex gap-8 ml-[5%] pt-5">
             <p className="pr-14">履歴書</p>
             <p>
-              令和　{year}年　{month}月　{date}日 現在
+              令和　{year - 2018}年　{month}月　{date}日 現在
             </p>
           </section>
           {/* Start of Name to Gender Section */}
@@ -65,12 +66,12 @@ const ResumePage1: React.FC<Props> = ({
                 <p className="w-full border-b-[1px] pl-2 text-xs">
                   ふりがな<span className="pl-3">{furiName}</span>
                 </p>
-                <p className="text-3xl py-7 px-3">
-                  氏名 <span>{name}</span>
+                <p className="text-2xl py-7 px-3">
+                  氏名 <span className="pl-2">{name}</span>
                 </p>
                 <div className="grid grid-flow-col col-span-2 text-xs border-t-2">
                   <div className="flex flex-col">
-                    <p className="px-2 pt-2 pb-1">生年月日</p>
+                    <p className="px-2 pt-2 pb-1">生年月日<span className="flex justify-end">({dob?age():"00"}歳)</span></p>
                     <p className="px-2 pb-2 text-right">
                       昭和・平成　{birthyear > -1 ? birthyear : "00"}年{birthmonth ? birthmonth : "00"}月{birthdate ? birthdate : "00"}日
                     </p>

@@ -10,7 +10,7 @@ interface Props {
 const AddressBox: React.FC<Props> = ({furival, val, text}) => {
   return (
     <div className="col-span-3">
-      <div className="col-span-3 border-2">
+      <div className="col-span-3 border-2 h-28">
         <p className="w-full px-3 border-b-[1px] border-dashed text-xs">
           ふりがな <span>{furival}</span>
         </p>
@@ -27,7 +27,7 @@ const AddressBox: React.FC<Props> = ({furival, val, text}) => {
             {text}
           </p>
         </div>
-        <p className="px-3 py-3">{val}</p>
+        <p className="px-3 py-3 text-sm">{val}</p>
       </div>
     </div>
   );
