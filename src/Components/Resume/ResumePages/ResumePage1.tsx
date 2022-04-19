@@ -70,11 +70,14 @@ const ResumePage1: React.FC<Props> = ({
                   氏名 <span className="pl-2">{name}</span>
                 </p>
                 <div className="grid grid-flow-col col-span-2 text-xs border-t-2">
-                  <div className="flex flex-col">
-                    <p className="px-2 pt-2 pb-1">生年月日<span className="flex justify-end">({dob?age():"00"}歳)</span></p>
-                    <p className="px-2 pb-2 text-right">
+                  <div className="flex">
+                    <p className="w-1/2 px-2 pt-2 pb-1">生年月日</p>
+                    <div className="flex flex-col w-full pr-2 py-2">
+                    <p className="flex justify-end">({dob?age():"00"}歳)</p>
+                    <p className="pb-2 text-right justify-end">
                       昭和・平成　{birthyear > -1 ? birthyear : "00"}年{birthmonth ? birthmonth : "00"}月{birthdate ? birthdate : "00"}日
                     </p>
+                    </div>
                   </div>
                   <div className="grid grid-flow-col col-span-1 border-l-[1px] place-content-center">
                     <span
@@ -97,8 +100,8 @@ const ResumePage1: React.FC<Props> = ({
               </div>
             </div>
             {/* Photo div */}
-            <div className="col-span-1">
-              <img className="p-2 h-full" src={photo} alt="photo" />
+            <div className="col-span-1 grid place-content-center">
+              <img className="photo" src={photo} alt="photo" />
             </div>
           </section>
           {/* End of Name to Gender Section */}

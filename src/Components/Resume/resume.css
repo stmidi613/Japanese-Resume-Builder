@@ -29,6 +29,11 @@
     line-height: 1.75rem;
 }
 
+.photo{
+    width: 113.5px;
+    height: 151.2px;
+}
+
 .input-div{
     display: grid;
     width: 20rem;

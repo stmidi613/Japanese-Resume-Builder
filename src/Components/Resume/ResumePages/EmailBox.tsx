@@ -18,7 +18,7 @@ const EmailBox: React.FC<Props> = ({ email, homePhone, cellPhone }) => {
         </p>
         <div className="text-xs border-t-2">
           <p className="px-2 text-[.5rem]">電子メール・E-mail</p>
-          <p className="pb-[.125rem] px-2 text-[.75em]">{email}</p>
+          <p className="pb-[.125rem] px-2 text-[.75em] break-words">{email}</p>
         </div>
       </div>
     </div>

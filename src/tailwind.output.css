@@ -668,6 +668,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 0.75rem;
 }
 
+.h-28 {
+  height: 7rem;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -1008,6 +1012,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 2.5rem;
 }
 
+.pl-1 {
+  padding-left: 0.25rem;
+}
+
 .pb-\[\.125rem\] {
   padding-bottom: .125rem;
 }
@@ -1086,6 +1094,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-\[\.5rem\] {
   font-size: .5rem;
+}
+
+.text-\[\.75em\] {
+  font-size: .75em;
 }
 
 .font-medium {
