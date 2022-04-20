@@ -1,5 +1,6 @@
 import React from "react";
 import '../../Buttons/button.css'
+import TipBox from "../ResumeForms/TipBox";
 
 const TipsHeader: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const TipsHeader: React.FC = () => {
         </div>
         <p className="grid place-content-center ml-1 text-orange text-2xl">Tips</p>
       </div>
+      <TipBox mt={false} content="Get tips for each section when you click on the Tips icon." />
     </>
   );
 };

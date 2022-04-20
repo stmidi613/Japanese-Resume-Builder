@@ -4,11 +4,11 @@ import UploadButton from "../../Buttons/UploadButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import NextButton from "../../Buttons/NextButton";
-import InputTitle from "../InputTitle";
+import InputTitle from "./InputTitle";
 import "../resume.css";
 import TextInput from "../TextInput";
-import EmailInput from "../EmailInput";
-import PhoneInput from "../PhoneInput";
+import EmailInput from "./EmailInput";
+import PhoneInput from "./PhoneInput";
 
 interface Props {
   furiName: string;

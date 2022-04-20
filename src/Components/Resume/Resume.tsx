@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Form1 from "./ResumePages/Form1";
+import Form1 from "./ResumeForms/Form1";
 import ResumeHeader from "./ResumeHeader/ResumeHeader";
 import ResumePage1 from "./ResumePages/ResumePage1";
 import "../Resume/resume.css";
+
 
 const Resume: React.FC = () => {
   const [furiName, setFuriName] = useState<string>("");

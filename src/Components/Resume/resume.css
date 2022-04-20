@@ -122,3 +122,20 @@
     padding-right: 1rem;
     grid-column: span 9 / span 9;
 }
+
+.tipbox{
+    display: none;
+    position: absolute;
+    z-index: 20;
+    margin-left: .5rem;
+    margin-right: 2.5rem;
+    color: #874ed2;
+    background-color: white;
+    text-align: center;
+    border-width: 2px;
+    border-color: #874ed2;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    border-radius: 0.375rem;
+    padding: .5rem;
+}
