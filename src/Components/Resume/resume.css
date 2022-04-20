@@ -124,7 +124,6 @@
 }
 
 .tipbox{
-    display: none;
     position: absolute;
     z-index: 20;
     margin-left: .5rem;
