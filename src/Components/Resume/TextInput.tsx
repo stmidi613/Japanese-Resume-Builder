@@ -2,18 +2,16 @@ import React, { useState } from "react";
 
 interface Props {
   place: string;
-  val: string;
-  change: React.Dispatch<React.SetStateAction<string>>;
+  change: any;
 }
 
-const TextInput: React.FC<Props> = ({ place, val, change }) => {
+const TextInput: React.FC<Props> = ({ place, change }) => {
   return (
     <input
       className="input focus:outline-none"
       placeholder={place}
       type="text"
-      value={val}
-      onChange={(e) => change(e.target.value)}
+      onChange={change}
       aria-required
     />
   );

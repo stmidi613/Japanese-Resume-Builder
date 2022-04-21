@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface Props {
   place: string;
-  val: string;
-  change: React.Dispatch<React.SetStateAction<string>>;
+  change: any;
 }
 
-const PhoneInput: React.FC<Props> = ({ place, val, change }) => {
+const PhoneInput: React.FC<Props> = ({ place, change }) => {
   return (
     <div className="input-div">
       <input
@@ -14,9 +13,7 @@ const PhoneInput: React.FC<Props> = ({ place, val, change }) => {
         placeholder={place}
         type="tel"
         pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-        value={val}
-        onChange={(e) => change(e.target.value)}
-        aria-required
+        onChange={change}
       />
     </div>
   );

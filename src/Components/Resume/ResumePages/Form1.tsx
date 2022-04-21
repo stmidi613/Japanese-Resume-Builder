@@ -1,23 +1,27 @@
-import React from "react";
+import React, { useReducer } from "react";
 import photo from "../../../images/photo.png";
 import UploadButton from "../../Buttons/UploadButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import NextButton from "../../Buttons/NextButton";
 import InputTitle from "../InputTitle";
-import "../resume.css";
 import TextInput from "../TextInput";
 import EmailInput from "../EmailInput";
 import PhoneInput from "../PhoneInput";
+import "../resume.css";
 
+//This is the setState boolean not the Reducer
 interface Props {
+  setGender: React.Dispatch<React.SetStateAction<boolean>>;
+}
+//Reducer types:  First list all the stateType with a type
+export type stateType = {
   furiName: string;
   name: string;
   dob: string;
   furiAddress: string;
   address: string;
   email: string;
-  gender: boolean;
   homePhone: string;
   cellPhone: string;
   furiContactAddress: string;
@@ -25,52 +29,94 @@ interface Props {
   contactPhone: string;
   contactCellPhone: string;
   contactEmail: string;
-  setFuriName: React.Dispatch<React.SetStateAction<string>>;
-  setName: React.Dispatch<React.SetStateAction<string>>;
-  setDob: React.Dispatch<React.SetStateAction<string>>;
-  setFuriAddress: React.Dispatch<React.SetStateAction<string>>;
-  setAddress: React.Dispatch<React.SetStateAction<string>>;
-  setEmail: React.Dispatch<React.SetStateAction<string>>;
-  setGender: React.Dispatch<React.SetStateAction<boolean>>;
-  setHomePhone: React.Dispatch<React.SetStateAction<string>>;
-  setCellPhone: React.Dispatch<React.SetStateAction<string>>;
-  setFuriContactAddress: React.Dispatch<React.SetStateAction<string>>;
-  setContactAddress: React.Dispatch<React.SetStateAction<string>>;
-  setContactPhone: React.Dispatch<React.SetStateAction<string>>;
-  setContactCellPhone: React.Dispatch<React.SetStateAction<string>>;
-  setContactEmail: React.Dispatch<React.SetStateAction<string>>;
+};
+//Second Define all the initial States with a const
+export const initialState: stateType = {
+  furiName: "",
+  name: "",
+  dob: "",
+  furiAddress: "",
+  address: "",
+  email: "",
+  homePhone: "",
+  cellPhone: "",
+  furiContactAddress: "",
+  contactAddress: "",
+  contactPhone: "",
+  contactCellPhone: "",
+  contactEmail: "",
+};
+//Third define all the action types with a type with the payload
+type actionType = {
+  type:
+    | "setFuriName"
+    | "setName"
+    | "setDob"
+    | "setFuriAddress"
+    | "setAddress"
+    | "setEmail"
+    | "setHomePhone"
+    | "setCellPhone"
+    | "setFuriContactAddress"
+    | "setContactAddress"
+    | "setContactPhone"
+    | "setContactCellPhone"
+    | "setContactEmail";
+  payload: string;
+};
+//Fourth write the reducer function to take a stateType and Action Type then Payload
+export function reducer(currentState: stateType, action: actionType) {
+  if (action.type === "setFuriName") {
+    return { ...currentState, furiName: action.payload };
+  }
+  if (action.type === "setName") {
+    return { ...currentState, name: action.payload };
+  }
+  if (action.type === "setDob") {
+    return { ...currentState, dob: action.payload };
+  }
+  if (action.type === "setFuriAddress") {
+    return { ...currentState, furiAddress: action.payload };
+  }
+  if (action.type === "setAddress") {
+    return { ...currentState, address: action.payload };
+  }
+  if (action.type === "setEmail") {
+    return { ...currentState, email: action.payload };
+  }
+  if (action.type === "setHomePhone") {
+    return { ...currentState, homePhone: action.payload };
+  }
+  if (action.type === "setCellPhone") {
+    return { ...currentState, cellPhone: action.payload };
+  }
+  if (action.type === "setFuriContactAddress") {
+    return { ...currentState, furiContactAddress: action.payload };
+  }
+  if (action.type === "setContactAddress") {
+    return { ...currentState, contactAddress: action.payload };
+  }
+  if (action.type === "setContactPhone") {
+    return { ...currentState, contactPhone: action.payload };
+  }
+  if (action.type === "setContactCellPhone") {
+    return { ...currentState, contactCellPhone: action.payload };
+  }
+  if (action.type === "setContactEmail") {
+    return { ...currentState, contactEmail: action.payload };
+  }
+  return currentState;
 }
 
 const Form1: React.FC<Props> = ({
-  furiName,
-  name,
-  dob,
-  furiAddress,
-  address,
-  email,
-  gender,
-  homePhone,
-  cellPhone,
-  furiContactAddress,
-  contactAddress,
-  contactPhone,
-  contactCellPhone,
-  contactEmail,
-  setFuriName,
-  setName,
-  setDob,
-  setFuriAddress,
-  setAddress,
-  setEmail,
   setGender,
-  setHomePhone,
-  setCellPhone,
-  setFuriContactAddress,
-  setContactAddress,
-  setContactPhone,
-  setContactCellPhone,
-  setContactEmail,
 }) => {
+  //Fifth add this reducer hook to take the reducer function and initial state
+  const [state, dispatch] = useReducer(reducer, initialState);
+  function onSubmitForm(event: React.FormEvent) {
+    event.preventDefault();
+  }
+
   return (
     <>
       <form className="form md:grid-cols-2 md:grid-rows-7">
@@ -86,12 +132,19 @@ const Form1: React.FC<Props> = ({
         <section className="section md:order-1 md:row-span-2 md:row-start-1">
           <InputTitle fieldName="Name" />
           <div className="input-div">
+            {/* Sixth add all the onchange functions like this here we passed it as a props called change */}
             <TextInput
               place="Name Furigana"
-              val={furiName}
-              change={setFuriName}
+              change={(e: React.ChangeEvent<HTMLInputElement>) =>
+                dispatch({ type: "setFuriName", payload: e.target.value })
+              }
             />
-            <TextInput place="Name" val={name} change={setName} />
+            <TextInput
+              place="Name"
+              change={(e: React.ChangeEvent<HTMLInputElement>) =>
+                dispatch({ type: "setName", payload: e.target.value })
+              }
+            />
           </div>
         </section>
         {/* Date of Birth Section */}
@@ -100,8 +153,10 @@ const Form1: React.FC<Props> = ({
           <div className="input-div">
             <input
               className="input focus:outline-none"
-              value={dob}
-              onChange={(e) => setDob(e.target.value)}
+              // value={dob}
+              onChange={(e) =>
+                dispatch({ type: "setDob", payload: e.target.value })
+              }
               type="date"
               aria-required
             />
@@ -115,20 +170,30 @@ const Form1: React.FC<Props> = ({
         {/* Address Section */}
         <section className="section md:order-4 md:row-span-2">
           <InputTitle fieldName="Address" />
-
           <div className="input-div">
             <TextInput
               place="Address Furigana"
-              val={furiAddress}
-              change={setFuriAddress}
+              change={(e: React.ChangeEvent<HTMLInputElement>) =>
+                dispatch({ type: "setFuriAddress", payload: e.target.value })
+              }
             />
-            <TextInput place="Address" val={address} change={setAddress} />
+            <TextInput
+              place="Address"
+              change={(e: React.ChangeEvent<HTMLInputElement>) =>
+                dispatch({ type: "setAddress", payload: e.target.value })
+              }
+            />
           </div>
         </section>
         {/* Email Section */}
         <section className="section md:order-6">
           <InputTitle fieldName="Email" />
-          <EmailInput place="Email" val={email} change={setEmail} />
+          <EmailInput
+            place="Email"
+            change={(e: React.ChangeEvent<HTMLInputElement>) =>
+              dispatch({ type: "setEmail", payload: e.target.value })
+            }
+          />
         </section>
         {/* Gender Section */}
         <section className="section grid-flow-col gap-8 md:order-5 md:row-span-1">
@@ -168,45 +233,52 @@ const Form1: React.FC<Props> = ({
           <div className="input-div">
             <PhoneInput
               place="Home Phone"
-              val={homePhone}
-              change={setHomePhone}
+              change={(e: React.ChangeEvent<HTMLInputElement>) =>
+                dispatch({ type: "setHomePhone", payload: e.target.value })
+              }
             />
             <PhoneInput
               place="Cell Phone"
-              val={cellPhone}
-              change={setCellPhone}
+              change={(e: React.ChangeEvent<HTMLInputElement>) =>
+                dispatch({ type: "setCellPhone", payload: e.target.value })
+              }
             />
           </div>
         </section>
         {/* Contact's Information Section */}
         <section className="section md:row-span-3 md:order-7">
           <InputTitle fieldName="Contact Information" />
-
           <div className="input-div">
             <TextInput
               place="Contact's Address Furigana"
-              val={furiContactAddress}
-              change={setFuriContactAddress}
+              change={(e: React.ChangeEvent<HTMLInputElement>) =>
+                dispatch({type: "setFuriContactAddress", payload: e.target.value,
+                })
+              }
             />
             <TextInput
               place="Contact's Address"
-              val={contactAddress}
-              change={setContactAddress}
+              change={(e: React.ChangeEvent<HTMLInputElement>) =>
+                dispatch({ type: "setContactAddress", payload: e.target.value })
+              }
             />
             <PhoneInput
               place="Contact's Phone Number"
-              val={contactPhone}
-              change={setContactPhone}
+              change={(e: React.ChangeEvent<HTMLInputElement>) =>
+                dispatch({ type: "setContactPhone", payload: e.target.value })
+              }
             />
             <PhoneInput
               place="Contact's Cell Phone Number"
-              val={contactCellPhone}
-              change={setContactCellPhone}
+              change={(e: React.ChangeEvent<HTMLInputElement>) =>
+                dispatch({ type: "setContactCellPhone", payload: e.target.value })
+              }
             />
             <EmailInput
               place="Contact's Email"
-              val={contactEmail}
-              change={setContactEmail}
+              change={(e: React.ChangeEvent<HTMLInputElement>) =>
+                dispatch({ type: "setContactEmail", payload: e.target.value })
+              }
             />
           </div>
         </section>

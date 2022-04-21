@@ -4,48 +4,23 @@ import AddressBox from "./AddressBox";
 import EmailBox from "./EmailBox";
 import HistoryInput from "./HistoryInput";
 import HistoryTitle from "./HistoryTitle";
+import {initialState} from '../ResumePages/Form1';
 
 interface Props {
-  furiName: string;
-  name: string;
-  dob: string;
-  furiAddress: string;
-  address: string;
-  email: string;
   gender: boolean;
-  homePhone: string;
-  cellPhone: string;
-  furiContactAddress: string;
-  contactAddress: string;
-  contactPhone: string;
-  contactCellPhone: string;
-  contactEmail: string;
 }
 
 const ResumePage1: React.FC<Props> = ({
-  furiName,
-  name,
-  dob,
-  furiAddress,
-  address,
-  email,
-  gender,
-  homePhone,
-  cellPhone,
-  furiContactAddress,
-  contactAddress,
-  contactPhone,
-  contactCellPhone,
-  contactEmail,
+  gender
 }) => {
   const d = new Date();
   const year = d.getFullYear();
   const month = d.getMonth() + 1;
   const date = d.getDate();
   
-  const birthyear = +dob.slice(0, 4);
-  const birthmonth = dob.slice(5, 7);
-  const birthdate = dob.slice(8);
+  const birthyear = +initialState.dob.slice(0, 4);
+  const birthmonth = initialState.dob.slice(5, 7);
+  const birthdate = initialState.dob.slice(8);
   const age = () => {return +month >= +birthmonth && +date >= +birthdate ? year - birthyear : year - birthyear - 1};
 
   return (
@@ -64,16 +39,16 @@ const ResumePage1: React.FC<Props> = ({
             <div className="col-span-3">
               <div className="col-span-3 border-2">
                 <p className="w-full border-b-[1px] pl-2 text-xs">
-                  ふりがな<span className="pl-3">{furiName}</span>
+                  ふりがな<span className="pl-3">{initialState.furiName}</span>
                 </p>
                 <p className="text-2xl py-7 px-3">
-                  氏名 <span className="pl-2">{name}</span>
+                  氏名 <span className="pl-2">{initialState.name}</span>
                 </p>
                 <div className="grid grid-flow-col col-span-2 text-xs border-t-2">
                   <div className="flex">
                     <p className="w-1/2 px-2 pt-2 pb-1">生年月日</p>
                     <div className="flex flex-col w-full pr-2 py-2">
-                    <p className="flex justify-end">({dob?age():"00"}歳)</p>
+                    <p className="flex justify-end">({initialState.dob?age():"00"}歳)</p>
                     <p className="pb-2 text-right justify-end">
                       昭和・平成　{birthyear > -1 ? birthyear : "00"}年{birthmonth ? birthmonth : "00"}月{birthdate ? birthdate : "00"}日
                     </p>
@@ -109,13 +84,13 @@ const ResumePage1: React.FC<Props> = ({
           <section className="resume-section">
             <AddressBox
               text=""
-              val={address}
-              furival={furiAddress}
+              val={initialState.address}
+              furival={initialState.furiAddress}
             />
             <EmailBox
-              email={email}
-              homePhone={homePhone}
-              cellPhone={cellPhone}
+              email={initialState.email}
+              homePhone={initialState.homePhone}
+              cellPhone={initialState.cellPhone}
             />
           </section>
           {/* End of Address Section */}
@@ -123,13 +98,13 @@ const ResumePage1: React.FC<Props> = ({
           <section className="resume-section mb-2">
             <AddressBox
               text="（現住所以外に連絡を希望する場合のみ記入）"
-              val={contactAddress}
-              furival={furiContactAddress}
+              val={initialState.contactAddress}
+              furival={initialState.furiContactAddress}
             />
             <EmailBox
-              email={contactEmail}
-              homePhone={contactPhone}
-              cellPhone={contactCellPhone}
+              email={initialState.contactEmail}
+              homePhone={initialState.contactPhone}
+              cellPhone={initialState.contactCellPhone}
             />
           </section>
           {/* End of Contact Address Section */}
