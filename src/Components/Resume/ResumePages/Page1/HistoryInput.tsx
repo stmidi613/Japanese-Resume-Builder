@@ -1,5 +1,5 @@
 import React from "react";
-import '../../Resume/resume.css';
+import '../../../Resume/resume.css';
 
 const HistoryInput: React.FC = () => {
   return (

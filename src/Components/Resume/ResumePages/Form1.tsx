@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useContext, useReducer } from "react";
 import photo from "../../../images/photo.png";
 import UploadButton from "../../Buttons/UploadButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,10 +9,11 @@ import TextInput from "../TextInput";
 import EmailInput from "../EmailInput";
 import PhoneInput from "../PhoneInput";
 import "../resume.css";
+import {ResumeContext} from "../Resume";
 
 //This is the setState boolean not the Reducer
 interface Props {
-  setGender: React.Dispatch<React.SetStateAction<boolean>>;
+  // setGender: React.Dispatch<React.SetStateAction<boolean>>;
 }
 //Reducer types:  First list all the stateType with a type
 export type stateType = {
@@ -108,15 +109,15 @@ export function reducer(currentState: stateType, action: actionType) {
   return currentState;
 }
 
-const Form1: React.FC<Props> = ({
-  setGender,
+const Form1: React.FC = ({
+  // setGender,
 }) => {
   //Fifth add this reducer hook to take the reducer function and initial state
   const [state, dispatch] = useReducer(reducer, initialState);
   function onSubmitForm(event: React.FormEvent) {
     event.preventDefault();
   }
-
+  const {gender, setGender} = useContext(ResumeContext)
   return (
     <>
       <form className="form md:grid-cols-2 md:grid-rows-7">
@@ -201,13 +202,13 @@ const Form1: React.FC<Props> = ({
 
           <div className="grid place-content-center relative top-4">
             <div>
-              <input
+             <input
                 className="input mr-2"
                 type="radio"
                 name="gender"
                 value="Male"
                 onChange={() => setGender(true)}
-              />
+              /> 
               <label className="text-purple" htmlFor="male">
                 Male
               </label>

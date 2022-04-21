@@ -1,8 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 import Form1 from "./ResumePages/Form1";
 import ResumeHeader from "./ResumeHeader/ResumeHeader";
-import ResumePage1 from "./ResumePages/ResumePage1";
+import ResumePage1 from "./ResumePages/Page1/ResumePage1";
+// import ResumeContext, {IResumeContext, defaultValue} from "./ResumeContext/ResumeContext";
 import "../Resume/resume.css";
+
+export interface IResumeContext {
+  gender: boolean;
+  setGender: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const defaultValue: IResumeContext = {
+  gender: true,
+  setGender: () => {},
+}
+
+export const ResumeContext = createContext<IResumeContext>(defaultValue);
 
 
 const Resume: React.FC = () => {
@@ -27,13 +40,15 @@ const Resume: React.FC = () => {
     <>
       <ResumeHeader />
       <div className="flex justify-center">
-        <Form1
-          setGender={setGender}
-        />
-        <ResumePage1
-          // info={info}
-          gender={gender}
-        />
+        <ResumeContext.Provider
+          value={{
+            gender,
+            setGender,
+          }}
+        >
+          <Form1 />
+          <ResumePage1 />
+        </ResumeContext.Provider>
       </div>
     </>
   );

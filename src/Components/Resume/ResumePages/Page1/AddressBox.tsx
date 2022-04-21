@@ -1,5 +1,5 @@
 import React from "react";
-import post from '../../../images/postnumber.svg'
+import post from '../../../../images/postnumber.svg'
 
 interface Props {
     furival: string;

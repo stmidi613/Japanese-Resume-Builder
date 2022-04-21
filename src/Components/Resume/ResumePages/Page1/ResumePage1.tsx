@@ -1,18 +1,15 @@
-import React from "react";
-import photo from "../../../images/photo.png";
+import React, { useContext } from "react";
+import photo from "../../../../images/photo.png";
 import AddressBox from "./AddressBox";
 import EmailBox from "./EmailBox";
 import HistoryInput from "./HistoryInput";
 import HistoryTitle from "./HistoryTitle";
-import {initialState} from '../ResumePages/Form1';
+import {ResumeContext} from "../../Resume"
+import {initialState} from '../Form1';
 
-interface Props {
-  gender: boolean;
-}
 
-const ResumePage1: React.FC<Props> = ({
-  gender
-}) => {
+const ResumePage1: React.FC = () => {
+  const { gender } = useContext(ResumeContext)
   const d = new Date();
   const year = d.getFullYear();
   const month = d.getMonth() + 1;
