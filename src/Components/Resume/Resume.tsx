@@ -1,9 +1,11 @@
 import React, { useState, createContext } from "react";
-import Form1 from "./ResumePages/Form1";
+
+import Form1 from "./ResumePages/ResumeForms/Form1/Form1";
 import ResumeHeader from "./ResumeHeader/ResumeHeader";
 import ResumePage1 from "./ResumePages/Page1/ResumePage1";
-// import ResumeContext, {IResumeContext, defaultValue} from "./ResumeContext/ResumeContext";
+
 import "../Resume/resume.css";
+import ResumeState from "./ResumeState/ResumeState";
 
 export interface IResumeContext {
   gender: boolean;
@@ -46,8 +48,10 @@ const Resume: React.FC = () => {
             setGender,
           }}
         >
+          <ResumeState>
           <Form1 />
           <ResumePage1 />
+          </ResumeState>
         </ResumeContext.Provider>
       </div>
     </>

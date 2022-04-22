@@ -1,23 +1,42 @@
 import React, { useContext } from "react";
-import photo from "../../../../images/photo.png";
+import {ResumeContext} from "../../Resume"
+
 import AddressBox from "./AddressBox";
 import EmailBox from "./EmailBox";
 import HistoryInput from "./HistoryInput";
 import HistoryTitle from "./HistoryTitle";
-import {ResumeContext} from "../../Resume"
-import {initialState} from '../Form1';
+
+import photo from "../../../../images/photo.png";
+import { ReducerContext } from "../../ResumeState/ResumeState";
+// import {initialState} from '../Form1';
 
 
 const ResumePage1: React.FC = () => {
   const { gender } = useContext(ResumeContext)
+  const {
+    furiName,
+    name,
+    dob,
+    furiAddress,
+    address,
+    email,
+    homePhone,
+    cellPhone,
+    furiContactAddress,
+    contactAddress,
+    contactPhone,
+    contactCellPhone,
+    contactEmail,
+  } = useContext(ReducerContext)
+  
   const d = new Date();
   const year = d.getFullYear();
   const month = d.getMonth() + 1;
   const date = d.getDate();
   
-  const birthyear = +initialState.dob.slice(0, 4);
-  const birthmonth = initialState.dob.slice(5, 7);
-  const birthdate = initialState.dob.slice(8);
+  const birthyear = +dob.slice(0, 4);
+  const birthmonth = dob.slice(5, 7);
+  const birthdate = dob.slice(8);
   const age = () => {return +month >= +birthmonth && +date >= +birthdate ? year - birthyear : year - birthyear - 1};
 
   return (
@@ -36,16 +55,16 @@ const ResumePage1: React.FC = () => {
             <div className="col-span-3">
               <div className="col-span-3 border-2">
                 <p className="w-full border-b-[1px] pl-2 text-xs">
-                  ふりがな<span className="pl-3">{initialState.furiName}</span>
+                  ふりがな<span className="pl-3">{furiName}</span>
                 </p>
                 <p className="text-2xl py-7 px-3">
-                  氏名 <span className="pl-2">{initialState.name}</span>
+                  氏名 <span className="pl-2">{name}</span>
                 </p>
                 <div className="grid grid-flow-col col-span-2 text-xs border-t-2">
                   <div className="flex">
                     <p className="w-1/2 px-2 pt-2 pb-1">生年月日</p>
                     <div className="flex flex-col w-full pr-2 py-2">
-                    <p className="flex justify-end">({initialState.dob?age():"00"}歳)</p>
+                    <p className="flex justify-end">({dob?age():"00"}歳)</p>
                     <p className="pb-2 text-right justify-end">
                       昭和・平成　{birthyear > -1 ? birthyear : "00"}年{birthmonth ? birthmonth : "00"}月{birthdate ? birthdate : "00"}日
                     </p>
@@ -81,13 +100,13 @@ const ResumePage1: React.FC = () => {
           <section className="resume-section">
             <AddressBox
               text=""
-              val={initialState.address}
-              furival={initialState.furiAddress}
+              val={address}
+              furival={furiAddress}
             />
             <EmailBox
-              email={initialState.email}
-              homePhone={initialState.homePhone}
-              cellPhone={initialState.cellPhone}
+              email={email}
+              homePhone={homePhone}
+              cellPhone={cellPhone}
             />
           </section>
           {/* End of Address Section */}
@@ -95,13 +114,13 @@ const ResumePage1: React.FC = () => {
           <section className="resume-section mb-2">
             <AddressBox
               text="（現住所以外に連絡を希望する場合のみ記入）"
-              val={initialState.contactAddress}
-              furival={initialState.furiContactAddress}
+              val={contactAddress}
+              furival={furiContactAddress}
             />
             <EmailBox
-              email={initialState.contactEmail}
-              homePhone={initialState.contactPhone}
-              cellPhone={initialState.contactCellPhone}
+              email={contactEmail}
+              homePhone={contactPhone}
+              cellPhone={contactCellPhone}
             />
           </section>
           {/* End of Contact Address Section */}
