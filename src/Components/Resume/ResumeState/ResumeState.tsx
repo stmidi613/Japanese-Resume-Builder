@@ -1,4 +1,4 @@
-import React, {createContext, useReducer} from 'react';
+import React, {createContext, useReducer, useState} from 'react';
 
 export const initialValues = {
   furiName: "",
@@ -14,6 +14,7 @@ export const initialValues = {
   contactPhone: "",
   contactCellPhone: "",
   contactEmail: "",
+  gender: true,
   setFuriName: (e:React.ChangeEvent<HTMLInputElement>) => {},
   setName: (e:React.ChangeEvent<HTMLInputElement>) => {},
   setDob: (e:React.ChangeEvent<HTMLInputElement>) => {},
@@ -27,6 +28,8 @@ export const initialValues = {
   setContactPhone: (e:React.ChangeEvent<HTMLInputElement>) => {},
   setContactCellPhone: (e:React.ChangeEvent<HTMLInputElement>) => {},
   setContactEmail: (e:React.ChangeEvent<HTMLInputElement>) => {},
+  setFemale: () => {},
+  setMale: () => {},
 };
 
 export const ReducerContext = createContext(initialValues)
@@ -45,6 +48,9 @@ export type stateType = {
   contactPhone: string;
   contactCellPhone: string;
   contactEmail: string;
+  gender: boolean;
+  setFemale: React.Dispatch<React.SetStateAction<boolean>>,
+  setMale: React.Dispatch<React.SetStateAction<boolean>>,
 };
 
 type actionType = {
@@ -61,7 +67,7 @@ type actionType = {
     | "setContactAddress"
     | "setContactPhone"
     | "setContactCellPhone"
-    | "setContactEmail";
+    | "setContactEmail"
   payload: string;
 };
 
@@ -109,7 +115,8 @@ export function reducer(currentState: stateType, action: actionType) {
 }
 
 const ResumeState: React.FC = ({children}) => {
-  const [state, dispatch] = useReducer(reducer, initialValues)
+  const [state, dispatch] = useReducer(reducer, initialValues);
+  const [gender, setGender] = useState<boolean>(true) 
 
   return (
     <ReducerContext.Provider value={{
@@ -126,6 +133,7 @@ const ResumeState: React.FC = ({children}) => {
     contactPhone: state.contactPhone,
     contactCellPhone: state.contactCellPhone,
     contactEmail: state.contactEmail,
+    gender,
     setFuriName: (e) => {dispatch({ type: "setFuriName", payload: e.target.value})},
     setName: (e) => {dispatch ({type: "setName", payload: e.target.value})},
     setDob: (e) => {dispatch ({type: "setDob", payload: e.target.value})},
@@ -139,6 +147,8 @@ const ResumeState: React.FC = ({children}) => {
     setContactPhone: (e) => {dispatch ({type: "setContactPhone", payload: e.target.value})},
     setContactCellPhone: (e) => {dispatch ({type: "setContactCellPhone", payload: e.target.value})},
     setContactEmail: (e) => {dispatch({ type: "setContactEmail", payload: e.target.value})},
+    setMale: () => {setGender(true)},
+    setFemale: () => {setGender(false)},
     }}>
       {children}
     </ReducerContext.Provider>

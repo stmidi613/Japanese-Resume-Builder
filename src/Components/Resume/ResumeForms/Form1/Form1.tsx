@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import {ResumeContext} from "../../Resume";
 import { ReducerContext } from "../../ResumeState/ResumeState";
 
 import UploadButton from "../../../Buttons/UploadButton";
@@ -21,7 +20,7 @@ const Form1: React.FC = () => {
   function onSubmitForm(event: React.FormEvent) {
     event.preventDefault();
   }
-  const {gender, setGender} = useContext(ResumeContext)
+  // const {gender, setGender} = useContext(ResumeContext)
   
   const {
     setFuriName,
@@ -37,6 +36,8 @@ const Form1: React.FC = () => {
     setContactPhone,
     setContactCellPhone,
     setContactEmail,
+    setMale,
+    setFemale
   } = useContext(ReducerContext)
   
   return (
@@ -116,7 +117,7 @@ const Form1: React.FC = () => {
                 type="radio"
                 name="gender"
                 value="Male"
-                onChange={() => setGender(true)}
+                onChange={setMale}
               /> 
               <label className="text-purple" htmlFor="male">
                 Male
@@ -128,7 +129,7 @@ const Form1: React.FC = () => {
                 type="radio"
                 name="gender"
                 value="Female"
-                onChange={() => setGender(false)}
+                onChange={setFemale}
               />
               <label className="text-purple" htmlFor="female">
                 Female

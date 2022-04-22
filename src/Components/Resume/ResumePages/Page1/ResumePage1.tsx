@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import {ResumeContext} from "../../Resume"
 
 import AddressBox from "./AddressBox";
 import EmailBox from "./EmailBox";
@@ -8,12 +7,11 @@ import HistoryTitle from "./HistoryTitle";
 
 import photo from "../../../../images/photo.png";
 import { ReducerContext } from "../../ResumeState/ResumeState";
-// import {initialState} from '../Form1';
 
 
 const ResumePage1: React.FC = () => {
-  const { gender } = useContext(ResumeContext)
   const {
+    gender,
     furiName,
     name,
     dob,
