@@ -1,6 +1,6 @@
 
 import React, { useState, createContext } from "react";
-import Form1 from "./ResumeForm/Form1/Form1";
+import Form1 from "./ResumeForms/Form1/Form1";
 
 import ResumeHeader from "./ResumeHeader/ResumeHeader";
 import ResumePage1 from "./ResumePages/Page1/ResumePage1";
