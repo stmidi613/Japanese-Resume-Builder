@@ -1,43 +1,34 @@
-import React from "react";
-import photo from "../../../images/photo.png";
+import React, { useContext } from "react";
+import {ResumeContext} from "../../Resume"
+
 import AddressBox from "./AddressBox";
 import EmailBox from "./EmailBox";
 import HistoryInput from "./HistoryInput";
 import HistoryTitle from "./HistoryTitle";
 
-interface Props {
-  furiName: string;
-  name: string;
-  dob: string;
-  furiAddress: string;
-  address: string;
-  email: string;
-  gender: boolean;
-  homePhone: string;
-  cellPhone: string;
-  furiContactAddress: string;
-  contactAddress: string;
-  contactPhone: string;
-  contactCellPhone: string;
-  contactEmail: string;
-}
+import photo from "../../../../images/photo.png";
+import { ReducerContext } from "../../ResumeState/ResumeState";
+// import {initialState} from '../Form1';
 
-const ResumePage1: React.FC<Props> = ({
-  furiName,
-  name,
-  dob,
-  furiAddress,
-  address,
-  email,
-  gender,
-  homePhone,
-  cellPhone,
-  furiContactAddress,
-  contactAddress,
-  contactPhone,
-  contactCellPhone,
-  contactEmail,
-}) => {
+
+const ResumePage1: React.FC = () => {
+  const { gender } = useContext(ResumeContext)
+  const {
+    furiName,
+    name,
+    dob,
+    furiAddress,
+    address,
+    email,
+    homePhone,
+    cellPhone,
+    furiContactAddress,
+    contactAddress,
+    contactPhone,
+    contactCellPhone,
+    contactEmail,
+  } = useContext(ReducerContext)
+  
   const d = new Date();
   const year = d.getFullYear();
   const month = d.getMonth() + 1;

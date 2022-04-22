@@ -1,76 +1,60 @@
-import React, { useState } from "react";
-import Form1 from "./ResumeForms/Form1";
+
+import React, { useState, createContext } from "react";
+import Form1 from "../Resume/ResumePages/ResumeForm/Form1/Form1";
+
 import ResumeHeader from "./ResumeHeader/ResumeHeader";
-import ResumePage1 from "./ResumePages/ResumePage1";
+import ResumePage1 from "./ResumePages/Page1/ResumePage1";
+import ResumeState from "./ResumeState/ResumeState";
+
 import "../Resume/resume.css";
+
+export interface IResumeContext {
+  gender: boolean;
+  setGender: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const defaultValue: IResumeContext = {
+  gender: true,
+  setGender: () => {},
+}
+
+export const ResumeContext = createContext<IResumeContext>(defaultValue);
+
 
 
 const Resume: React.FC = () => {
-  const [furiName, setFuriName] = useState<string>("");
-  const [name, setName] = useState<string>("");
-  const [dob, setDob] = useState<string>("");
-  const [furiAddress, setFuriAddress] = useState<string>("");
-  const [address, setAddress] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
   const [gender, setGender] = useState<boolean>(true);
-  const [homePhone, setHomePhone] = useState<string>("");
-  const [cellPhone, setCellPhone] = useState<string>("");
-  const [furiContactAddress, setFuriContactAddress] = useState<string>("");
-  const [contactAddress, setContactAddress] = useState<string>("");
-  const [contactPhone, setContactPhone] = useState<string>("");
-  const [contactCellPhone, setContactCellPhone] = useState<string>("");
-  const [contactEmail, setContactEmail] = useState<string>("");
 
+  // const info = {
+  // furiName: "",
+  // name: "",
+  // dob: "",
+  // furiAddress: "",
+  // address: "",
+  // email: "",
+  // homePhone: "",
+  // cellPhone: "",
+  // furiContactAddress: "",
+  // contactAddress: "",
+  // contactPhone: "",
+  // contactCellPhone: "",
+  // contactEmail: "",
+  // }
   return (
     <>
       <ResumeHeader />
       <div className="flex justify-center">
-        <Form1
-          furiName={furiName}
-          name={name}
-          dob={dob}
-          furiAddress={furiAddress}
-          address={address}
-          email={email}
-          gender={gender}
-          homePhone={homePhone}
-          cellPhone={cellPhone}
-          furiContactAddress={furiContactAddress}
-          contactAddress={contactAddress}
-          contactPhone={contactPhone}
-          contactCellPhone={contactCellPhone}
-          contactEmail={contactEmail}
-          setFuriName={setFuriName}
-          setName={setName}
-          setDob={setDob}
-          setFuriAddress={setFuriAddress}
-          setAddress={setAddress}
-          setEmail={setEmail}
-          setGender={setGender}
-          setHomePhone={setHomePhone}
-          setCellPhone={setCellPhone}
-          setFuriContactAddress={setFuriContactAddress}
-          setContactAddress={setContactAddress}
-          setContactPhone={setContactPhone}
-          setContactCellPhone={setContactCellPhone}
-          setContactEmail={setContactEmail}
-        />
-        <ResumePage1
-          furiName={furiName}
-          name={name}
-          dob={dob}
-          furiAddress={furiAddress}
-          address={address}
-          email={email}
-          gender={gender}
-          homePhone={homePhone}
-          cellPhone={cellPhone}
-          furiContactAddress={furiContactAddress}
-          contactAddress={contactAddress}
-          contactPhone={contactPhone}
-          contactCellPhone={contactCellPhone}
-          contactEmail={contactEmail}
-        />
+        <ResumeContext.Provider
+          value={{
+            gender,
+            setGender,
+          }}
+        >
+          <ResumeState>
+          <Form1 />
+          <ResumePage1 />
+          </ResumeState>
+        </ResumeContext.Provider>
       </div>
     </>
   );

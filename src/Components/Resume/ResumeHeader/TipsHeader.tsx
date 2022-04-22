@@ -1,6 +1,6 @@
 import React from "react";
 import '../../Buttons/button.css'
-import TipBox from "../ResumeForms/TipBox";
+import TipBox from "../ResumePages/ResumeForm/TipBox";
 
 const TipsHeader: React.FC = () => {
   return (
