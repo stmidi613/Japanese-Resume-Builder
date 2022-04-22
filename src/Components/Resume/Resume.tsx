@@ -1,6 +1,6 @@
 
 import React, { useState, createContext } from "react";
-import Form1 from "../Resume/ResumePages/ResumeForm/Form1/Form1";
+import Form1 from "./ResumeForm/Form1/Form1";
 
 import ResumeHeader from "./ResumeHeader/ResumeHeader";
 import ResumePage1 from "./ResumePages/Page1/ResumePage1";
@@ -25,21 +25,6 @@ export const ResumeContext = createContext<IResumeContext>(defaultValue);
 const Resume: React.FC = () => {
   const [gender, setGender] = useState<boolean>(true);
 
-  // const info = {
-  // furiName: "",
-  // name: "",
-  // dob: "",
-  // furiAddress: "",
-  // address: "",
-  // email: "",
-  // homePhone: "",
-  // cellPhone: "",
-  // furiContactAddress: "",
-  // contactAddress: "",
-  // contactPhone: "",
-  // contactCellPhone: "",
-  // contactEmail: "",
-  // }
   return (
     <>
       <ResumeHeader />

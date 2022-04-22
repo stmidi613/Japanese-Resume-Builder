@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import {ResumeContext} from "../../../Resume";
-import { ReducerContext } from "../../../ResumeState/ResumeState";
+import {ResumeContext} from "../../Resume";
+import { ReducerContext } from "../../ResumeState/ResumeState";
 
-import UploadButton from "../../../../Buttons/UploadButton";
-import NextButton from "../../../../Buttons/NextButton";
+import UploadButton from "../../../Buttons/UploadButton";
+import NextButton from "../../../Buttons/NextButton";
 
 import InputTitle from "../InputTitle";
 import TextInput from "./TextInput";
@@ -13,8 +13,8 @@ import PhoneInput from "./PhoneInput";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 
-import photo from "../../../../../images/photo.png";
-import "../../../../Resume/resume.css";
+import photo from "../../../../images/photo.png";
+import "../../../Resume/resume.css";
 
 const Form1: React.FC = () => {
   //Fifth add this reducer hook to take the reducer function and initial state
