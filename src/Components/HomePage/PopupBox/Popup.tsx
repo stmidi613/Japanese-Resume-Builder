@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import resume from "../../../images/resume.png";
 import skillsheet from "../../../images/skillsheet.png";
+import CloseButton from "../../Buttons/CloseButton";
 import ResumeButton from "../../Buttons/ResumeButton";
 import SkillSheetButton from "../../Buttons/SkillSheetButton";
 
@@ -17,10 +18,10 @@ const Popup: React.FC<Props> = ({
   resumeButtonText,
   skillSheetButtonText,
 }) => {
-  useEffect(() => {
-    let popup = document.getElementById("popup");
-    if (popup) popup.style.boxShadow = "0 0 10px 1000px rgba(0, 0, 0, 0.6)";
-  }, [showPopup]);
+  // useEffect(() => {
+  //   let popup = document.getElementById("popup");
+  //   if (popup) popup.style.boxShadow = "0 0 10px 1000px rgba(0, 0, 0, 0.6)";
+  // }, [showPopup]);
 
   return (
     <>
@@ -28,14 +29,7 @@ const Popup: React.FC<Props> = ({
         id="popup"
         className="focus:outline-none z-30 p-3 absolute top-24 left-[5%] w-[90%] bg-white border-2 border-purple rounded-md"
       >
-        <div className="flex justify-end">
-          <button
-            className="text-orange border-2 border-orange bg-gray rounded-md py-1 px-2"
-            onClick={() => setShowPopup(false)}
-          >
-            X
-          </button>
-        </div>
+        <CloseButton showPopup={showPopup} setShowPopup={setShowPopup} />
         <div className="flex justify-evenly flex-col md:flex-row items-center">
           <div className="p-2 h-1/3">
             <img className="w-7/8 pb-2" src={resume} alt="resume" />

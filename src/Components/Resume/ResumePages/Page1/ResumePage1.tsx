@@ -8,7 +8,6 @@ import HistoryTitle from "./HistoryTitle";
 import photo from "../../../../images/photo.png";
 import { ReducerContext } from "../../ResumeState/ResumeState";
 
-
 const ResumePage1: React.FC = () => {
   const {
     gender,
@@ -25,17 +24,27 @@ const ResumePage1: React.FC = () => {
     contactPhone,
     contactCellPhone,
     contactEmail,
-  } = useContext(ReducerContext)
-  
+  } = useContext(ReducerContext);
+
   const d = new Date();
   const year = d.getFullYear();
   const month = d.getMonth() + 1;
   const date = d.getDate();
-  
+
   const birthyear = +dob.slice(0, 4);
-  const birthmonth = dob.slice(5, 7);
-  const birthdate = dob.slice(8);
-  const age = () => {return +month >= +birthmonth && +date >= +birthdate ? year - birthyear : year - birthyear - 1};
+  const birthmonth = +dob.slice(5, 7);
+  const birthdate = +dob.slice(8);
+
+  const showa = (birthyear < 1989) || (birthyear == 1989 && birthmonth == 1 && birthdate <= 7);
+  const heisei = (birthyear > 1989) || (birthyear == 1989 && birthmonth >= 1 && birthdate >= 8);
+  const showayear = birthyear - 1925;
+  const heiseiyear = birthyear - 1988;
+
+  const age = () => {
+    return +month >= +birthmonth && +date >= +birthdate
+      ? year - birthyear
+      : year - birthyear - 1;
+  };
 
   return (
     <>
@@ -60,12 +69,21 @@ const ResumePage1: React.FC = () => {
                 </p>
                 <div className="grid grid-flow-col col-span-2 text-xs border-t-2">
                   <div className="flex">
-                    <p className="w-1/2 px-2 pt-2 pb-1">生年月日</p>
+                    <p className="w-1/2 px-2 pt-2">生年月日</p>
                     <div className="flex flex-col w-full pr-2 py-2">
-                    <p className="flex justify-end">({dob?age():"00"}歳)</p>
-                    <p className="pb-2 text-right justify-end">
-                      昭和・平成　{birthyear > -1 ? birthyear : "00"}年{birthmonth ? birthmonth : "00"}月{birthdate ? birthdate : "00"}日
-                    </p>
+                      <p className="flex justify-end">
+                        ({dob ? age() : "00"}歳)
+                      </p>
+                      <div className="flex py-1 text-right justify-end">
+                      <p className={showa  ? `border-[1px] rounded-full relative bottom-1 p-1` : ""}>昭和</p>
+                      <p>・</p>
+                      <p className={heisei ? `border-[1px] rounded-full relative bottom-1 p-1` : ""}>平成</p>
+                      <p className="pl-2">
+                        {birthyear > 0 && birthyear < year && heisei ? heiseiyear : birthyear <= 0 ? "00" : showayear}年
+                        {birthmonth ? birthmonth : "00"}月
+                        {birthdate ? birthdate : "00"}日
+                      </p>
+                      </div>
                     </div>
                   </div>
                   <div className="grid grid-flow-col col-span-1 border-l-[1px] place-content-center">
@@ -96,11 +114,7 @@ const ResumePage1: React.FC = () => {
           {/* End of Name to Gender Section */}
           {/* Start of Address Section */}
           <section className="resume-section">
-            <AddressBox
-              text=""
-              val={address}
-              furival={furiAddress}
-            />
+            <AddressBox text="" val={address} furival={furiAddress} />
             <EmailBox
               email={email}
               homePhone={homePhone}
