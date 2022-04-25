@@ -1,15 +1,17 @@
-import React from 'react';
-import HomePage from './Components/HomePage/HomePage';
-import Resume from './Components/Resume/Resume';
-import './tailwind.css';
-
+import React from "react";
+import HomePage from "./Components/HomePage/HomePage";
+import Resume from "./Components/Resume/Resume";
+import AppState from "./AppState/AppState";
+import "./tailwind.css";
 
 const App: React.FC = () => {
   return (
     <>
-    <Resume />
+      <AppState>
+        <Resume />
+      </AppState>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -1,14 +1,25 @@
-import React from 'react';
-import '../Buttons/button.css'
+import React, { useContext } from "react";
+import { AppContext } from "../../AppState/AppState";
+import "../Buttons/button.css";
 
-const TipsIcon: React.FC = () => {
+interface Props {
+  idnum: number;
+  
+}
+
+const TipsIcon: React.FC<Props> = ({ idnum }) => {
+  const {setShowPopup} = useContext(AppContext)
+
   return (
     <>
-        <div className='button-animation mr-1 rounded-full p-0.5 w-8'>
-            <p className='text-white text-xl font-extrabold grid place-content-center'>?</p>
-        </div>
+      <button
+        onClick={setShowPopup}
+        className="button-animation mr-1 rounded-full p-0.5 w-8 text-white text-xl font-extrabold grid place-content-center"
+      >
+          ?
+      </button>
     </>
-  )
-}
+  );
+};
 
 export default TipsIcon;

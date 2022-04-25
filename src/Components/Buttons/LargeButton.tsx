@@ -1,21 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../../AppState/AppState";
 
 interface Props {
   largeButtonText: string,
-  setShowPopup: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 const LargeButton: React.FC<Props> = ({
-  setShowPopup,
+  // setShowPopup,
   largeButtonText,
 }) => {
-
+  const {setShowPopup} = useContext(AppContext);
   return (
     <>
       <div>
         <button
           className="button button-animation text-5xl p-7"
-          onClick={() => setShowPopup(true)}
+          onClick={setShowPopup}
         >
           {largeButtonText}
         </button>

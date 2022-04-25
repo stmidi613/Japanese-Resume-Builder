@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import LanguageButton from "../Buttons/LanguageButton";
-import USF from "../../images/USflag.png";
 import LargeButton from "../Buttons/LargeButton";
 import MobileButton from "../Buttons/MobileButton";
 import HomeSubSection from "./HomeSubSection/HomeSubSection";
-import "./HomePage.css";
 import Popup from "./PopupBox/Popup";
+
+import { AppContext } from "../../AppState/AppState";
+
+import USF from "../../images/USflag.png";
+import "./HomePage.css";
 
 const US = {
   title: "Japanese Resume Builder",
@@ -39,7 +42,7 @@ let lang = US;
 
 const HomePage: React.FC = () => {
   const [language, setLanguage] = useState<string>(USF);
-  const [showPopup, setShopPopup] = useState<boolean>(false);
+  const {showPopup, setShowPopup} = useContext(AppContext);
 
   {
     language === USF ? (lang = US) : (lang = JP);
@@ -48,8 +51,8 @@ const HomePage: React.FC = () => {
     <>
       {showPopup && (
         <Popup
-          showPopup={showPopup}
-          setShowPopup={setShopPopup}
+          idnum={0}
+          // showPopup={showPopup}
           resumeButtonText={lang.resumeButtonText}
           skillSheetButtonText={lang.skillSheetButtonText}
         />
@@ -74,7 +77,7 @@ const HomePage: React.FC = () => {
         </h3>
         <div className="absolute bottom-48 md:bottom-48 grid place-content-center w-full">
           <LargeButton
-            setShowPopup={setShopPopup}
+            // setShowPopup={setShowPopup}
             largeButtonText={lang.largeButtonText}
           />
         </div>

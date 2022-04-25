@@ -116,7 +116,7 @@ export function reducer(currentState: stateType, action: actionType) {
 
 const ResumeState: React.FC = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initialValues);
-  const [gender, setGender] = useState<boolean>(true) 
+  const [gender, setGender] = useState<boolean>(true); 
 
   return (
     <ReducerContext.Provider value={{
