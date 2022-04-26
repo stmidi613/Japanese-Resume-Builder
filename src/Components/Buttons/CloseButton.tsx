@@ -1,14 +1,14 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import { AppContext } from "../../AppState/AppState";
 
-interface Props {
-    idnum: number;
-    // setHidePopup: React.Dispatch<React.SetStateAction<boolean>>;
-  }
 
-const CloseButton: React.FC<Props> = ({idnum}) => {
-  const {setHidePopup} = useContext(AppContext)
-    
+const CloseButton: React.FC = () => {
+  const {showPopup, setHidePopup} = useContext(AppContext)
+  useEffect(() => {
+    let popup = document.getElementById(`popup`);
+    if (popup) popup.style.boxShadow = "0 0 10px 1000px rgba(0, 0, 0, 0.6)";
+  }, [showPopup]);
+
   return (
     <>
       <div className="flex justify-end">

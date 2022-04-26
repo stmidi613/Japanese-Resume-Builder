@@ -20,7 +20,7 @@ const TipsHeader: React.FC = () => {
       </button>
         <p className="grid place-content-center ml-1 text-orange text-2xl">Tips</p>
       </div>
-      {showPopup && <TipBox idnum={1} mt={false} content="Get tips for each section when you click on the Tips icon." />}
+      {showPopup && <TipBox mt={false} content="Get tips for each section when you click on the Tips icon." />}
     </>
   );
 };

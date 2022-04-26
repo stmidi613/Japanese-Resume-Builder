@@ -51,7 +51,6 @@ const HomePage: React.FC = () => {
     <>
       {showPopup && (
         <Popup
-          idnum={0}
           // showPopup={showPopup}
           resumeButtonText={lang.resumeButtonText}
           skillSheetButtonText={lang.skillSheetButtonText}

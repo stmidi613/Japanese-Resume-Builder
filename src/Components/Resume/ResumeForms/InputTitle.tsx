@@ -4,18 +4,17 @@ import TipsIcon from "../TipsIcon";
 import TipBox from "./TipBox";
 
 interface Props {
-    idnum: number;
     fieldName: string;
 }
 
-const InputTitle: React.FC<Props> = ({idnum, fieldName}) => {
+const InputTitle: React.FC<Props> = ({ fieldName}) => {
   const {showPopup} = useContext(AppContext);
 
   return (
-    <div id={`popup${idnum}`} className="section-div">
-      <TipsIcon idnum={idnum} />
+    <div className="section-div">
+      <TipsIcon />
       <h2 className="h2">{fieldName}</h2>
-     {showPopup && <TipBox idnum={idnum} mt={true} content="Get tips for each section when you click on the Tips icon." /> }
+     {/* {showPopup && <TipBox mt={true} content="Get tips for each section when you click on the Tips icon." /> } */}
     </div>
   );
 };
