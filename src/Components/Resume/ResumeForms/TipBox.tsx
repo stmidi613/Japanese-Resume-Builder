@@ -1,30 +1,28 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { AppContext } from "../../../AppState/AppState";
-import CloseButton from "../../Buttons/CloseButton";
+import TipsCloseButton from "../../Buttons/TipsCloseButton";
 
 interface Props {
-  content: any;
+  content: string;
   mt: boolean;
+  id: number;
+  index: number;
 }
 
-const TipBox: React.FC<Props> = ({ mt, content }) => {
+const TipBox: React.FC<Props> = ({id, index, mt, content }) => {
   const {showPopup} = useContext(AppContext);
-  
-  useEffect(() => {
-    let popup = document.getElementById(`popup`);
-    if (popup) popup.style.boxShadow = "0 0 10px 2000px rgba(0, 0, 0, 0.6)";
-  }, [showPopup]);
-
+  const string = String(id);
   return (
+    // Do the next map here using the key and id
     <>
-      <div
+      <div id={`${string}`}
         className={
           mt
             ? `tipbox w-64 drop-shadow-md mt-10`
             : `tipbox drop-shadow-md mt-[4.5rem]`
         }
       >
-        <CloseButton />
+        <TipsCloseButton />
         <p>{content}</p>
       </div>
     </>

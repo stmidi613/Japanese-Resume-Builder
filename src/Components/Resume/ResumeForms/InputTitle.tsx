@@ -1,21 +1,18 @@
-import React, { useContext } from "react";
-import { AppContext } from "../../../AppState/AppState";
+import React from "react";
 import TipsIcon from "../TipsIcon";
-import TipBox from "./TipBox";
 
 interface Props {
+    id: number;
     fieldName: string;
 }
 
-const InputTitle: React.FC<Props> = ({ fieldName}) => {
-  const {showPopup} = useContext(AppContext);
+const InputTitle: React.FC<Props> = ({id, fieldName }) => {
 
   return (
     <div className="section-div">
-      <TipsIcon />
+      <TipsIcon id={id} />
       <h2 className="h2">{fieldName}</h2>
-     {/* {showPopup && <TipBox mt={true} content="Get tips for each section when you click on the Tips icon." /> } */}
-    </div>
+     </div>
   );
 };
 

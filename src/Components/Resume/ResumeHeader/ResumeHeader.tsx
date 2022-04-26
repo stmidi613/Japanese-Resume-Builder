@@ -28,7 +28,7 @@ const ResumeHeader: React.FC = () => {
             />
           </div>
           <div className="grid place-content-center">
-            <TipsHeader />
+            <TipsHeader id={0} />
           </div>
           <div className="grid place-content-center">
             <HomeButton />

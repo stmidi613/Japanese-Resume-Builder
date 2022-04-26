@@ -15,7 +15,7 @@ const Popup: React.FC<Props> = ({
   resumeButtonText,
   skillSheetButtonText,
 }) => {
-  const {showPopup, setHidePopup} = useContext(AppContext)
+  const {showPopup} = useContext(AppContext)
 
   useEffect(() => {
     let popup = document.getElementById(`popup`);

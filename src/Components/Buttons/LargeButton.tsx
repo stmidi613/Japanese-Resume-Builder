@@ -6,7 +6,6 @@ interface Props {
 }
 
 const LargeButton: React.FC<Props> = ({
-  // setShowPopup,
   largeButtonText,
 }) => {
   const {setShowPopup} = useContext(AppContext);
