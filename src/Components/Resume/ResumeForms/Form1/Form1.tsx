@@ -20,7 +20,6 @@ const Form1: React.FC = () => {
   function onSubmitForm(event: React.FormEvent) {
     event.preventDefault();
   }
-  // const {gender, setGender} = useContext(ResumeContext)
   
   const {
     setFuriName,
@@ -45,7 +44,7 @@ const Form1: React.FC = () => {
       <form className="form md:grid-cols-2 md:grid-rows-7">
         {/* Photo Section */}
         <section className="section md:order-2 md:row-span-4">
-          <InputTitle fieldName="Photo" />
+          <InputTitle idnum={3} fieldName="Photo" />
           <div className="flex w-48 mb-5 flex-col justify-center">
             <img src={photo} alt="photo" />
             <UploadButton />
@@ -53,7 +52,7 @@ const Form1: React.FC = () => {
         </section>
         {/* Name Section */}
         <section className="section md:order-1 md:row-span-2 md:row-start-1">
-          <InputTitle fieldName="Name" />
+          <InputTitle idnum={4} fieldName="Name" />
           <div className="input-div">
             {/* Sixth add all the onchange functions like this here we passed it as a props called change */}
             <TextInput
@@ -68,7 +67,7 @@ const Form1: React.FC = () => {
         </section>
         {/* Date of Birth Section */}
         <section className="section md:order-3 md:row-span-1">
-          <InputTitle fieldName="Date of Birth" />
+          <InputTitle idnum={5} fieldName="Date of Birth" />
           <div className="input-div">
             <input
               className="input focus:outline-none"
@@ -86,7 +85,7 @@ const Form1: React.FC = () => {
         </section>
         {/* Address Section */}
         <section className="section md:order-4 md:row-span-2">
-          <InputTitle fieldName="Address" />
+          <InputTitle idnum={6} fieldName="Address" />
           <div className="input-div">
             <TextInput
               place="Address Furigana"
@@ -100,7 +99,7 @@ const Form1: React.FC = () => {
         </section>
         {/* Email Section */}
         <section className="section md:order-6">
-          <InputTitle fieldName="Email" />
+          <InputTitle idnum={7} fieldName="Email" />
           <EmailInput
             place="Email"
             change={setEmail}
@@ -108,7 +107,7 @@ const Form1: React.FC = () => {
         </section>
         {/* Gender Section */}
         <section className="section grid-flow-col gap-8 md:order-5 md:row-span-1">
-          <InputTitle fieldName="Gender" />
+          <InputTitle idnum={8} fieldName="Gender" />
 
           <div className="grid place-content-center relative top-4">
             <div>
@@ -139,7 +138,7 @@ const Form1: React.FC = () => {
         </section>
         {/* Phone Section */}
         <section className="section md:order-8 md:row-span-2">
-          <InputTitle fieldName="Phone" />
+          <InputTitle idnum={9} fieldName="Phone" />
 
           <div className="input-div">
             <PhoneInput
@@ -154,7 +153,7 @@ const Form1: React.FC = () => {
         </section>
         {/* Contact's Information Section */}
         <section className="section md:row-span-3 md:order-7">
-          <InputTitle fieldName="Contact Information" />
+          <InputTitle idnum={10} fieldName="Contact Information" />
           <div className="input-div">
             <TextInput
               place="Contact's Address Furigana"

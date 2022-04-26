@@ -13,7 +13,7 @@ const TipBox: React.FC<Props> = ({idnum, mt, content }) => {
   
   useEffect(() => {
     let popup = document.getElementById(`popup${idnum}`);
-    if (popup) popup.style.boxShadow = "0 0 10px 1000px rgba(0, 0, 0, 0.6)";
+    if (popup) popup.style.boxShadow = "0 0 10px 2000px rgba(0, 0, 0, 0.6)";
   }, [showPopup]);
 
   return (
@@ -26,7 +26,7 @@ const TipBox: React.FC<Props> = ({idnum, mt, content }) => {
             : `tipbox drop-shadow-md mt-[4.5rem]`
         }
       >
-        <CloseButton idnum={1} />
+        <CloseButton idnum={idnum} />
         <p>{content}</p>
       </div>
     </>
