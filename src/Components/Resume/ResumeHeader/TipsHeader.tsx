@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import TipBox from "../ResumeForms/TipBox";
 
 import '../../Buttons/button.css'
 import { AppContext } from "../../../AppState/AppState";
@@ -9,7 +8,7 @@ interface Props {
 }
 
 const TipsHeader: React.FC<Props> = () => {
-  const {showPopup, setShowPopup} = useContext(AppContext)
+  const {setShowPopup} = useContext(AppContext)
 
   return (
     <>
@@ -22,8 +21,6 @@ const TipsHeader: React.FC<Props> = () => {
       </button>
         <p className="grid place-content-center ml-1 text-orange text-2xl">Tips</p>
       </div>
-      {/* Use this function to make sure the right popup box comes up */}
-      {/* {showPopup && <TipBox id={id} index={1} mt={false} content="Get tips for each section when you click on the Tips icon." />} */}
     </>
   );
 };

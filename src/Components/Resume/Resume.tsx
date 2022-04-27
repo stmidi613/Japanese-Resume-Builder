@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
-import Form1 from "./ResumeForms/Form1/Form1";
 
+import Form1 from "./ResumeForms/Form1/Form1";
 import ResumeHeader from "./ResumeHeader/ResumeHeader";
 import ResumePage1 from "./ResumePages/Page1/ResumePage1";
 import ResumeState from "./ResumeState/ResumeState";
-
-import "../Resume/resume.css";
-import { AppContext } from "../../AppState/AppState";
 import TipBox from "./ResumeForms/TipBox";
+
+import { AppContext } from "../../AppState/AppState";
+import "../Resume/resume.css";
+import Form1Tips from "./Form1Tips";
 
 const Resume: React.FC = () => {
   const {showPopup} = useContext(AppContext);
@@ -18,7 +19,7 @@ const Resume: React.FC = () => {
         <ResumeState>
           <Form1 />
           {!showPopup ? 
-          <ResumePage1 /> : <TipBox content="This is content." />}
+          <ResumePage1 /> : <TipBox content={<Form1Tips />} />}
         </ResumeState>
       </div>
     </>

@@ -1,20 +1,17 @@
-import React, { useContext } from "react";
-import { AppContext } from "../../../AppState/AppState";
-import TipsCloseButton from "../../Buttons/TipsCloseButton";
+import React, { ReactFragment } from "react";
+import CloseButton from "../../Buttons/CloseButton";
 
 interface Props {
-  content: string;
+  content: ReactFragment;
 }
 
 const TipBox: React.FC<Props> = ({ content }) => {
-  const { showPopup } = useContext(AppContext);
 
   return (
-    // Do the next map here using the key and id
     <>
       <section className="hidden w-1/2 bg-gray bg-opacity-30 xl:block">
         <div className="page-div drop-shadow-lg tipbox">
-          <TipsCloseButton />
+          <CloseButton />
           <p>{content}</p>
         </div>
       </section>
