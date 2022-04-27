@@ -588,14 +588,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 0.25rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.mt-\[4\.5rem\] {
-  margin-top: 4.5rem;
-}
-
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -730,8 +722,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 90%;
 }
 
-.w-64 {
-  width: 16rem;
+.w-1\/2 {
+  width: 50%;
 }
 
 .w-\[14\.3\%\] {
@@ -744,10 +736,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-2 {
   width: 0.5rem;
-}
-
-.w-1\/2 {
-  width: 50%;
 }
 
 .origin-top-right {
