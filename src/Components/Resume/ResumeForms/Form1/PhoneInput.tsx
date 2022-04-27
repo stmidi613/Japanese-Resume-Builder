@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 interface Props {
   place: string;
@@ -12,7 +12,6 @@ const PhoneInput: React.FC<Props> = ({ place, change }) => {
         className="input focus:outline-none"
         placeholder={place}
         type="tel"
-        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
         onChange={change}
       />
     </div>

@@ -8,10 +8,8 @@ interface Props {
   id: number;
 }
 
-const TipsHeader: React.FC<Props> = ({id}) => {
+const TipsHeader: React.FC<Props> = () => {
   const {showPopup, setShowPopup} = useContext(AppContext)
-  //put a variable here to set the right popup box
-  const Pid = document.getElementById(`${id}`)?.id;
 
   return (
     <>
@@ -25,7 +23,7 @@ const TipsHeader: React.FC<Props> = ({id}) => {
         <p className="grid place-content-center ml-1 text-orange text-2xl">Tips</p>
       </div>
       {/* Use this function to make sure the right popup box comes up */}
-      {showPopup && <TipBox id={id} index={1} mt={false} content="Get tips for each section when you click on the Tips icon." />}
+      {/* {showPopup && <TipBox id={id} index={1} mt={false} content="Get tips for each section when you click on the Tips icon." />} */}
     </>
   );
 };

@@ -8,8 +8,6 @@ interface Props {
 
 const TipsIcon: React.FC<Props> = ({id}) => {
   const {showPopup, setShowPopup} = useContext(AppContext);
-  const Pid = document.getElementById(`${id}`)?.id;
-  const num = Number(Pid);
   // const HandleClick = () => {num == id ? setShowPopup : setHidePopup}
   // Put the show popup function here where you map through use example
   // const handleShowPopup = (id: number) => {

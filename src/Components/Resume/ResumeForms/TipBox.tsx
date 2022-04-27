@@ -4,27 +4,20 @@ import TipsCloseButton from "../../Buttons/TipsCloseButton";
 
 interface Props {
   content: string;
-  mt: boolean;
-  id: number;
-  index: number;
 }
 
-const TipBox: React.FC<Props> = ({id, index, mt, content }) => {
-  const {showPopup} = useContext(AppContext);
-  const string = String(id);
+const TipBox: React.FC<Props> = ({ content }) => {
+  const { showPopup } = useContext(AppContext);
+
   return (
     // Do the next map here using the key and id
     <>
-      <div id={`${string}`}
-        className={
-          mt
-            ? `tipbox w-64 drop-shadow-md mt-10`
-            : `tipbox drop-shadow-md mt-[4.5rem]`
-        }
-      >
-        <TipsCloseButton />
-        <p>{content}</p>
-      </div>
+      <section className="hidden w-1/2 bg-gray bg-opacity-30 xl:block">
+        <div className="page-div drop-shadow-lg tipbox">
+          <TipsCloseButton />
+          <p>{content}</p>
+        </div>
+      </section>
     </>
   );
 };

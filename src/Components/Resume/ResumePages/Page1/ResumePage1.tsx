@@ -6,6 +6,7 @@ import HistoryInput from "./HistoryInput";
 import HistoryTitle from "./HistoryTitle";
 
 import photo from "../../../../images/photo.png";
+
 import { ReducerContext } from "../../ResumeState/ResumeState";
 
 const ResumePage1: React.FC = () => {

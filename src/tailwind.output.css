@@ -1220,6 +1220,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(253 112 94 / var(--tw-border-opacity));
 }
 
+.hover\:bg-gray:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
+}
+
 .hover\:text-purple:hover {
   --tw-text-opacity: 1;
   color: rgb(135 78 210 / var(--tw-text-opacity));

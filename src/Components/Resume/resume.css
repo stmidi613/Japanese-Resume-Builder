@@ -51,7 +51,6 @@
 }
 
 .input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #874ed2;
     opacity: 1; /* Firefox */
 }
 
@@ -61,7 +60,7 @@
 }
 
 .input[type="date"]{
-    color:#874ed2;
+    /* color:#874ed2; */
     padding-left: 1.5rem;
 }
 
@@ -73,6 +72,7 @@
     margin: 2rem;
     background-color: white;
     height: 90%;
+    /* width: 93%; */
 }
 
 .resume-section{
@@ -124,11 +124,7 @@
 }
 
 .tipbox{
-    position: absolute;
     z-index: 20;
-    margin-left: .5rem;
-    margin-right: 2.5rem;
-    color: #874ed2;
     background-color: white;
     text-align: center;
     border-width: 2px;
