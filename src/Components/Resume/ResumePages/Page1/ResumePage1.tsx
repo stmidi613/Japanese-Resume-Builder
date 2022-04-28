@@ -5,12 +5,11 @@ import EmailBox from "./EmailBox";
 import HistoryInput from "./HistoryInput";
 import HistoryTitle from "./HistoryTitle";
 
-import photo from "../../../../images/photo.png";
-
 import { ReducerContext } from "../../ResumeState/ResumeState";
 
 const ResumePage1: React.FC = () => {
   const {
+    pic,
     gender,
     furiName,
     name,
@@ -52,10 +51,10 @@ const ResumePage1: React.FC = () => {
       <section className="hidden w-1/2 bg-gray bg-opacity-30 xl:block">
         <div className="page-div drop-shadow-lg">
           {/* This is the Title and date */}
-          <section className="flex gap-8 ml-[5%] pt-5">
-            <p className="pr-14">履歴書</p>
-            <p>
-              令和　{year - 2018}年　{month}月　{date}日 現在
+          <section className="flex justify-between w-2/3 ml-[5%] pt-5">
+            <p className="justify-start pr-14">履歴書</p>
+            <p className="justify-end">
+              令和　{year - 2018}年{month}月{date}日 現在
             </p>
           </section>
           {/* Start of Name to Gender Section */}
@@ -109,7 +108,7 @@ const ResumePage1: React.FC = () => {
             </div>
             {/* Photo div */}
             <div className="col-span-1 grid place-content-center">
-              <img className="photo" src={photo} alt="photo" />
+              <img className="photo" src={pic} alt="photo" />
             </div>
           </section>
           {/* End of Name to Gender Section */}

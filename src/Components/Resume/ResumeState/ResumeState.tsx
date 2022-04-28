@@ -18,7 +18,7 @@ export const initialValues = {
   contactCellPhone: "",
   contactEmail: "",
   gender: true,
-  // setPhoto: () => {},
+  setPic: (e:React.ChangeEvent<HTMLInputElement>) => {},
   setFuriName: (e:React.ChangeEvent<HTMLInputElement>) => {},
   setName: (e:React.ChangeEvent<HTMLInputElement>) => {},
   setDob: (e:React.ChangeEvent<HTMLInputElement>) => {},
@@ -60,6 +60,7 @@ export type stateType = {
 
 type actionType = {
   type:
+    | "setPic"
     | "setFuriName"
     | "setName"
     | "setDob"
@@ -116,6 +117,9 @@ export function reducer(currentState: stateType, action: actionType) {
   if (action.type === "setContactEmail") {
     return { ...currentState, contactEmail: action.payload };
   }
+  if (action.type === "setPic") {
+    return { ...currentState, pic: action.payload };
+  }
   
   return currentState;
 }
@@ -123,11 +127,10 @@ export function reducer(currentState: stateType, action: actionType) {
 const ResumeState: React.FC = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initialValues);
   const [gender, setGender] = useState<boolean>(true); 
-  const [pic, setPic] = useState<string>(photo);
 
   return (
     <ReducerContext.Provider value={{
-    pic,
+    pic: state.pic,
     furiName: state.furiName,
     name: state.name,
     dob: state.dob,
@@ -142,7 +145,8 @@ const ResumeState: React.FC = ({children}) => {
     contactCellPhone: state.contactCellPhone,
     contactEmail: state.contactEmail,
     gender,
-    // setPic: () => {setPic()},
+    setPic: (e) => {dispatch({ type: "setPic", payload: e.target.files
+    ? URL.createObjectURL(e.target.files[0]) : photo})},
     setFuriName: (e) => {dispatch({ type: "setFuriName", payload: e.target.value})},
     setName: (e) => {dispatch ({type: "setName", payload: e.target.value})},
     setDob: (e) => {dispatch ({type: "setDob", payload: e.target.value})},

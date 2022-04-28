@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { ReducerContext } from "../../ResumeState/ResumeState";
 
 import NextButton from "../../../Buttons/NextButton";
@@ -11,7 +11,6 @@ import PhoneInput from "./PhoneInput";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 
-import photo from "../../../../images/photo.png";
 import "../../../Resume/resume.css";
 
 const Form1: React.FC = () => {
@@ -21,8 +20,8 @@ const Form1: React.FC = () => {
   }
 
   const {
-    // pic,
-    // setPic,
+    pic,
+    setPic,
     setFuriName,
     setName,
     setDob,
@@ -40,8 +39,6 @@ const Form1: React.FC = () => {
     setFemale,
   } = useContext(ReducerContext);
 
-  const [pic, setPic] = useState<string>(photo);
-
   return (
     <>
       <form className="form md:grid-cols-2 md:grid-rows-7">
@@ -49,17 +46,13 @@ const Form1: React.FC = () => {
         <section className="section md:order-2 md:row-span-4">
           <InputTitle fieldName="Photo (JPEG or PNG)" />
           <div className="flex w-48 mb-5 flex-col justify-center">
-            <img id="photo" src={pic} alt="photo" />
+            <img className="h-56 w-full" src={pic} alt="photo" />
             {/* <button className="mt-1 text-xs button-animation button"> */}
             <input className="p-3 mt-1 text-xs button-animation button"
               id="Photo"
               type="file"
               placeholder={pic}
-              onChange={(event) =>
-                event.target.files
-                ? setPic(URL.createObjectURL(event.target.files[0]))
-                : pic
-              }
+              onChange={setPic}
               />
               {/* </button> */}
           </div>
