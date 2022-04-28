@@ -1,9 +1,9 @@
 import React, {createContext, useReducer, useState} from 'react';
-// import photo from "../../../images/photo.png";
+import photo from "../../../images/photo.png";
 
 
 export const initialValues = {
-  file: "",
+  pic: photo,
   furiName: "",
   name: "",
   dob: "",
@@ -18,7 +18,7 @@ export const initialValues = {
   contactCellPhone: "",
   contactEmail: "",
   gender: true,
-  setPhoto: (e:React.ChangeEvent<HTMLInputElement>) => {},
+  // setPhoto: () => {},
   setFuriName: (e:React.ChangeEvent<HTMLInputElement>) => {},
   setName: (e:React.ChangeEvent<HTMLInputElement>) => {},
   setDob: (e:React.ChangeEvent<HTMLInputElement>) => {},
@@ -39,7 +39,7 @@ export const initialValues = {
 export const ReducerContext = createContext(initialValues)
 
 export type stateType = {
-  file: string;
+  pic: string;
   furiName: string;
   name: string;
   dob: string;
@@ -60,7 +60,6 @@ export type stateType = {
 
 type actionType = {
   type:
-    | "setPhoto"
     | "setFuriName"
     | "setName"
     | "setDob"
@@ -117,19 +116,18 @@ export function reducer(currentState: stateType, action: actionType) {
   if (action.type === "setContactEmail") {
     return { ...currentState, contactEmail: action.payload };
   }
-  if (action.type === "setPhoto") {
-    return { ...currentState, contactEmail: action.payload };
-  }
+  
   return currentState;
 }
 
 const ResumeState: React.FC = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initialValues);
   const [gender, setGender] = useState<boolean>(true); 
+  const [pic, setPic] = useState<string>(photo);
 
   return (
     <ReducerContext.Provider value={{
-    file: state.file,
+    pic,
     furiName: state.furiName,
     name: state.name,
     dob: state.dob,
@@ -144,7 +142,7 @@ const ResumeState: React.FC = ({children}) => {
     contactCellPhone: state.contactCellPhone,
     contactEmail: state.contactEmail,
     gender,
-    setPhoto: (e) => {dispatch({ type: "setPhoto", payload: e.target.value})},
+    // setPic: () => {setPic()},
     setFuriName: (e) => {dispatch({ type: "setFuriName", payload: e.target.value})},
     setName: (e) => {dispatch ({type: "setName", payload: e.target.value})},
     setDob: (e) => {dispatch ({type: "setDob", payload: e.target.value})},

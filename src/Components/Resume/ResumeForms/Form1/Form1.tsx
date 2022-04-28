@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { ReducerContext } from "../../ResumeState/ResumeState";
 
-import UploadButton from "../../../Buttons/UploadButton";
 import NextButton from "../../../Buttons/NextButton";
 
 import InputTitle from "../InputTitle";
@@ -20,10 +19,10 @@ const Form1: React.FC = () => {
   function onSubmitForm(event: React.FormEvent) {
     event.preventDefault();
   }
-  
+
   const {
-    // file,
-    // setPhoto,
+    // pic,
+    // setPic,
     setFuriName,
     setName,
     setDob,
@@ -38,28 +37,31 @@ const Form1: React.FC = () => {
     setContactCellPhone,
     setContactEmail,
     setMale,
-    setFemale
-  } = useContext(ReducerContext)
+    setFemale,
+  } = useContext(ReducerContext);
 
-  const [pic, setPic] = useState<string>(photo)
-  
-  // const photoUpload = (e: any) =>{
-  //   if(e.target.files && e.target.file[0]){
-  //     let img = e.target.files[0];
-  //     setPic({pic: URL.createObjectURL(img)})
-  //   }
-  // }
+  const [pic, setPic] = useState<string>(photo);
 
   return (
     <>
       <form className="form md:grid-cols-2 md:grid-rows-7">
         {/* Photo Section */}
         <section className="section md:order-2 md:row-span-4">
-          <InputTitle fieldName="Photo" />
+          <InputTitle fieldName="Photo (JPEG or PNG)" />
           <div className="flex w-48 mb-5 flex-col justify-center">
-            <img id="photo" src={photo} alt="photo" />
-            <input id="Photo" type="file" placeholder={pic} onChange={(event) => event.target.files ? setPic(URL.createObjectURL(event.target.files[0])) : pic} />
-            {/* <UploadButton /> */}
+            <img id="photo" src={pic} alt="photo" />
+            {/* <button className="mt-1 text-xs button-animation button"> */}
+            <input className="p-3 mt-1 text-xs button-animation button"
+              id="Photo"
+              type="file"
+              placeholder={pic}
+              onChange={(event) =>
+                event.target.files
+                ? setPic(URL.createObjectURL(event.target.files[0]))
+                : pic
+              }
+              />
+              {/* </button> */}
           </div>
         </section>
         {/* Name Section */}
@@ -67,14 +69,8 @@ const Form1: React.FC = () => {
           <InputTitle fieldName="Name" />
           <div className="input-div">
             {/* Sixth add all the onchange functions like this here we passed it as a props called change */}
-            <TextInput
-              place="Name Furigana"
-              change={setFuriName}
-            />
-            <TextInput
-              place="Name"
-              change={setName}
-            />
+            <TextInput place="Name Furigana" change={setFuriName} />
+            <TextInput place="Name" change={setName} />
           </div>
         </section>
         {/* Date of Birth Section */}
@@ -98,23 +94,14 @@ const Form1: React.FC = () => {
         <section className="section md:order-4 md:row-span-2">
           <InputTitle fieldName="Address" />
           <div className="input-div">
-            <TextInput
-              place="Address Furigana"
-              change={setFuriAddress}
-            />
-            <TextInput
-              place="Address"
-              change={setAddress}
-            />
+            <TextInput place="Address Furigana" change={setFuriAddress} />
+            <TextInput place="Address" change={setAddress} />
           </div>
         </section>
         {/* Email Section */}
         <section className="section md:order-6">
           <InputTitle fieldName="Email" />
-          <EmailInput
-            place="Email"
-            change={setEmail}
-          />
+          <EmailInput place="Email" change={setEmail} />
         </section>
         {/* Gender Section */}
         <section className="section grid-flow-col gap-8 md:order-5 md:row-span-1">
@@ -122,13 +109,13 @@ const Form1: React.FC = () => {
 
           <div className="grid place-content-center relative top-4">
             <div>
-             <input
+              <input
                 className="input mr-2"
                 type="radio"
                 name="gender"
                 value="Male"
                 onChange={setMale}
-              /> 
+              />
               <label className="text-purple" htmlFor="male">
                 Male
               </label>
@@ -152,14 +139,8 @@ const Form1: React.FC = () => {
           <InputTitle fieldName="Phone" />
 
           <div className="input-div">
-            <PhoneInput
-              place="Home Phone"
-              change={setHomePhone}
-            />
-            <PhoneInput
-              place="Cell Phone"
-              change={setCellPhone}
-            />
+            <PhoneInput place="Home Phone" change={setHomePhone} />
+            <PhoneInput place="Cell Phone" change={setCellPhone} />
           </div>
         </section>
         {/* Contact's Information Section */}
@@ -170,10 +151,7 @@ const Form1: React.FC = () => {
               place="Contact's Address Furigana"
               change={setFuriContactAddress}
             />
-            <TextInput
-              place="Contact's Address"
-              change={setContactAddress}
-            />
+            <TextInput place="Contact's Address" change={setContactAddress} />
             <PhoneInput
               place="Contact's Phone Number"
               change={setContactPhone}
@@ -182,10 +160,7 @@ const Form1: React.FC = () => {
               place="Contact's Cell Phone Number"
               change={setContactCellPhone}
             />
-            <EmailInput
-              place="Contact's Email"
-              change={setContactEmail}
-            />
+            <EmailInput place="Contact's Email" change={setContactEmail} />
           </div>
         </section>
         <NextButton />

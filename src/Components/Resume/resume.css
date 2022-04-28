@@ -82,6 +82,10 @@
     padding-left: 1.5rem;
 }
 
+/* .input[type="file"]{
+  opacity: 0;
+} */
+
 .input[type="radio"]:checked{
     background-color: #874ed2;   
 }
