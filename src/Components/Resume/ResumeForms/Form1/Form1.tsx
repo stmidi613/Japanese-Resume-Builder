@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { ReducerContext } from "../../ResumeState/ResumeState";
 
 import UploadButton from "../../../Buttons/UploadButton";
@@ -22,6 +22,8 @@ const Form1: React.FC = () => {
   }
   
   const {
+    // file,
+    // setPhoto,
     setFuriName,
     setName,
     setDob,
@@ -38,7 +40,16 @@ const Form1: React.FC = () => {
     setMale,
     setFemale
   } = useContext(ReducerContext)
+
+  const [pic, setPic] = useState<string>(photo)
   
+  // const photoUpload = (e: any) =>{
+  //   if(e.target.files && e.target.file[0]){
+  //     let img = e.target.files[0];
+  //     setPic({pic: URL.createObjectURL(img)})
+  //   }
+  // }
+
   return (
     <>
       <form className="form md:grid-cols-2 md:grid-rows-7">
@@ -46,8 +57,9 @@ const Form1: React.FC = () => {
         <section className="section md:order-2 md:row-span-4">
           <InputTitle fieldName="Photo" />
           <div className="flex w-48 mb-5 flex-col justify-center">
-            <img src={photo} alt="photo" />
-            <UploadButton />
+            <img id="photo" src={photo} alt="photo" />
+            <input id="Photo" type="file" placeholder={pic} onChange={(event) => event.target.files ? setPic(URL.createObjectURL(event.target.files[0])) : pic} />
+            {/* <UploadButton /> */}
           </div>
         </section>
         {/* Name Section */}

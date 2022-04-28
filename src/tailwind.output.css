@@ -562,6 +562,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 2.5rem;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -1206,11 +1211,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:border-orange:hover {
   --tw-border-opacity: 1;
   border-color: rgb(253 112 94 / var(--tw-border-opacity));
-}
-
-.hover\:bg-gray:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
 }
 
 .hover\:text-purple:hover {

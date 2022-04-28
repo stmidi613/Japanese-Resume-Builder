@@ -9,8 +9,7 @@ const InputTitle: React.FC<Props> = ({ fieldName }) => {
 
   return (
     <div className="section-div">
-      {/* <TipsIcon id={id} /> */}
-      <h2 className="h2">{fieldName}</h2>
+      <label htmlFor={fieldName} className="h2">{fieldName}</label>
      </div>
   );
 };
