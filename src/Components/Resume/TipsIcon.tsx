@@ -9,7 +9,7 @@ const TipsIcon: React.FC = () => {
     <>
       <button
         onClick={setShowPopup}
-        className="button-animation mr-1 rounded-full p-0.5 w-8 text-white text-xl font-extrabold grid place-content-center"
+        className="button-animation circle-button mr-1"
       >
           ?
       </button>

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 
 import Form1 from "./ResumeForms/Form1/Form1";
+import Form2 from "./Form2/Form2";
 import ResumeHeader from "./ResumeHeader/ResumeHeader";
 import ResumePage1 from "./ResumePages/Page1/ResumePage1";
 import ResumeState from "./ResumeState/ResumeState";
@@ -17,7 +18,7 @@ const Resume: React.FC = () => {
       <ResumeHeader />
       <div className="flex justify-center">
         <ResumeState>
-          <Form1 />
+          <Form2 />
           {!showPopup ? 
           <ResumePage1 /> : <TipBox content={<Form1Tips />} />}
         </ResumeState>

@@ -677,6 +677,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 0.75rem;
 }
 
+.h-56 {
+  height: 14rem;
+}
+
 .h-28 {
   height: 7rem;
 }
@@ -743,6 +747,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 0.5rem;
 }
 
+.w-2\/3 {
+  width: 66.666667%;
+}
+
 .origin-top-right {
   -webkit-transform-origin: top right;
           transform-origin: top right;
@@ -789,6 +797,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-end {

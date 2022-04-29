@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import LanguageButton from "../../Buttons/LanguageButton";
 import USF from "../../../images/USflag.png";
 import TipsHeader from "./TipsHeader";
 import HomeButton from "../../Buttons/HomeButton";
+import { ReducerContext } from "../ResumeState/ResumeState";
 
 const ResumeHeader: React.FC = () => {
   const [language, setLanguage] = useState<string>(USF);
   const [step, setStep] = useState<number>(1);
   const headerTitle = "Personal Information";
-
+  // const {step} = useContext(ReducerContext);
   return (
     <>
       <header className="grid grid-flow-col grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-content-center w-full">
