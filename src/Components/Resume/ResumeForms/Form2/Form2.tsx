@@ -1,14 +1,19 @@
 import React from "react";
-import NextButton from "../../Buttons/NextButton";
-import SmallCircleButton from "../../Buttons/SmallCircleButton";
-import TextInput from "../ResumeForms/Form1/TextInput";
-import InputTitle from "../ResumeForms/InputTitle";
+import NextButton from "../../../Buttons/NextButton";
+import SmallCircleButton from "../../../Buttons/SmallCircleButton";
+import TextInput from "../Form1/TextInput";
+import InputTitle from "../InputTitle";
 import StartEndDate from "./StartEndDate";
 
 const Form2: React.FC = () => {
+
+  const onSubmitHandler = (e:any) => {
+    e.preventDefault()
+  }
+
   return (
     <>
-      <form className="form md:grid-cols-2 md:grid-rows-7">
+      <form onSubmit={onSubmitHandler} className="form md:grid-cols-2 md:grid-rows-7">
         <section className="section md:order-1 md:row-span-2 md:row-start-1">
           <InputTitle fieldName="Educational Background" />
           <div className="input-div">
