@@ -2,7 +2,6 @@ import React, { createContext, useReducer, useState } from "react";
 import photo from "../../../images/photo.png";
 
 export const initialValues = {
-  // step: 1,
   pic: photo,
   furiName: "",
   name: "",
@@ -34,7 +33,6 @@ export const initialValues = {
   setContactEmail: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setFemale: () => {},
   setMale: () => {},
-  // setStep: () => {},
 };
 
 export const ReducerContext = createContext(initialValues);
@@ -54,9 +52,7 @@ export type stateType = {
   contactPhone: string;
   contactCellPhone: string;
   contactEmail: string;
-  // step: number;
   gender: boolean;
-  // setStep: React.Dispatch<React.SetStateAction<number>>;
   setFemale: React.Dispatch<React.SetStateAction<boolean>>;
   setMale: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -130,7 +126,6 @@ export function reducer(currentState: stateType, action: actionType) {
 const ResumeState: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialValues);
   const [gender, setGender] = useState<boolean>(true);
-  const [step, setStep] = useState<number>(1);
 
   return (
     <ReducerContext.Provider
@@ -149,7 +144,6 @@ const ResumeState: React.FC = ({ children }) => {
         contactPhone: state.contactPhone,
         contactCellPhone: state.contactCellPhone,
         contactEmail: state.contactEmail,
-        // step,
         gender,
         setPic: (e) => {
           dispatch({
@@ -204,7 +198,6 @@ const ResumeState: React.FC = ({ children }) => {
         setFemale: () => {
           setGender(false);
         },
-        // setStep: () => {console.log(setStep(state.step + 1))},
       }}
     >
       {children}
