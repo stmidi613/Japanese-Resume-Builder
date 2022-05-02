@@ -4,9 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface Props {
     label: string;
+    change: any;
 }
 
-const StartEndDate: React.FC<Props> = ({label}) => {
+const StartEndDate: React.FC<Props> = ({change, label}) => {
   return (
     <div className="date-input-div">
       <label className="text-purple" htmlFor="start-date">
@@ -14,7 +15,7 @@ const StartEndDate: React.FC<Props> = ({label}) => {
       </label>
       <input
         className="input focus:outline-none"
-        //   onChange={""}
+        onChange={change}
         type="date"
         aria-required
       />

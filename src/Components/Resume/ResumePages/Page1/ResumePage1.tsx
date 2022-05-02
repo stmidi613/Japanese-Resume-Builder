@@ -9,6 +9,7 @@ import { ReducerContext } from "../../ResumeState/ResumeState";
 
 const ResumePage1: React.FC = () => {
   const {
+    //Form 1
     pic,
     gender,
     furiName,
@@ -24,8 +25,18 @@ const ResumePage1: React.FC = () => {
     contactPhone,
     contactCellPhone,
     contactEmail,
+    //Form 2
+      schoolName,
+      degree,
+      educStartDate,
+      educEndDate,
+      companyName,
+      position,
+      workStartDate,
+      workEndDate,
   } = useContext(ReducerContext);
 
+  //Form 1
   const d = new Date();
   const year = d.getFullYear();
   const month = d.getMonth() + 1;
@@ -45,6 +56,16 @@ const ResumePage1: React.FC = () => {
       ? year - birthyear
       : year - birthyear - 1;
   };
+
+  //Form 2
+  const educStartYear = educStartDate.slice(0, 4);
+  const educEndYear = educEndDate.slice(0, 4);
+  const educStartMonth = educStartDate.slice(5, 7);
+  const educEndMonth = educEndDate.slice(5, 7);
+  const workStartYear = workStartDate.slice(0, 4);
+  const workEndYear = workEndDate.slice(0, 4);
+  const workStartMonth = workStartDate.slice(5, 7);
+  const workEndMonth = workEndDate.slice(5, 7);
 
   return (
     <>
@@ -145,15 +166,15 @@ const ResumePage1: React.FC = () => {
               <div className="resume-history-title-div">学歴・職歴</div>
             </div>
             <HistoryTitle text="学歴" />
-            <HistoryInput />
-            <HistoryInput />
-            <HistoryInput />
-            <HistoryInput />
+            <HistoryInput year={educStartYear} month={educStartMonth} text={`${schoolName}: ${degree}`} />
+            <HistoryInput year={educEndYear} month={educEndMonth} text={`${schoolName}: ${degree}`} />
+            <HistoryInput year={educStartYear} month={educStartMonth} text={`${schoolName}: ${degree}`} />
+            <HistoryInput year={educEndYear} month={educEndMonth} text={`${schoolName}: ${degree}`} />
             <HistoryTitle text="職歴" />
-            <HistoryInput />
-            <HistoryInput />
-            <HistoryInput />
-            <HistoryInput />
+            <HistoryInput year={workStartYear} month={workStartMonth} text={`${companyName}: ${position}`} />
+            <HistoryInput year={workEndYear} month={workEndMonth} text={`${companyName}: ${position}`} />
+            <HistoryInput year={workStartYear} month={workStartMonth} text={`${companyName}: ${position}`} />
+            <HistoryInput year={workEndYear} month={workEndMonth} text={`${companyName}: ${position}`} />
             <div className="resume-history-div">
               <div className="resume-history-year-div"></div>
               <div className="resume-history-month-div"></div>
