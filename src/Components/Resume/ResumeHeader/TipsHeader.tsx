@@ -3,11 +3,7 @@ import React, { useContext } from "react";
 import '../../Buttons/button.css'
 import { AppContext } from "../../../AppState/AppState";
 
-interface Props {
-  id: number;
-}
-
-const TipsHeader: React.FC<Props> = () => {
+const TipsHeader: React.FC = () => {
   const {setShowPopup} = useContext(AppContext)
 
   return (

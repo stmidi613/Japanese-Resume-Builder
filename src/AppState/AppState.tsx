@@ -12,6 +12,7 @@ export const defaultValues = {
     showPopup: false,
     step: 1,
     setStep: () => {},
+    setBackStep: () => {},
     setShowPopup: () => {},
     setHidePopup: () => {},
 }
@@ -26,6 +27,7 @@ const AppState: React.FC = ({children}) => {
         step,
         showPopup,
         setStep: () => {setStep(step+1)},
+        setBackStep: () => {setStep(step-1)},
         setShowPopup: () => {setPopup(true)},
         setHidePopup: () => {setPopup(false)},
     }}>

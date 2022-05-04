@@ -133,14 +133,8 @@
     display: grid;
     grid-column: span 9 / span 9;
     padding-left: .75rem;
-}
-
-.resume-history-last-div{
-    display: grid;
-    border-top: 1px;
-    place-content: end;
-    padding-right: 1rem;
-    grid-column: span 9 / span 9;
+    padding-right: .75rem;
+    height: 25px;
 }
 
 .tipbox{

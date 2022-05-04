@@ -20,11 +20,13 @@ export const initialValues = {
   gender: true,
   //Form 2
   schoolName: "",
-  degree: "",
+  department: "",
+  major: "",
+  startWork: "",
   educStartDate: "",
   educEndDate: "",
   companyName: "",
-  position: "",
+  explanation: "",
   workStartDate: "",
   workEndDate: "",
   //Form 1
@@ -46,11 +48,13 @@ export const initialValues = {
   setMale: () => {},
   //Form 2
   setSchoolName: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  setDegree: (e: React.ChangeEvent<HTMLInputElement>) => {},
+  setDepartment: (e: React.ChangeEvent<HTMLInputElement>) => {},
+  setMajor: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setEducStartDate: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setEducEndDate: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setCompanyName: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  setPosition: (e: React.ChangeEvent<HTMLInputElement>) => {},
+  setStartWork: (e: React.ChangeEvent<HTMLInputElement>) => {},
+  setExplanation: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setWorkStartDate: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setWorkEndDate: (e: React.ChangeEvent<HTMLInputElement>) => {},
 };
@@ -78,11 +82,13 @@ export type stateType = {
   setMale: React.Dispatch<React.SetStateAction<boolean>>;
   //Form 2
   schoolName: string;
-  degree: string;
+  department: string;
+  major: string;
+  startWork: string;
   educStartDate: string;
   educEndDate: string;
   companyName: string;
-  position: string;
+  explanation: string;
   workStartDate: string;
   workEndDate: string;
 };
@@ -105,11 +111,13 @@ type actionType = {
     | "setContactEmail"
     //Form 2
     | "setSchoolName"
-    | "setDegree"
+    | "setDepartment"
+    | "setMajor"
     | "setEducStartDate"
     | "setEducEndDate"
     | "setCompanyName"
-    | "setPosition"
+    | "setStartWork"
+    | "setExplanation"
     | "setWorkStartDate"
     | "setWorkEndDate";
   payload: string;
@@ -163,8 +171,11 @@ export function reducer(currentState: stateType, action: actionType) {
   if (action.type === "setSchoolName") {
     return { ...currentState, schoolName: action.payload };
   }
-  if (action.type === "setDegree") {
-    return { ...currentState, degree: action.payload };
+  if (action.type === "setDepartment") {
+    return { ...currentState, department: action.payload };
+  }
+  if (action.type === "setMajor") {
+    return { ...currentState, major: action.payload };
   }
   if (action.type === "setEducStartDate") {
     return { ...currentState, educStartDate: action.payload };
@@ -175,8 +186,11 @@ export function reducer(currentState: stateType, action: actionType) {
   if (action.type === "setCompanyName") {
     return { ...currentState, companyName: action.payload };
   }
-  if (action.type === "setPosition") {
-    return { ...currentState, position: action.payload };
+  if (action.type === "setStartWork") {
+    return { ...currentState, startWork: action.payload };
+  }
+  if (action.type === "setExplanation") {
+    return { ...currentState, explanation: action.payload };
   }
   if (action.type === "setWorkStartDate") {
     return { ...currentState, workStartDate: action.payload };
@@ -213,11 +227,13 @@ const ResumeState: React.FC = ({ children }) => {
         gender,
         //Form 2
         schoolName: state.schoolName,
-        degree: state.degree,
+        department: state.department,
+        major: state.major,
         educStartDate: state.educStartDate,
         educEndDate: state.educEndDate,
         companyName: state.companyName,
-        position: state.position,
+        explanation: state.explanation,
+        startWork: state.startWork,
         workStartDate: state.workStartDate,
         workEndDate: state.workEndDate,
         //Form 1
@@ -278,8 +294,11 @@ const ResumeState: React.FC = ({ children }) => {
         setSchoolName: (e) => {
           dispatch({ type: "setSchoolName", payload: e.target.value });
         },
-        setDegree: (e) => {
-          dispatch({ type: "setDegree", payload: e.target.value });
+        setDepartment: (e) => {
+          dispatch({ type: "setDepartment", payload: e.target.value });
+        },
+        setMajor: (e) => {
+          dispatch({ type: "setMajor", payload: e.target.value });
         },
         setEducStartDate: (e) => {
           dispatch({ type: "setEducStartDate", payload: e.target.value });
@@ -290,8 +309,11 @@ const ResumeState: React.FC = ({ children }) => {
         setCompanyName: (e) => {
           dispatch({ type: "setCompanyName", payload: e.target.value });
         },
-        setPosition: (e) => {
-          dispatch({ type: "setPosition", payload: e.target.value });
+        setExplanation: (e) => {
+          dispatch({ type: "setExplanation", payload: e.target.value });
+        },
+        setStartWork: (e) => {
+          dispatch({ type: "setStartWork", payload: e.target.value });
         },
         setWorkStartDate: (e) => {
           dispatch({ type: "setWorkStartDate", payload: e.target.value });

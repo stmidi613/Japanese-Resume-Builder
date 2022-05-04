@@ -9,7 +9,7 @@ import TipBox from "./ResumeForms/TipBox";
 
 import { AppContext } from "../../AppState/AppState";
 import "../Resume/resume.css";
-import Form1Tips from "./Form1Tips";
+import Form1Tips from "./ResumeForms/Form1/Form1Tips";
 
 const Resume: React.FC = () => {
   const {showPopup} = useContext(AppContext);

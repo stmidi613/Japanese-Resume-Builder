@@ -26,14 +26,16 @@ const ResumePage1: React.FC = () => {
     contactCellPhone,
     contactEmail,
     //Form 2
-      schoolName,
-      degree,
-      educStartDate,
-      educEndDate,
-      companyName,
-      position,
-      workStartDate,
-      workEndDate,
+    schoolName,
+    department,
+    major,
+    startWork,
+    educStartDate,
+    educEndDate,
+    companyName,
+    explanation,
+    workStartDate,
+    workEndDate,
   } = useContext(ReducerContext);
 
   //Form 1
@@ -46,8 +48,12 @@ const ResumePage1: React.FC = () => {
   const birthmonth = +dob.slice(5, 7);
   const birthdate = +dob.slice(8);
 
-  const showa = (birthyear < 1989) || (birthyear == 1989 && birthmonth == 1 && birthdate <= 7);
-  const heisei = (birthyear > 1989) || (birthyear == 1989 && birthmonth >= 1 && birthdate >= 8);
+  const showa =
+    birthyear < 1989 ||
+    (birthyear == 1989 && birthmonth == 1 && birthdate <= 7);
+  const heisei =
+    birthyear > 1989 ||
+    (birthyear == 1989 && birthmonth >= 1 && birthdate >= 8);
   const showayear = birthyear - 1925;
   const heiseiyear = birthyear - 1988;
 
@@ -96,14 +102,34 @@ const ResumePage1: React.FC = () => {
                         ({dob ? age() : "00"}歳)
                       </p>
                       <div className="flex py-1 text-right justify-end">
-                      <p className={showa  ? `border-[1px] rounded-full relative bottom-1 p-1` : ""}>昭和</p>
-                      <p>・</p>
-                      <p className={heisei ? `border-[1px] rounded-full relative bottom-1 p-1` : ""}>平成</p>
-                      <p className="pl-2">
-                        {birthyear > 0 && birthyear < year && heisei ? heiseiyear : birthyear <= 0 ? "00" : showayear}年
-                        {birthmonth ? birthmonth : "00"}月
-                        {birthdate ? birthdate : "00"}日
-                      </p>
+                        <p
+                          className={
+                            showa
+                              ? `border-[1px] rounded-full relative bottom-1 p-1`
+                              : ""
+                          }
+                        >
+                          昭和
+                        </p>
+                        <p>・</p>
+                        <p
+                          className={
+                            heisei
+                              ? `border-[1px] rounded-full relative bottom-1 p-1`
+                              : ""
+                          }
+                        >
+                          平成
+                        </p>
+                        <p className="pl-2">
+                          {birthyear > 0 && birthyear < year && heisei
+                            ? heiseiyear
+                            : birthyear <= 0
+                            ? "00"
+                            : showayear}
+                          年{birthmonth ? birthmonth : "00"}月
+                          {birthdate ? birthdate : "00"}日
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -159,26 +185,54 @@ const ResumePage1: React.FC = () => {
           {/* End of Contact Address Section */}
 
           {/* Start of Education and Work History */}
-          <section className="mx-[5%] mt-5 border-2">
-            <div className="grid grid-cols-12">
-              <div className="resume-history-year-div">年（西暦）</div>
-              <div className="resume-history-month-div">月</div>
-              <div className="resume-history-title-div">学歴・職歴</div>
+          <section className="mx-[5%] mt-5 border-t-[1px] border-2">
+            <div className="text-center">
+              <HistoryInput year="年（西暦）" month="月" text="学歴・職歴" />
             </div>
             <HistoryTitle text="学歴" />
-            <HistoryInput year={educStartYear} month={educStartMonth} text={`${schoolName}: ${degree}`} />
-            <HistoryInput year={educEndYear} month={educEndMonth} text={`${schoolName}: ${degree}`} />
-            <HistoryInput year={educStartYear} month={educStartMonth} text={`${schoolName}: ${degree}`} />
-            <HistoryInput year={educEndYear} month={educEndMonth} text={`${schoolName}: ${degree}`} />
+            <HistoryInput
+              year={educStartYear}
+              month={educStartMonth}
+              text={`${schoolName} ${department} ${major}`}
+            />
+            <HistoryInput
+              year={educEndYear}
+              month={educEndMonth}
+              text={`${schoolName} ${department} ${major}`}
+            />
+            <HistoryInput
+              year={educStartYear}
+              month={educStartMonth}
+              text={`${schoolName} ${department} ${major}`}
+            />
+            <HistoryInput
+              year={educEndYear}
+              month={educEndMonth}
+              text={`${schoolName} ${department} ${major}`}
+            />
             <HistoryTitle text="職歴" />
-            <HistoryInput year={workStartYear} month={workStartMonth} text={`${companyName}: ${position}`} />
-            <HistoryInput year={workEndYear} month={workEndMonth} text={`${companyName}: ${position}`} />
-            <HistoryInput year={workStartYear} month={workStartMonth} text={`${companyName}: ${position}`} />
-            <HistoryInput year={workEndYear} month={workEndMonth} text={`${companyName}: ${position}`} />
-            <div className="resume-history-div">
-              <div className="resume-history-year-div"></div>
-              <div className="resume-history-month-div"></div>
-              <div className="resume-history-last-div">以上</div>
+            <HistoryInput
+              year={workStartYear}
+              month={workStartMonth}
+              text={`${companyName} ${startWork}`}
+            />
+            <HistoryInput
+              year={workEndYear}
+              month={workEndMonth}
+              text={`${companyName} ${explanation}`}
+            />
+            <HistoryInput
+              year={workStartYear}
+              month={workStartMonth}
+              text={companyName}
+            />
+            <HistoryInput
+              year={workEndYear}
+              month={workEndMonth}
+              text={`${companyName} ${explanation}`}
+            />
+            <div className="text-right">
+              <HistoryInput year="" month="" text="以上" />
             </div>
           </section>
         </div>

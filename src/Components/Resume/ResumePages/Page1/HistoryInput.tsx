@@ -19,8 +19,8 @@ const HistoryInput: React.FC<Props> = ({ year, month, text }) => {
         </div>
         <div
           className={"resume-history-text-div"}>
-          <p className={text.length > 2 ? "text-black" : "text-white"}>
-          {text}
+          <p className={text}>
+          {text} 
           </p>
         </div>
       </div>
