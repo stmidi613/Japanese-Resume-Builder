@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useState } from "react";
 import photo from "../../../images/photo.png";
-
+//https://amanhimself.dev/blog/manage-state-with-usecontext-usereducer-in-react-apps/
 export const initialValues = {
   //Form 1
   pic: photo,
@@ -19,7 +19,6 @@ export const initialValues = {
   contactEmail: "",
   gender: true,
   //Form 2
-  // educHistory: [],
   schoolName: "",
   department: "",
   major: "",

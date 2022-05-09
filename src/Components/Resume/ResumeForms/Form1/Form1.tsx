@@ -21,6 +21,17 @@ const Form1: React.FC = () => {
 
   const {
     pic,
+    furiName,
+    name,
+    dob,
+    email,
+    furiAddress,
+    furiContactAddress,
+    address,
+    contactAddress,
+    contactEmail,
+    contactPhone,
+    contactCellPhone,
     setPic,
     setFuriName,
     setName,
@@ -62,8 +73,8 @@ const Form1: React.FC = () => {
           <InputTitle fieldName="Name" />
           <div className="input-div">
             {/* Sixth add all the onchange functions like this here we passed it as a props called change */}
-            <TextInput place="Name Furigana" change={setFuriName} />
-            <TextInput place="Name" change={setName} />
+            <TextInput value={furiName} place="Name Furigana" change={setFuriName} />
+            <TextInput value={name} place="Name" change={setName} />
           </div>
         </section>
         {/* Date of Birth Section */}
@@ -87,8 +98,8 @@ const Form1: React.FC = () => {
         <section className="section md:order-4 md:row-span-2">
           <InputTitle fieldName="Address" />
           <div className="input-div">
-            <TextInput place="Address Furigana" change={setFuriAddress} />
-            <TextInput place="Address" change={setAddress} />
+            <TextInput value={furiAddress} place="Address Furigana" change={setFuriAddress} />
+            <TextInput value={address} place="Address" change={setAddress} />
           </div>
         </section>
         {/* Email Section */}
@@ -141,10 +152,11 @@ const Form1: React.FC = () => {
           <InputTitle fieldName="Contact Information" />
           <div className="input-div">
             <TextInput
+            value={furiContactAddress}
               place="Contact's Address Furigana"
               change={setFuriContactAddress}
             />
-            <TextInput place="Contact's Address" change={setContactAddress} />
+            <TextInput value={contactAddress} place="Contact's Address" change={setContactAddress} />
             <PhoneInput
               place="Contact's Phone Number"
               change={setContactPhone}

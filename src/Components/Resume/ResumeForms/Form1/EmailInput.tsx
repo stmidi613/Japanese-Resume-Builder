@@ -5,7 +5,7 @@ interface Props {
     change: any;
 }
 
-const EmailInput: React.FC<Props> = ({place, change}) => {
+const EmailInput: React.FC<Props> = ({ place, change}) => {
   return (
       <input
         className="input focus:outline-none"

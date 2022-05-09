@@ -7,7 +7,7 @@ interface Props {
 const SmallCircleButton: React.FC<Props> = ({handleAdd}) => {
   return (
     <div className="flex justify-end">
-      <button onClick={handleAdd} className="circle-button button-animation">+</button>
+      <button type="submit" onClick={handleAdd} className="circle-button button-animation">+</button>
     </div>
   );
 };

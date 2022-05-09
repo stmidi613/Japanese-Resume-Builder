@@ -5,30 +5,45 @@ import { EducHistory } from "./Form2Models";
 import StartEndDate from "./StartEndDate";
 
 interface Props {
-  index: number;
   item: EducHistory;
-  key: string;
-  educationItems: EducHistory[];
-  setEducationItems: React.Dispatch<React.SetStateAction<EducHistory[]>>;
+  // key: string;
+  // educationItems: EducHistory[];
+  // setEducationItems: React.Dispatch<React.SetStateAction<EducHistory[]>>;
 }
 
 const SingleEducationItem: React.FC<Props> = ({
-  index,
   item,
-  key,
-  educationItems,
-  setEducationItems,
+  // key,
+  // educationItems,
+  // setEducationItems,
 }) => {
+  const {
+    schoolName,
+    department,
+    major,
+    educStartDate,
+    educEndDate,
+    setSchoolName,
+    setDepartment,
+    setMajor,
+    setEducStartDate,
+    setEducEndDate,
+    setCompanyName,
+    setStartWork,
+    setExplanation,
+    setWorkStartDate,
+    setWorkEndDate,
+  } = useContext(ReducerContext);
 
   return (
     <>
-      <div id={key} className="input-div">
-        <span>{item.schoolName}</span>
-        <span>{item.department}</span>
-        <span>{item.major}</span>
+      <div className="input-div">
+        <span className="w-10">{schoolName}</span>
+        <span>{department}</span>
+        <span>{major}</span>
         <div className="flex justify-between">
-            <span>{item.educStartDate}</span>
-            <span>{item.educEndDate}</span>
+            <span>{educStartDate}</span>
+            <span>{educEndDate}</span>
         </div>
       </div>
     </>
