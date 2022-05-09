@@ -1,5 +1,4 @@
 import React from "react";
-import TipsIcon from "../TipsIcon";
 
 interface Props {
     fieldName: string;
