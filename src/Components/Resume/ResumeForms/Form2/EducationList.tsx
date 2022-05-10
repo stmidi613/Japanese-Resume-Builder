@@ -5,11 +5,7 @@ import { ReducerContext } from "../../ResumeState/ResumeState";
 import { EducHistory } from "./Form2Models";
 import SingleEducationItem from "./SingleEducationItem";
 
-interface Props {
-  handleAdd: (e: React.FormEvent) => void;
-}
-
-const EducationList: React.FC<Props> = ({handleAdd}) => {
+const EducationList: React.FC = () => {
   const [educationItems, setEducationItems] = useState<EducHistory[]>([]);
   const {
     schoolName,
@@ -32,7 +28,6 @@ const EducationList: React.FC<Props> = ({handleAdd}) => {
       key={item.schoolName}
       />
       ))}
-        <SmallCircleButton handleAdd={handleAdd} />
       </div>
     </>
   );

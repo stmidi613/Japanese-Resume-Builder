@@ -10,9 +10,12 @@ import { ReducerContext } from "../../ResumeState/ResumeState";
 import { EducHistory } from "./Form2Models";
 import EducationList from "./EducationList";
 import SingleEducationItem from "./SingleEducationItem";
+import { Form2Context } from "../../ResumeState/Form2State";
 
 const Form2: React.FC = () => {
   const [education, setEducation] = useState<EducHistory[]>([]);
+
+  const [state, dispatch] = useContext(Form2Context);
 
   const onSubmitHandler = (e: any) => {
     e.preventDefault();
@@ -66,8 +69,8 @@ const Form2: React.FC = () => {
               <StartEndDate label="End Date:" value={educEndDate} change={setEducEndDate} />
             </div>
           </div>
-          {/* <SmallCircleButton handleAdd={educHandleAdd} /> */}
-          <EducationList handleAdd={educHandleAdd} />
+          <SmallCircleButton handleAdd={educHandleAdd} />
+          <EducationList />
         </section>
         <section className="section md:order-1 md:row-span-2 md:row-start-1">
           <InputTitle fieldName="Work History" />
