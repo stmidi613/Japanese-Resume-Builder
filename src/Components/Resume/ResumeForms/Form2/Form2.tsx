@@ -15,7 +15,7 @@ import { Form2Context } from "../../ResumeState/Form2State";
 const Form2: React.FC = () => {
   const [education, setEducation] = useState<EducHistory[]>([]);
 
-  const [state, dispatch] = useContext(Form2Context);
+  const {educInfo} = useContext(Form2Context);
 
   const onSubmitHandler = (e: any) => {
     e.preventDefault();

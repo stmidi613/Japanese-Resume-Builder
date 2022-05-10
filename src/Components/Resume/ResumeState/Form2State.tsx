@@ -1,34 +1,37 @@
 import React, { createContext, Reducer, useReducer } from 'react';
-import { stateType } from './ResumeState';
+// import { stateType } from './ResumeState';
 
 //Form2
 export const initialState = {
-    educInfo: [{
+    educInfo: {
       educId: "",
       schoolName: "",
-    }]
+    },
+    setEducInfo: (e: React.ChangeEvent<HTMLInputElement>) => {},
   }
 
-// export const initialValues = typeof initialState;
-// export type stateType = {
-//     educInfo: string[];
-//     educId: string;
-//     schoolName: string; 
+//   type stateType = {
+//     educInfo: {
+//         educId: string;
+//         schoolName: string;
+//     }[];
 // }
+
+export type stateType = typeof initialState;
 
 export type actionType = {
     type:
         | "ADD_EDUC",
-    payload: typeof initialState;
+    payload: stateType;
 }
 
   export const Form2Context = createContext(initialState);
 
-export const Form2Reducer: Reducer<typeof initialState, actionType> = (state, action) => {
+export const Form2Reducer: Reducer<stateType, actionType> = (state, action) => {
     switch(action.type){
         case "ADD_EDUC":
             return {
-                educInfo: [...state.educInfo, action.payload]
+                educInfo: [state.educInfo, action.payload.educInfo]
             };
         default:
             return {
@@ -37,10 +40,12 @@ export const Form2Reducer: Reducer<typeof initialState, actionType> = (state, ac
     }
 }
 
-const Form2State: React.FC = ({children}: any) => {
+const Form2State: React.FC<React.ReactNode> = ({children}: any) => {
     const [state, dispatch] = useReducer(Form2Reducer, initialState)
   return (
-    <Form2Context.Provider value={[state, dispatch]}>
+    <Form2Context.Provider value={
+      state
+    }>
         {children}
     </Form2Context.Provider>
   )
