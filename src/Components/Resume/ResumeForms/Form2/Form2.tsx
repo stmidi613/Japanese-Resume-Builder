@@ -4,25 +4,34 @@ import InputTitle from "../InputTitle";
 import StartEndDate from "./StartEndDate";
 import NextButton from "../../../Buttons/NextButton";
 import BackButton from "../../../Buttons/BackButton";
-import SmallCircleButton from "../../../Buttons/SmallCircleButton";
 import { ReducerContext } from "../../ResumeState/ResumeState";
 
-import { EducHistory } from "./Form2Models";
+import { Form2Model } from "./Form2Model";
+
 import EducationList from "./EducationList";
-import SingleEducationItem from "./SingleEducationItem";
-import { Form2Context } from "../../ResumeState/Form2State";
+import F2TextInput from "./F2TextInput";
 
 const Form2: React.FC = () => {
-  const [education, setEducation] = useState<EducHistory[]>([]);
 
-  const {educInfo} = useContext(Form2Context);
+  const [schoolName, setSchoolName] = useState<string>("");
+  const [educHist, setEducHist] = useState<Form2Model[]>([]);
 
+  
+  const handleAdd = (e: React.FormEvent) => {
+    e.preventDefault();
+    if(schoolName){
+      setEducHist([...educHist, {educId: Date.now(), schoolName}]);
+      setSchoolName("");
+    }
+  }
+  
   const onSubmitHandler = (e: any) => {
     e.preventDefault();
+    handleAdd(e)
   };
 
   const {
-    schoolName,
+    // schoolName,
     department,
     major,
     educStartDate,
@@ -32,7 +41,7 @@ const Form2: React.FC = () => {
     explanation,
     workEndDate,
     workStartDate,
-    setSchoolName,
+    // setSchoolName,
     setDepartment,
     setMajor,
     setEducStartDate,
@@ -44,34 +53,36 @@ const Form2: React.FC = () => {
     setWorkEndDate,
   } = useContext(ReducerContext);
 
-  const educHandleAdd = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (schoolName) {
-      setEducation([...education, { educId: String(Date.now()), schoolName, department, major, educStartDate, educEndDate }]);
-      setEducation([]);
-    }
-  }
+  // const educHandleAdd = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (schoolName) {
+  //     setEducation([...education, { educId: String(Date.now()), schoolName, department, major, educStartDate, educEndDate }]);
+  //     setEducation([]);
+  //   }
+  // }
 
   return (
     <>
       <form
         onSubmit={onSubmitHandler}
-        className="form md:grid-cols-2 md:grid-rows-7"
       >
         <section className="section md:order-1 md:row-span-2 md:row-start-1">
           <InputTitle fieldName="Educational Background" />
           <div className="input-div">
-            <TextInput place="Name of School" value={schoolName} change={setSchoolName} />
-            <TextInput place="Department" value={department} change={setDepartment} />
+            <F2TextInput place="Name of School" value={schoolName} change={setSchoolName} />
+            {/* <TextInput place="Department" value={department} change={setDepartment} />
             <TextInput place="Major" value={major} change={setMajor} />
             <div className="flex justify-between">
               <StartEndDate label="Start Date:" value={educStartDate} change={setEducStartDate} />
               <StartEndDate label="End Date:" value={educEndDate} change={setEducEndDate} />
-            </div>
+            </div> */}
           </div>
-          <SmallCircleButton handleAdd={educHandleAdd} />
-          <EducationList />
+          {/* <SmallCircleButton handleAdd={handleAdd} /> */}
+          <EducationList educHist={educHist} setEducHist={setEducHist} />
         </section>
+        </form>
+       
+        <form>
         <section className="section md:order-1 md:row-span-2 md:row-start-1">
           <InputTitle fieldName="Work History" />
           <div className="input-div">
@@ -80,13 +91,13 @@ const Form2: React.FC = () => {
             <TextInput value={explanation}
               place="Explanation for Leaving"
               change={setExplanation}
-            />
+              />
             <div className="flex justify-between">
               <StartEndDate value={workStartDate} label="Start Date:" change={setWorkStartDate} />
               <StartEndDate value={workEndDate} label="End Date:" change={setWorkEndDate} />
             </div>
           </div>
-          <SmallCircleButton handleAdd={educHandleAdd} />
+          {/* <SmallCircleButton handleAdd={educHandleAdd} /> */}
         </section>
         <NextButton />
         <BackButton />

@@ -1,13 +1,11 @@
 import React from "react";
 
-interface Props {
-  handleAdd: (e: React.FormEvent) => void;
-}
 
-const SmallCircleButton: React.FC<Props> = ({handleAdd}) => {
+const SmallCircleButton: React.FC = () => {
+  
   return (
     <div className="flex justify-end">
-      <button type="submit" onClick={handleAdd} className="circle-button button-animation">+</button>
+      <button type="submit" className="circle-button button-animation">+</button>
     </div>
   );
 };

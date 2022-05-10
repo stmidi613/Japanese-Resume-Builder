@@ -1,33 +1,28 @@
 import React, { useContext, useState } from "react";
-import SmallCircleButton from "../../../Buttons/SmallCircleButton";
+import { Form2Model } from "./Form2Model";
 
 import { ReducerContext } from "../../ResumeState/ResumeState";
 import { EducHistory } from "./Form2Models";
 import SingleEducationItem from "./SingleEducationItem";
 
-const EducationList: React.FC = () => {
-  const [educationItems, setEducationItems] = useState<EducHistory[]>([]);
-  const {
-    schoolName,
-    department,
-    major,
-    educStartDate,
-    educEndDate,
-    setSchoolName,
-    setDepartment,
-    setMajor,
-    setEducStartDate,
-    setEducEndDate,
-  } = useContext(ReducerContext);
+interface Props {
+  educHist: Form2Model[];
+  setEducHist: React.Dispatch<React.SetStateAction<Form2Model[]>>
+}
+
+const EducationList: React.FC<Props> = ({educHist, setEducHist}) => {
+  
   return (
     <>
     <div className="">
-    {educationItems.map((item) => (
-      <SingleEducationItem
-      item={item}
-      key={item.schoolName}
-      />
-      ))}
+    <span>Education Background List</span>
+    {
+      educHist.map((item) => 
+      (<SingleEducationItem
+        key={item.educId}
+        item={item}
+        />))
+    }
       </div>
     </>
   );
