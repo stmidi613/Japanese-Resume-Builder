@@ -8,9 +8,12 @@ import HistoryTitle from "./HistoryTitle";
 import { ReducerContext } from "../../ResumeState/ResumeState";
 import { Form2Context } from "../../ResumeState/Form2State";
 
-import { Form2Model } from "../../ResumeState/Form2State";
+// import { Form2Model } from "../../ResumeState/Form2State";
 
 const ResumePage1: React.FC = () => {
+  const { educHist } =
+    useContext(Form2Context);
+
   const {
     //Form 1
     pic,
@@ -40,7 +43,6 @@ const ResumePage1: React.FC = () => {
     workStartDate,
     workEndDate,
   } = useContext(ReducerContext);
-
 
   //Form 1
   const d = new Date();
@@ -194,6 +196,9 @@ const ResumePage1: React.FC = () => {
               <HistoryInput year="年（西暦）" month="月" text="学歴・職歴" />
             </div>
             <HistoryTitle text="学歴" />
+            {educHist.map((item) => (
+              <HistoryInput year="01" month="01" key={item.educId} text={item.schoolName} />
+            ))}
             <HistoryInput
               year={educStartYear}
               month={educStartMonth}

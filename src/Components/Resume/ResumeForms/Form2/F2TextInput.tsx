@@ -17,7 +17,7 @@ const F2TextInput: React.FC<Props> = ({ value, place, change }) => {
         type="input"
         className="input_box"
       />
-      <SmallCircleButton />
+      {/* <SmallCircleButton /> */}
         {/* <button type="submit" className="circle-button button-animation">+</button> */}
     </>
   );
