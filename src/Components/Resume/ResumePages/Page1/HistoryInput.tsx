@@ -1,5 +1,6 @@
 import React from "react";
 import "../../../Resume/resume.css";
+import { Form2Model } from "../../ResumeForms/Form2/Form2Model";
 
 interface Props {
   year: string;
@@ -19,7 +20,7 @@ const HistoryInput: React.FC<Props> = ({ year, month, text }) => {
         </div>
         <div
           className={"resume-history-text-div"}>
-          <p className={text}>
+          <p>
           {text} 
           </p>
         </div>

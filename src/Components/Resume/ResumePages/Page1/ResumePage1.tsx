@@ -6,6 +6,9 @@ import HistoryInput from "./HistoryInput";
 import HistoryTitle from "./HistoryTitle";
 
 import { ReducerContext } from "../../ResumeState/ResumeState";
+import { Form2Context } from "../../ResumeState/Form2State";
+
+import { Form2Model } from "../../ResumeState/Form2State";
 
 const ResumePage1: React.FC = () => {
   const {
@@ -26,7 +29,7 @@ const ResumePage1: React.FC = () => {
     contactCellPhone,
     contactEmail,
     //Form 2
-    schoolName,
+    // schoolName,
     department,
     major,
     startWork,
@@ -37,6 +40,7 @@ const ResumePage1: React.FC = () => {
     workStartDate,
     workEndDate,
   } = useContext(ReducerContext);
+
 
   //Form 1
   const d = new Date();
@@ -193,22 +197,22 @@ const ResumePage1: React.FC = () => {
             <HistoryInput
               year={educStartYear}
               month={educStartMonth}
-              text={`${schoolName} ${department} ${major}`}
+              text={`${department} ${major}`}
             />
             <HistoryInput
               year={educEndYear}
               month={educEndMonth}
-              text={`${schoolName} ${department} ${major}`}
+              text={`${department} ${major}`}
             />
             <HistoryInput
               year={educStartYear}
               month={educStartMonth}
-              text={`${schoolName} ${department} ${major}`}
+              text={`${department} ${major}`}
             />
             <HistoryInput
               year={educEndYear}
               month={educEndMonth}
-              text={`${schoolName} ${department} ${major}`}
+              text={`${department} ${major}`}
             />
             <HistoryTitle text="職歴" />
             <HistoryInput

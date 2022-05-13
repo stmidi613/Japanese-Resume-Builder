@@ -30,7 +30,7 @@ export const initialValues = {
   explanation: "",
   workStartDate: "",
   workEndDate: "",
-  //Form 1
+  // Form 1
   setPic: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setFuriName: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setName: (e: React.ChangeEvent<HTMLInputElement>) => {},

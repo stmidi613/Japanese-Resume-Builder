@@ -1,16 +1,15 @@
 import React, { useContext, useState } from "react";
-import { Form2Model } from "./Form2Model";
+import { Form2Model } from "../../ResumeState/Form2State";
 
 import { ReducerContext } from "../../ResumeState/ResumeState";
-import { EducHistory } from "./Form2Models";
+// import { EducHistory } from "./Form2Models";
 import SingleEducationItem from "./SingleEducationItem";
 
 interface Props {
   educHist: Form2Model[];
-  setEducHist: React.Dispatch<React.SetStateAction<Form2Model[]>>
 }
 
-const EducationList: React.FC<Props> = ({educHist, setEducHist}) => {
+const EducationList: React.FC<Props> = ({educHist}) => {
   
   return (
     <>

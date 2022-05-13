@@ -10,6 +10,7 @@ import TipBox from "./ResumeForms/TipBox";
 import { AppContext } from "../../AppState/AppState";
 import "../Resume/resume.css";
 import Form1Tips from "./ResumeForms/Form1/Form1Tips";
+import Form2State from "./ResumeState/Form2State";
 
 const Resume: React.FC = () => {
   const {showPopup} = useContext(AppContext);
@@ -17,10 +18,12 @@ const Resume: React.FC = () => {
     <>
       <ResumeHeader />
       <div className="flex justify-center">
-        <ResumeState>         
+        <ResumeState>
+          <Form2State>
           <Form2 />
           {!showPopup ? 
           <ResumePage1 /> : <TipBox content={<Form1Tips />} />}
+          </Form2State>         
         </ResumeState>
       </div>
     </>
