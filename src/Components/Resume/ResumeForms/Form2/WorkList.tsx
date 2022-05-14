@@ -12,7 +12,7 @@ const WorkList: React.FC<Props> = ({workHist}) => {
   return (
     <>
     <div className="">
-    <span>Education Background List</span>
+    <span>Work History List</span>
     {
       workHist.map((item) => 
       (<SingleWorkItem
