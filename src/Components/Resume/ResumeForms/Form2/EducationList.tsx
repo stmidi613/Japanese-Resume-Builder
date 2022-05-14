@@ -1,12 +1,10 @@
-import React, { useContext, useState } from "react";
-import { Form2Model } from "../../ResumeState/Form2State";
-
-import { ReducerContext } from "../../ResumeState/ResumeState";
-// import { EducHistory } from "./Form2Models";
+import React from "react";
 import SingleEducationItem from "./SingleEducationItem";
 
+import { Form2Education } from "../../ResumeState/Form2State";
+
 interface Props {
-  educHist: Form2Model[];
+  educHist: Form2Education[];
 }
 
 const EducationList: React.FC<Props> = ({educHist}) => {
@@ -18,7 +16,6 @@ const EducationList: React.FC<Props> = ({educHist}) => {
     {
       educHist.map((item) => 
       (<SingleEducationItem
-        // educHist={educHist}
         key={item.educId}
         item={item}
         />))

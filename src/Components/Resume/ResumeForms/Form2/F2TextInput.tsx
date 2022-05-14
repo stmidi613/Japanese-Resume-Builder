@@ -1,5 +1,4 @@
 import React from "react";
-import SmallCircleButton from "../../../Buttons/SmallCircleButton";
 
 interface Props {
   value: string;
@@ -17,8 +16,6 @@ const F2TextInput: React.FC<Props> = ({ value, place, change }) => {
         type="input"
         className="input focus:outline-none"
       />
-      {/* <SmallCircleButton /> */}
-        {/* <button type="submit" className="circle-button button-animation">+</button> */}
     </>
   );
 };

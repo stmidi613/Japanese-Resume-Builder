@@ -8,11 +8,8 @@ import HistoryTitle from "./HistoryTitle";
 import { ReducerContext } from "../../ResumeState/ResumeState";
 import { Form2Context } from "../../ResumeState/Form2State";
 
-// import { Form2Model } from "../../ResumeState/Form2State";
-
 const ResumePage1: React.FC = () => {
-  const { educHist } =
-    useContext(Form2Context);
+  const { educHist, workHist } = useContext(Form2Context);
 
   const {
     //Form 1
@@ -31,17 +28,6 @@ const ResumePage1: React.FC = () => {
     contactPhone,
     contactCellPhone,
     contactEmail,
-    //Form 2
-    // schoolName,
-    department,
-    major,
-    startWork,
-    educStartDate,
-    educEndDate,
-    companyName,
-    explanation,
-    workStartDate,
-    workEndDate,
   } = useContext(ReducerContext);
 
   //Form 1
@@ -70,14 +56,14 @@ const ResumePage1: React.FC = () => {
   };
 
   //Form 2
-  const educStartYear = educStartDate.slice(0, 4);
-  const educEndYear = educEndDate.slice(0, 4);
-  const educStartMonth = educStartDate.slice(5, 7);
-  const educEndMonth = educEndDate.slice(5, 7);
-  const workStartYear = workStartDate.slice(0, 4);
-  const workEndYear = workEndDate.slice(0, 4);
-  const workStartMonth = workStartDate.slice(5, 7);
-  const workEndMonth = workEndDate.slice(5, 7);
+  // const educStartYear = educHist[0].educStartDate.slice(0, 4);
+  // const educEndYear = educHist[0].educEndDate.slice(0, 4);
+  // const educStartMonth = educHist[0].educStartDate.slice(5, 7);
+  // const educEndMonth = educHist[0].educEndDate.slice(5, 7);
+  // const workStartYear = workHist[0].workStartDate.slice(0, 4);
+  // const workEndYear = workHist[0].workEndDate.slice(0, 4);
+  // const workStartMonth = workHist[0].workStartDate.slice(5, 7);
+  // const workEndMonth = workHist[0].workEndDate.slice(5, 7);
 
   return (
     <>
@@ -197,48 +183,57 @@ const ResumePage1: React.FC = () => {
             </div>
             <HistoryTitle text="学歴" />
             {educHist.map((item) => (
-              <HistoryInput year="01" month="01" key={item.educId} text={item.schoolName} />
+              <>
+              <HistoryInput year={"0"} month={"0"} key={item.educId} text={item.schoolName} />
+              <HistoryInput year={"0"} month={"2"} key={item.educId} text={item.schoolName} />
+              </>
             ))}
             <HistoryInput
-              year={educStartYear}
-              month={educStartMonth}
-              text={`${department} ${major}`}
+              year=""
+              month=""
+              text=""
             />
             <HistoryInput
-              year={educEndYear}
-              month={educEndMonth}
-              text={`${department} ${major}`}
+              year=""
+              month=""
+              text=""
             />
             <HistoryInput
-              year={educStartYear}
-              month={educStartMonth}
-              text={`${department} ${major}`}
+              year=""
+              month=""
+              text=""
             />
             <HistoryInput
-              year={educEndYear}
-              month={educEndMonth}
-              text={`${department} ${major}`}
+              year=""
+              month=""
+              text=""
             />
             <HistoryTitle text="職歴" />
+            {workHist.map((item) => (
+              <>
+              <HistoryInput year={"0"} month={"0"} key={item.workId} text={item.companyName} />
+              <HistoryInput year={"0"} month={"0"} key={item.workId} text={item.companyName} />
+              </>
+            ))}
             <HistoryInput
-              year={workStartYear}
-              month={workStartMonth}
-              text={`${companyName} ${startWork}`}
+              year=""
+              month=""
+              text=""
             />
             <HistoryInput
-              year={workEndYear}
-              month={workEndMonth}
-              text={`${companyName} ${explanation}`}
+              year=""
+              month=""
+              text=""
             />
             <HistoryInput
-              year={workStartYear}
-              month={workStartMonth}
-              text={companyName}
+              year=""
+              month=""
+              text=""
             />
             <HistoryInput
-              year={workEndYear}
-              month={workEndMonth}
-              text={`${companyName} ${explanation}`}
+              year=""
+              month=""
+              text=""
             />
             <div className="text-right">
               <HistoryInput year="" month="" text="以上" />

@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useState } from "react";
+
 import photo from "../../../images/photo.png";
-//https://amanhimself.dev/blog/manage-state-with-usecontext-usereducer-in-react-apps/
 
 export const initialValues = {
   //Form 1
@@ -19,17 +19,6 @@ export const initialValues = {
   contactCellPhone: "",
   contactEmail: "",
   gender: true,
-  //Form 2
-  schoolName: "",
-  department: "",
-  major: "",
-  educStartDate: "",
-  educEndDate: "",
-  companyName: "",
-  startWork: "",
-  explanation: "",
-  workStartDate: "",
-  workEndDate: "",
   // Form 1
   setPic: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setFuriName: (e: React.ChangeEvent<HTMLInputElement>) => {},
@@ -47,17 +36,6 @@ export const initialValues = {
   setContactEmail: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setFemale: () => {},
   setMale: () => {},
-  //Form 2
-  setSchoolName: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  setDepartment: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  setMajor: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  setEducStartDate: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  setEducEndDate: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  setCompanyName: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  setStartWork: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  setExplanation: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  setWorkStartDate: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  setWorkEndDate: (e: React.ChangeEvent<HTMLInputElement>) => {},
 };
 
 export const ReducerContext = createContext(initialValues);
@@ -81,17 +59,6 @@ export type stateType = {
   gender: boolean;
   setFemale: React.Dispatch<React.SetStateAction<boolean>>;
   setMale: React.Dispatch<React.SetStateAction<boolean>>;
-  //Form 2
-  schoolName: string;
-  department: string;
-  major: string;
-  startWork: string;
-  educStartDate: string;
-  educEndDate: string;
-  companyName: string;
-  explanation: string;
-  workStartDate: string;
-  workEndDate: string;
 };
 
 type actionType = {
@@ -110,17 +77,6 @@ type actionType = {
     | "setContactPhone"
     | "setContactCellPhone"
     | "setContactEmail"
-    //Form 2
-    | "setSchoolName"
-    | "setDepartment"
-    | "setMajor"
-    | "setEducStartDate"
-    | "setEducEndDate"
-    | "setCompanyName"
-    | "setStartWork"
-    | "setExplanation"
-    | "setWorkStartDate"
-    | "setWorkEndDate";
   payload: string;
 };
 
@@ -168,38 +124,6 @@ export function reducer(currentState: stateType, action: actionType) {
   if (action.type === "setPic") {
     return { ...currentState, pic: action.payload };
   }
-  //Form 2
-  if (action.type === "setSchoolName") {
-    return { ...currentState, schoolName: action.payload };
-  }
-  if (action.type === "setDepartment") {
-    return { ...currentState, department: action.payload };
-  }
-  if (action.type === "setMajor") {
-    return { ...currentState, major: action.payload };
-  }
-  if (action.type === "setEducStartDate") {
-    return { ...currentState, educStartDate: action.payload };
-  }
-  if (action.type === "setEducEndDate") {
-    return { ...currentState, educEndDate: action.payload };
-  }
-  if (action.type === "setCompanyName") {
-    return { ...currentState, companyName: action.payload };
-  }
-  if (action.type === "setStartWork") {
-    return { ...currentState, startWork: action.payload };
-  }
-  if (action.type === "setExplanation") {
-    return { ...currentState, explanation: action.payload };
-  }
-  if (action.type === "setWorkStartDate") {
-    return { ...currentState, workStartDate: action.payload };
-  }
-  if (action.type === "setWorkEndDate") {
-    return { ...currentState, workEndDate: action.payload };
-  }
-
   return currentState;
 }
 
@@ -226,17 +150,6 @@ const ResumeState: React.FC = ({ children }) => {
         contactCellPhone: state.contactCellPhone,
         contactEmail: state.contactEmail,
         gender,
-        //Form 2
-        schoolName: state.schoolName,
-        department: state.department,
-        major: state.major,
-        educStartDate: state.educStartDate,
-        educEndDate: state.educEndDate,
-        companyName: state.companyName,
-        explanation: state.explanation,
-        startWork: state.startWork,
-        workStartDate: state.workStartDate,
-        workEndDate: state.workEndDate,
         //Form 1
         setPic: (e) => {
           dispatch({
@@ -290,37 +203,6 @@ const ResumeState: React.FC = ({ children }) => {
         },
         setFemale: () => {
           setGender(false);
-        },
-        //Form 2
-        setSchoolName: (e) => {
-          dispatch({ type: "setSchoolName", payload: e.target.value });
-        },
-        setDepartment: (e) => {
-          dispatch({ type: "setDepartment", payload: e.target.value });
-        },
-        setMajor: (e) => {
-          dispatch({ type: "setMajor", payload: e.target.value });
-        },
-        setEducStartDate: (e) => {
-          dispatch({ type: "setEducStartDate", payload: e.target.value });
-        },
-        setEducEndDate: (e) => {
-          dispatch({ type: "setEducEndDate", payload: e.target.value });
-        },
-        setCompanyName: (e) => {
-          dispatch({ type: "setCompanyName", payload: e.target.value });
-        },
-        setExplanation: (e) => {
-          dispatch({ type: "setExplanation", payload: e.target.value });
-        },
-        setStartWork: (e) => {
-          dispatch({ type: "setStartWork", payload: e.target.value });
-        },
-        setWorkStartDate: (e) => {
-          dispatch({ type: "setWorkStartDate", payload: e.target.value });
-        },
-        setWorkEndDate: (e) => {
-          dispatch({ type: "setWorkEndDate", payload: e.target.value });
         },
       }}
     >

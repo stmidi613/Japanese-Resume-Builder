@@ -1,6 +1,7 @@
 import React, { createContext, useState } from "react";
 
-export interface Form2Model {
+export interface Form2Education {
+  //Education
   educId: number;
   schoolName: string;
   department: string;
@@ -8,14 +9,20 @@ export interface Form2Model {
   result: string;
   educStartDate: string;
   educEndDate: string;
-  // compId: number;
-  // companyName: string;
-  // explanation: string;
-  // workStartDate: string;
-  // workEndDate: string;
+}
+
+export interface Form2Work {
+  //Work
+  workId: number;
+  companyName: string;
+  startExpl: string;
+  endExpl: string;
+  workStartDate: string;
+  workEndDate: string;
 }
 
 const Form2Values = {
+  //Education
   educId: Date.now(),
   schoolName: "",
   department: "",
@@ -40,22 +47,55 @@ const Form2Values = {
   setResult: (e: React.SetStateAction<string>) => {},
   setEducStartDate: (e: React.SetStateAction<string>) => {},
   setEducEndDate: (e: React.SetStateAction<string>) => {},
-  setEducHist: (e: React.Dispatch<React.SetStateAction<Form2Model[]>>) => {},
+  setEducHist: (e: React.Dispatch<React.SetStateAction<Form2Education[]>>) => {},
+  //Work
+  workId: Date.now(),
+  companyName: "",
+  startExpl: "",
+  endExpl: "",
+  workStartDate: "",
+  workEndDate: "",
+  workHist: [
+    {
+      workId: Date.now(),
+      companyName: "",
+      startExpl: "",
+      endExpl: "",
+      workStartDate: "",
+      workEndDate: "",
+    },
+  ],
+  setCompanyName: (e: React.SetStateAction<string>) => {},
+  setStartExpl: (e: React.SetStateAction<string>) => {},
+  setEndExpl: (e: React.SetStateAction<string>) => {},
+  setWorkStartDate: (e: React.SetStateAction<string>) => {},
+  setWorkEndDate: (e: React.SetStateAction<string>) => {},
+  setWorkHist: (e: React.Dispatch<React.SetStateAction<Form2Work[]>>) => {},
 };
 
 export const Form2Context = createContext(Form2Values);
 
 const Form2State: React.FC = ({ children }) => {
+  //Education
   const [schoolName, setSchoolName] = useState<string>("");
   const [department, setDepartment] = useState<string>("");
   const [major, setMajor] = useState<string>("");
   const [result, setResult] = useState<string>("");
   const [educStartDate, setEducStartDate] = useState<string>("");
   const [educEndDate, setEducEndDate] = useState<string>("");
-  const [educHist, setEducHist] = useState<Form2Model[]>([]);
+  const [educHist, setEducHist] = useState<Form2Education[]>([]);
+  //Work
+  const [companyName, setCompanyName] = useState<string>("");
+  const [startExpl, setStartExpl] = useState<string>("");
+  const [endExpl, setEndExpl] = useState<string>("");
+  const [workStartDate, setWorkStartDate] = useState<string>("");
+  const [workEndDate, setWorkEndDate] = useState<string>("");
+  const [workHist, setWorkHist] = useState<Form2Work[]>([]);
+
   return (
     <Form2Context.Provider
       value={{
+        //Education
         educId: Date.now(),
         schoolName,
         department,
@@ -81,6 +121,31 @@ const Form2State: React.FC = ({ children }) => {
               result,
               educStartDate,
               educEndDate,
+            },
+          ]);
+        },
+        workId: Date.now(),
+        companyName,
+        startExpl,
+        endExpl,
+        workStartDate,
+        workEndDate,
+        setCompanyName,
+        setStartExpl,
+        setEndExpl,
+        setWorkStartDate,
+        setWorkEndDate,
+        workHist,
+        setWorkHist: () => {
+          setWorkHist([
+            ...workHist,
+            {
+              workId: Date.now(),
+              companyName,
+              startExpl,
+              endExpl,
+              workStartDate,
+              workEndDate,
             },
           ]);
         },

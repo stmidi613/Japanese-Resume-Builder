@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 
-import '../../Buttons/button.css'
 import { AppContext } from "../../../AppState/AppState";
+
+import '../../Buttons/button.css'
 
 const TipsHeader: React.FC = () => {
   const {setShowPopup} = useContext(AppContext)

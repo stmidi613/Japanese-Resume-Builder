@@ -1,18 +1,20 @@
 import React, { useContext } from "react";
-import TextInput from "../Form1/TextInput";
+
 import InputTitle from "../InputTitle";
+import F2TextInput from "./F2TextInput";
 import StartEndDate from "./StartEndDate";
+import EducationList from "./EducationList";
+import WorkList from "./WorkList";
+
+import SmallCircleButton from "../../../Buttons/SmallCircleButton";
 import NextButton from "../../../Buttons/NextButton";
 import BackButton from "../../../Buttons/BackButton";
-import { ReducerContext } from "../../ResumeState/ResumeState";
 
-import EducationList from "./EducationList";
-import F2TextInput from "./F2TextInput";
 import { Form2Context } from "../../ResumeState/Form2State";
-import SmallCircleButton from "../../../Buttons/SmallCircleButton";
 
 const Form2: React.FC = () => {
   const {
+    //Education
     educStartDate,
     setEducStartDate,
     educEndDate,
@@ -27,6 +29,19 @@ const Form2: React.FC = () => {
     setSchoolName,
     educHist,
     setEducHist,
+    //Work
+    companyName,
+    setCompanyName,
+    startExpl,
+    setStartExpl,
+    endExpl,
+    setEndExpl,
+    workStartDate,
+    setWorkStartDate,
+    workEndDate,
+    setWorkEndDate,
+    workHist,
+    setWorkHist,
   } = useContext(Form2Context);
 
   const handleAdd = (e: React.FormEvent) => {
@@ -34,6 +49,19 @@ const Form2: React.FC = () => {
     if (schoolName) {
       setEducHist(() => {});
       setSchoolName("");
+      setDepartment("");
+      setMajor("");
+      setResult("");
+      setEducStartDate("");
+      setEducEndDate("");
+    }
+    if (companyName) {
+      setWorkHist(() => {});
+      setCompanyName("");
+      setStartExpl("");      
+      setEndExpl("");      
+      setWorkStartDate("");      
+      setWorkEndDate("");      
     }
   };
 
@@ -42,32 +70,11 @@ const Form2: React.FC = () => {
     handleAdd(e);
   };
 
-  const {
-    // schoolName,
-    // department,
-    // major,
-    // educStartDate,
-    // educEndDate,
-    companyName,
-    startWork,
-    explanation,
-    workEndDate,
-    workStartDate,
-    // setSchoolName,
-    // setDepartment,
-    // setMajor,
-    // setEducStartDate,
-    // setEducEndDate,
-    setCompanyName,
-    setStartWork,
-    setExplanation,
-    setWorkStartDate,
-    setWorkEndDate,
-  } = useContext(ReducerContext);
-
   return (
     <>
-      <form onSubmit={onSubmitHandler}>
+    <div className="w-1/2 grid place-content-center">
+    
+    <form onSubmit={onSubmitHandler}>
         <section className="section md:order-1 md:row-span-2 md:row-start-1">
           <InputTitle fieldName="Educational Background" />
           <div className="input-div">
@@ -85,42 +92,26 @@ const Form2: React.FC = () => {
         </section>
       </form>
 
-      <form>
+      <form onSubmit={onSubmitHandler}>
         <section className="section md:order-1 md:row-span-2 md:row-start-1">
           <InputTitle fieldName="Work History" />
           <div className="input-div">
-            <TextInput
-              value={companyName}
-              place="Name of Place of Work"
-              change={setCompanyName}
-            />
-            <TextInput
-              value={startWork}
-              place="Explanation for Starting"
-              change={setStartWork}
-            />
-            <TextInput
-              value={explanation}
-              place="Explanation for Leaving"
-              change={setExplanation}
-            />
+            <F2TextInput place="Name of Company" value={companyName} change={setCompanyName} />
+            <F2TextInput place="Explanation for Starting Work" value={startExpl} change={setStartExpl} />
+            <F2TextInput place="Explanation for Leaving" value={endExpl} change={setEndExpl} />
             <div className="flex justify-between">
-              <StartEndDate
-                value={workStartDate}
-                label="Start Date:"
-                change={setWorkStartDate}
-              />
-              <StartEndDate
-                value={workEndDate}
-                label="End Date:"
-                change={setWorkEndDate}
-              />
+              <StartEndDate label="Start Date:" value={workStartDate} change={setWorkStartDate} />
+              <StartEndDate label="End Date:" value={workEndDate} change={setWorkEndDate} />
             </div>
           </div>
+          <SmallCircleButton />
+          <WorkList workHist={workHist} />
         </section>
         <NextButton />
         <BackButton />
       </form>
+    
+    </div>
     </>
   );
 };
