@@ -15,7 +15,6 @@ const EducationList: React.FC<Props> = ({educHist}) => {
     {
       educHist.map((item) => 
       (<SingleEducationItem
-        educHist={educHist}
         key={item.educId}
         item={item}
         />))

@@ -48,6 +48,7 @@ const Form2Values = {
   setEducStartDate: (e: React.SetStateAction<string>) => {},
   setEducEndDate: (e: React.SetStateAction<string>) => {},
   setEducHist: (e: React.Dispatch<React.SetStateAction<Form2Education[]>>) => {},
+  setEducDelete: (e: number) => {},
   //Work
   workId: Date.now(),
   companyName: "",
@@ -71,6 +72,7 @@ const Form2Values = {
   setWorkStartDate: (e: React.SetStateAction<string>) => {},
   setWorkEndDate: (e: React.SetStateAction<string>) => {},
   setWorkHist: (e: React.Dispatch<React.SetStateAction<Form2Work[]>>) => {},
+  setWorkDelete: (e: number) => {},
 };
 
 export const Form2Context = createContext(Form2Values);
@@ -124,6 +126,8 @@ const Form2State: React.FC = ({ children }) => {
             },
           ]);
         },
+        setEducDelete: (educId: number) => setEducHist(educHist.filter((each) => each.educId !== educId)),
+        //Work
         workId: Date.now(),
         companyName,
         startExpl,
@@ -149,6 +153,7 @@ const Form2State: React.FC = ({ children }) => {
             },
           ]);
         },
+        setWorkDelete: (workId: number) => setWorkHist(workHist.filter((each) => each.workId !== workId)),
       }}
     >
       {children}

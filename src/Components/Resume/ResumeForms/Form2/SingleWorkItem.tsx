@@ -1,5 +1,5 @@
-import React from "react";
-import { Form2Work } from "../../ResumeState/Form2State";
+import React, { useContext } from "react";
+import { Form2Context, Form2Work } from "../../ResumeState/Form2State";
 
 export interface Props {
   item: Form2Work;
@@ -8,6 +8,7 @@ export interface Props {
 const SingleWorkItem: React.FC<Props> = ({
   item,
 }) => {
+  const {setWorkDelete} = useContext(Form2Context);
   return (
     <>
       <div className="input-div p-4">
@@ -16,6 +17,7 @@ const SingleWorkItem: React.FC<Props> = ({
         <span>{item.endExpl}</span>
         <span>{item.workStartDate}</span>
         <span>{item.workEndDate}</span>
+        <button onClick={() => setWorkDelete(item.workId)}>Delete</button>
       </div>
     </>
   );

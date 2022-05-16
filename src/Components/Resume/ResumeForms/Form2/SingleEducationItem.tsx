@@ -3,19 +3,13 @@ import { Form2Context, Form2Education } from "../../ResumeState/Form2State";
 
 export interface Props {
   item: Form2Education;
-  educHist: Form2Education[];
 }
 
 const SingleEducationItem: React.FC<Props> = ({
   item,
-  educHist,
 }) => {
-  const {setEducHist} = useContext(Form2Context);
-  const handleDelete = (educId: number) => {
-    setEducHist(() => educHist.filter((each) => each.educId != educId))
-    console.log(item.educId);
-    console.log(educHist);
-  }
+  const {setEducDelete} = useContext(Form2Context);
+  
   return (
     <>
       <div className="input-div p-4">
@@ -26,7 +20,7 @@ const SingleEducationItem: React.FC<Props> = ({
         <span>{item.educStartDate}</span>
         <span>{item.educEndDate}</span>
       </div>
-        <button onClick={() => handleDelete(item.educId)}>Delete</button>
+        <button onClick={() => setEducDelete(item.educId)}>Delete</button>
     </>
   );
 };
