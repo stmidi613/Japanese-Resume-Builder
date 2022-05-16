@@ -15,9 +15,7 @@ import { Form2Context } from "../../ResumeState/Form2State";
 const Form2: React.FC = () => {
   const {
     //Education
-    educStartDate,
     setEducStartDate,
-    educEndDate,
     setEducEndDate,
     major,
     setMajor,
@@ -36,15 +34,13 @@ const Form2: React.FC = () => {
     setStartExpl,
     endExpl,
     setEndExpl,
-    workStartDate,
     setWorkStartDate,
-    workEndDate,
     setWorkEndDate,
     workHist,
     setWorkHist,
   } = useContext(Form2Context);
 
-  const handleAdd = (e: React.FormEvent) => {
+  const handleEducAdd = (e: React.FormEvent) => {
     e.preventDefault();
     if (schoolName) {
       setEducHist(() => {});
@@ -55,63 +51,90 @@ const Form2: React.FC = () => {
       setEducStartDate("");
       setEducEndDate("");
     }
+  };
+
+  const handleWorkAdd = (e: React.FormEvent) => {
+    e.preventDefault();
     if (companyName) {
       setWorkHist(() => {});
       setCompanyName("");
-      setStartExpl("");      
-      setEndExpl("");      
-      setWorkStartDate("");      
-      setWorkEndDate("");      
+      setStartExpl("");
+      setEndExpl("");
+      setWorkStartDate("");
+      setWorkEndDate("");
     }
   };
 
-  const onSubmitHandler = (e: any) => {
+  const onEducSubmitHandler = (e: any) => {
     e.preventDefault();
-    handleAdd(e);
+    handleEducAdd(e);
+  };
+
+  const onWorkSubmitHandler = (e: any) => {
+    e.preventDefault();
+    handleWorkAdd(e);
   };
 
   return (
     <>
-    <div className="w-1/2 grid place-content-center">
-    
-    <form onSubmit={onSubmitHandler}>
-        <section className="section md:order-1 md:row-span-2 md:row-start-1">
-          <InputTitle fieldName="Educational Background" />
-          <div className="input-div">
-            <F2TextInput place="Name of School" value={schoolName} change={setSchoolName} />
-            <F2TextInput place="Department" value={department} change={setDepartment} />
-            <F2TextInput place="Major" value={major} change={setMajor} />
-            <F2TextInput place="Result" value={result} change={setResult} />
-            <div className="flex justify-between">
-              <StartEndDate label="Start Date:" value={educStartDate} change={setEducStartDate} />
-              <StartEndDate label="End Date:" value={educEndDate} change={setEducEndDate} />
+      <div className="w-1/2 grid place-content-center">
+        <form onSubmit={onEducSubmitHandler}>
+          <section className="section md:order-1 md:row-span-2 md:row-start-1">
+            <InputTitle fieldName="Educational Background" />
+            <div className="input-div">
+              <F2TextInput
+                place="Name of School"
+                value={schoolName}
+                change={setSchoolName}
+              />
+              <F2TextInput
+                place="Department"
+                value={department}
+                change={setDepartment}
+              />
+              <F2TextInput place="Major" value={major} change={setMajor} />
+              <F2TextInput place="Result" value={result} change={setResult} />
+              <div className="flex justify-between">
+                <StartEndDate label="Start Date:" change={setEducStartDate} />
+                <StartEndDate label="End Date:" change={setEducEndDate} />
+              </div>
             </div>
-          </div>
-          <SmallCircleButton />
-          <EducationList educHist={educHist} />
-        </section>
-      </form>
+            <SmallCircleButton />
+            <EducationList educHist={educHist} />
+          </section>
+        </form>
 
-      <form onSubmit={onSubmitHandler}>
-        <section className="section md:order-1 md:row-span-2 md:row-start-1">
-          <InputTitle fieldName="Work History" />
-          <div className="input-div">
-            <F2TextInput place="Name of Company" value={companyName} change={setCompanyName} />
-            <F2TextInput place="Explanation for Starting Work" value={startExpl} change={setStartExpl} />
-            <F2TextInput place="Explanation for Leaving" value={endExpl} change={setEndExpl} />
-            <div className="flex justify-between">
-              <StartEndDate label="Start Date:" value={workStartDate} change={setWorkStartDate} />
-              <StartEndDate label="End Date:" value={workEndDate} change={setWorkEndDate} />
+        <form onSubmit={onWorkSubmitHandler}>
+          <section className="section md:order-1 md:row-span-2 md:row-start-1">
+            <InputTitle fieldName="Work History" />
+            <div className="input-div">
+              <F2TextInput
+                place="Name of Company"
+                value={companyName}
+                change={setCompanyName}
+              />
+              <F2TextInput
+                place="Explanation for Starting Work"
+                value={startExpl}
+                change={setStartExpl}
+              />
+              <F2TextInput
+                place="Explanation for Leaving"
+                value={endExpl}
+                change={setEndExpl}
+              />
+              <div className="flex justify-between">
+                <StartEndDate label="Start Date:" change={setWorkStartDate} />
+                <StartEndDate label="End Date:" change={setWorkEndDate} />
+              </div>
             </div>
-          </div>
-          <SmallCircleButton />
-          <WorkList workHist={workHist} />
-        </section>
+            <SmallCircleButton />
+            <WorkList workHist={workHist} />
+          </section>
         <NextButton />
         <BackButton />
-      </form>
-    
-    </div>
+        </form>
+      </div>
     </>
   );
 };

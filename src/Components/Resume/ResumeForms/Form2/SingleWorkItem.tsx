@@ -10,7 +10,7 @@ const SingleWorkItem: React.FC<Props> = ({
 }) => {
   return (
     <>
-      <div className="input-div">
+      <div className="input-div p-4">
         <span>{item.companyName}</span>
         <span>{item.startExpl}</span>
         <span>{item.endExpl}</span>

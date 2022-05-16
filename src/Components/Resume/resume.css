@@ -127,6 +127,7 @@
     display: grid;
     grid-column: span 9 / span 9;
     place-content: center;
+    height: 25px;
 }
 
 .resume-history-text-div{

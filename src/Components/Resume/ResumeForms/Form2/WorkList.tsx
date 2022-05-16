@@ -11,8 +11,8 @@ const WorkList: React.FC<Props> = ({workHist}) => {
   
   return (
     <>
-    <div className="">
-    <span>Work History List</span>
+    <div className="mt-4">
+    <span className="text-xl text-purple">Work History List</span>
     {
       workHist.map((item) => 
       (<SingleWorkItem

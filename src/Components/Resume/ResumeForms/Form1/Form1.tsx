@@ -14,7 +14,6 @@ import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import "../../../Resume/resume.css";
 
 const Form1: React.FC = () => {
-  //Fifth add this reducer hook to take the reducer function and initial state
   function onSubmitForm(event: React.FormEvent) {
     event.preventDefault();
   }
@@ -58,21 +57,18 @@ const Form1: React.FC = () => {
           <InputTitle fieldName="Photo (JPEG or PNG)" />
           <div className="flex w-48 mb-5 flex-col justify-center">
             <img className="h-56 w-full" src={pic} alt="photo" />
-            {/* <button className="mt-1 text-xs button-animation button"> */}
             <input className="p-3 mt-1 text-xs button-animation button"
               id="Photo"
               type="file"
               placeholder={pic}
               onChange={setPic}
               />
-              {/* </button> */}
           </div>
         </section>
         {/* Name Section */}
         <section className="section md:order-1 md:row-span-2 md:row-start-1">
           <InputTitle fieldName="Name" />
           <div className="input-div">
-            {/* Sixth add all the onchange functions like this here we passed it as a props called change */}
             <TextInput value={furiName} place="Name Furigana" change={setFuriName} />
             <TextInput value={name} place="Name" change={setName} />
           </div>
