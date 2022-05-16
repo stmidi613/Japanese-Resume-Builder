@@ -1,6 +1,5 @@
 import React from "react";
 import "../../../Resume/resume.css";
-import { Form2Model } from "../../ResumeForms/Form2/Form2Model";
 
 interface Props {
   year: string;
