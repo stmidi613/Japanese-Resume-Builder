@@ -48,8 +48,6 @@ const Form2: React.FC = () => {
       setDepartment("");
       setMajor("");
       setResult("");
-      setEducStartDate("");
-      setEducEndDate("");
     }
   };
 
@@ -60,8 +58,6 @@ const Form2: React.FC = () => {
       setCompanyName("");
       setStartExpl("");
       setEndExpl("");
-      setWorkStartDate("");
-      setWorkEndDate("");
     }
   };
 
@@ -131,8 +127,8 @@ const Form2: React.FC = () => {
             <SmallCircleButton />
             <WorkList workHist={workHist} />
           </section>
-        <NextButton />
-        <BackButton />
+          <NextButton />
+          <BackButton />
         </form>
       </div>
     </>
