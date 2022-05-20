@@ -21,7 +21,6 @@ const Form3: React.FC = () => {
     certName,
     setCertName,
     setCertStartDate,
-    setCertEndDate,
     certHist,
     setCertHist,
   } = useContext(Form3Context);
@@ -32,7 +31,6 @@ const Form3: React.FC = () => {
       setCertHist(() => {});
       setCertName("");
       setCertStartDate("");
-      setCertEndDate("");
     }
   };
 
@@ -48,17 +46,16 @@ const Form3: React.FC = () => {
               value={certName}
               change={setCertName}
             />
-            <F2TextInput
+            {/* <F2TextInput
               place="List of Suggestions"
               value={certName}
               change={setCertName}
-            />
+            /> */}
             <div className="flex justify-between">
               <StartEndDate
                 label="Validation Date:"
                 change={setCertStartDate}
               />
-              <StartEndDate label="Expiration Date:" change={setCertEndDate} />
             </div>
           </div>
           <SmallCircleButton />

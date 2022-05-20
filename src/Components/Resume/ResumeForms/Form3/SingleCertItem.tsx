@@ -14,7 +14,6 @@ const SingleCertItem: React.FC<Props> = ({ item }) => {
       <div className="input-div p-4">
         <span>{item.certName}</span>
         <span>{item.certStartDate}</span>
-        <span>{item.certEndDate}</span>
         <DeleteButton item={item.certId} change={setCertDelete} />
       </div>
     </>

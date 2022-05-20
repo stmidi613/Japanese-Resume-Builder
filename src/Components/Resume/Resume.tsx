@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import ResumeHeader from "./ResumeHeader/ResumeHeader";
 
 import ResumePage1 from "./ResumePages/Page1/ResumePage1";
+import ResumePage2 from "./ResumePages/Page2/ResumePage2";
 
 import Form1 from "./ResumeForms/Form1/Form1";
 import Form2 from "./ResumeForms/Form2/Form2";
@@ -24,16 +25,25 @@ const Resume: React.FC = () => {
       <ResumeHeader />
       <div className="flex justify-center">
         <ResumeState>
-          <Form3State>
-            <Form3 />
-          </Form3State>
           {/* <Form2State>
           <Form2 /> */}
-          {!showPopup ? (
-            <ResumePage1 />
-          ) : (
-            <TipBox content={step < 2 ? <Form1Tips /> : <Form2Tips />} />
-          )}
+          <Form3State>
+            <Form3 />
+            {!showPopup && step < 3 ? (
+              <ResumePage1 />
+            ) : step < 3 ? (
+              <TipBox content={step < 2 ? <Form1Tips /> : <Form2Tips />} />
+            ) : (
+              ""
+            )}
+            {!showPopup && step >= 3 ? (
+              <ResumePage2 />
+            ) : step >= 3 ? (
+              <TipBox content={Form2Tips} />
+            ) : (
+              ""
+            )}
+          </Form3State>
           {/* </Form2State>          */}
         </ResumeState>
       </div>
