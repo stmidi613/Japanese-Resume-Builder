@@ -11,7 +11,7 @@ const ResumePage2: React.FC = () => {
   return (
     <>
       <section className="hidden w-1/2 bg-gray bg-opacity-30 xl:block h-full">
-        <div className="page-div drop-shadow-lg py-5">
+        <div className="page-div drop-shadow-lg pt-5">
           <section className="mx-[5%] border-t-[.5px] border-2">
             <CertLicTitle year="年（西暦）" month="月" text="資格・免許" />
             {certHist.map((item) => (

@@ -678,6 +678,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 33.333333%;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -696,10 +700,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-4 {
   height: 1rem;
-}
-
-.w-80 {
-  width: 20rem;
 }
 
 .w-12 {
@@ -754,6 +754,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-2\/3 {
   width: 66.666667%;
+}
+
+.min-w-\[200px\] {
+  min-width: 200px;
+}
+
+.min-w-\[9rem\] {
+  min-width: 9rem;
 }
 
 .origin-top-right {
@@ -836,6 +844,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 2rem;
 }
 
+.gap-10 {
+  gap: 2.5rem;
+}
+
 .break-words {
   overflow-wrap: break-word;
 }
@@ -884,6 +896,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .border-t-\[1px\] {
   border-top-width: 1px;
+}
+
+.border-t-\[\.5px\] {
+  border-top-width: .5px;
 }
 
 .border-dashed {
@@ -1341,6 +1357,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-row-start: 1;
   }
 
+  .md\:flex {
+    display: flex;
+  }
+
   .md\:grid {
     display: grid;
   }
@@ -1351,6 +1371,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:h-16 {
     height: 4rem;
+  }
+
+  .md\:w-64 {
+    width: 16rem;
+  }
+
+  .md\:w-full {
+    width: 100%;
   }
 
   .md\:w-16 {
@@ -1405,6 +1433,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:grid {
     display: grid;
+  }
+
+  .lg\:w-1\/2 {
+    width: 50%;
   }
 
   .lg\:grid-cols-3 {

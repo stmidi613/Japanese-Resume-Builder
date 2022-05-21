@@ -17,6 +17,7 @@ import Form3State from "./ResumeState/Form3State";
 
 import { AppContext } from "../../AppState/AppState";
 import "../Resume/resume.css";
+import Form4 from "./ResumeForms/Form4/Form4";
 
 const Resume: React.FC = () => {
   const { showPopup, step } = useContext(AppContext);
@@ -27,8 +28,9 @@ const Resume: React.FC = () => {
         <ResumeState>
           {/* <Form2State>
           <Form2 /> */}
-          <Form3State>
-            <Form3 />
+          {/* <Form3State>
+            <Form3 /> */}
+            <Form4 />
             {!showPopup && step < 3 ? (
               <ResumePage1 />
             ) : step < 3 ? (
@@ -43,7 +45,7 @@ const Resume: React.FC = () => {
             ) : (
               ""
             )}
-          </Form3State>
+          {/* </Form3State> */}
           {/* </Form2State>          */}
         </ResumeState>
       </div>

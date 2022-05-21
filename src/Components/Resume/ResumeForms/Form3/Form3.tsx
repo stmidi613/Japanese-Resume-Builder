@@ -38,7 +38,7 @@ const Form3: React.FC = () => {
   return (
     <>
       <form className="w-1/2" onSubmit={onSubmitHandler}>
-        <section className="section md:order-1 md:row-span-2 md:row-start-1">
+        <section className="section w-full">
           <InputTitle fieldName="Certifications and Licenses" />
           <div className="input-div">
             <F2TextInput

@@ -7,7 +7,7 @@ import { AppContext } from "../../../AppState/AppState";
 
 const ResumeHeader: React.FC = () => {
   const [language, setLanguage] = useState<string>(USF);
-  const headerTitle = ["Personal Information", "Education and Work History", "Certifications and Licenses", "Appeal Points: What you want them to know", "Additional Information: Extra Details", "Preview: Proofread Your Resume", "Save and Print"];
+  const headerTitle = ["Personal Information", "Education and Work History", "Certifications and Licenses", "Appeal Points", "Additional Information", "Preview", "Save and Print"];
   const {step} = useContext(AppContext);
 
   return (

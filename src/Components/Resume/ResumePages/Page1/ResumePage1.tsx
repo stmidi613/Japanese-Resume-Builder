@@ -42,10 +42,10 @@ const ResumePage1: React.FC = () => {
 
   const showa =
     birthyear < 1989 ||
-    (birthyear == 1989 && birthmonth == 1 && birthdate <= 7);
+    (birthyear === 1989 && birthmonth === 1 && birthdate <= 7);
   const heisei =
     birthyear > 1989 ||
-    (birthyear == 1989 && birthmonth >= 1 && birthdate >= 8);
+    (birthyear === 1989 && birthmonth >= 1 && birthdate >= 8);
   const showayear = birthyear - 1925;
   const heiseiyear = birthyear - 1988;
 
@@ -57,7 +57,7 @@ const ResumePage1: React.FC = () => {
 
   return (
     <>
-      <section className="hidden w-1/2 bg-gray bg-opacity-30 xl:block">
+      <section className="hidden w-1/2 bg-gray bg-opacity-30 xl:block h-full">
         <div className="page-div drop-shadow-lg">
           {/* This is the Title and date */}
           <section className="flex justify-between w-2/3 ml-[5%] pt-5">
@@ -137,7 +137,7 @@ const ResumePage1: React.FC = () => {
             </div>
             {/* Photo div */}
             <div className="col-span-1 grid place-content-center">
-              <img className="photo" src={pic} alt="photo" />
+              <img className="photo" src={pic} alt="" />
             </div>
           </section>
           {/* End of Name to Gender Section */}
