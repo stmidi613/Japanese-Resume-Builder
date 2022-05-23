@@ -7,6 +7,7 @@ import HistoryTitle from "./HistoryTitle";
 
 import { ReducerContext } from "../../ResumeState/ResumeState";
 import { Form2Context } from "../../ResumeState/Form2State";
+import HistoryHeader from "./HistoryHeader";
 
 const ResumePage1: React.FC = () => {
   const { educHist, workHist } = useContext(Form2Context);
@@ -167,8 +168,8 @@ const ResumePage1: React.FC = () => {
           {/* End of Contact Address Section */}
 
           {/* Start of Education and Work History */}
-          <section className="mx-[5%] mt-5 border-t-[1px] border-2">
-            <HistoryTitle year="年（西暦）" month="月" text="学歴・職歴" />
+          <section className="mx-[5%] mt-5 border-t-[1px] border-x-2">
+            <HistoryHeader year="年（西暦）" month="月" text="学歴・職歴" />
             <HistoryTitle year="" month="" text="学歴" />
             {educHist.map((item) => (
               <>

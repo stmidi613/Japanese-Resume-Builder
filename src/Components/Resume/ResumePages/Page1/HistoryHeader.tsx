@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface Props {
     text: string;
@@ -6,16 +6,16 @@ interface Props {
     month: string;
 }
 
-const CertLicTitle: React.FC<Props> = ({text, year, month}) => {
+const HistoryHeader: React.FC<Props> = ({year, month, text}) => {
   return (
     <>
-      <div className="resume-history-header-div">
+      <div className="resume-history-header-div border-t-[.5px]">
         <div className="resume-history-year-div">{year}</div>
         <div className="resume-history-month-div">{month}</div>
         <div className="resume-history-title-div">{text}</div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default CertLicTitle
+export default HistoryHeader;

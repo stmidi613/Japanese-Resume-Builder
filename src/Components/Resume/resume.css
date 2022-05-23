@@ -107,7 +107,14 @@
 .resume-history-div{
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
-    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.resume-history-header-div{
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    border-bottom-width: 2px;
+    border-style: double;
 }
 
 .resume-history-year-div{
