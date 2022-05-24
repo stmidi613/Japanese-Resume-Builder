@@ -50,37 +50,37 @@ const Form4: React.FC = () => {
         <section className="section">
           <InputTitle fieldName="Family" />
           <div className="family-drop-down-div">
+            <label htmlFor="hours">Dependents (Not including Spouse)</label>
             <input
-              className="drop-down shadow-lg"
+              className="drop-down flex md:float-left shadow-lg"
               name="hours"
               type="number"
               min="1"
               max="10"
             />
-            <label htmlFor="hours">Dependents (Not including Spouse)</label>
           </div>
           <div className="md:flex gap-10 w-full">
             <div className="family-drop-down-div">
+              <label htmlFor="spouse">Spouse</label>
               <select
-                className="drop-down shadow-lg"
+                className="drop-down flex md:float-left shadow-lg"
                 name="spouse"
               >
                 <option value=""></option>
                 <option value="no">No</option>
                 <option value="yes">Yes</option>
               </select>
-              <label htmlFor="spouse">Spouse</label>
             </div>
             <div className="family-drop-down-div">
+              <label htmlFor="spouseDep">Spouse's Dependents</label>
               <select
-                className="drop-down shadow-lg"
+                className="drop-down flex md:float-left shadow-lg"
                 name="spouseDep"
               >
                 <option value=""></option>
                 <option value="no">No</option>
                 <option value="yes">Yes</option>
               </select>
-              <label htmlFor="spouseDep">Spouse's Dependents</label>
             </div>
           </div>
         </section>

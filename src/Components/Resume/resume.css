@@ -178,6 +178,7 @@
     width: 5rem;
     height: 2rem;
     margin-right: .5rem;
+    margin-top: .5rem;
 }
 
 .select-drop-down-div{
@@ -194,5 +195,8 @@
 @media (min-width: 768px) {
     .text-area {
         width: 32rem;
+    }
+    .drop-down {
+        margin-top: 0;
     }
 }

@@ -562,6 +562,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 2.5rem;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -702,6 +706,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 1rem;
 }
 
+.h-60 {
+  height: 15rem;
+}
+
+.h-2\/3 {
+  height: 66.666667%;
+}
+
+.h-\[112\%\] {
+  height: 112%;
+}
+
 .w-12 {
   width: 3rem;
 }
@@ -796,6 +812,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -878,6 +906,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-width: 1px;
 }
 
+.border-x-2 {
+  border-left-width: 2px;
+  border-right-width: 2px;
+}
+
 .border-r-2 {
   border-right-width: 2px;
 }
@@ -890,6 +923,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-top-width: 2px;
 }
 
+.border-t-\[\.5px\] {
+  border-top-width: .5px;
+}
+
 .border-l-\[1px\] {
   border-left-width: 1px;
 }
@@ -898,12 +935,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-top-width: 1px;
 }
 
-.border-t-\[\.5px\] {
-  border-top-width: .5px;
+.border-t-\[0px\] {
+  border-top-width: 0px;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
+.border-l-\[0px\] {
+  border-left-width: 0px;
 }
 
 .border-dashed {
   border-style: dashed;
+}
+
+.border-double {
+  border-style: double;
 }
 
 .border-orange {
@@ -1073,6 +1122,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pr-2 {
   padding-right: 0.5rem;
+}
+
+.pr-4 {
+  padding-right: 1rem;
 }
 
 .text-left {

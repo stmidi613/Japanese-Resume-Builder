@@ -8,6 +8,9 @@ import ResumePage2 from "./ResumePages/Page2/ResumePage2";
 import Form1 from "./ResumeForms/Form1/Form1";
 import Form2 from "./ResumeForms/Form2/Form2";
 import Form3 from "./ResumeForms/Form3/Form3";
+import Form4 from "./ResumeForms/Form4/Form4";
+import Form5 from "./ResumeForms/Form5/Form5";
+
 import TipBox from "./ResumeForms/TipBox";
 import Form1Tips from "./ResumeForms/Form1/Form1Tips";
 import Form2Tips from "./ResumeForms/Form2/Form2Tips";
@@ -17,7 +20,6 @@ import Form3State from "./ResumeState/Form3State";
 
 import { AppContext } from "../../AppState/AppState";
 import "../Resume/resume.css";
-import Form4 from "./ResumeForms/Form4/Form4";
 
 const Resume: React.FC = () => {
   const { showPopup, step } = useContext(AppContext);
@@ -30,7 +32,8 @@ const Resume: React.FC = () => {
           <Form2 /> */}
           {/* <Form3State>
             <Form3 /> */}
-            <Form4 />
+            {/* <Form4 /> */}
+            <Form5 />
             {!showPopup && step < 3 ? (
               <ResumePage1 />
             ) : step < 3 ? (
