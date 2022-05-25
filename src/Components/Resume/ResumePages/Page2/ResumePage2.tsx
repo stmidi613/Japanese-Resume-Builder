@@ -85,7 +85,7 @@ const ResumePage2: React.FC = () => {
                     通勤時間
                   </p>
                   <p className="grid items-center pr-4 text-xs text-right h-2/3">
-                    約{travelHours}時間{travelMinutes}分
+                    約  {travelHours}  時間  {travelMinutes}  分
                   </p>
                 </div>
                 {/* Family Section */}
@@ -102,15 +102,45 @@ const ResumePage2: React.FC = () => {
                     <p className="grid place-content-center h-full border-r-2">
                       配偶者
                     </p>
-                    <p className="grid place-content-center border-r-2 h-[112%]">
-                      有・無
+                    <p className="grid grid-flow-col place-content-center border-r-2 h-[112%]">
+                    <span
+                      className={`${
+                        spouse ? "border-[1px] rounded-full p-1" : "p-1"
+                      }`}
+                    >
+                      有
+                    </span>
+                    <span className="px-2 py-1">・</span>
+                    <span
+                      className={`${
+                        !spouse ? "border-[1px] rounded-full p-1" : "p-1"
+                      }`}
+                    >
+                      無
+                    </span>
                     </p>
                   </div>
                   <div className="border-b-2">
                     <p className="grid place-content-center h-full">
                       配偶者の扶養義務
                     </p>
-                    <p className="grid place-content-center h-[112%]">{spouseDependents ? `有・無` : ""}</p>
+                    <p className="grid grid-flow-col place-content-center h-[112%]">
+                    <span
+                      className={`${
+                        spouseDependents ? "border-[1px] rounded-full p-1" : "p-1"
+                      }`}
+                    >
+                      有
+                    </span>
+                    <span className="px-2 py-1">・</span>
+                    <span
+                      className={`${
+                        !spouseDependents ? "border-[1px] rounded-full p-1" : "p-1"
+                      }`}
+                    >
+                      無
+                    </span>
+                    </p>
                   </div>
                 </div>
               </div>

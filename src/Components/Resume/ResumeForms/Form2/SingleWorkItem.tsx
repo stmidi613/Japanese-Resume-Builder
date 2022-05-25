@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import DeleteButton from "../DeleteButton";
+
+import DeleteButton from "../../../Buttons/DeleteButton";
 
 import { Form2Context, Form2Work } from "../../ResumeState/Form2State";
 

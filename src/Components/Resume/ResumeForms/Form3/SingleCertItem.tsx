@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import DeleteButton from "../DeleteButton";
+
+import DeleteButton from "../../../Buttons/DeleteButton";
 
 import { Form3Cert, Form3Context } from "../../ResumeState/Form3State";
 

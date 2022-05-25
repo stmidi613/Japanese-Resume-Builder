@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
+
+import DeleteButton from "../../../Buttons/DeleteButton";
+
 import { Form2Context, Form2Education } from "../../ResumeState/Form2State";
-import DeleteButton from "../DeleteButton";
 
 export interface Props {
   item: Form2Education;

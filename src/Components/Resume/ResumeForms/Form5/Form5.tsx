@@ -24,6 +24,7 @@ const Form5: React.FC = () => {
             <textarea
               className="text-area"
               name="appeal"
+              maxLength={1080}
               placeholder="Tell the reader about any other details you want them to know such as desired salary, type of work, travel distance, work location, and any other requests etc..."
               onChange={(e) => setAdditionalInfo(e.target.value)}
             />

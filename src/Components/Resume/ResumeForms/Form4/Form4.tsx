@@ -33,6 +33,7 @@ const Form4: React.FC = () => {
             <textarea
               className="text-area"
               name="appeal"
+              maxLength={750}
               placeholder="Tell the reader about your hopes, special skills, interests, etc..."
               onChange={(e) => setAppealPoints(e.target.value)}
             />
@@ -90,8 +91,8 @@ const Form4: React.FC = () => {
                 name="spouse"
               >
                 <option value=""></option>
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
+                <option onClick={setSpouseFalse} value="no">No</option>
+                <option onClick={setSpouseTrue} value="yes">Yes</option>
               </select>
             </div>
             <div className="family-drop-down-div">
@@ -99,16 +100,10 @@ const Form4: React.FC = () => {
               <select
                 className="drop-down flex md:float-left shadow-lg"
                 name="spouseDep"
-                id="spouseDep"
-                // onChange={
-                //   document.getElementById("spouseDep")?.ariaValueText == "yes"
-                //     ? setSpouseDependentsFalse
-                //     : setSpouseDependentsTrue
-                // }
               >
                 <option value=""></option>
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
+                <option onClick={setSpouseDependentsFalse} value="no">No</option>
+                <option onClick={setSpouseDependentsTrue} value="yes">Yes</option>
               </select>
             </div>
           </div>
