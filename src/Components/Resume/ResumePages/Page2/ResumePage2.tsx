@@ -4,9 +4,19 @@ import CertLicTitle from "./CertLicTitle";
 import CertHistInput from "./CertHistInput";
 
 import { Form3Context } from "../../ResumeState/Form3State";
+import { Form4To5Context } from "../../ResumeState/Form4To5State";
 
 const ResumePage2: React.FC = () => {
   const { certHist } = useContext(Form3Context);
+  const {
+    appealPoints,
+    travelHours,
+    travelMinutes,
+    dependents,
+    spouse,
+    spouseDependents,
+    additionalInfo,
+  } = useContext(Form4To5Context);
 
   return (
     <>
@@ -64,7 +74,7 @@ const ResumePage2: React.FC = () => {
                 <p className="w-full px-3 border-b-2 border-double text-sm text-center">
                   希望の動機・特技・興味・アピールポイントなど
                 </p>
-                <p className="m-2 text-xs">"Hello World"</p>
+                <p className="m-2 text-xs">{appealPoints}</p>
               </div>
             </div>
             <div className="col-span-1">
@@ -75,7 +85,7 @@ const ResumePage2: React.FC = () => {
                     通勤時間
                   </p>
                   <p className="grid items-center pr-4 text-xs text-right h-2/3">
-                    約　　時間　　分
+                    約{travelHours}時間{travelMinutes}分
                   </p>
                 </div>
                 {/* Family Section */}
@@ -84,7 +94,7 @@ const ResumePage2: React.FC = () => {
                     扶養家族数（配偶を除く）
                   </p>
                   <p className="grid items-center pr-4 text-xs text-right h-2/3">
-                    0 人
+                    {dependents} 人
                   </p>
                 </div>
                 <div className="h-1/3 grid grid-cols-2 grid-rows-2 text-center text-xs border-t-2">
@@ -100,7 +110,7 @@ const ResumePage2: React.FC = () => {
                     <p className="grid place-content-center h-full">
                       配偶者の扶養義務
                     </p>
-                    <p className="grid place-content-center h-[112%]">有・無</p>
+                    <p className="grid place-content-center h-[112%]">{spouseDependents ? `有・無` : ""}</p>
                   </div>
                 </div>
               </div>
@@ -109,9 +119,9 @@ const ResumePage2: React.FC = () => {
           <section className="mx-[5%] mt-6 border-2">
             <div className="h-60">
               <p className="w-full px-1 border-b-2 border-double text-sm text-center">
-              本人希望記入欄（特に給料・職種・勤務時間・勤務地・その他についての希望などがあれば記入）
+                本人希望記入欄（特に給料・職種・勤務時間・勤務地・その他についての希望などがあれば記入）
               </p>
-              <p className="m-2 text-xs">"Hello World"</p>
+              <p className="m-2 text-xs">{additionalInfo}</p>
             </div>
           </section>
         </div>

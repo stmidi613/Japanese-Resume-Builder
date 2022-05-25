@@ -16,7 +16,9 @@ import Form1Tips from "./ResumeForms/Form1/Form1Tips";
 import Form2Tips from "./ResumeForms/Form2/Form2Tips";
 
 import ResumeState from "./ResumeState/ResumeState";
+import Form2State from "./ResumeState/Form2State";
 import Form3State from "./ResumeState/Form3State";
+import Form4To5State from "./ResumeState/Form4To5State";
 
 import { AppContext } from "../../AppState/AppState";
 import "../Resume/resume.css";
@@ -32,8 +34,9 @@ const Resume: React.FC = () => {
           <Form2 /> */}
           {/* <Form3State>
             <Form3 /> */}
+          <Form4To5State>
             {/* <Form4 /> */}
-            <Form5 />
+            <Form4 />
             {!showPopup && step < 3 ? (
               <ResumePage1 />
             ) : step < 3 ? (
@@ -48,6 +51,7 @@ const Resume: React.FC = () => {
             ) : (
               ""
             )}
+          </Form4To5State>
           {/* </Form3State> */}
           {/* </Form2State>          */}
         </ResumeState>

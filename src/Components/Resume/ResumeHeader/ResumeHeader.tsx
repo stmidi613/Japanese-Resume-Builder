@@ -1,8 +1,11 @@
 import { useContext, useState } from "react";
-import LanguageButton from "../../Buttons/LanguageButton";
-import USF from "../../../images/USflag.png";
+
 import TipsHeader from "./TipsHeader";
 import HomeButton from "../../Buttons/HomeButton";
+import LanguageButton from "../../Buttons/LanguageButton";
+
+import USF from "../../../images/USflag.png";
+
 import { AppContext } from "../../../AppState/AppState";
 
 const ResumeHeader: React.FC = () => {

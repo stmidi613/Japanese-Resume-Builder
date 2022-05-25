@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+
 import InputTitle from "../InputTitle";
 
 import NextButton from "../../../Buttons/NextButton";
 import BackButton from "../../../Buttons/BackButton";
 
+import { Form4To5Context } from "../../ResumeState/Form4To5State";
+
 
 const Form5: React.FC = () => {
-  
-    const onSubmitHandler = (e: React.FormEvent) => {
+  const {setAdditionalInfo} = useContext(Form4To5Context);
+
+  const onSubmitHandler = (e: React.FormEvent) => {
     e.preventDefault();
   };
 
@@ -21,6 +25,7 @@ const Form5: React.FC = () => {
               className="text-area"
               name="appeal"
               placeholder="Tell the reader about any other details you want them to know such as desired salary, type of work, travel distance, work location, and any other requests etc..."
+              onChange={(e) => setAdditionalInfo(e.target.value)}
             />
           </div>
         </section>

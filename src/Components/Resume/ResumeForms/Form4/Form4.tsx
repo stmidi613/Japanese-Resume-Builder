@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
+
 import InputTitle from "../InputTitle";
 
 import NextButton from "../../../Buttons/NextButton";
 import BackButton from "../../../Buttons/BackButton";
 
+import { Form4To5Context } from "../../ResumeState/Form4To5State";
+import { getValue } from "@testing-library/user-event/dist/utils";
+
 const Form4: React.FC = () => {
+  const {
+    setAppealPoints,
+    setTravelHours,
+    setTravelMinutes,
+    setDependents,
+    setSpouseTrue,
+    setSpouseFalse,
+    setSpouseDependentsTrue,
+    setSpouseDependentsFalse,
+  } = useContext(Form4To5Context);
+
   const onSubmitHandler = (e: React.FormEvent) => {
     e.preventDefault();
   };
@@ -14,11 +29,12 @@ const Form4: React.FC = () => {
       <form className="lg:w-1/2" onSubmit={onSubmitHandler}>
         <section className="section">
           <div className="input-div grid place-content-center">
-          <InputTitle fieldName="Appeal Points" />
+            <InputTitle fieldName="Appeal Points" />
             <textarea
               className="text-area"
               name="appeal"
               placeholder="Tell the reader about your hopes, special skills, interests, etc..."
+              onChange={(e) => setAppealPoints(e.target.value)}
             />
           </div>
         </section>
@@ -32,8 +48,11 @@ const Form4: React.FC = () => {
                 type="number"
                 min="1"
                 max="10"
+                onChange={(e) => setTravelHours(e.target.value)}
               />
-              <label className="grid place-content-center" htmlFor="hours">Hours</label>
+              <label className="grid place-content-center" htmlFor="hours">
+                Hours
+              </label>
             </div>
             <div className="time-div">
               <input
@@ -42,8 +61,11 @@ const Form4: React.FC = () => {
                 type="number"
                 min="1"
                 max="59"
+                onChange={(e) => setTravelMinutes(e.target.value)}
               />
-              <label className="grid place-content-center" htmlFor="minutes">Minute</label>
+              <label className="grid place-content-center" htmlFor="minutes">
+                Minute
+              </label>
             </div>
           </div>
         </section>
@@ -57,6 +79,7 @@ const Form4: React.FC = () => {
               type="number"
               min="1"
               max="10"
+              onChange={(e) => setDependents(e.target.value)}
             />
           </div>
           <div className="md:flex gap-10 w-full">
@@ -76,6 +99,12 @@ const Form4: React.FC = () => {
               <select
                 className="drop-down flex md:float-left shadow-lg"
                 name="spouseDep"
+                id="spouseDep"
+                // onChange={
+                //   document.getElementById("spouseDep")?.ariaValueText == "yes"
+                //     ? setSpouseDependentsFalse
+                //     : setSpouseDependentsTrue
+                // }
               >
                 <option value=""></option>
                 <option value="no">No</option>
