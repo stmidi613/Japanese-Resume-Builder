@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import { AppContext } from "../../AppState/AppState";
 
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { AppContext } from "../../AppState/AppState";
 
 const NextButton: React.FC = () => {
   const {setStep} = useContext(AppContext)

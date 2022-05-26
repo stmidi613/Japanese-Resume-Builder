@@ -1,36 +1,29 @@
 import React, { useContext } from "react";
-import { ReducerContext } from "../../ResumeState/ResumeState";
-
-import NextButton from "../../../Buttons/NextButton";
 
 import InputTitle from "../InputTitle";
 import TextInput from "./TextInput";
 import EmailInput from "./EmailInput";
 import PhoneInput from "./PhoneInput";
 
+import NextButton from "../../../Buttons/NextButton";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
+
+import { ReducerContext } from "../../ResumeState/ResumeState";
 
 import "../../../Resume/resume.css";
 
 const Form1: React.FC = () => {
-  function onSubmitForm(event: React.FormEvent) {
-    event.preventDefault();
-  }
 
   const {
     pic,
     furiName,
     name,
-    dob,
-    email,
     furiAddress,
     furiContactAddress,
     address,
     contactAddress,
-    contactEmail,
-    contactPhone,
-    contactCellPhone,
     setPic,
     setFuriName,
     setName,
@@ -51,25 +44,30 @@ const Form1: React.FC = () => {
 
   return (
     <>
-      <form className="form md:grid-cols-2 md:grid-rows-7">
+      <form className="w-full lg:w-1/2 form md:grid-cols-2 md:grid-rows-7">
         {/* Photo Section */}
         <section className="section md:order-2 md:row-span-4">
           <InputTitle fieldName="Photo (JPEG or PNG)" />
           <div className="flex w-48 mb-5 flex-col justify-center">
             <img className="h-56 w-full" src={pic} alt="photo" />
-            <input className="p-3 mt-1 text-xs button-animation button"
+            <input
+              className="p-3 mt-1 text-xs button-animation button"
               id="Photo"
               type="file"
               placeholder={pic}
               onChange={setPic}
-              />
+            />
           </div>
         </section>
         {/* Name Section */}
         <section className="section md:order-1 md:row-span-2 md:row-start-1">
           <InputTitle fieldName="Name" />
           <div className="input-div">
-            <TextInput value={furiName} place="Name Furigana" change={setFuriName} />
+            <TextInput
+              value={furiName}
+              place="Name Furigana"
+              change={setFuriName}
+            />
             <TextInput value={name} place="Name" change={setName} />
           </div>
         </section>
@@ -94,7 +92,11 @@ const Form1: React.FC = () => {
         <section className="section md:order-4 md:row-span-2">
           <InputTitle fieldName="Address" />
           <div className="input-div">
-            <TextInput value={furiAddress} place="Address Furigana" change={setFuriAddress} />
+            <TextInput
+              value={furiAddress}
+              place="Address Furigana"
+              change={setFuriAddress}
+            />
             <TextInput value={address} place="Address" change={setAddress} />
           </div>
         </section>
@@ -148,11 +150,15 @@ const Form1: React.FC = () => {
           <InputTitle fieldName="Contact Information" />
           <div className="input-div">
             <TextInput
-            value={furiContactAddress}
+              value={furiContactAddress}
               place="Contact's Address Furigana"
               change={setFuriContactAddress}
             />
-            <TextInput value={contactAddress} place="Contact's Address" change={setContactAddress} />
+            <TextInput
+              value={contactAddress}
+              place="Contact's Address"
+              change={setContactAddress}
+            />
             <PhoneInput
               place="Contact's Phone Number"
               change={setContactPhone}

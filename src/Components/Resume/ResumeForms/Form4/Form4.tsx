@@ -6,7 +6,6 @@ import NextButton from "../../../Buttons/NextButton";
 import BackButton from "../../../Buttons/BackButton";
 
 import { Form4To5Context } from "../../ResumeState/Form4To5State";
-import { getValue } from "@testing-library/user-event/dist/utils";
 
 const Form4: React.FC = () => {
   const {
@@ -60,9 +59,9 @@ const Form4: React.FC = () => {
                 className="drop-down shadow-lg"
                 name="minutes"
                 type="number"
-                min="1"
+                min="0"
                 max="59"
-                onChange={(e) => setTravelMinutes(e.target.value)}
+                onChange={(e) => setTravelMinutes(e.target.value.length < 2 ? "0" + e.target.value : e.target.value)}
               />
               <label className="grid place-content-center" htmlFor="minutes">
                 Minute
@@ -78,7 +77,7 @@ const Form4: React.FC = () => {
               className="drop-down flex md:float-left shadow-lg"
               name="hours"
               type="number"
-              min="1"
+              min="0"
               max="10"
               onChange={(e) => setDependents(e.target.value)}
             />

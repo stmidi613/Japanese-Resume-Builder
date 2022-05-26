@@ -70,7 +70,7 @@ const ResumePage1: React.FC = () => {
           {/* Start of Name to Gender Section */}
           <section className="resume-section">
             <div className="col-span-3">
-              <div className="col-span-3 border-2">
+              <div className="col-span-3 border-2 border-b-[1px]">
                 <p className="w-full border-b-[1px] pl-2 text-xs">
                   ふりがな<span className="pl-3">{furiName}</span>
                 </p>
@@ -144,7 +144,7 @@ const ResumePage1: React.FC = () => {
           {/* End of Name to Gender Section */}
           {/* Start of Address Section */}
           <section className="resume-section">
-            <AddressBox text="" val={address} furival={furiAddress} />
+            <AddressBox text="" val={address} furival={ furiAddress} />
             <EmailBox
               email={email}
               homePhone={homePhone}
@@ -157,7 +157,7 @@ const ResumePage1: React.FC = () => {
             <AddressBox
               text="（現住所以外に連絡を希望する場合のみ記入）"
               val={contactAddress}
-              furival={furiContactAddress}
+              furival={ furiContactAddress}
             />
             <EmailBox
               email={contactEmail}

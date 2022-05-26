@@ -21,7 +21,7 @@ const ResumeHeader: React.FC = () => {
         </div>
         <div className="hidden md:grid place-content-center border-r-2 border-purple text-center text-sm h-20 md:text-lg text-purple justify-around">
           <h2>{headerTitle[step-1]}:</h2>
-          <h3>Step {step} of 7</h3>
+          <h3>Step {step} of 6</h3>
         </div>
         <div className="flex justify-evenly h-20">
           <div className="grid place-content-center">
@@ -32,7 +32,7 @@ const ResumeHeader: React.FC = () => {
             />
           </div>
           <div className="grid place-content-center">
-            <TipsHeader />
+            {step < 6 ? <TipsHeader /> : ""}
           </div>
           <div className="grid place-content-center">
             <HomeButton />
@@ -40,7 +40,7 @@ const ResumeHeader: React.FC = () => {
         </div>
       </header>
       <div className="h-3 w-full bg-gray">
-        <div className={`h-3 rounded-r-lg w-${step}/6 bg-purple`}></div>
+        <div className={`h-3 ${step < 6 ? `rounded-r-lg` : ""} w-${step}/6 bg-purple`}></div>
       </div>
       <div className="md:hidden my-2 text-sm md:text-lg text-purple flex justify-around">
         <h2>{headerTitle[step-1]}:</h2>
