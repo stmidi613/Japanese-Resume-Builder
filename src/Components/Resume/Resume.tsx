@@ -2,14 +2,15 @@ import React, { useContext } from "react";
 
 import ResumeHeader from "./ResumeHeader/ResumeHeader";
 
-import ResumePage1 from "./ResumePages/Page1/ResumePage1";
-import ResumePage2 from "./ResumePages/Page2/ResumePage2";
-
 import Form1 from "./ResumeForms/Form1/Form1";
 import Form2 from "./ResumeForms/Form2/Form2";
 import Form3 from "./ResumeForms/Form3/Form3";
 import Form4 from "./ResumeForms/Form4/Form4";
 import Form5 from "./ResumeForms/Form5/Form5";
+import Form6 from "./ResumeForms/Form6/Form6";
+
+import ResumePage1 from "./ResumePages/Page1/ResumePage1";
+import ResumePage2 from "./ResumePages/Page2/ResumePage2";
 
 import TipBox from "./ResumeForms/TipBox";
 import Form1Tips from "./ResumeForms/Form1/Form1Tips";
@@ -41,21 +42,24 @@ const Resume: React.FC = () => {
               <Form4To5State>
                 {step === 4 ? <Form4 /> : ""}
                 {step === 5 ? <Form5 /> : ""}
+                {step === 6 ? <Form6 /> : ""}                  
                 {/* Resume Pages and Tip Boxes */}
-                {!showPopup && step < 3 || step === 6 ? (
-                  <ResumePage1 />
-                ) : step < 3 ? (
-                  <TipBox content={step < 2 ? <Form1Tips /> :  <Form2Tips />} />
-                ) : (
-                  ""
-                )}
-                {!showPopup && step >= 3 || step === 6 ? (
-                  <ResumePage2 />
-                ) : step >= 3 && step < 6 ? (
-                  <TipBox content={<Form3Tips />} />
-                ) : (
-                  ""
-                )}
+                  {(!showPopup && step < 3) ? (
+                    <ResumePage1 />
+                  ) : step < 3 ? (
+                    <TipBox
+                      content={step < 2 ? <Form1Tips /> : <Form2Tips />}
+                    />
+                  ) : (
+                    ""
+                  )}
+                  {(!showPopup && step >= 3) && (step !== 6) ? (
+                    <ResumePage2 />
+                  ) : step >= 3 && step < 6 ? (
+                    <TipBox content={<Form3Tips />} />
+                  ) : (
+                    ""
+                  )}
               </Form4To5State>
             </Form3State>
           </Form2State>

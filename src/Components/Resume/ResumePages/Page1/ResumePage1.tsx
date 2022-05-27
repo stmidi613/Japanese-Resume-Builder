@@ -1,15 +1,17 @@
 import React, { useContext } from "react";
 
+import HistoryHeader from "./HistoryHeader";
 import AddressBox from "./AddressBox";
 import EmailBox from "./EmailBox";
 import HistoryInput from "./HistoryInput";
 import HistoryTitle from "./HistoryTitle";
 
+import { AppContext } from "../../../../AppState/AppState";
 import { ReducerContext } from "../../ResumeState/ResumeState";
 import { Form2Context } from "../../ResumeState/Form2State";
-import HistoryHeader from "./HistoryHeader";
 
 const ResumePage1: React.FC = () => {
+  const {step} = useContext(AppContext);
   const { educHist, workHist } = useContext(Form2Context);
 
   const {
@@ -58,7 +60,7 @@ const ResumePage1: React.FC = () => {
 
   return (
     <>
-      <section className="hidden w-1/2 bg-gray bg-opacity-30 xl:block h-full">
+      <section className={step < 6 ? `hidden w-1/2 bg-gray bg-opacity-30 xl:block h-full` : `block xl:w-1/2 w-full h-full pb-5 bg-gray bg-opacity-30`}>
         <div className="page-div drop-shadow-lg">
           {/* This is the Title and date */}
           <section className="flex justify-between w-2/3 ml-[5%] pt-5">

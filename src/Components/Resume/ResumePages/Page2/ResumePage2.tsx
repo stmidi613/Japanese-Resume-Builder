@@ -3,10 +3,12 @@ import React, { useContext } from "react";
 import CertLicTitle from "./CertLicTitle";
 import CertHistInput from "./CertHistInput";
 
+import { AppContext } from "../../../../AppState/AppState";
 import { Form3Context } from "../../ResumeState/Form3State";
 import { Form4To5Context } from "../../ResumeState/Form4To5State";
 
 const ResumePage2: React.FC = () => {
+  const {step} = useContext(AppContext);
   const { certHist } = useContext(Form3Context);
   const {
     appealPoints,
@@ -20,7 +22,7 @@ const ResumePage2: React.FC = () => {
 
   return (
     <>
-      <section className="hidden w-1/2 bg-gray bg-opacity-30 xl:block h-full">
+      <section className={step < 6 ? `hidden w-1/2 bg-gray bg-opacity-30 xl:block h-full` : `block xl:w-1/2 w-full pb-5 h-full bg-gray bg-opacity-30`}>
         <div className="page-div drop-shadow-lg pt-5">
           {/* Certifications and Licenses */}
           <section className="mx-[5%] border-2">
