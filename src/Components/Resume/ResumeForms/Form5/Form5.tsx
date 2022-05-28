@@ -17,7 +17,7 @@ const Form5: React.FC = () => {
 
   return (
     <>
-      <form className="lg:w-1/2" onSubmit={onSubmitHandler}>
+      <form className="w-full xl:w-1/2" onSubmit={onSubmitHandler}>
         <section className="section">
           <div className="input-div grid place-content-center">
             <InputTitle fieldName="Additional Information" />

@@ -73,7 +73,7 @@ const Form2: React.FC = () => {
 
   return (
     <>
-      <div className="w-1/2 grid place-content-center">
+      <div className="w-full xl:w-1/2 grid md:flex md:gap-10 xl:grid place-content-center">
         <form onSubmit={onEducSubmitHandler}>
           <section className="section md:order-1 md:row-span-2 md:row-start-1">
             <InputTitle fieldName="Educational Background" />

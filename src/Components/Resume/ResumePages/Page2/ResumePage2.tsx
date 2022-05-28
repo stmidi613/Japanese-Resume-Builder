@@ -22,7 +22,7 @@ const ResumePage2: React.FC = () => {
 
   return (
     <>
-      <section className={step < 6 ? `hidden w-1/2 bg-gray bg-opacity-30 xl:block h-full` : `block xl:w-1/2  w-[762px] pb-5 h-full bg-gray bg-opacity-30`}>
+      <section className={step < 6 ? `hidden xl:w-1/2 bg-gray bg-opacity-30 md:block h-full` : `block xl:w-1/2  w-[762px] pb-5 h-full bg-gray bg-opacity-30`}>
         <div className="page-div drop-shadow-lg pt-5">
           {/* Certifications and Licenses */}
           <section className="mx-[5%] border-2">

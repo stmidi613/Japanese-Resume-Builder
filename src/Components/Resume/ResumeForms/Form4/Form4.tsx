@@ -25,8 +25,8 @@ const Form4: React.FC = () => {
 
   return (
     <>
-      <form className="lg:w-1/2" onSubmit={onSubmitHandler}>
-        <section className="section">
+      <form className="w-full xl:w-1/2" onSubmit={onSubmitHandler}>
+        <section className="section w-full">
           <div className="input-div grid place-content-center">
             <InputTitle fieldName="Appeal Points" />
             <textarea

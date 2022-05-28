@@ -11,12 +11,12 @@ const Form6: React.FC = () => {
   return (
     <>
       <div className="grid w-full">
-        <div className="flex flex-wrap flex-col justify-start md:flex-row md:justify-evenly md:w-full w-1/3">
+        <div className="flex flex-wrap flex-col justify-start md:flex-row md:justify-evenly md:w-full w-full">
           <BackButton />
           <PrintButton />
           <SaveButton />
         </div>
-        <div className="xl:flex grid w-full">
+        <div className="xl:flex grid ml-96 md:ml-0 w-full">
           <ResumePage1 />
           <ResumePage2 />
         </div>

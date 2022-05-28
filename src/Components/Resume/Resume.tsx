@@ -31,7 +31,7 @@ const Resume: React.FC = () => {
   return (
     <>
       <ResumeHeader />
-      <div className="flex justify-center">
+      <div className="grid xl:flex justify-center">
         {/* Forms */}
         <ResumeState>
           {step === 1 ? <Form1 /> : ""}

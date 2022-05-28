@@ -60,7 +60,7 @@ const ResumePage1: React.FC = () => {
 
   return (
     <>
-      <section className={step < 6 ? `hidden w-1/2 bg-gray bg-opacity-30 xl:block h-full` : `block xl:w-1/2 w-[762px] h-full pb-5 bg-gray bg-opacity-30`}>
+      <section className={step < 6 ? `hidden xl:w-1/2 w-full bg-gray bg-opacity-30 md:block h-full` : `block xl:w-1/2 w-[762px] h-full pb-5 bg-gray bg-opacity-30`}>
         <div className="page-div drop-shadow-lg">
           {/* This is the Title and date */}
           <section className="flex justify-between w-2/3 ml-[5%] pt-5">
