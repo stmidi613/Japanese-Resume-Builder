@@ -12,6 +12,7 @@ const ResumeHeader: React.FC = () => {
   const [language, setLanguage] = useState<string>(USF);
   const headerTitle = ["Personal Information", "Education and Work History", "Certifications and Licenses", "Appeal Points", "Additional Information", "Preview", "Save and Print"];
   const {step} = useContext(AppContext);
+  const width = ["w-1/6", "w-1/3", "w-1/2", "w-2/3", "w-5/6", "w-full"]
 
   return (
     <>
@@ -40,11 +41,11 @@ const ResumeHeader: React.FC = () => {
         </div>
       </header>
       <div className="h-3 w-full bg-gray">
-        <div className={`h-3 ${step < 6 ? `rounded-r-lg` : ""} w-${step}/6 bg-purple`}></div>
+        <div className={`h-3 ${step < 6 ? `rounded-r-lg`  : ""} ${width[step-1]} bg-purple`}></div>
       </div>
       <div className="md:hidden my-2 text-sm md:text-lg text-purple flex justify-around">
         <h2>{headerTitle[step-1]}:</h2>
-        <h3>Step {step} of 7</h3>
+        <h3>Step {step} of 6</h3>
       </div>
     </>
   );

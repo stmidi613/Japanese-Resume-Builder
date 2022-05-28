@@ -22,7 +22,7 @@ const ResumePage2: React.FC = () => {
 
   return (
     <>
-      <section className={step < 6 ? `hidden w-1/2 bg-gray bg-opacity-30 xl:block h-full` : `block xl:w-1/2 w-full pb-5 h-full bg-gray bg-opacity-30`}>
+      <section className={step < 6 ? `hidden w-1/2 bg-gray bg-opacity-30 xl:block h-full` : `block xl:w-1/2  w-[762px] pb-5 h-full bg-gray bg-opacity-30`}>
         <div className="page-div drop-shadow-lg pt-5">
           {/* Certifications and Licenses */}
           <section className="mx-[5%] border-2">
@@ -92,7 +92,7 @@ const ResumePage2: React.FC = () => {
                 </div>
                 {/* Family Section */}
                 <div className="h-1/3 border-t-2">
-                  <p className="w-full px-3 border-b-2 border-double text-sm text-center">
+                  <p className="w-full px-1 border-b-2 border-double text-sm text-center">
                     扶養家族数（配偶を除く）
                   </p>
                   <p className="grid items-center pr-4 text-xs text-right h-2/3">

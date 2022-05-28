@@ -44,7 +44,7 @@ const Form1: React.FC = () => {
 
   return (
     <>
-      <form className="w-full lg:w-1/2 form md:grid-cols-2 md:grid-rows-7">
+      <form className="w-full xl:w-1/2 form md:grid-cols-2 md:grid-rows-7">
         {/* Photo Section */}
         <section className="section md:order-2 md:row-span-4">
           <InputTitle fieldName="Photo (JPEG or PNG)" />
@@ -139,7 +139,6 @@ const Form1: React.FC = () => {
         {/* Phone Section */}
         <section className="section md:order-8 md:row-span-2">
           <InputTitle fieldName="Phone" />
-
           <div className="input-div">
             <PhoneInput place="Home Phone" change={setHomePhone} />
             <PhoneInput place="Cell Phone" change={setCellPhone} />
