@@ -11,7 +11,7 @@ import { ReducerContext } from "../../ResumeState/ResumeState";
 import { Form2Context } from "../../ResumeState/Form2State";
 
 const ResumePage1: React.FC = () => {
-  const {step} = useContext(AppContext);
+  const { step } = useContext(AppContext);
   const { educHist, workHist } = useContext(Form2Context);
 
   const {
@@ -60,7 +60,13 @@ const ResumePage1: React.FC = () => {
 
   return (
     <>
-      <section className={step < 6 ? `hidden xl:w-1/2 w-full bg-gray bg-opacity-30 md:block h-full` : `block xl:w-1/2 w-[762px] h-full pb-5 bg-gray bg-opacity-30`}>
+      <section
+        className={
+          step < 6
+            ? `hidden xl:w-1/2 w-full bg-gray bg-opacity-30 md:block h-full`
+            : `block xl:w-1/2 w-[762px] h-full pb-5 bg-gray bg-opacity-30`
+        }
+      >
         <div className="page-div drop-shadow-lg">
           {/* This is the Title and date */}
           <section className="flex justify-between w-2/3 ml-[5%] pt-5">
@@ -146,7 +152,7 @@ const ResumePage1: React.FC = () => {
           {/* End of Name to Gender Section */}
           {/* Start of Address Section */}
           <section className="resume-section">
-            <AddressBox text="" val={address} furival={ furiAddress} />
+            <AddressBox text="" val={address} furival={furiAddress} />
             <EmailBox
               email={email}
               homePhone={homePhone}
@@ -159,7 +165,7 @@ const ResumePage1: React.FC = () => {
             <AddressBox
               text="（現住所以外に連絡を希望する場合のみ記入）"
               val={contactAddress}
-              furival={ furiContactAddress}
+              furival={furiContactAddress}
             />
             <EmailBox
               email={contactEmail}
@@ -249,16 +255,20 @@ const ResumePage1: React.FC = () => {
             ) : (
               ""
             )}
-            <div className="text-right">
-              <HistoryInput
-                startYear=""
-                startMonth=""
-                startText=""
-                endYear=""
-                endMonth=""
-                endText="以上"
-              />
-            </div>
+            {workHist.length + educHist.length < 6 ? (
+              <div className="text-right">
+                <HistoryInput
+                  startYear=""
+                  startMonth=""
+                  startText=""
+                  endYear=""
+                  endMonth=""
+                  endText="以上"
+                />
+              </div>
+            ) : (
+              ""
+            )}
           </section>
         </div>
       </section>
