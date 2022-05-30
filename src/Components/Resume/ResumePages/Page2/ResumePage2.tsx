@@ -6,6 +6,7 @@ import CertHistInput from "./CertHistInput";
 import { AppContext } from "../../../../AppState/AppState";
 import { Form3Context } from "../../ResumeState/Form3State";
 import { Form4To5Context } from "../../ResumeState/Form4To5State";
+import Page2History from "./Page2History";
 
 const ResumePage2: React.FC = () => {
   const {step} = useContext(AppContext);
@@ -25,6 +26,7 @@ const ResumePage2: React.FC = () => {
       <section className={step < 6 ? `hidden xl:w-1/2 bg-gray bg-opacity-30 md:block h-full` : `block xl:w-1/2  w-[762px] pb-5 h-full bg-gray bg-opacity-30`}>
         <div className="page-div drop-shadow-lg pt-5">
           {/* Certifications and Licenses */}
+          <Page2History />
           <section className="mx-[5%] border-2">
             <CertLicTitle year="年（西暦）" month="月" text="資格・免許" />
             {certHist.map((item) => (

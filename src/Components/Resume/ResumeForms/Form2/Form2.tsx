@@ -95,7 +95,7 @@ const Form2: React.FC = () => {
                 <StartEndDate label="End Date:" change={setEducEndDate} />
               </div>
             </div>
-            <SmallCircleButton />
+            {educHist.length < 5 ? <SmallCircleButton /> : ""}
             <EducationList educHist={educHist} />
           </section>
         </form>
@@ -124,7 +124,7 @@ const Form2: React.FC = () => {
                 <StartEndDate label="End Date:" change={setWorkEndDate} />
               </div>
             </div>
-            <SmallCircleButton />
+            {workHist.length < 5 ? <SmallCircleButton /> : ""}
             <WorkList workHist={workHist} />
           </section>
           <NextButton />

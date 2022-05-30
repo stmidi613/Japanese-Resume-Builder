@@ -9,6 +9,7 @@ import HistoryTitle from "./HistoryTitle";
 import { AppContext } from "../../../../AppState/AppState";
 import { ReducerContext } from "../../ResumeState/ResumeState";
 import { Form2Context } from "../../ResumeState/Form2State";
+import Page2History from "../Page2/Page2History";
 
 const ResumePage1: React.FC = () => {
   const { step } = useContext(AppContext);
@@ -63,10 +64,11 @@ const ResumePage1: React.FC = () => {
       <section
         className={
           step < 6
-            ? `hidden xl:w-1/2 w-full bg-gray bg-opacity-30 md:block h-full`
-            : `block xl:w-1/2 w-[762px] h-full pb-5 bg-gray bg-opacity-30`
+          ? `hidden xl:w-1/2 w-full bg-gray bg-opacity-30 md:block h-full`
+          : `block xl:w-1/2 w-[762px] h-full bg-gray bg-opacity-30`
         }
       >
+        <h2 className="text-purple grid my-3 place-content-center">Resume Page 1</h2>
         <div className="page-div drop-shadow-lg">
           {/* This is the Title and date */}
           <section className="flex justify-between w-2/3 ml-[5%] pt-5">
@@ -218,7 +220,7 @@ const ResumePage1: React.FC = () => {
             )}
             <HistoryTitle year="" month="" text="" />
             <HistoryTitle year="" month="" text="職歴" />
-            {workHist.map((item) => (
+            {workHist.map((item, index) => (index < 1 || (index < 2 && educHist.length < 5) || (index < 3 && educHist.length < 4)  ?
               <>
                 <HistoryInput
                   key={item.workId}
@@ -229,9 +231,9 @@ const ResumePage1: React.FC = () => {
                   endYear={item.workEndDate.slice(0, 4)}
                   endMonth={item.workEndDate.slice(5, 7)}
                 />
-              </>
+              </> : ""
             ))}
-            {workHist.length < 1 ? (
+            {(workHist.length < 1) && (educHist.length < 4) ? (
               <HistoryInput
                 startYear=""
                 startMonth=""
@@ -243,7 +245,7 @@ const ResumePage1: React.FC = () => {
             ) : (
               ""
             )}
-            {workHist.length < 2 ? (
+            {(workHist.length < 2) && (educHist.length < 5) ? (
               <HistoryInput
                 startYear=""
                 startMonth=""
@@ -255,7 +257,7 @@ const ResumePage1: React.FC = () => {
             ) : (
               ""
             )}
-            {workHist.length + educHist.length < 6 ? (
+            {(workHist.length + educHist.length < 6) && (workHist.length < 3) ? (
               <div className="text-right">
                 <HistoryInput
                   startYear=""
@@ -270,7 +272,13 @@ const ResumePage1: React.FC = () => {
               ""
             )}
           </section>
-        </div>
+          </div>
+         {(workHist.length > 2) || (workHist.length + educHist.length > 5) ? 
+         (<>
+         <h2 className="text-purple grid my-3 place-content-center">
+         Resume Page 2
+       </h2>
+       <div className="page-div drop-shadow-lg pt-3"><Page2History /></div></>):("")}
       </section>
     </>
   );
