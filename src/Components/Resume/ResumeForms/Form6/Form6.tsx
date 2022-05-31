@@ -16,7 +16,7 @@ const Form6: React.FC = () => {
           <PrintButton />
           <SaveButton />
         </div>
-        <div className="xl:flex grid ml-96 md:ml-0 w-full">
+        <div className="xl:flex grid ml-[20rem] md:ml-0 w-full">
           <ResumePage1 />
           <ResumePage2 />
         </div>

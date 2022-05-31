@@ -6,7 +6,7 @@ interface Props {
   change: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const F2TextInput: React.FC<Props> = ({ value, place, change }) => {
+const F3TextInput: React.FC<Props> = ({ value, place, change }) => {
   return (
     <>
       <input
@@ -15,10 +15,10 @@ const F2TextInput: React.FC<Props> = ({ value, place, change }) => {
         onChange={(e) => change(e.target.value)}
         type="input"
         className="input focus:outline-none"
-        maxLength={40}
+        maxLength={58}
       />
     </>
   );
 };
 
-export default F2TextInput;
+export default F3TextInput;

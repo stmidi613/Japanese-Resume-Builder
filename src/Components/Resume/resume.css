@@ -133,17 +133,18 @@
 
 .resume-history-title-div{
     display: grid;
-    grid-column: span 9 / span 9;
     place-content: center;
-    height: 25px;
+    grid-column: span 9 / span 9;
+    min-height: 30px;
 }
 
 .resume-history-text-div{
     display: grid;
+    align-items: center;
     grid-column: span 9 / span 9;
     padding-left: .75rem;
     padding-right: .75rem;
-    height: 25px;
+    min-height: 30px;
 }
 
 .tipbox{

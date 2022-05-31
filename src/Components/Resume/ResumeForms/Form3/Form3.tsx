@@ -10,6 +10,7 @@ import NextButton from "../../../Buttons/NextButton";
 import SmallCircleButton from "../../../Buttons/SmallCircleButton";
 
 import { Form3Context } from "../../ResumeState/Form3State";
+import F3TextInput from "./Form3Input";
 
 const Form3: React.FC = () => {
   const onSubmitHandler = (e: React.FormEvent) => {
@@ -41,7 +42,7 @@ const Form3: React.FC = () => {
         <section className="section w-full">
           <InputTitle fieldName="Certifications and Licenses" />
           <div className="input-div">
-            <F2TextInput
+            <F3TextInput
               place="Certification or License Name"
               value={certName}
               change={setCertName}

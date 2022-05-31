@@ -68,10 +68,10 @@ const ResumePage1: React.FC = () => {
           : `block xl:w-1/2 w-[762px] h-full bg-gray bg-opacity-30`
         }
       >
-        <h2 className="text-purple grid my-3 place-content-center">Resume Page 1</h2>
+        {step < 6 ? <h2 className="text-purple grid my-3 place-content-center">Resume Page 1</h2> : ""}
         <div className="page-div drop-shadow-lg">
           {/* This is the Title and date */}
-          <section className="flex justify-between w-2/3 ml-[5%] pt-5">
+          <section className="flex justify-between w-2/3 ml-[5%] pt-10">
             <p className="justify-start pr-14">履歴書</p>
             <p className="justify-end">
               令和　{year - 2018}年{month}月{date}日 現在
@@ -82,7 +82,7 @@ const ResumePage1: React.FC = () => {
             <div className="col-span-3">
               <div className="col-span-3 border-2 border-b-[1px]">
                 <p className="w-full border-b-[1px] pl-2 text-xs">
-                  ふりがな<span className="pl-3">{furiName}</span>
+                  ふりがな<span className="pl-5">{furiName}</span>
                 </p>
                 <p className="text-2xl py-7 px-3">
                   氏名 <span className="pl-2">{name}</span>
@@ -188,7 +188,7 @@ const ResumePage1: React.FC = () => {
                   startText={`${item.schoolName} ${item.department} ${item.major}`}
                   startYear={item.educStartDate.slice(0, 4)}
                   startMonth={item.educStartDate.slice(5, 7)}
-                  endText={`${item.schoolName} ${item.department} ${item.major}`}
+                  endText={`${item.schoolName} ${item.result}`}
                   endYear={item.educEndDate.slice(0, 4)}
                   endMonth={item.educEndDate.slice(5, 7)}
                 />
@@ -220,7 +220,7 @@ const ResumePage1: React.FC = () => {
             )}
             <HistoryTitle year="" month="" text="" />
             <HistoryTitle year="" month="" text="職歴" />
-            {workHist.map((item, index) => (index < 1 || (index < 2 && educHist.length < 5) || (index < 3 && educHist.length < 4)  ?
+            {workHist.map((item, index) => (index < 2 || (index < 3 && educHist.length < 5) || (index < 4 && educHist.length < 4)  ?
               <>
                 <HistoryInput
                   key={item.workId}
@@ -273,7 +273,7 @@ const ResumePage1: React.FC = () => {
             )}
           </section>
           </div>
-         {(workHist.length > 2) || (workHist.length + educHist.length > 5) ? 
+         {(workHist.length > 2  && step < 6) || (workHist.length + educHist.length > 5 && step < 6) ? 
          (<>
          <h2 className="text-purple grid my-3 place-content-center">
          Resume Page 2

@@ -12,7 +12,7 @@ const AddressBox: React.FC<Props> = ({furival, val, text}) => {
     <div className="col-span-3">
       <div className="col-span-3 border-b-[1px] border-l-2 border-r-[1px] border-t-[1px] h-28">
         <p className="w-full px-3 border-b-[1px] border-dashed text-xs">
-          ふりがな <span>{furival}</span>
+          ふりがな <span className="px-3">{furival}</span>
         </p>
         <div className="flex pt-1 px-3 h-4">
           <p className="text-xs">
