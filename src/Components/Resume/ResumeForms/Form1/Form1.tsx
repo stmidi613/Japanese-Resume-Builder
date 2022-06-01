@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 
 import InputTitle from "../InputTitle";
+import NameInput from "./NameInput";
 import TextInput from "./TextInput";
 import EmailInput from "./EmailInput";
 import PhoneInput from "./PhoneInput";
@@ -63,12 +64,12 @@ const Form1: React.FC = () => {
         <section className="section md:order-1 md:row-span-2 md:row-start-1">
           <InputTitle fieldName="Name" />
           <div className="input-div">
-            <TextInput
+            <NameInput
               value={furiName}
               place="Name Furigana"
               change={setFuriName}
             />
-            <TextInput value={name} place="Name" change={setName} />
+            <NameInput value={name} place="Name" change={setName} />
           </div>
         </section>
         {/* Date of Birth Section */}

@@ -12,6 +12,7 @@ const EmailInput: React.FC<Props> = ({ place, change}) => {
         placeholder={place}
         type="email"
         onChange={change}
+        maxLength={50}
         aria-required
       />
   );

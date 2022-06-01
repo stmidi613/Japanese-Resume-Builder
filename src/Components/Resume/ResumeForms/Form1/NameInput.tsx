@@ -6,18 +6,18 @@ interface Props {
   value: string;
 }
 
-const TextInput: React.FC<Props> = ({ value, place, change }) => {
+const NameInput: React.FC<Props> = ({ value, place, change }) => {
   return (
     <input
       className="input focus:outline-none"
       placeholder={place}
       value={value}
       type="text"
-      maxLength={130}
+      maxLength={60}
       onChange={change}
       aria-required
     />
   );
 };
 
-export default TextInput;
+export default NameInput;
