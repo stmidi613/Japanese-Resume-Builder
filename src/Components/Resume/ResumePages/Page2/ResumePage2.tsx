@@ -23,8 +23,8 @@ const ResumePage2: React.FC = () => {
 
   return (
     <>
-      <section className={step < 6 ? `hidden xl:w-1/2 bg-gray bg-opacity-30 md:block h-full` : `block xl:w-1/2  w-[762px] pb-5 h-full bg-gray bg-opacity-30`}>
-        <div className="page-div drop-shadow-lg pt-5">
+      <section id="resume-page-2-bg" className={step < 6 ? `hidden xl:w-1/2 bg-gray bg-opacity-30 md:block h-full` : `block xl:w-1/2  w-[762px] pb-5 h-full bg-gray bg-opacity-30`}>
+        <div id="resume-page-2" className={`page-div ${step < 6 ? `drop-shadow-lg` : ""} pt-5`}>
           {/* Certifications and Licenses */}
           <Page2History />
           <section className="mx-[5%] border-2">

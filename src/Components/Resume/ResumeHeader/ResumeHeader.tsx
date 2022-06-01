@@ -16,7 +16,7 @@ const ResumeHeader: React.FC = () => {
 
   return (
     <>
-      <header className="grid grid-flow-col grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-content-center w-full">
+      <header id="resume-header" className="grid grid-flow-col grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-content-center w-full">
         <div className="hidden lg:grid place-content-center border-r-2 border-purple text-center text-sm h-20 md:text-lg text-purple justify-around">
          <h1 className="text-2xl">Japanese Resume Builder</h1>
         </div>

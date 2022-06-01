@@ -1246,8 +1246,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: .5rem;
 }
 
-.text-\[\.75em\] {
-  font-size: .75em;
+.text-\[1em\] {
+  font-size: 1em;
 }
 
 .font-medium {
@@ -1260,6 +1260,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .font-extrabold {
   font-weight: 800;
+}
+
+.leading-3 {
+  line-height: .75rem;
 }
 
 .text-orange {

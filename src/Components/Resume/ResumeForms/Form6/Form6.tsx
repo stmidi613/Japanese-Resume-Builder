@@ -11,7 +11,7 @@ const Form6: React.FC = () => {
   return (
     <>
       <div className="grid w-full">
-        <div className="flex flex-wrap flex-col justify-start md:flex-row md:justify-evenly md:w-full w-full">
+        <div id="button-group" className="flex flex-wrap flex-col justify-start md:flex-row md:justify-evenly md:w-full w-full">
           <BackButton />
           <PrintButton />
           <SaveButton />
