@@ -23,11 +23,11 @@ const ResumePage2: React.FC = () => {
 
   return (
     <>
-      <section id="resume-page-2-bg" className={step < 6 ? `hidden xl:w-1/2 bg-gray bg-opacity-30 md:block h-full` : `block xl:w-1/2  w-[762px] pb-5 h-full bg-gray bg-opacity-30`}>
+      <section id="resume-page-2-bg" className={step < 6 ? `hidden xl:w-1/2 bg-gray bg-opacity-30 md:block h-full` : `block xl:w-1/2  min-w-[762px] pb-5 h-full bg-gray bg-opacity-30`}>
         <div id="resume-page-2" className={`page-div ${step < 6 ? `drop-shadow-lg` : ""} pt-5`}>
           {/* Certifications and Licenses */}
           <Page2History />
-          <section className="mx-[5%] border-2">
+          <section className="mx-[5%] my-3 border-2 border-b-[0px]">
             <CertLicTitle year="年（西暦）" month="月" text="資格・免許" />
             {certHist.map((item) => (
               <>
@@ -74,7 +74,7 @@ const ResumePage2: React.FC = () => {
           <section className="mx-[5%] grid grid-cols-3">
             <div className="col-span-2">
               {/* Appeal Points */}
-              <div className="col-span-2 border-2 border-t-[0px] h-60">
+              <div className="col-span-2 border-2 h-60">
                 <p className="w-full px-3 border-b-2 border-double text-sm text-center">
                   希望の動機・特技・興味・アピールポイントなど
                 </p>
@@ -82,7 +82,7 @@ const ResumePage2: React.FC = () => {
               </div>
             </div>
             <div className="col-span-1">
-              <div className="col-span-1 border-2 border-t-[0px] border-l-[0px] h-60">
+              <div className="col-span-1 border-2 border-l-[0px] h-60">
                 {/* Travel Time */}
                 <div className="h-1/3">
                   <p className="w-full px-3 border-b-2 border-double text-sm text-center">
@@ -150,8 +150,8 @@ const ResumePage2: React.FC = () => {
               </div>
             </div>
           </section>
-          <section className="mx-[5%] mt-6 border-2">
-            <div className="h-60">
+          <section className="mx-[5%] mt-3 border-2">
+            <div className="h-56">
               <p className="w-full px-1 border-b-2 border-double text-sm text-center">
                 本人希望記入欄（特に給料・職種・勤務時間・勤務地・その他についての希望などがあれば記入）
               </p>

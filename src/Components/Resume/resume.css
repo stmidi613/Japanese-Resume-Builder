@@ -204,6 +204,7 @@
 }
 
 @media print {
+
     body{
         margin: 0;
         background-color: #fff;
@@ -226,14 +227,14 @@
 
     #resume-page-1, #resume-page-2{
         display: block !important;
-        height: 1400px;
-        width: 850px;
+        width: 100%;
         padding: 0;
         margin: 0;
-        break-inside: avoid !important;
+        break-inside: page !important;
     }
 
-    /* div.card-wrapper{
-        display: block;
-    } */
+    #resume-page-1 {
+        height: 1135px;
+    }
+
 }

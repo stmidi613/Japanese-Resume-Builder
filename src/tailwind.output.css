@@ -818,6 +818,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   min-width: 9rem;
 }
 
+.min-w-\[762px\] {
+  min-width: 762px;
+}
+
 .origin-top-right {
   -webkit-transform-origin: top right;
           transform-origin: top right;

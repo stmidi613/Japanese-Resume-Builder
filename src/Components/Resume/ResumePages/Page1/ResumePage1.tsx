@@ -84,8 +84,8 @@ const ResumePage1: React.FC = () => {
                 <p className="w-full border-b-[1px] pl-2 text-xs">
                   ふりがな<span className="pl-5">{furiName}</span>
                 </p>
-                <p className="text-2xl py-7 px-3">
-                  氏名 <span className="pl-2">{name}</span>
+                <p className="text-2xl py-5 px-3">
+                  氏名 <span className="pl-2 max-h-20">{name}</span>
                 </p>
                 <div className="grid grid-flow-col col-span-2 text-xs border-t-2">
                   <div className="flex">
@@ -207,6 +207,18 @@ const ResumePage1: React.FC = () => {
               ""
             )}
             {educHist.length < 2 ? (
+              <HistoryInput
+                startYear=""
+                startMonth=""
+                startText=""
+                endYear=""
+                endMonth=""
+                endText=""
+              />
+            ) : (
+              ""
+            )}
+            {educHist.length < 3 ? (
               <HistoryInput
                 startYear=""
                 startMonth=""
