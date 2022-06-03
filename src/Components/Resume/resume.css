@@ -91,9 +91,9 @@
 }
 
 .page-div{
-    margin: 2rem;
+    margin: 1rem;
     background-color: white;
-    height: 95%;
+    height: 97%;
     padding-bottom: 1.25rem;
 }
 
@@ -162,7 +162,7 @@
 /* Form3 css */
 .text-area{
     min-width: 18rem;
-    height: 16rem;
+    height: 15rem;
     background: #f7f7f7;
     padding: 1rem;
 }
@@ -230,7 +230,8 @@
         width: 100%;
         padding: 0;
         margin: 0;
-        page-break-after: page !important;
+        clear: both;
+        page-break-inside: avoid !important;
     }
 
     #resume-page-1 {

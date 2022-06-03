@@ -59,7 +59,7 @@ const Form3: React.FC = () => {
               />
             </div>
           </div>
-          {certHist.length < 8 ? <SmallCircleButton /> : ""}
+          {certHist.length < 7 ? <SmallCircleButton /> : ""}
           <CertList certHist={certHist} />
         </section>
         <NextButton />

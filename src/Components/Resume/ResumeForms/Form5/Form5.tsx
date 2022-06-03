@@ -23,8 +23,8 @@ const Form5: React.FC = () => {
             <InputTitle fieldName="Additional Information" />
             <textarea
               className="text-area"
-              name="appeal"
-              maxLength={1080}
+              name="information"
+              maxLength={1000}
               placeholder="Tell the reader about any other details you want them to know such as desired salary, type of work, travel distance, work location, and any other requests etc..."
               onChange={(e) => setAdditionalInfo(e.target.value)}
             />

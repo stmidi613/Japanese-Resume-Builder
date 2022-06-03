@@ -232,7 +232,7 @@ const ResumePage1: React.FC = () => {
             )}
             <HistoryTitle year="" month="" text="" />
             <HistoryTitle year="" month="" text="職歴" />
-            {workHist.map((item, index) => (index < 2 || (index < 3 && educHist.length < 5) || (index < 4 && educHist.length < 4)  ?
+            {workHist.map((item, index) => ((index < 1 && educHist.length < 6) || (index < 2 && educHist.length < 5) ?
               <>
                 <HistoryInput
                   key={item.workId}

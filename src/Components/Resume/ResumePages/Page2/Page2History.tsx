@@ -8,9 +8,9 @@ const Page2History: React.FC = () => {
     <>
       <section className="mx-[5%] my-5 border-t-[1px] border-x-2">
         {workHist.map((item, index) =>
-          index > 3 ||
-          (index > 1 && educHist.length > 4) ||
-          (index > 2 && educHist.length > 3) ? (
+          index > 1 ||
+          (index > 0 && educHist.length > 4) ||
+          (index > 1 && educHist.length > 3) ? (
             <>
               <HistoryInput
                 key={item.workId}
