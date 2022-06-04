@@ -744,10 +744,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 12rem;
 }
 
-.max-h-20 {
-  max-height: 5rem;
-}
-
 .w-12 {
   width: 3rem;
 }
@@ -1125,9 +1121,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.75rem;
 }
 
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .pl-2 {
