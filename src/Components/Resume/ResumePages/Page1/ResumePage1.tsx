@@ -84,8 +84,8 @@ const ResumePage1: React.FC = () => {
                 <p className="w-full border-b-[1px] pl-2 text-xs">
                   ふりがな<span className="pl-5">{furiName}</span>
                 </p>
-                <p className="text-2xl py-5 px-3">
-                  氏名 <span className="pl-2 max-h-20">{name}</span>
+                <p className="text-2xl py-6 px-3">
+                  氏名 <span className="pl-2">{name}</span>
                 </p>
                 <div className="grid grid-flow-col col-span-2 text-xs border-t-2">
                   <div className="flex">
@@ -232,7 +232,7 @@ const ResumePage1: React.FC = () => {
             )}
             <HistoryTitle year="" month="" text="" />
             <HistoryTitle year="" month="" text="職歴" />
-            {workHist.map((item, index) => ((index < 1 && educHist.length < 6) || (index < 2 && educHist.length < 5) ?
+            {workHist.map((item, index) => ((index < 2 && educHist.length < 6) || (index < 3 && educHist.length < 5) ?
               <>
                 <HistoryInput
                   key={item.workId}
@@ -269,7 +269,7 @@ const ResumePage1: React.FC = () => {
             ) : (
               ""
             )}
-            {(workHist.length + educHist.length < 6) && (workHist.length < 3) ? (
+            {(workHist.length + educHist.length < 7) && (workHist.length < 4) ? (
               <div className="text-right">
                 <HistoryInput
                   startYear=""
