@@ -204,38 +204,35 @@
 }
 
 @media print {
-
-    body{
-        margin: 0;
+    
+    html, body{
+        margin: 0 !important;
+        padding: 0 !important;
         background-color: #fff;
-        float: none;
-        width: 100%;
+        width: 210mm;
+        height: 297mm;
     }
     
     @page { 
-       margin: 0;
+       size: A4;
     }
     
-    #resume-header, #button-group{
+    #resume-header, #button-group, #sub-header{
         display: none !important;
     }
 
     #resume-page-1-bg, #resume-page-2-bg{
-        margin: 0;
-        padding: 0;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     #resume-page-1, #resume-page-2{
         display: block !important;
-        width: 100%;
-        padding: 0;
-        margin: 0;
+        width: 210mm;
+        height: 297mm;
+        padding: 0 !important;
+        margin: 0 !important;
         clear: both;
         page-break-inside: avoid !important;
     }
-
-    #resume-page-1 {
-        height: 1135px;
-    }
-
 }

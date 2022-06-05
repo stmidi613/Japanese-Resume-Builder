@@ -5,7 +5,6 @@ import ResumePage2 from "../../ResumePages/Page2/ResumePage2";
 
 import BackButton from "../../../Buttons/BackButton";
 import PrintButton from "../../../Buttons/PrintButton";
-import SaveButton from "../../../Buttons/SaveButton";
 
 const Form6: React.FC = () => {
   return (
@@ -13,8 +12,8 @@ const Form6: React.FC = () => {
       <div className="grid w-full">
         <div id="button-group" className="flex flex-wrap flex-col justify-start md:flex-row md:justify-evenly md:w-full w-full">
           <BackButton />
+          <p className="flex items-center justify-center text-red-500 text-xl">Use A4 Page Size to Print</p>
           <PrintButton />
-          <SaveButton />
         </div>
         <div className="xl:flex grid ml-[20rem] md:ml-0 w-full">
           <ResumePage1 />

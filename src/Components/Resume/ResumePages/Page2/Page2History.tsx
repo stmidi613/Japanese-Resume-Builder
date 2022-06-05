@@ -6,7 +6,7 @@ const Page2History: React.FC = () => {
   const { workHist, educHist } = useContext(Form2Context);
   return (
     <>
-      <section className="mx-[5%] my-5 border-t-[1px] border-x-2">
+      <section className="mx-[5%] mb-5 mt-10 border-t-[1px] border-x-2">
         {workHist.map((item, index) =>
           index > 4 ||
           (index > 1 && educHist.length > 4) ||

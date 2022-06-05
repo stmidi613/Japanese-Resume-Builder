@@ -65,10 +65,10 @@ const ResumePage1: React.FC = () => {
         className={
           step < 6
           ? `hidden xl:w-1/2 w-full bg-gray bg-opacity-30 md:block h-full`
-          : `block xl:w-1/2 min-w-[762px] h-full bg-gray bg-opacity-30`
+          : `block xl:w-1/2 xl:min-w-fit min-w-[725px] h-full bg-gray bg-opacity-30`
         }
       >
-        {step < 6 ? <h2 className="text-purple grid my-3 place-content-center">Resume Page 1</h2> : ""}
+        {step === 2 ? <h2 className="text-purple grid my-3 place-content-center">Resume Page 1</h2> : ""}
         <div id="resume-page-1" className={`page-div ${step < 6 ? `drop-shadow-lg` : ""}`}>
           {/* This is the Title and date */}
           <section className="flex justify-between w-2/3 ml-[5%] pt-10">
@@ -258,6 +258,18 @@ const ResumePage1: React.FC = () => {
               ""
             )}
             {(workHist.length < 2) && (educHist.length < 5) ? (
+              <HistoryInput
+                startYear=""
+                startMonth=""
+                startText=""
+                endYear=""
+                endMonth=""
+                endText=""
+              />
+            ) : (
+              ""
+            )}
+            {(workHist.length < 3) && (educHist.length < 6) ? (
               <HistoryInput
                 startYear=""
                 startMonth=""

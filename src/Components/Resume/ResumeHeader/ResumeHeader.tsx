@@ -40,7 +40,7 @@ const ResumeHeader: React.FC = () => {
           </div>
         </div>
       </header>
-      <div className="h-3 w-full bg-gray">
+      <div id="sub-header" className="h-3 w-full bg-gray">
         <div className={`h-3 ${step < 6 ? `rounded-r-lg`  : ""} ${width[step-1]} bg-purple`}></div>
       </div>
       <div className="md:hidden my-2 text-sm md:text-lg text-purple flex justify-around">
