@@ -2,6 +2,7 @@ import React from "react";
 
 import HomePage from "./Components/HomePage/HomePage";
 import Resume from "./Components/Resume/Resume";
+import SkillSheet from "./Components/SkillSheet/SkillSheet";
 
 import AppState from "./AppState/AppState";
 
@@ -11,7 +12,7 @@ const App: React.FC = () => {
   return (
     <>
       <AppState>
-        <Resume />
+        <SkillSheet />
       </AppState>
     </>
   );

@@ -591,11 +591,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 5%;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -650,6 +645,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .mt-3 {
@@ -818,8 +817,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   min-width: 9rem;
 }
 
-.min-w-\[762px\] {
-  min-width: 762px;
+.min-w-\[725px\] {
+  min-width: 725px;
 }
 
 .origin-top-right {
@@ -1285,6 +1284,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(135 78 210 / var(--tw-text-opacity));
 }
 
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -1594,5 +1598,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .xl\:w-1\/2 {
     width: 50%;
+  }
+
+  .xl\:min-w-fit {
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
   }
 }

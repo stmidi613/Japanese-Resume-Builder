@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 
 import CertLicTitle from "./CertLicTitle";
 import CertHistInput from "./CertHistInput";
+import Page2History from "./Page2History";
 
 import { AppContext } from "../../../../AppState/AppState";
 import { Form3Context } from "../../ResumeState/Form3State";
 import { Form4To5Context } from "../../ResumeState/Form4To5State";
-import Page2History from "./Page2History";
 
 const ResumePage2: React.FC = () => {
   const {step} = useContext(AppContext);
@@ -23,7 +23,8 @@ const ResumePage2: React.FC = () => {
 
   return (
     <>
-      <section id="resume-page-2-bg" className={step < 6 ? `hidden xl:w-1/2 bg-gray bg-opacity-30 md:block h-full` : `block xl:w-1/2 xl:min-w-fit min-w-[725px] pb-5 h-full bg-gray bg-opacity-30`}>
+      <section id="resume-page-2-bg" className={step < 6 ? `hidden xl:w-1/2 bg-gray bg-opacity-30 md:block h-full` : `block xl:w-1/2 md:min-w-0 min-w-[725px] pb-5 h-full bg-gray bg-opacity-30`}>
+      {step < 6 ? <h2 className="text-purple grid my-3 place-content-center">Resume Will Appear Differently When Printed</h2> : ""}
         <div id="resume-page-2" className={`page-div ${step < 6 ? `drop-shadow-lg` : ""} pt-5`}>
           {/* Certifications and Licenses */}
           <Page2History />

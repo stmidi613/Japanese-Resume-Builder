@@ -26,7 +26,7 @@ const Page2History: React.FC = () => {
             ""
           )
         )}
-        {(workHist.length > 3) || (workHist.length + educHist.length > 6) ? 
+        {(workHist.length > 3) || (workHist.length + educHist.length > 7) ? 
         (<div className="text-right">
           <HistoryInput
             startYear=""
