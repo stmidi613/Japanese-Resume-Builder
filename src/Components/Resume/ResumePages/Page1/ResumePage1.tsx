@@ -64,7 +64,7 @@ const ResumePage1: React.FC = () => {
       <section id="resume-page-1-bg"
         className={
           step < 6
-          ? `hidden xl:w-1/2 w-full bg-gray bg-opacity-30 md:block h-full`
+          ? `hidden xl:w-1/2 w-full bg-gray bg-opacity-30 md:block h-full pb-3`
           : `block xl:w-1/2 md:min-w-0 h-full bg-gray bg-opacity-30`
         }
       >

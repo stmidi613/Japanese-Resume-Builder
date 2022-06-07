@@ -10,6 +10,7 @@ module.exports = {
         offwhite: "#fafafa",
         orange: "#fd705e",
         purple: "#874ed2",
+        skillsheetgray: "#f2f2f2",
       }
     },
     theme: {
