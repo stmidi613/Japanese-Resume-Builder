@@ -18,7 +18,10 @@ const Projects: React.FC = () => {
         </tr>
         <tr className="grid col-span-6">
           <td className="short-cell"></td>
-          <td className="medium-cell h-56"></td>
+          <td className="medium-cell h-56">
+            <span>概要</span>
+            <span>ポイント</span>
+          </td>
         </tr>
         <tr className="mid-cell">
           <td className="bg-skillsheetgray text-sm short-cell">環境・言語</td>

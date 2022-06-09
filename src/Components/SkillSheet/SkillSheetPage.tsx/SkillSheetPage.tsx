@@ -1,12 +1,10 @@
 import React from "react";
 
-import ResumeHeader from "../../Resume/ResumeHeader/ResumeHeader";
-
 import JobSummary from "./JobSummary";
 import Projects from "./Projects";
 import PR from "./PR";
 
-import "../../SkillSheet/skillsheet.css"
+import "../../SkillSheet/skillsheet.css";
 
 const SkillSheetPage: React.FC = () => {
   const d = new Date();
@@ -16,7 +14,6 @@ const SkillSheetPage: React.FC = () => {
 
   return (
     <>
-      <ResumeHeader />
       <section
         className={`hidden md:block xl:w-2/3 w-full h-full pb-3 bg-gray bg-opacity-30`}
       >
