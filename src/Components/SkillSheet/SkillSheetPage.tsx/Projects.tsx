@@ -12,7 +12,7 @@ const Projects: React.FC = () => {
         </tr>
       </table>
       <table className="table">
-        <tr className="grid col-span-2 text-sm border-r-[1px]">
+        <tr className="grid col-span-2 text-sm border-r-2">
           <td className="bg-skillsheetgray short-cell">案件名</td>
           <td className="medium-cell h-56"></td>
         </tr>
@@ -24,7 +24,7 @@ const Projects: React.FC = () => {
           </td>
         </tr>
         <tr className="mid-cell">
-          <td className="bg-skillsheetgray text-sm short-cell">環境・言語</td>
+          <td className="bg-skillsheetgray text-xs short-cell">環境・<span className='break-before'>言語</span></td>
           <td className="medium-cell"></td>
         </tr>
         <tr className="grid col-span-3 h-56">

@@ -14,7 +14,7 @@ const JobSummary: React.FC = () => {
           事務要約
         </td>
         <td className="medium-cell h-16">
-          活かせる経験・知識
+          活かせる経験<span className='break-before text-center'>・知識</span>
         </td>
       </tr>
       <tr className="grid col-span-6">
@@ -25,10 +25,10 @@ const JobSummary: React.FC = () => {
       </tr>
       <tr className="bg-skillsheetgray mid-cell">
         <td className="medium-cell">
-          保有技術
+          保有<span className='break-before'>技術</span>
         </td>
         <td className="medium-cell">
-          その他
+          その他<span className='break-before opacity-0'>T</span>
         </td>
       </tr>
       <tr className="grid col-span-3">

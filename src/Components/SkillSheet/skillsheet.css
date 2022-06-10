@@ -9,7 +9,7 @@
     grid-auto-flow: column;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     width: 100%;
-    border-width: 1px 1px 0px 1px;
+    border-width: 2px 2px 0px 2px;
 }
 
 .info-table-row{
@@ -18,22 +18,22 @@
     grid-column: span 2 / span 2;
     font-size: 0.875rem/* 14px */;
     line-height: 1.25rem/* 20px */;
-    border-right-width: 1px;
+    border-right-width: 2px;
 }
 
 .short-cell{
     display: grid;
     place-content: center;
     padding: 0.25rem/* 4px */;
-    border-bottom-width: 1px;
+    border-bottom-width: 2px;
     height: 2rem;
 }
 
 .medium-cell{
     display: grid;
     place-content: center;
-    padding: 0.25rem/* 4px */;
-    border-bottom-width: 1px;
+    padding: 0.25rem;
+    border-bottom-width: 2px;
     font-size: 0.875rem/* 14px */;
     line-height: 1.25rem/* 20px */;
 }
@@ -41,7 +41,7 @@
 .mid-cell{
     display: grid;
     grid-column: span 1 / span 1;
-    border-width: 0px 1px 0px 1px;
+    border-width: 0px 2px 0px 2px;
 }
 
 .last-cell{
@@ -53,7 +53,7 @@
 .mini-table-container{
     display: grid;
     align-content: center;
-    border-bottom-width: 1px;
+    border-bottom-width: 2px;
     height: 2rem;
 }
 
@@ -69,13 +69,17 @@
     display: grid;
     place-content: center;
     grid-column: span 1 / span 1;
-    border-right-width: 1px;
+    border-right-width: 2px;
 }
 
 .mini-table-td{
     text-align: center;
-    font-size: 0.75rem/* 12px */;
-    line-height: 1rem/* 16px */;
+    font-size: 0.70rem/* 12px */;
+    line-height: .8rem/* 16px */;
+}
+
+.gray{
+    background-color: #f2f2f2;
 }
 
 .circle{
@@ -83,4 +87,45 @@
     height: 1rem;
     border-radius: 50%;
     background-color: black;
+}
+
+@media print {
+    
+    html, body{
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 210mm;
+        height: 297mm;
+    }
+    
+    @page { 
+       size: A4;
+    }
+    
+    #resume-header, #skillsheet-button-group, #sub-header, #warning-text{
+        display: none !important;
+    }
+
+    #skillsheet-page-1-bg{
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #skillsheet-page-1{
+        display: block !important;
+        width: 210mm;
+        height: 297mm;
+        padding: 0 !important;
+        margin: 0 !important;
+        clear: both;
+        page-break-inside: avoid !important;
+    }
+
+    #gray{
+        background-color: #f2f2f2 !important;
+    }
+    
+    .circle{
+        background-color: black !important;
+    }
 }

@@ -4,6 +4,9 @@ import TextInput from "../../Resume/ResumeForms/Form1/TextInput";
 import InputTitle from "../../Resume/ResumeForms/InputTitle";
 import StartEndDate from "../../Resume/ResumeForms/Form2/StartEndDate";
 
+import NextButton from "../../Buttons/NextButton";
+import BackButton from "../../Buttons/BackButton";
+
 const SSForm2: React.FC = () => {
   return (
     <>
@@ -188,6 +191,8 @@ const SSForm2: React.FC = () => {
             {/* Last drop down */}
           </section>
         </div>
+        <NextButton />
+        <BackButton />
       </form>
     </>
   );
