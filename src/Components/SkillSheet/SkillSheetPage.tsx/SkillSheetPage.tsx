@@ -5,6 +5,7 @@ import Projects from "./Projects";
 import PR from "./PR";
 
 import "../../SkillSheet/skillsheet.css";
+import "../../Resume/resume.css";
 
 const SkillSheetPage: React.FC = () => {
   const d = new Date();

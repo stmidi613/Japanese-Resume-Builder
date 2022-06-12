@@ -1,5 +1,8 @@
 import React from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
+
 const Projects: React.FC = () => {
   return (
     <>
@@ -61,25 +64,25 @@ const Projects: React.FC = () => {
           <td className="mini-table-container">
             <table className="mini-table">
               <tr className="mini-table-row">
-                <td className="circle"></td>
+                <td><FontAwesomeIcon icon={faCircle} /></td>
               </tr>
               <tr className="mini-table-row">
-                <td className="circle"></td>
+                <td><FontAwesomeIcon icon={faCircle} /></td>
               </tr>
               <tr className="mini-table-row">
-                <td className="circle"></td>
+                <td><FontAwesomeIcon icon={faCircle} /></td>
               </tr>
               <tr className="mini-table-row">
-                <td className="circle"></td>
+                <td><FontAwesomeIcon icon={faCircle} /></td>
               </tr>
               <tr className="mini-table-row">
-                <td className="circle"></td>
+                <td><FontAwesomeIcon icon={faCircle} /></td>
               </tr>
               <tr className="mini-table-row">
-                <td className="circle"></td>
+                <td><FontAwesomeIcon icon={faCircle} /></td>
               </tr>
               <tr className="last-cell">
-                <td className="circle"></td>
+                <td><FontAwesomeIcon icon={faCircle} /></td>
               </tr>
             </table>
           </td>

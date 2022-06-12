@@ -79,7 +79,8 @@
 }
 
 .gray{
-    background-color: #f2f2f2;
+    background-image: url(../../images/bg-gray.png);
+    background-size: contain;
 }
 
 .circle{
@@ -94,6 +95,7 @@
     html, body{
         margin: 0 !important;
         padding: 0 !important;
+        background-color: #fff;
         width: 210mm;
         height: 297mm;
     }
@@ -119,13 +121,5 @@
         margin: 0 !important;
         clear: both;
         page-break-inside: avoid !important;
-    }
-
-    #gray{
-        background-color: #f2f2f2 !important;
-    }
-    
-    .circle{
-        background-color: black !important;
-    }
+    }    
 }

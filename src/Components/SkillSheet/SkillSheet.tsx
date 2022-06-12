@@ -11,6 +11,7 @@ import ResumeState from "../Resume/ResumeState/ResumeState";
 import { AppContext } from "../../AppState/AppState";
 
 import "../Resume/resume.css";
+import "../SkillSheet/skillsheet.css";
 
 const SkillSheet: React.FC = () => {
   const {step} = useContext(AppContext);
