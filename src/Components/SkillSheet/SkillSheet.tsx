@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import ResumeHeader from "../Resume/ResumeHeader/ResumeHeader";
+import Header from "../Header/Header";
 import SkillSheetPage from "./SkillSheetPage.tsx/SkillSheetPage";
 import SSForm1 from "./Forms.tsx/SSForm1";
 import SSForm2 from "./Forms.tsx/SSForm2";
@@ -15,10 +15,14 @@ import "../SkillSheet/skillsheet.css";
 
 const SkillSheet: React.FC = () => {
   const {step} = useContext(AppContext);
+
+  const headerTitle = ["Company/Skills", "Projects", "PR/Appeal Points", "Preview, Save, and Print"];
+  const width = ["w-1/4", "w-1/2", "w-3/4", "w-full"]
+
   return (
     <>
       <ResumeState>
-        <ResumeHeader />
+        <Header headerTitle={headerTitle} width={width} />
         <div className="grid place-content-center xl:flex">
           {step === 1 ? <SSForm1 /> : ""}
           {step === 2 ? <SSForm2 /> : ""}

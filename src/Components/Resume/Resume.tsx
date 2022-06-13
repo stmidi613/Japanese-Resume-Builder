@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import ResumeHeader from "./ResumeHeader/ResumeHeader";
+import Header from "../Header/Header";
 
 import Form1 from "./ResumeForms/Form1/Form1";
 import Form2 from "./ResumeForms/Form2/Form2";
@@ -28,9 +28,13 @@ import "../Resume/resume.css";
 
 const Resume: React.FC = () => {
   const { showPopup, step } = useContext(AppContext);
+
+  const headerTitle = ["Personal Information", "Education and Work History", "Certifications and Licenses", "Appeal Points", "Additional Information", "Preview, Save, and Print"];
+  const width = ["w-1/6", "w-1/3", "w-1/2", "w-2/3", "w-5/6", "w-full"]
+
   return (
     <>
-      <ResumeHeader />
+      <Header headerTitle={headerTitle} width={width} />
       <div className="grid xl:flex justify-center">
         {/* Forms */}
         <ResumeState>
