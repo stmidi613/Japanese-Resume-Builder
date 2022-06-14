@@ -21,13 +21,15 @@ const Projects: React.FC = () => {
         </tr>
         <tr className="grid col-span-6">
           <td className="short-cell"></td>
-          <td className="medium-cell h-56">
-            <span>概要</span>
-            <span>ポイント</span>
+          <td className="grid grid-rows-2 medium-cell h-56">
+            <span className="row-span-1 grid m-4 w-[30rem]">【概要】</span>
+            <span className="row-span-1 grid m-4 w-[30rem]">【ポイント】</span>
           </td>
         </tr>
         <tr className="mid-cell">
-          <td className="bg-skillsheetgray text-xs short-cell">環境・<span className='break-before'>言語</span></td>
+          <td className="bg-skillsheetgray text-xs short-cell">
+            環境・<span className="break-before">言語</span>
+          </td>
           <td className="medium-cell"></td>
         </tr>
         <tr className="grid col-span-3 h-56">
@@ -64,25 +66,39 @@ const Projects: React.FC = () => {
           <td className="mini-table-container">
             <table className="mini-table">
               <tr className="mini-table-row">
-                <td><FontAwesomeIcon icon={faCircle} /></td>
+                <td>
+                  <FontAwesomeIcon icon={faCircle} />
+                </td>
               </tr>
               <tr className="mini-table-row">
-                <td><FontAwesomeIcon icon={faCircle} /></td>
+                <td>
+                  <FontAwesomeIcon icon={faCircle} />
+                </td>
               </tr>
               <tr className="mini-table-row">
-                <td><FontAwesomeIcon icon={faCircle} /></td>
+                <td>
+                  <FontAwesomeIcon icon={faCircle} />
+                </td>
               </tr>
               <tr className="mini-table-row">
-                <td><FontAwesomeIcon icon={faCircle} /></td>
+                <td>
+                  <FontAwesomeIcon icon={faCircle} />
+                </td>
               </tr>
               <tr className="mini-table-row">
-                <td><FontAwesomeIcon icon={faCircle} /></td>
+                <td>
+                  <FontAwesomeIcon icon={faCircle} />
+                </td>
               </tr>
               <tr className="mini-table-row">
-                <td><FontAwesomeIcon icon={faCircle} /></td>
+                <td>
+                  <FontAwesomeIcon icon={faCircle} />
+                </td>
               </tr>
               <tr className="last-cell">
-                <td><FontAwesomeIcon icon={faCircle} /></td>
+                <td>
+                  <FontAwesomeIcon icon={faCircle} />
+                </td>
               </tr>
             </table>
           </td>

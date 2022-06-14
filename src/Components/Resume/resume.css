@@ -217,7 +217,7 @@
        size: A4;
     }
     
-    #resume-header, #button-group, #sub-header{
+    #resume-header, #button-group, #sub-header, #warning-text, #progress-bar{
         display: none !important;
     }
 

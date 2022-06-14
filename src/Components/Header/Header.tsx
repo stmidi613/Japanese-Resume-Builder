@@ -43,10 +43,10 @@ const Header: React.FC<Props> = ({width, headerTitle}) => {
           </div>
         </div>
       </header>
-      <div id="sub-header" className="h-3 w-full bg-gray">
+      <div id="progress-bar" className="h-3 w-full bg-gray">
         <div className={`h-3 ${step < width.length ? `rounded-r-lg`  : ""} ${width[step-1]} bg-purple`}></div>
       </div>
-      <div className="md:hidden my-2 text-sm md:text-lg text-purple flex justify-around">
+      <div id="sub-header" className="md:hidden my-2 text-sm md:text-lg text-purple flex justify-around">
         <h2>{headerTitle[step-1]}:</h2>
         <h3>Step {step} of {width.length}</h3>
       </div>

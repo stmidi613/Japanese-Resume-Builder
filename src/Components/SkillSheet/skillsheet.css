@@ -78,11 +78,6 @@
     line-height: .8rem/* 16px */;
 }
 
-.gray{
-    background-image: url(../../images/bg-gray.png);
-    background-size: contain;
-}
-
 @media print {
     
     html, body{
@@ -97,16 +92,18 @@
        size: A4;
     }
     
-    #resume-header, #skillsheet-button-group, #sub-header, #warning-text{
+    #resume-header, #skillsheet-button-group, #sub-header, #warning-text, #progress-bar{
         display: none !important;
     }
 
     #skillsheet-page-1-bg{
         margin: 0 !important;
         padding: 0 !important;
+        background-color: #fff !important;
     }
 
     #skillsheet-page-1{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         display: block !important;
         width: 210mm;
         height: 297mm;
@@ -115,8 +112,5 @@
         clear: both;
         page-break-inside: avoid !important;
     }
-    .gray{
-        background-image: url(../../images/bg-gray.png);
-        background-size: contain;
-    }    
+
 }
