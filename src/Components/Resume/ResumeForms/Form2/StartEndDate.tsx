@@ -14,7 +14,6 @@ const StartEndDate: React.FC<Props> = ({change, label}) => {
         {label}
       </label>
       <input
-        id="Hello"
         className="input focus:outline-none"
         onChange={(e) => change(e.target.value)}
         type="date"

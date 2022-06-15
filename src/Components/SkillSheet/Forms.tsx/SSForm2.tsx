@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import TextInput from "../../Resume/ResumeForms/Form1/TextInput";
 import InputTitle from "../../Resume/ResumeForms/InputTitle";
@@ -7,10 +7,46 @@ import StartEndDate from "../../Resume/ResumeForms/Form2/StartEndDate";
 import NextButton from "../../Buttons/NextButton";
 import BackButton from "../../Buttons/BackButton";
 
+import { ProjectsContext } from "../SkillSheetState/SSForm2State";
+
 const SSForm2: React.FC = () => {
+  const {
+    workPlace,
+    projName,
+    projStart,
+    projEnd,
+    language,
+    position,
+    scale,
+    setWorkPlace,
+    setProjName,
+    setProjStart,
+    setProjEnd,
+    setOverview,
+    setPoints,
+    setLanguage,
+    setPosition,
+    setScale,
+    setRequirements,
+    setNoRequirements,
+    setBasicDesign,
+    setNoBasicDesign,
+    setDetailedDesign,
+    setNoDetailedDesign,
+    setImplementation,
+    setNoImplementation,
+    setSimpleTest,
+    setNoSimpleTest,
+    setConclusionTest,
+    setNoConclusionTest,
+    setMaintenance,
+    setNoMaintenance,
+  } = useContext(ProjectsContext);
+
   const onSubmitHandler = (e: React.FormEvent) => {
     e.preventDefault();
   };
+
   return (
     <>
       <form onSubmit={onSubmitHandler} className="w-full mb-7 xl:w-1/3 h-fit">
@@ -18,15 +54,19 @@ const SSForm2: React.FC = () => {
           <section className="section">
             <InputTitle fieldName="Work Place" />
             <div className="input-div">
-              <TextInput value="" place="Work Place" change={() => {}} />
+              <TextInput
+                value={workPlace}
+                place="Work Place"
+                change={setWorkPlace}
+              />
             </div>
             <InputTitle fieldName="Project Name" />
             <div className="input-div">
-              <TextInput value="" place="Project Name" change={() => {}} />
+              <TextInput value={projName} place="Project Name" change={setProjName} />
             </div>
             <div className="flex justify-between">
-              <StartEndDate label="Start Date:" change={() => {}} />
-              <StartEndDate label="End Date:" change={() => {}} />
+              <StartEndDate label="Start Date:" change={setProjStart} />
+              <StartEndDate label="End Date:" change={setProjEnd} />
             </div>
             <InputTitle fieldName="Overview" />
             <div className="input-div">
@@ -36,8 +76,8 @@ const SSForm2: React.FC = () => {
                 rows={5}
                 name="Overview"
                 maxLength={300}
-                placeholder=""
-                onChange={() => {}}
+                placeholder="Overview of the Project"
+                onChange={setOverview}
               />
             </div>
             <InputTitle fieldName="Points" />
@@ -46,10 +86,10 @@ const SSForm2: React.FC = () => {
                 className="bg-lightgray mb-4"
                 cols={5}
                 rows={5}
-                name="Points"
+                name="Points you wanted to make"
                 maxLength={300}
                 placeholder=""
-                onChange={() => {}}
+                onChange={setPoints}
               />
             </div>
           </section>
@@ -57,21 +97,21 @@ const SSForm2: React.FC = () => {
             <InputTitle fieldName="Language/Environment" />
             <div className="input-div">
               <TextInput
-                value=""
+                value={language}
                 place="Language/Environment"
-                change={() => {}}
+                change={setLanguage}
               />
             </div>
             <InputTitle fieldName="Role/Position" />
             <div className="input-div">
-              <TextInput value="" place="Role/Position" change={() => {}} />
+              <TextInput value={position} place="Role/Position" change={setPosition} />
             </div>
             <InputTitle fieldName="Scale/Number of Workers" />
             <div className="input-div">
               <TextInput
-                value=""
+                value={scale}
                 place="Scale/Number of Workers"
-                change={() => {}}
+                change={setScale}
               />
             </div>
             <InputTitle fieldName="Processes Followed" />
@@ -84,10 +124,10 @@ const SSForm2: React.FC = () => {
                   name="requirements"
                 >
                   <option value=""></option>
-                  <option onClick={() => {}} value="no">
+                  <option onClick={setNoRequirements} value="no">
                     No
                   </option>
-                  <option onClick={() => {}} value="yes">
+                  <option onClick={setRequirements} value="yes">
                     Yes
                   </option>
                 </select>
@@ -96,10 +136,10 @@ const SSForm2: React.FC = () => {
                 <label htmlFor="basicDesign">Basic Design</label>
                 <select className="drop-down flex shadow-lg" name="basicDesign">
                   <option value=""></option>
-                  <option onClick={() => {}} value="no">
+                  <option onClick={setNoBasicDesign} value="no">
                     No
                   </option>
-                  <option onClick={() => {}} value="yes">
+                  <option onClick={setBasicDesign} value="yes">
                     Yes
                   </option>
                 </select>
@@ -115,10 +155,10 @@ const SSForm2: React.FC = () => {
                   name="detailedDesign"
                 >
                   <option value=""></option>
-                  <option onClick={() => {}} value="no">
+                  <option onClick={setNoDetailedDesign} value="no">
                     No
                   </option>
-                  <option onClick={() => {}} value="yes">
+                  <option onClick={setDetailedDesign} value="yes">
                     Yes
                   </option>
                 </select>
@@ -130,10 +170,10 @@ const SSForm2: React.FC = () => {
                   name="implementation"
                 >
                   <option value=""></option>
-                  <option onClick={() => {}} value="no">
+                  <option onClick={setNoImplementation} value="no">
                     No
                   </option>
-                  <option onClick={() => {}} value="yes">
+                  <option onClick={setImplementation} value="yes">
                     Yes
                   </option>
                 </select>
@@ -146,10 +186,10 @@ const SSForm2: React.FC = () => {
                 <label htmlFor="simpleTest">Simple Test</label>
                 <select className="drop-down flex shadow-lg" name="simpleTest">
                   <option value=""></option>
-                  <option onClick={() => {}} value="no">
+                  <option onClick={setNoSimpleTest} value="no">
                     No
                   </option>
-                  <option onClick={() => {}} value="yes">
+                  <option onClick={setSimpleTest} value="yes">
                     Yes
                   </option>
                 </select>
@@ -161,10 +201,10 @@ const SSForm2: React.FC = () => {
                   name="conclusionTest"
                 >
                   <option value=""></option>
-                  <option onClick={() => {}} value="no">
+                  <option onClick={setNoConclusionTest} value="no">
                     No
                   </option>
-                  <option onClick={() => {}} value="yes">
+                  <option onClick={setConclusionTest} value="yes">
                     Yes
                   </option>
                 </select>
@@ -182,10 +222,10 @@ const SSForm2: React.FC = () => {
                   name="maintenanceOperation"
                 >
                   <option value=""></option>
-                  <option onClick={() => {}} value="no">
+                  <option onClick={setNoMaintenance} value="no">
                     No
                   </option>
-                  <option onClick={() => {}} value="yes">
+                  <option onClick={setMaintenance} value="yes">
                     Yes
                   </option>
                 </select>

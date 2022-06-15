@@ -12,6 +12,7 @@ import SkillSheetState from "./SkillSheetState/SkillSheetState";
 
 import "../Resume/resume.css";
 import "../SkillSheet/skillsheet.css";
+import SSForm2State from "./SkillSheetState/SSForm2State";
 
 const SkillSheet: React.FC = () => {
   const { step } = useContext(AppContext);
@@ -27,14 +28,16 @@ const SkillSheet: React.FC = () => {
   return (
     <>
       <SkillSheetState>
-        <Header headerTitle={headerTitle} width={width} />
-        <div className="grid place-content-center xl:flex">
-          {step === 1 ? <SSForm1 /> : ""}
-          {step === 2 ? <SSForm2 /> : ""}
-          {step === 3 ? <SSForm3 /> : ""}
-          {step === 4 ? <SSForm4 /> : ""}
-          <SkillSheetPage />
-        </div>
+        <SSForm2State>
+          <Header headerTitle={headerTitle} width={width} />
+          <div className="grid place-content-center xl:flex">
+            {step === 1 ? <SSForm1 /> : ""}
+            {step === 2 ? <SSForm2 /> : ""}
+            {step === 3 ? <SSForm3 /> : ""}
+            {step === 4 ? <SSForm4 /> : ""}
+            <SkillSheetPage />
+          </div>
+        </SSForm2State>
       </SkillSheetState>
     </>
   );
