@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import InputTitle from "../../Resume/ResumeForms/InputTitle";
 
 import NextButton from "../../Buttons/NextButton";
 import BackButton from "../../Buttons/BackButton";
+import { SkillSheetContext } from "../SkillSheetState/SkillSheetState";
 
 const SSForm3: React.FC = () => {
+  
+  const {setPR} = useContext(SkillSheetContext);
+
   const onSubmitHandler = (e: React.FormEvent) => {
     e.preventDefault();
   };
@@ -21,7 +25,7 @@ const SSForm3: React.FC = () => {
               rows={15}
               maxLength={1000}
               placeholder="Tell the reader about any other details you want them to know."
-              onChange={() => {}}
+              onChange={setPR}
             />
           </div>
         </section>

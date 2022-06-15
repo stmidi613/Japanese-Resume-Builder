@@ -1,23 +1,42 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import InputTitle from "../../Resume/ResumeForms/InputTitle";
 import NameInput from "../../Resume/ResumeForms/Form1/NameInput";
 import TextInput from "../../Resume/ResumeForms/Form1/TextInput";
 import NextButton from "../../Buttons/NextButton";
 
+import { SkillSheetContext } from "../SkillSheetState/SkillSheetState";
+
 const SSForm1: React.FC = () => {
+  const {
+    nameFurigana,
+    name,
+    technology,
+    otherInfo,
+    setNameFurigana,
+    setName,
+    setWorkSummary,
+    setKandE,
+    setTechnology,
+    setOtherInfo,
+  } = useContext(SkillSheetContext);
+
+  const onSubmitHandler = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <>
-      <form className="w-full mb-5 xl:w-1/3 h-fit">
+      <form onSubmit={onSubmitHandler} className="w-full mb-5 xl:w-1/3 h-fit">
         <section className="section">
           <InputTitle fieldName="Company Name (Furigana)" />
           <div className="input-div">
             <NameInput
-              value=""
+              value={nameFurigana}
               place="Company Name Furigana"
-              change={() => {}}
+              change={setNameFurigana}
             />
-            <TextInput value="" place="Name" change={() => {}} />
+            <TextInput value={name} place="Name" change={setName} />
           </div>
           <InputTitle fieldName="Work Summary" />
           <div className="input-div">
@@ -27,8 +46,8 @@ const SSForm1: React.FC = () => {
               rows={5}
               name="Work Summary"
               maxLength={300}
-              placeholder=""
-              onChange={() => {}}
+              placeholder="Type a Short Job Description"
+              onChange={setWorkSummary}
             />
           </div>
           <InputTitle fieldName="Knowledge and Experience" />
@@ -39,17 +58,21 @@ const SSForm1: React.FC = () => {
               rows={5}
               name="KandE"
               maxLength={300}
-              placeholder=""
-              onChange={() => {}}
+              placeholder="Knowledge and experience gained from working"
+              onChange={setKandE}
             />
           </div>
           <InputTitle fieldName="Technology" />
           <div className="input-div">
-            <TextInput value="" place="Technology" change={() => {}} />
+            <TextInput value={technology} place="Technology" change={setTechnology} />
           </div>
           <InputTitle fieldName="Other Information" />
           <div className="input-div">
-            <TextInput value="" place="Other Information" change={() => {}} />
+            <TextInput
+              value={otherInfo}
+              place="Other Information"
+              change={setOtherInfo}
+            />
           </div>
         </section>
         <NextButton />
