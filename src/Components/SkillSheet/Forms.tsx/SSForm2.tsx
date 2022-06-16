@@ -13,8 +13,6 @@ const SSForm2: React.FC = () => {
   const {
     workPlace,
     projName,
-    projStart,
-    projEnd,
     language,
     position,
     scale,
