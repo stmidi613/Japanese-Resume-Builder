@@ -1,7 +1,6 @@
 import React, { createContext, useReducer } from "react";
-import Projects from "../SkillSheetPage.tsx/Projects";
 
-interface Projects {
+export interface Projects {
   // Form2
   id: number;
   workPlace: string;
@@ -85,6 +84,7 @@ const projectValues = {
   setNoConclusionTest: () => {},
   setMaintenance: () => {},
   setNoMaintenance: () => {},
+  setProjectDelete: (e:number) => {},
 };
 
 export const ProjectsContext = createContext(projectValues);
@@ -101,19 +101,12 @@ type ActionType =
   | { type: "setPosition"; payload: string }
   | { type: "setScale"; payload: string }
   | { type: "setRequirements"; payload: boolean }
-  // | { type: "setNoRequirements"; payload: boolean }
   | { type: "setBasicDesign"; payload: boolean }
-  // | { type: "setNoBasicDesign"; payload: boolean }
   | { type: "setDetailedDesign"; payload: boolean }
-  // | { type: "setNoDetailedDesign"; payload: boolean }
   | { type: "setImplementation"; payload: boolean }
-  // | { type: "setNoImplementation"; payload: boolean }
   | { type: "setSimpleTest"; payload: boolean }
-  // | { type: "setNoSimpleTest"; payload: boolean }
   | { type: "setConclusionTest"; payload: boolean }
-  // | { type: "setNoConclusionTest"; payload: boolean }
   | { type: "setMaintenance"; payload: boolean };
-// | { type: "setNoMaintenance"; payload: boolean };
 
 function reducer(currentState: Projects, action: ActionType): any {
   if (action.type === "setProjects") {
@@ -149,45 +142,24 @@ function reducer(currentState: Projects, action: ActionType): any {
   if (action.type === "setRequirements") {
     return { ...currentState, requirements: action.payload };
   }
-  // if (action.type === "setNoRequirements") {
-  //   return { ...currentState, requirements: action.payload };
-  // }
   if (action.type === "setBasicDesign") {
     return { ...currentState, basicDesign: action.payload };
   }
-  // if (action.type === "setNoBasicDesign") {
-  //   return { ...currentState, basicDesign: action.payload };
-  // }
   if (action.type === "setDetailedDesign") {
     return { ...currentState, detailedDesign: action.payload };
   }
-  // if (action.type === "setNoDetailedDesign") {
-  //   return { ...currentState, detailedDesign: action.payload };
-  // }
   if (action.type === "setImplementation") {
     return { ...currentState, implementation: action.payload };
   }
-  // if (action.type === "setNoImplementation") {
-  //   return { ...currentState, implementation: action.payload };
-  // }
   if (action.type === "setSimpleTest") {
     return { ...currentState, simpleTest: action.payload };
   }
-  // if (action.type === "setNoSimpleTest") {
-  //   return { ...currentState, simpleTest: action.payload };
-  // }
   if (action.type === "setConclusionTest") {
     return { ...currentState, conclusionTest: action.payload };
   }
-  // if (action.type === "setNoConclusionTest") {
-  //   return { ...currentState, conclusionTest: action.payload };
-  // }
   if (action.type === "setMaintenance") {
     return { ...currentState, maintenance: action.payload };
   }
-  // if (action.type === "setNoMaintenance") {
-  //   return { ...currentState, maintenance: action.payload };
-  // }
 }
 
 const SSForm2State: React.FC = ({ children }) => {
@@ -311,6 +283,7 @@ const SSForm2State: React.FC = ({ children }) => {
               ]),
             });
           },
+          setProjectDelete: (id: number) => state.setProjects(state.Projects.filter((each: any) => each.id !== id)),
         }}
       >
         {children}

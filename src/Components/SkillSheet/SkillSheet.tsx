@@ -7,12 +7,12 @@ import SSForm2 from "./Forms.tsx/SSForm2";
 import SSForm3 from "./Forms.tsx/SSForm3";
 import SSForm4 from "./Forms.tsx/SSForm4";
 
-import { AppContext } from "../../AppState/AppState";
 import SkillSheetState from "./SkillSheetState/SkillSheetState";
+import SSForm2State from "./SkillSheetState/SSForm2State";
+import { AppContext } from "../../AppState/AppState";
 
 import "../Resume/resume.css";
 import "../SkillSheet/skillsheet.css";
-import SSForm2State from "./SkillSheetState/SSForm2State";
 
 const SkillSheet: React.FC = () => {
   const { step } = useContext(AppContext);

@@ -21,7 +21,6 @@ const SingleWorkItem: React.FC<Props> = ({
         <span>{item.workStartDate}</span>
         <span>{item.workEndDate}</span>
         <DeleteButton item={item.workId} change={setWorkDelete} />
-        {/* <button onClick={() => setWorkDelete(item.workId)}>Delete</button> */}
       </div>
     </>
   );
