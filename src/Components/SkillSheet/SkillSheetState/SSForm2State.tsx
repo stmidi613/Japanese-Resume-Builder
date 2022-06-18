@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useState } from "react";
 
 export interface Projects {
   // Form2
@@ -21,7 +21,7 @@ export interface Projects {
   maintenance: boolean;
 }
 
-const projectValues = {
+export const projectValues = {
   id: Date.now(),
   workPlace: "",
   projName: "",
@@ -90,7 +90,6 @@ const projectValues = {
 export const ProjectsContext = createContext(projectValues);
 
 type ActionType =
-  | { type: "setProjects"; payload: Projects[] }
   | { type: "setWorkPlace"; payload: string }
   | { type: "setProjName"; payload: string }
   | { type: "setProjStart"; payload: string }
@@ -109,9 +108,6 @@ type ActionType =
   | { type: "setMaintenance"; payload: boolean };
 
 function reducer(currentState: Projects, action: ActionType): any {
-  if (action.type === "setProjects") {
-    return { ...currentState, Projects: action.payload };
-  }
   if (action.type === "setWorkPlace") {
     return { ...currentState, workPlace: action.payload };
   }
@@ -164,6 +160,7 @@ function reducer(currentState: Projects, action: ActionType): any {
 
 const SSForm2State: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, projectValues);
+  const [Projects, setProjects] = useState<Projects[]>([]);
 
   return (
     <>
@@ -255,12 +252,10 @@ const SSForm2State: React.FC = ({ children }) => {
           setNoMaintenance: () => {
             dispatch({ type: "setMaintenance", payload: false });
           },
-          Projects: state.Projects,
+          Projects: Projects,
           setProjects: () => {
-            dispatch({
-              type: "setProjects",
-              payload: state.setProjects([
-                ...state.Projects,
+              setProjects([
+              ...state.Projects,
                 {
                   id: Date.now(),
                   workPlace: state.workPlace,
@@ -280,10 +275,9 @@ const SSForm2State: React.FC = ({ children }) => {
                   conclusionTest: state.conclusionTest,
                   maintenance: state.maintenance,
                 },
-              ]),
-            });
+              ])
           },
-          setProjectDelete: (id: number) => state.setProjects(state.Projects.filter((each: any) => each.id !== id)),
+          setProjectDelete: (id: number) => setProjects(Projects.filter((each: any) => each.id !== id)),
         }}
       >
         {children}

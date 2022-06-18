@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import TextInput from "../../Resume/ResumeForms/Form1/TextInput";
 import InputTitle from "../../Resume/ResumeForms/InputTitle";
-import StartEndDate from "../../Resume/ResumeForms/Form2/StartEndDate";
+import ProjStartEndDate from "./Form2Components/ProjStartEndDate";
 
 import NextButton from "../../Buttons/NextButton";
 import BackButton from "../../Buttons/BackButton";
@@ -57,10 +57,10 @@ const SSForm2: React.FC = () => {
     e.preventDefault();
     if (projName) {
       console.log(Projects);
-      setProjects(() => {});
-      
-    }
+      setProjects(() => {})
   };
+}
+
   const onSubmitHandler = (e: React.FormEvent) => {
     e.preventDefault();
     onProjectAdd(e);
@@ -88,8 +88,8 @@ const SSForm2: React.FC = () => {
               />
             </div>
             <div className="flex justify-between">
-              <StartEndDate label="Start Date:" change={setProjStart} />
-              <StartEndDate label="End Date:" change={setProjEnd} />
+              <ProjStartEndDate label="Start Date:" change={setProjStart} />
+              <ProjStartEndDate label="End Date:" change={setProjEnd} />
             </div>
             <InputTitle fieldName="Overview" />
             <div className="input-div">
