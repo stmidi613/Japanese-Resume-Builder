@@ -15,7 +15,7 @@ const ProjectList: React.FC<Props> = ({Projects}) => {
     <div className="mt-4">
     <span className="text-xl text-purple">Projects List</span>
     {
-      Projects?.map((item) => 
+      Projects.map((item) => 
       (<SingleProject
         key={item.id}
         item={item}

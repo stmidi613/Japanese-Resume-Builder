@@ -60,7 +60,6 @@ export const projectValues = {
       maintenance: false,
     },
   ],
-  setProjects: (e: React.Dispatch<React.SetStateAction<Projects[]>>) => {},
   setWorkPlace: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setProjName: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setProjStart: (e: React.ChangeEvent<HTMLInputElement>) => {},
@@ -84,7 +83,9 @@ export const projectValues = {
   setNoConclusionTest: () => {},
   setMaintenance: () => {},
   setNoMaintenance: () => {},
-  setProjectDelete: (e:number) => {},
+  setProjects: (e: React.Dispatch<React.SetStateAction<Projects[]>>) => {},
+  setProjectsClear: (e: React.ChangeEvent<HTMLInputElement>) => {},
+  setProjectDelete: (e: number) => {},
 };
 
 export const ProjectsContext = createContext(projectValues);
@@ -254,30 +255,34 @@ const SSForm2State: React.FC = ({ children }) => {
           },
           Projects: Projects,
           setProjects: () => {
-              setProjects([
-              ...state.Projects,
-                {
-                  id: Date.now(),
-                  workPlace: state.workPlace,
-                  projName: state.projName,
-                  projStart: state.projStart,
-                  projEnd: state.projEnd,
-                  overview: state.overview,
-                  points: state.points,
-                  language: state.language,
-                  position: state.position,
-                  scale: state.scale,
-                  requirements: state.requirements,
-                  basicDesign: state.basicDesign,
-                  detailedDesign: state.detailedDesign,
-                  implementation: state.implementation,
-                  simpleTest: state.simpleTest,
-                  conclusionTest: state.conclusionTest,
-                  maintenance: state.maintenance,
-                },
-              ])
+            setProjects([
+              ...Projects,
+              {
+                id: Date.now(),
+                workPlace: state.workPlace,
+                projName: state.projName,
+                projStart: state.projStart,
+                projEnd: state.projEnd,
+                overview: state.overview,
+                points: state.points,
+                language: state.language,
+                position: state.position,
+                scale: state.scale,
+                requirements: state.requirements,
+                basicDesign: state.basicDesign,
+                detailedDesign: state.detailedDesign,
+                implementation: state.implementation,
+                simpleTest: state.simpleTest,
+                conclusionTest: state.conclusionTest,
+                maintenance: state.maintenance,
+              },
+            ]);
           },
-          setProjectDelete: (id: number) => setProjects(Projects.filter((each: any) => each.id !== id)),
+          setProjectsClear: () => {
+            dispatch({ type: "setWorkPlace", payload: "" });
+          },
+          setProjectDelete: (id: number) =>
+            setProjects(Projects.filter((each: any) => each.id !== id)),
         }}
       >
         {children}

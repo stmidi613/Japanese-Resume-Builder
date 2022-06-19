@@ -50,6 +50,7 @@ const SSForm2: React.FC = () => {
     setMaintenance,
     setNoMaintenance,
     setProjects,
+    setProjectsClear,
   } = useContext(ProjectsContext);
 
   
@@ -57,7 +58,8 @@ const SSForm2: React.FC = () => {
     e.preventDefault();
     if (projName) {
       console.log(Projects);
-      setProjects(() => {})
+      setProjects(() => {});
+      // setProjectsClear;
   };
 }
 
@@ -188,6 +190,9 @@ const SSForm2: React.FC = () => {
                   Detailed Design
                 </label>
                 <select
+                 onChange={
+                  !detailedDesign ? setDetailedDesign : setNoDetailedDesign
+                }
                   className="drop-down flex shadow-lg"
                   name="detailedDesign"
                 >
