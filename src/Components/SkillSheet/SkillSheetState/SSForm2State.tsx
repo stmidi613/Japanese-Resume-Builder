@@ -84,7 +84,7 @@ export const projectValues = {
   setMaintenance: () => {},
   setNoMaintenance: () => {},
   setProjects: (e: React.Dispatch<React.SetStateAction<Projects[]>>) => {},
-  setProjectsClear: (e: React.ChangeEvent<HTMLInputElement>) => {},
+  setProjectsClear: () => {},
   setProjectDelete: (e: number) => {},
 };
 
@@ -280,6 +280,21 @@ const SSForm2State: React.FC = ({ children }) => {
           },
           setProjectsClear: () => {
             dispatch({ type: "setWorkPlace", payload: "" });
+            dispatch({ type: "setProjName", payload: "" });
+            dispatch({ type: "setProjStart", payload: "" });
+            dispatch({ type: "setProjEnd", payload: "" });
+            dispatch({ type: "setOverview", payload: "" });
+            dispatch({ type: "setPoints", payload: "" });
+            dispatch({ type: "setLanguage", payload: "" });
+            dispatch({ type: "setPosition", payload: "" });
+            dispatch({ type: "setScale", payload: "" });
+            dispatch({ type: "setRequirements", payload: false });
+            dispatch({ type: "setBasicDesign", payload: false });
+            dispatch({ type: "setDetailedDesign", payload: false });
+            dispatch({ type: "setImplementation", payload: false });
+            dispatch({ type: "setSimpleTest", payload: false });
+            dispatch({ type: "setConclusionTest", payload: false });
+            dispatch({ type: "setMaintenance", payload: false });
           },
           setProjectDelete: (id: number) =>
             setProjects(Projects.filter((each: any) => each.id !== id)),

@@ -18,6 +18,8 @@ const SSForm2: React.FC = () => {
     language,
     position,
     scale,
+    overview,
+    points,
     requirements,
     basicDesign,
     detailedDesign,
@@ -57,9 +59,8 @@ const SSForm2: React.FC = () => {
   const onProjectAdd = (e: React.FormEvent) => {
     e.preventDefault();
     if (projName) {
-      console.log(Projects);
       setProjects(() => {});
-      // setProjectsClear;
+      setProjectsClear();
   };
 }
 
@@ -100,6 +101,7 @@ const SSForm2: React.FC = () => {
                 cols={5}
                 rows={5}
                 name="Overview"
+                value={overview}
                 maxLength={300}
                 placeholder="Overview of the Project"
                 onChange={setOverview}
@@ -112,8 +114,9 @@ const SSForm2: React.FC = () => {
                 cols={5}
                 rows={5}
                 name="Points you wanted to make"
+                value={points}
                 maxLength={300}
-                placeholder=""
+                placeholder="Points you wanted to make"
                 onChange={setPoints}
               />
             </div>
