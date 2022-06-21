@@ -288,13 +288,13 @@ const SSForm2State: React.FC = ({ children }) => {
             dispatch({ type: "setLanguage", payload: "" });
             dispatch({ type: "setPosition", payload: "" });
             dispatch({ type: "setScale", payload: "" });
-            dispatch({ type: "setRequirements", payload: false });
-            dispatch({ type: "setBasicDesign", payload: false });
-            dispatch({ type: "setDetailedDesign", payload: false });
-            dispatch({ type: "setImplementation", payload: false });
-            dispatch({ type: "setSimpleTest", payload: false });
-            dispatch({ type: "setConclusionTest", payload: false });
-            dispatch({ type: "setMaintenance", payload: false });
+            // dispatch({ type: "setRequirements", payload: false });
+            // dispatch({ type: "setBasicDesign", payload: false });
+            // dispatch({ type: "setDetailedDesign", payload: false });
+            // dispatch({ type: "setImplementation", payload: false });
+            // dispatch({ type: "setSimpleTest", payload: false });
+            // dispatch({ type: "setConclusionTest", payload: false });
+            // dispatch({ type: "setMaintenance", payload: false });
           },
           setProjectDelete: (id: number) =>
             setProjects(Projects.filter((each: any) => each.id !== id)),

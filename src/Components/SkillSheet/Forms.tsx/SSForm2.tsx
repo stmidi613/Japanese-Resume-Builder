@@ -55,15 +55,14 @@ const SSForm2: React.FC = () => {
     setProjectsClear,
   } = useContext(ProjectsContext);
 
-  
   const onProjectAdd = (e: React.FormEvent) => {
     e.preventDefault();
     if (projName) {
       setProjects(() => {});
       setProjectsClear();
-  };
-}
-
+    };
+  }
+  
   const onSubmitHandler = (e: React.FormEvent) => {
     e.preventDefault();
     onProjectAdd(e);
@@ -71,7 +70,7 @@ const SSForm2: React.FC = () => {
 
   return (
     <>
-      <form onSubmit={onSubmitHandler} className="w-full mb-7 xl:w-1/3 h-fit">
+      <form id="form" onSubmit={onSubmitHandler} className="w-full mb-7 xl:w-1/3 h-fit">
         <div className="xl:grid md:flex md:justify-evenly grid">
           <section className="section">
             <InputTitle fieldName="Work Place" />
@@ -199,7 +198,7 @@ const SSForm2: React.FC = () => {
                   className="drop-down flex shadow-lg"
                   name="detailedDesign"
                 >
-                  <option onClick={setNoDetailedDesign} value="no">
+                  <option onClick={setNoDetailedDesign} value="no" defaultChecked>
                     No
                   </option>
                   <option onClick={setDetailedDesign} value="yes">
@@ -211,7 +210,7 @@ const SSForm2: React.FC = () => {
                 <label htmlFor="implementation">Implementation</label>
                 <select
                   onChange={
-                    !implementation ? setImplementation : setImplementation
+                    !implementation ? setImplementation : setNoImplementation
                   }
                   className="drop-down flex shadow-lg"
                   name="implementation"

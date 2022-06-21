@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import JobSummary from "./JobSummary";
-import Projects from "./Projects";
+import Project from "./Project";
 import PR from "./PR";
+
+import { ProjectsContext } from "../SkillSheetState/SSForm2State";
 
 import "../../SkillSheet/skillsheet.css";
 
@@ -12,12 +14,18 @@ const SkillSheetPage: React.FC = () => {
   const month = d.getMonth() + 1;
   const date = d.getDate();
 
+  const { Projects } = useContext(ProjectsContext);
+
   return (
     <>
-      <section id="skillsheet-page-1-bg"
+      <section
+        id="skillsheet-page-1-bg"
         className={`hidden md:block xl:w-2/3 w-full h-full pb-3 bg-gray bg-opacity-30`}
       >
-        <p id="warning-text" className="grid place-content-center py-3 text-purple">
+        <p
+          id="warning-text"
+          className="grid place-content-center py-3 text-purple"
+        >
           Skill Sheet Will Appear Differently When Printed
         </p>
         {/* This is the page containter div */}
@@ -31,9 +39,72 @@ const SkillSheetPage: React.FC = () => {
           </section>
           {/* End of Title Section */}
           <section className="page-section">
-           <JobSummary />
-            <Projects />
-            <Projects />
+            <JobSummary />
+            {Projects.map((item) => (
+              <Project
+                key={item.id}
+                workPlace={item.workPlace}
+                projName={item.projName}
+                projStart={item.projStart}
+                projEnd={item.projEnd}
+                overview={item.overview}
+                points={item.points}
+                language={item.language}
+                position={item.position}
+                scale={item.scale}
+                requirements={item.requirements}
+                basicDesign={item.basicDesign}
+                detailedDesign={item.detailedDesign}
+                implementation={item.implementation}
+                simpleTest={item.simpleTest}
+                conclusionTest={item.conclusionTest}
+                maintenance={item.maintenance}
+              />
+            ))}
+            {Projects.length === 0 ? (
+              <Project
+                workPlace=""
+                projName=""
+                projStart=""
+                projEnd=""
+                overview=""
+                points=""
+                language=""
+                position=""
+                scale=""
+                requirements={false}
+                basicDesign={false}
+                detailedDesign={false}
+                implementation={false}
+                simpleTest={false}
+                conclusionTest={false}
+                maintenance={false}
+              />
+            ) : (
+              ""
+            )}
+            {Projects.length < 2 ? (
+              <Project
+                workPlace=""
+                projName=""
+                projStart=""
+                projEnd=""
+                overview=""
+                points=""
+                language=""
+                position=""
+                scale=""
+                requirements={false}
+                basicDesign={false}
+                detailedDesign={false}
+                implementation={false}
+                simpleTest={false}
+                conclusionTest={false}
+                maintenance={false}
+              />
+            ) : (
+              ""
+            )}
             <PR />
           </section>
         </div>

@@ -1,29 +1,45 @@
-import React, { useContext } from "react";
-
-import { ProjectsContext } from "../SkillSheetState/SSForm2State";
+import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
-const Projects: React.FC = () => {
-  const {
-    workPlace,
-    projName,
-    projStart,
-    projEnd,
-    overview,
-    points,
-    language,
-    position,
-    scale,
-    requirements,
-    basicDesign,
-    detailedDesign,
-    implementation,
-    simpleTest,
-    conclusionTest,
-    maintenance,
-  } = useContext(ProjectsContext);
+interface Props {
+  workPlace: string;
+  projName: string;
+  projStart: string;
+  projEnd: string;
+  overview: string;
+  points: string;
+  language: string;
+  position: string;
+  scale: string;
+  requirements: boolean;
+  basicDesign: boolean;
+  detailedDesign: boolean;
+  implementation: boolean;
+  simpleTest: boolean;
+  conclusionTest: boolean;
+  maintenance: boolean;
+}
+
+const Project: React.FC<Props> = ({
+  workPlace,
+  projName,
+  projStart,
+  projEnd,
+  overview,
+  points,
+  language,
+  position,
+  scale,
+  requirements,
+  basicDesign,
+  detailedDesign,
+  implementation,
+  simpleTest,
+  conclusionTest,
+  maintenance,
+}) => {
 
   return (
     <>
@@ -42,7 +58,9 @@ const Projects: React.FC = () => {
           <tr className="grid col-span-2 text-sm border-r-2">
             <td className="bg-skillsheetgray short-cell">案件名</td>
             <td className="medium-cell h-56">
-              {projStart}~{projEnd}
+              {projStart}~<span className="break-words">
+                {projEnd}
+                </span>
             </td>
           </tr>
           <tr className="grid col-span-6">
@@ -155,4 +173,4 @@ const Projects: React.FC = () => {
   );
 };
 
-export default Projects;
+export default Project;
