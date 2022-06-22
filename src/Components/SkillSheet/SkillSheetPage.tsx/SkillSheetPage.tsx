@@ -4,6 +4,7 @@ import JobSummary from "./JobSummary";
 import Project from "./Project";
 import PR from "./PR";
 
+import { AppContext } from "../../../AppState/AppState";
 import { ProjectsContext } from "../SkillSheetState/SSForm2State";
 
 import "../../SkillSheet/skillsheet.css";
@@ -14,13 +15,15 @@ const SkillSheetPage: React.FC = () => {
   const month = d.getMonth() + 1;
   const date = d.getDate();
 
+  const {step} = useContext(AppContext);
   const { Projects } = useContext(ProjectsContext);
+
 
   return (
     <>
       <section
         id="skillsheet-page-1-bg"
-        className={`hidden md:block xl:w-2/3 w-full h-full pb-3 bg-gray bg-opacity-30`}
+        className={step < 4 ? `hidden xl:w-1/2 bg-gray bg-opacity-30 md:block h-full pb-3` : `block xl:w-1/2 md:min-w-0 min-w-[725px] pb-5 h-full bg-gray bg-opacity-30`}
       >
         <p
           id="warning-text"

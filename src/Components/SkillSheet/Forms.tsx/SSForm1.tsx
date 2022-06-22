@@ -27,7 +27,7 @@ const SSForm1: React.FC = () => {
 
   return (
     <>
-      <form onSubmit={onSubmitHandler} className="w-full mb-5 xl:w-1/3 h-fit">
+      <form onSubmit={onSubmitHandler} className="w-full mb-5 xl:w-1/2 h-fit">
         <section className="section">
           <InputTitle fieldName="Company Name (Furigana)" />
           <div className="input-div">

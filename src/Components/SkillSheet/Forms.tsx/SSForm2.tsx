@@ -6,10 +6,11 @@ import ProjStartEndDate from "./Form2Components/ProjStartEndDate";
 
 import NextButton from "../../Buttons/NextButton";
 import BackButton from "../../Buttons/BackButton";
+import SmallCircleButton from "../../Buttons/SmallCircleButton";
+
+import ProjectList from "./Form2Components/ProjectList";
 
 import { ProjectsContext } from "../SkillSheetState/SSForm2State";
-import SmallCircleButton from "../../Buttons/SmallCircleButton";
-import ProjectList from "./Form2Components/ProjectList";
 
 const SSForm2: React.FC = () => {
   const {
@@ -70,7 +71,7 @@ const SSForm2: React.FC = () => {
 
   return (
     <>
-      <form id="form" onSubmit={onSubmitHandler} className="w-full mb-7 xl:w-1/3 h-fit">
+      <form id="form" onSubmit={onSubmitHandler} className="w-full mb-7 xl:w-1/2 h-fit">
         <div className="xl:grid md:flex md:justify-evenly grid">
           <section className="section">
             <InputTitle fieldName="Work Place" />

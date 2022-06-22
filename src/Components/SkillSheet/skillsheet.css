@@ -2,6 +2,7 @@
     margin: 0 1rem 1rem 1rem;
     background-color: white;
     padding-bottom: 1.25rem;
+    min-width: 610px;
 }
 
 .table{
@@ -74,8 +75,8 @@
 
 .mini-table-td{
     text-align: center;
-    font-size: 0.70rem/* 12px */;
-    line-height: .8rem/* 16px */;
+    font-size: 0.50rem/* 12px */;
+    line-height: .7rem/* 16px */;
 }
 
 @media print {
@@ -111,6 +112,12 @@
         margin: 0 !important;
         clear: both;
         page-break-inside: avoid !important;
+    }
+
+    .mini-table-td{
+        text-align: center;
+        font-size: 0.70rem/* 12px */;
+        line-height: .8rem/* 16px */;
     }
 
 }

@@ -8,10 +8,10 @@ const SSForm4: React.FC = () => {
     <>
       <div
         id="skillsheet-button-group"
-        className="flex flex-wrap flex-col justify-start md:flex-row md:justify-evenly md:w-full xl:w-1/3"
+        className="grid grid-flow-row md:grid-flow-col xl:grid-flow-row md:justify-evenly md:w-full xl:w-1/2"
       >
         <BackButton />
-        <p className="flex items-center justify-center text-red-500 text-xl">
+        <p className="flex items-center justify-center text-red-500 text:lg xl:text-xl">
           Use A4 Page Size to Print
         </p>
         <PrintButton />

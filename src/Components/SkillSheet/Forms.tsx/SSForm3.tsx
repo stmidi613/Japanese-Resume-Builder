@@ -15,7 +15,7 @@ const SSForm3: React.FC = () => {
 
   return (
     <>
-      <form className="w-full mb-5 xl:w-1/3 h-fit" onSubmit={onSubmitHandler}>
+      <form className="w-full mb-5 xl:w-1/2 h-fit" onSubmit={onSubmitHandler}>
         <section className="section">
           <div className="input-div">
             <InputTitle fieldName="PR" />
