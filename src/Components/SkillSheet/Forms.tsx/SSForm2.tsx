@@ -72,7 +72,7 @@ const SSForm2: React.FC = () => {
   return (
     <>
       <form id="form" onSubmit={onSubmitHandler} className="w-full mb-7 xl:w-1/2 h-fit">
-        <div className="xl:grid md:flex md:justify-evenly grid">
+        <div className="md:flex md:justify-evenly grid">
           <section className="section">
             <InputTitle fieldName="Work Place" />
             <div className="input-div">
@@ -120,8 +120,6 @@ const SSForm2: React.FC = () => {
                 onChange={setPoints}
               />
             </div>
-          </section>
-          <section className="section">
             <InputTitle fieldName="Language/Environment" />
             <div className="input-div">
               <TextInput
@@ -146,6 +144,8 @@ const SSForm2: React.FC = () => {
                 change={setScale}
               />
             </div>
+          </section>
+          <section className="section">
             <InputTitle fieldName="Processes Followed" />
             {/* First drop downs */}
             <div className="flex w-full">
