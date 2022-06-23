@@ -4,16 +4,17 @@ interface Props {
   place: string;
   change: any;
   value: string;
+  max: number;
 }
 
-const TextInput: React.FC<Props> = ({ value, place, change }) => {
+const TextInput: React.FC<Props> = ({ value, place, change, max }) => {
   return (
     <input
       className="input focus:outline-none"
       placeholder={place}
       value={value}
       type="text"
-      maxLength={130}
+      maxLength={max}
       onChange={change}
       aria-required
     />

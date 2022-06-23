@@ -95,11 +95,12 @@ const Form1: React.FC = () => {
           <InputTitle fieldName="Address" />
           <div className="input-div">
             <TextInput
+              max={130}
               value={furiAddress}
               place="Address Furigana"
               change={setFuriAddress}
             />
-            <TextInput value={address} place="Address" change={setAddress} />
+            <TextInput max={130} value={address} place="Address" change={setAddress} />
           </div>
         </section>
         {/* Email Section */}
@@ -151,11 +152,13 @@ const Form1: React.FC = () => {
           <InputTitle fieldName="Contact Information" />
           <div className="input-div">
             <TextInput
+              max={130}
               value={furiContactAddress}
               place="Contact's Address Furigana"
               change={setFuriContactAddress}
             />
             <TextInput
+              max={130}
               value={contactAddress}
               place="Contact's Address"
               change={setContactAddress}

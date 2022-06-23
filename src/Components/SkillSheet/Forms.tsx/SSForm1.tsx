@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 
 import InputTitle from "../../Resume/ResumeForms/InputTitle";
 import NameInput from "../../Resume/ResumeForms/Form1/NameInput";
-import TextInput from "../../Resume/ResumeForms/Form1/TextInput";
 import NextButton from "../../Buttons/NextButton";
 
 import { SkillSheetContext } from "../SkillSheetState/SkillSheetState";

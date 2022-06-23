@@ -41,6 +41,10 @@ const Project: React.FC<Props> = ({
   maintenance,
 }) => {
 
+  const months =
+    (+projEnd.slice(0, 4) - +projStart.slice(0, 4)) * 12 +
+    (+projEnd.slice(5, 7) - +projStart.slice(5, 7));
+
   return (
     <>
       <table className="w-full">
@@ -48,8 +52,8 @@ const Project: React.FC<Props> = ({
           <tr className="info-table-row">
             <td className="grid place-content-center p-1 h-8">勤務先</td>
           </tr>
-          <tr className="grid col-span-2">
-            <td className="grid p-1">{workPlace}</td>
+          <tr className="grid col-span-10">
+            <td className="p-1">{workPlace}</td>
           </tr>
         </tbody>
       </table>
@@ -58,18 +62,18 @@ const Project: React.FC<Props> = ({
           <tr className="grid col-span-2 text-sm border-r-2">
             <td className="bg-skillsheetgray short-cell">案件名</td>
             <td className="medium-cell h-56">
-              {projStart}~<span className="break-words">
-                {projEnd}
-                </span>
+              {projStart}~<span className="break-words">{projEnd}</span>
+              <br />
+              <span>（{months}カ月）</span>
             </td>
           </tr>
           <tr className="grid col-span-6">
-            <td className="short-cell">{projName}</td>
-            <td className="grid grid-rows-2 medium-cell h-56">
-              <span className="row-span-1 grid m-4 w-[30rem]">
+            <td className="project-name-cell">{projName}</td>
+            <td className="grid grid-rows-2 overview-point-cell h-56">
+              <span className="row-span-1 grid m-2 w-[20rem]">
                 【概要】<p>{overview}</p>
               </span>
-              <span className="row-span-1 grid m-4 w-[30rem]">
+              <span className="row-span-1 grid m-2 w-[20rem]">
                 【ポイント】<p>{points}</p>
               </span>
             </td>

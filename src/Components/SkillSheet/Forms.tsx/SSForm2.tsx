@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 
+import NameInput from "../../Resume/ResumeForms/Form1/NameInput";
 import TextInput from "../../Resume/ResumeForms/Form1/TextInput";
 import InputTitle from "../../Resume/ResumeForms/InputTitle";
 import ProjStartEndDate from "./Form2Components/ProjStartEndDate";
@@ -77,6 +78,7 @@ const SSForm2: React.FC = () => {
             <InputTitle fieldName="Work Place" />
             <div className="input-div">
               <TextInput
+                max={70}
                 value={workPlace}
                 place="Work Place"
                 change={setWorkPlace}
@@ -84,7 +86,8 @@ const SSForm2: React.FC = () => {
             </div>
             <InputTitle fieldName="Project Name" />
             <div className="input-div">
-              <TextInput
+              <NameInput
+                max={40}
                 value={projName}
                 place="Project Name"
                 change={setProjName}
@@ -102,7 +105,7 @@ const SSForm2: React.FC = () => {
                 rows={5}
                 name="Overview"
                 value={overview}
-                maxLength={300}
+                maxLength={175}
                 placeholder="Overview of the Project"
                 onChange={setOverview}
               />
@@ -115,7 +118,7 @@ const SSForm2: React.FC = () => {
                 rows={5}
                 name="Points you wanted to make"
                 value={points}
-                maxLength={300}
+                maxLength={175}
                 placeholder="Points you wanted to make"
                 onChange={setPoints}
               />
@@ -123,6 +126,7 @@ const SSForm2: React.FC = () => {
             <InputTitle fieldName="Language/Environment" />
             <div className="input-div">
               <TextInput
+                max={7}
                 value={language}
                 place="Language/Environment"
                 change={setLanguage}
@@ -131,6 +135,7 @@ const SSForm2: React.FC = () => {
             <InputTitle fieldName="Role/Position" />
             <div className="input-div">
               <TextInput
+                max={45}
                 value={position}
                 place="Role/Position"
                 change={setPosition}
@@ -139,6 +144,7 @@ const SSForm2: React.FC = () => {
             <InputTitle fieldName="Scale/Number of Workers" />
             <div className="input-div">
               <TextInput
+                max={10}
                 value={scale}
                 place="Scale/Number of Workers"
                 change={setScale}

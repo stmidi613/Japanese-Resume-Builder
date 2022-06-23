@@ -16,7 +16,7 @@ const SkillSheetPage: React.FC = () => {
   const date = d.getDate();
 
   const {step} = useContext(AppContext);
-  const { Projects } = useContext(ProjectsContext);
+  const { Projects, workPlace, projName, projStart, projEnd, overview, points, language, position, scale } = useContext(ProjectsContext);
 
 
   return (
@@ -43,7 +43,7 @@ const SkillSheetPage: React.FC = () => {
           {/* End of Title Section */}
           <section className="page-section">
             <JobSummary />
-            {Projects.map((item) => (
+            {/* {Projects.map((item) => (
               <Project
                 key={item.id}
                 workPlace={item.workPlace}
@@ -63,18 +63,18 @@ const SkillSheetPage: React.FC = () => {
                 conclusionTest={item.conclusionTest}
                 maintenance={item.maintenance}
               />
-            ))}
-            {Projects.length === 0 ? (
+            ))} */}
+            {/* {Projects.length === 0 ? ( */}
               <Project
-                workPlace=""
-                projName=""
-                projStart=""
-                projEnd=""
-                overview=""
-                points=""
-                language=""
-                position=""
-                scale=""
+                workPlace={workPlace}
+                projName={projName}
+                projStart={projStart}
+                projEnd={projEnd}
+                overview={overview}
+                points={points}
+                language={language}
+                position={position}
+                scale={scale}
                 requirements={false}
                 basicDesign={false}
                 detailedDesign={false}
@@ -83,9 +83,9 @@ const SkillSheetPage: React.FC = () => {
                 conclusionTest={false}
                 maintenance={false}
               />
-            ) : (
+            {/* ) : (
               ""
-            )}
+            )} */}
             {Projects.length < 2 ? (
               <Project
                 workPlace=""
