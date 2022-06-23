@@ -68,8 +68,9 @@ const Form1: React.FC = () => {
               value={furiName}
               place="Name Furigana"
               change={setFuriName}
+              max={60}
             />
-            <NameInput value={name} place="Name" change={setName} />
+            <NameInput value={name} place="Name" change={setName} max={60} />
           </div>
         </section>
         {/* Date of Birth Section */}

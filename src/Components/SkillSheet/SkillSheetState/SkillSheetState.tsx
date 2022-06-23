@@ -24,8 +24,8 @@ export const initialValue = {
   setName: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setWorkSummary: (e: React.ChangeEvent<HTMLTextAreaElement>) => {},
   setKandE: (e: React.ChangeEvent<HTMLTextAreaElement>) => {},
-  setTechnology: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  setOtherInfo: (e: React.ChangeEvent<HTMLInputElement>) => {},
+  setTechnology: (e: React.ChangeEvent<HTMLTextAreaElement>) => {},
+  setOtherInfo: (e: React.ChangeEvent<HTMLTextAreaElement>) => {},
   //Form3
   PR: "",
   setPR: (e: React.ChangeEvent<HTMLTextAreaElement>) => {},

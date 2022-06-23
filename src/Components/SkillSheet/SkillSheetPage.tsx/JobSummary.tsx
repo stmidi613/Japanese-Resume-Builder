@@ -24,16 +24,16 @@ const JobSummary: React.FC = () => {
           <td className="medium-cell h-16">{KandE}</td>
         </tr>
         <tr className="bg-skillsheetgray mid-cell">
-          <td className="medium-cell">
+          <td className="medium-cell h-[5.5rem]">
             保有<span className="break-before">技術</span>
           </td>
-          <td className="medium-cell">
-            その他<span className="break-before opacity-0">T</span>
+          <td className="medium-cell h-[5.5rem]">
+            その他
           </td>
         </tr>
         <tr className="grid col-span-3">
-          <td className="medium-cell">{technology}</td>
-          <td className="medium-cell">{otherInfo}</td>
+          <td className="medium-cell h-[5.5rem]">{technology}</td>
+          <td className="medium-cell h-[5.5rem]">{otherInfo}</td>
         </tr>
       </tbody>
     </table>

@@ -23,7 +23,7 @@ const SSForm3: React.FC = () => {
               className="bg-lightgray mb-2"
               name="PR"
               rows={15}
-              maxLength={1000}
+              maxLength={500}
               placeholder="Tell the reader about any other details you want them to know."
               onChange={setPR}
             />
