@@ -12,6 +12,7 @@ interface Props {
   points: string;
   language: string;
   position: string;
+  numberOfPers: string;
   scale: string;
   requirements: boolean;
   basicDesign: boolean;
@@ -32,6 +33,7 @@ const Project: React.FC<Props> = ({
   language,
   position,
   scale,
+  numberOfPers,
   requirements,
   basicDesign,
   detailedDesign,
@@ -70,10 +72,10 @@ const Project: React.FC<Props> = ({
           <tr className="grid col-span-6">
             <td className="project-name-cell">{projName}</td>
             <td className="grid grid-rows-2 overview-point-cell h-56">
-              <span className="row-span-1 grid m-2 w-[20rem]">
+              <span className="row-span-1 grid m-1">
                 【概要】<p>{overview}</p>
               </span>
-              <span className="row-span-1 grid m-2 w-[20rem]">
+              <span className="row-span-1 grid m-1">
                 【ポイント】<p>{points}</p>
               </span>
             </td>
@@ -88,7 +90,7 @@ const Project: React.FC<Props> = ({
             <td className="bg-skillsheetgray short-cell">役割・役職</td>
             <td className="medium-cell h-12">{position}</td>
             <td className="bg-skillsheetgray short-cell">規模・人数</td>
-            <td className="medium-cell h-12">{scale}</td>
+            <td className="medium-cell h-12"><p className="text-center">要員数：{numberOfPers}名</p><p className="text-center">（PJ 全体：{scale}名）</p></td>
             <td className="bg-skillsheetgray short-cell">担当工程</td>
             <td className="bg-skillsheetgray mini-table-container">
               <table className="w-full">

@@ -19,6 +19,7 @@ const SSForm2: React.FC = () => {
     projName,
     language,
     position,
+    numberOfPers,
     scale,
     overview,
     points,
@@ -38,6 +39,7 @@ const SSForm2: React.FC = () => {
     setPoints,
     setLanguage,
     setPosition,
+    setNumberOfPers,
     setScale,
     setRequirements,
     setNoRequirements,
@@ -62,9 +64,9 @@ const SSForm2: React.FC = () => {
     if (projName) {
       setProjects(() => {});
       setProjectsClear();
-    };
-  }
-  
+    }
+  };
+
   const onSubmitHandler = (e: React.FormEvent) => {
     e.preventDefault();
     onProjectAdd(e);
@@ -72,7 +74,11 @@ const SSForm2: React.FC = () => {
 
   return (
     <>
-      <form id="form" onSubmit={onSubmitHandler} className="w-full mb-7 xl:w-1/2 h-fit">
+      <form
+        id="form"
+        onSubmit={onSubmitHandler}
+        className="w-full mb-7 xl:w-1/2 h-fit"
+      >
         <div className="md:flex md:justify-evenly grid">
           <section className="section">
             <InputTitle fieldName="Work Place" />
@@ -126,7 +132,7 @@ const SSForm2: React.FC = () => {
             <InputTitle fieldName="Language/Environment" />
             <div className="input-div">
               <TextInput
-                max={7}
+                max={1000}
                 value={language}
                 place="Language/Environment"
                 change={setLanguage}
@@ -141,13 +147,29 @@ const SSForm2: React.FC = () => {
                 change={setPosition}
               />
             </div>
-            <InputTitle fieldName="Scale/Number of Workers" />
-            <div className="input-div">
-              <TextInput
-                max={10}
+            <InputTitle fieldName="Scale/Number of Personnel" />
+            <div className="family-drop-down-div">
+              <label htmlFor="Number of Personnel">Number of Personnel</label>
+              <input
+                className="drop-down flex md:float-left shadow-lg"
+                name="Number of Personnel"
+                type="number"
+                min="0"
+                max="100"
+                value={numberOfPers}
+                onChange={setNumberOfPers}
+              />
+            </div>
+            <div className="family-drop-down-div">
+              <label htmlFor="scale">Scale</label>
+              <input
+                className="drop-down flex md:float-left shadow-lg"
+                name="scale"
+                type="number"
+                min="0"
+                max="100"
                 value={scale}
-                place="Scale/Number of Workers"
-                change={setScale}
+                onChange={setScale}
               />
             </div>
           </section>
@@ -199,13 +221,17 @@ const SSForm2: React.FC = () => {
                   Detailed Design
                 </label>
                 <select
-                 onChange={
-                  !detailedDesign ? setDetailedDesign : setNoDetailedDesign
-                }
+                  onChange={
+                    !detailedDesign ? setDetailedDesign : setNoDetailedDesign
+                  }
                   className="drop-down flex shadow-lg"
                   name="detailedDesign"
                 >
-                  <option onClick={setNoDetailedDesign} value="no" defaultChecked>
+                  <option
+                    onClick={setNoDetailedDesign}
+                    value="no"
+                    defaultChecked
+                  >
                     No
                   </option>
                   <option onClick={setDetailedDesign} value="yes">

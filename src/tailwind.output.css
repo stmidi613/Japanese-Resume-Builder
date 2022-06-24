@@ -546,6 +546,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-column: span 3 / span 3;
 }
 
+.col-span-10 {
+  grid-column: span 10 / span 10;
+}
+
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
@@ -568,10 +572,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .m-10 {
   margin: 2.5rem;
-}
-
-.m-4 {
-  margin: 1rem;
 }
 
 .m-2 {
@@ -847,8 +847,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 90%;
 }
 
-.w-\[30rem\] {
-  width: 30rem;
+.w-\[20rem\] {
+  width: 20rem;
 }
 
 .w-48 {

@@ -270,18 +270,6 @@ const ResumePage1: React.FC = () => {
             ) : (
               ""
             )}
-            {/* {(workHist.length < 3) && (educHist.length < 6) ? (
-              <HistoryInput
-                startYear=""
-                startMonth=""
-                startText=""
-                endYear=""
-                endMonth=""
-                endText=""
-              />
-            ) : (
-              ""
-            )} */}
             {(workHist.length + educHist.length < 8) && (workHist.length < 4) ? (
               <div className="text-right">
                 <HistoryInput

@@ -12,6 +12,7 @@ export interface Projects {
   language: string;
   position: string;
   scale: string;
+  numberOfPers: string;
   requirements: boolean;
   basicDesign: boolean;
   detailedDesign: boolean;
@@ -32,6 +33,7 @@ export const projectValues = {
   language: "",
   position: "",
   scale: "",
+  numberOfPers: "",
   requirements: false,
   basicDesign: false,
   detailedDesign: false,
@@ -51,6 +53,7 @@ export const projectValues = {
       language: "",
       position: "",
       scale: "",
+      numberOfPers: "",
       requirements: false,
       basicDesign: false,
       detailedDesign: false,
@@ -66,6 +69,7 @@ export const projectValues = {
   setProjEnd: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setOverview: (e: React.ChangeEvent<HTMLTextAreaElement>) => {},
   setPoints: (e: React.ChangeEvent<HTMLTextAreaElement>) => {},
+  setNumberOfPers: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setScale: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setLanguage: (e: React.ChangeEvent<HTMLInputElement>) => {},
   setPosition: (e: React.ChangeEvent<HTMLInputElement>) => {},
@@ -99,6 +103,7 @@ type ActionType =
   | { type: "setPoints"; payload: string }
   | { type: "setLanguage"; payload: string }
   | { type: "setPosition"; payload: string }
+  | { type: "setNumberOfPers"; payload: string }
   | { type: "setScale"; payload: string }
   | { type: "setRequirements"; payload: boolean }
   | { type: "setBasicDesign"; payload: boolean }
@@ -126,6 +131,9 @@ function reducer(currentState: Projects, action: ActionType): any {
   }
   if (action.type === "setPoints") {
     return { ...currentState, points: action.payload };
+  }
+  if (action.type === "setNumberOfPers") {
+    return { ...currentState, numberOfPers: action.payload };
   }
   if (action.type === "setScale") {
     return { ...currentState, scale: action.payload };
@@ -177,6 +185,7 @@ const SSForm2State: React.FC = ({ children }) => {
           language: state.language,
           position: state.position,
           scale: state.scale,
+          numberOfPers: state.numberOfPers,
           requirements: state.requirements,
           basicDesign: state.basicDesign,
           detailedDesign: state.detailedDesign,
@@ -207,6 +216,9 @@ const SSForm2State: React.FC = ({ children }) => {
           },
           setPosition: (e) => {
             dispatch({ type: "setPosition", payload: e.target.value });
+          },
+          setNumberOfPers: (e) => {
+            dispatch({ type: "setNumberOfPers", payload: e.target.value });
           },
           setScale: (e) => {
             dispatch({ type: "setScale", payload: e.target.value });
@@ -268,6 +280,7 @@ const SSForm2State: React.FC = ({ children }) => {
                 language: state.language,
                 position: state.position,
                 scale: state.scale,
+                numberOfPers: state.numberOfPers,
                 requirements: state.requirements,
                 basicDesign: state.basicDesign,
                 detailedDesign: state.detailedDesign,
@@ -287,6 +300,7 @@ const SSForm2State: React.FC = ({ children }) => {
             dispatch({ type: "setPoints", payload: "" });
             dispatch({ type: "setLanguage", payload: "" });
             dispatch({ type: "setPosition", payload: "" });
+            dispatch({ type: "setNumberOfPers", payload: "" });
             dispatch({ type: "setScale", payload: "" });
             // dispatch({ type: "setRequirements", payload: false });
             // dispatch({ type: "setBasicDesign", payload: false });

@@ -15,15 +15,30 @@ const SkillSheetPage: React.FC = () => {
   const month = d.getMonth() + 1;
   const date = d.getDate();
 
-  const {step} = useContext(AppContext);
-  const { Projects, workPlace, projName, projStart, projEnd, overview, points, language, position, scale } = useContext(ProjectsContext);
-
+  const { step } = useContext(AppContext);
+  const {
+    Projects,
+    workPlace,
+    projName,
+    projStart,
+    projEnd,
+    overview,
+    points,
+    language,
+    position,
+    numberOfPers,
+    scale,
+  } = useContext(ProjectsContext);
 
   return (
     <>
       <section
         id="skillsheet-page-1-bg"
-        className={step < 4 ? `hidden xl:w-1/2 bg-gray bg-opacity-30 md:block h-full pb-3` : `block xl:w-1/2 md:min-w-0 min-w-[725px] pb-5 h-full bg-gray bg-opacity-30`}
+        className={
+          step < 4
+            ? `hidden xl:w-1/2 bg-gray bg-opacity-30 md:block h-full pb-3`
+            : `block xl:w-1/2 md:min-w-0 min-w-[725px] pb-5 h-full bg-gray bg-opacity-30`
+        }
       >
         <p
           id="warning-text"
@@ -54,6 +69,7 @@ const SkillSheetPage: React.FC = () => {
                 points={item.points}
                 language={item.language}
                 position={item.position}
+                numberOfPers={item.numberOfPers}
                 scale={item.scale}
                 requirements={item.requirements}
                 basicDesign={item.basicDesign}
@@ -65,24 +81,25 @@ const SkillSheetPage: React.FC = () => {
               />
             ))} */}
             {/* {Projects.length === 0 ? ( */}
-              <Project
-                workPlace={workPlace}
-                projName={projName}
-                projStart={projStart}
-                projEnd={projEnd}
-                overview={overview}
-                points={points}
-                language={language}
-                position={position}
-                scale={scale}
-                requirements={false}
-                basicDesign={false}
-                detailedDesign={false}
-                implementation={false}
-                simpleTest={false}
-                conclusionTest={false}
-                maintenance={false}
-              />
+            <Project
+              workPlace={workPlace}
+              projName={projName}
+              projStart={projStart}
+              projEnd={projEnd}
+              overview={overview}
+              points={points}
+              language={language}
+              position={position}
+              numberOfPers={numberOfPers}
+              scale={scale}
+              requirements={false}
+              basicDesign={false}
+              detailedDesign={false}
+              implementation={false}
+              simpleTest={false}
+              conclusionTest={false}
+              maintenance={false}
+            />
             {/* ) : (
               ""
             )} */}
@@ -96,6 +113,7 @@ const SkillSheetPage: React.FC = () => {
                 points=""
                 language=""
                 position=""
+                numberOfPers=""
                 scale=""
                 requirements={false}
                 basicDesign={false}
