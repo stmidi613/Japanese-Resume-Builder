@@ -55,7 +55,7 @@ const Project: React.FC<Props> = ({
             <td className="grid place-content-center p-1 h-8">勤務先</td>
           </tr>
           <tr className="grid col-span-10">
-            <td className="p-1">{workPlace}</td>
+            <td className="p-1 text-sm">{workPlace}</td>
           </tr>
         </tbody>
       </table>
@@ -70,13 +70,13 @@ const Project: React.FC<Props> = ({
             </td>
           </tr>
           <tr className="grid col-span-6">
-            <td className="project-name-cell">{projName}</td>
+            <td className="project-name-cell text-sm">{projName}</td>
             <td className="grid grid-rows-2 overview-point-cell h-56">
               <span className="row-span-1 grid m-1">
-                【概要】<p>{overview}</p>
+                【概要】<p className="text-sm">{overview}</p>
               </span>
               <span className="row-span-1 grid m-1">
-                【ポイント】<p>{points}</p>
+                【ポイント】<p className="text-sm">{points}</p>
               </span>
             </td>
           </tr>
@@ -84,11 +84,11 @@ const Project: React.FC<Props> = ({
             <td className="bg-skillsheetgray text-xs short-cell">
               環境・<span className="break-before">言語</span>
             </td>
-            <td className="medium-cell">{language}</td>
+            <td className="medium-cell text-sm">{language}</td>
           </tr>
           <tr className="grid col-span-3 h-56">
             <td className="bg-skillsheetgray short-cell">役割・役職</td>
-            <td className="medium-cell h-12">{position}</td>
+            <td className="medium-cell h-12 text-sm">{position}</td>
             <td className="bg-skillsheetgray short-cell">規模・人数</td>
             <td className="medium-cell h-12"><p className="text-center">要員数：{numberOfPers}名</p><p className="text-center">（PJ 全体：{scale}名）</p></td>
             <td className="bg-skillsheetgray short-cell">担当工程</td>

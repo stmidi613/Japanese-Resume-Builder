@@ -18,9 +18,9 @@ const JobSummary: React.FC = () => {
           </td>
         </tr>
         <tr className="grid col-span-6">
-          <td className="short-cell">{nameFurigana}</td>
-          <td className="short-cell">{name}</td>
-          <td className="medium-cell h-12">{workSummary}</td>
+          <td className="short-cell text-sm">{nameFurigana}</td>
+          <td className="short-cell text-sm">{name}</td>
+          <td className="medium-cell h-12 text-sm">{workSummary}</td>
           <td className="medium-cell h-16">{KandE}</td>
         </tr>
         <tr className="bg-skillsheetgray mid-cell">
@@ -32,8 +32,8 @@ const JobSummary: React.FC = () => {
           </td>
         </tr>
         <tr className="grid col-span-3">
-          <td className="medium-cell h-[5.5rem]">{technology}</td>
-          <td className="medium-cell h-[5.5rem]">{otherInfo}</td>
+          <td className="medium-cell h-[5.5rem] text-sm">{technology}</td>
+          <td className="medium-cell h-[5.5rem] text-sm">{otherInfo}</td>
         </tr>
       </tbody>
     </table>

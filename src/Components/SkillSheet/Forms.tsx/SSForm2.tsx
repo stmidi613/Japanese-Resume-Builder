@@ -84,7 +84,7 @@ const SSForm2: React.FC = () => {
             <InputTitle fieldName="Work Place" />
             <div className="input-div">
               <TextInput
-                max={70}
+                max={45}
                 value={workPlace}
                 place="Work Place"
                 change={setWorkPlace}
@@ -93,7 +93,7 @@ const SSForm2: React.FC = () => {
             <InputTitle fieldName="Project Name" />
             <div className="input-div">
               <NameInput
-                max={40}
+                max={25}
                 value={projName}
                 place="Project Name"
                 change={setProjName}
@@ -111,7 +111,7 @@ const SSForm2: React.FC = () => {
                 rows={5}
                 name="Overview"
                 value={overview}
-                maxLength={175}
+                maxLength={100}
                 placeholder="Overview of the Project"
                 onChange={setOverview}
               />
@@ -124,7 +124,7 @@ const SSForm2: React.FC = () => {
                 rows={5}
                 name="Points you wanted to make"
                 value={points}
-                maxLength={175}
+                maxLength={100}
                 placeholder="Points you wanted to make"
                 onChange={setPoints}
               />
@@ -141,7 +141,7 @@ const SSForm2: React.FC = () => {
             <InputTitle fieldName="Role/Position" />
             <div className="input-div">
               <TextInput
-                max={45}
+                max={25}
                 value={position}
                 place="Role/Position"
                 change={setPosition}

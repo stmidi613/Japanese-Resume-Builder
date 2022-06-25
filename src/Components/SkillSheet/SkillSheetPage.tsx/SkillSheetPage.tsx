@@ -49,14 +49,14 @@ const SkillSheetPage: React.FC = () => {
         {/* This is the page containter div */}
         <div id="skillsheet-page-1" className="page-section drop-shadow-lg">
           {/* Start Title Section */}
-          <section className="grid w-full pt-5 px-5">
+          <section className="grid w-full pt-5 px-7">
             <p className="flex justify-end w-full">
               作成日 令和　{year - 2018}年{month}月{date}日
             </p>
             <p className="flex justify-center w-full">スキルツート</p>
           </section>
           {/* End of Title Section */}
-          <section className="page-section">
+          <section className="page-section px-3">
             <JobSummary />
             {/* {Projects.map((item) => (
               <Project

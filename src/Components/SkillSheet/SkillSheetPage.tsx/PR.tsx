@@ -12,8 +12,8 @@ const PR: React.FC = () => {
       <tr className="w-full border-b-2">
         <td className="bg-skillsheetgray w-full grid text-center">自己PR</td>
       </tr>
-      <tr className="p-2 border-b-2 h-40">
-        <td>{PR}</td>
+      <tr className="p-2 border-b-2 h-46">
+        <td className="grid place-content-center text-sm">{PR}</td>
       </tr>
       </tbody>
     </table>
