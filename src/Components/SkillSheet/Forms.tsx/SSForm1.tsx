@@ -32,7 +32,7 @@ const SSForm1: React.FC = () => {
               value={nameFurigana}
               place="Company Name Furigana"
               change={setNameFurigana}
-              max={45}
+              max={26}
             />
             <NameInput value={name} place="Name" change={setName} max={45} />
           </div>
@@ -43,7 +43,7 @@ const SSForm1: React.FC = () => {
               cols={5}
               rows={5}
               name="Work Summary"
-              maxLength={50}
+              maxLength={26}
               placeholder="Type a Short Job Description"
               onChange={setWorkSummary}
             />

@@ -20,7 +20,7 @@ const SingleProject: React.FC<Props> = ({ item }) => {
         <span>{item.projEnd}</span>
         <span>{item.overview}</span>
         <span>{item.points}</span>
-        <span>{item.language}</span>
+        <span>{item.languages}</span>
         <span>{item.position}</span>
         <span>{item.scale}</span>
         {item.projName ? (

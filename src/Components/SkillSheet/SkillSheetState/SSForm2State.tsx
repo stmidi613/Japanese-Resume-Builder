@@ -1,5 +1,10 @@
 import React, { createContext, useReducer, useState } from "react";
 
+export interface Languages {
+  languageId: number; 
+  language: string;
+}
+
 export interface Projects {
   // Form2
   id: number;
@@ -9,7 +14,7 @@ export interface Projects {
   projEnd: string;
   overview: string;
   points: string;
-  language: string;
+  languages:  Languages[];
   position: string;
   scale: string;
   numberOfPers: string;
@@ -30,6 +35,7 @@ export const projectValues = {
   projEnd: "",
   overview: "",
   points: "",
+  languageId: Date.now(),
   language: "",
   position: "",
   scale: "",
@@ -50,7 +56,8 @@ export const projectValues = {
       projEnd: "",
       overview: "",
       points: "",
-      language: "",
+      languages: [{languageId: Date.now(),
+        language: "",},],
       position: "",
       scale: "",
       numberOfPers: "",
@@ -87,6 +94,7 @@ export const projectValues = {
   setNoConclusionTest: () => {},
   setMaintenance: () => {},
   setNoMaintenance: () => {},
+  setLanguages: (e: React.Dispatch<React.SetStateAction<Languages[]>>) => {},
   setProjects: (e: React.Dispatch<React.SetStateAction<Projects[]>>) => {},
   setProjectsClear: () => {},
   setProjectDelete: (e: number) => {},
@@ -170,6 +178,7 @@ function reducer(currentState: Projects, action: ActionType): any {
 const SSForm2State: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, projectValues);
   const [Projects, setProjects] = useState<Projects[]>([]);
+  const [Languages, setLanguages] = useState<Languages[]>([]);
 
   return (
     <>
@@ -182,6 +191,7 @@ const SSForm2State: React.FC = ({ children }) => {
           projEnd: state.projEnd,
           overview: state.overview,
           points: state.points,
+          languageId: Date.now(),
           language: state.language,
           position: state.position,
           scale: state.scale,
@@ -266,6 +276,16 @@ const SSForm2State: React.FC = ({ children }) => {
             dispatch({ type: "setMaintenance", payload: false });
           },
           Projects: Projects,
+          // Languages: Languages,
+          setLanguages: () => {
+            setLanguages([
+              ...Languages,
+              {
+                languageId: Date.now(),
+                language: state.language,
+              }
+            ]);
+          },
           setProjects: () => {
             setProjects([
               ...Projects,
@@ -277,7 +297,7 @@ const SSForm2State: React.FC = ({ children }) => {
                 projEnd: state.projEnd,
                 overview: state.overview,
                 points: state.points,
-                language: state.language,
+                languages: Languages,
                 position: state.position,
                 scale: state.scale,
                 numberOfPers: state.numberOfPers,
@@ -288,7 +308,7 @@ const SSForm2State: React.FC = ({ children }) => {
                 simpleTest: state.simpleTest,
                 conclusionTest: state.conclusionTest,
                 maintenance: state.maintenance,
-              },
+              }
             ]);
           },
           setProjectsClear: () => {
