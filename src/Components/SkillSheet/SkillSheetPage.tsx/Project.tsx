@@ -10,7 +10,7 @@ interface Props {
   projEnd: string;
   overview: string;
   points: string;
-  language: string;
+  languages: string;
   position: string;
   numberOfPers: string;
   scale: string;
@@ -30,7 +30,7 @@ const Project: React.FC<Props> = ({
   projEnd,
   overview,
   points,
-  language,
+  languages,
   position,
   scale,
   numberOfPers,
@@ -84,7 +84,7 @@ const Project: React.FC<Props> = ({
             <td className="bg-skillsheetgray text-xs short-cell">
               環境・<span className="break-before">言語</span>
             </td>
-            <td className="medium-cell text-sm">{language}</td>
+            <td className="medium-cell text-sm">{languages}</td>
           </tr>
           <tr className="grid col-span-3 h-56">
             <td className="bg-skillsheetgray short-cell">役割・役職</td>

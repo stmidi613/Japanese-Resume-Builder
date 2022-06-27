@@ -37,6 +37,8 @@ export const projectValues = {
   points: "",
   languageId: Date.now(),
   language: "",
+  languages: [{languageId: Date.now(),
+    language: "",},],
   position: "",
   scale: "",
   numberOfPers: "",
@@ -95,6 +97,8 @@ export const projectValues = {
   setMaintenance: () => {},
   setNoMaintenance: () => {},
   setLanguages: (e: React.Dispatch<React.SetStateAction<Languages[]>>) => {},
+  setLanguagesClear: () => {},
+  setLanguageDelete: (e: number) => {},
   setProjects: (e: React.Dispatch<React.SetStateAction<Projects[]>>) => {},
   setProjectsClear: () => {},
   setProjectDelete: (e: number) => {},
@@ -276,7 +280,7 @@ const SSForm2State: React.FC = ({ children }) => {
             dispatch({ type: "setMaintenance", payload: false });
           },
           Projects: Projects,
-          // Languages: Languages,
+          languages: Languages,
           setLanguages: () => {
             setLanguages([
               ...Languages,
@@ -285,6 +289,9 @@ const SSForm2State: React.FC = ({ children }) => {
                 language: state.language,
               }
             ]);
+          },
+          setLanguagesClear: () => {
+            dispatch({ type: "setLanguage", payload: "" });
           },
           setProjects: () => {
             setProjects([
@@ -318,10 +325,10 @@ const SSForm2State: React.FC = ({ children }) => {
             dispatch({ type: "setProjEnd", payload: "" });
             dispatch({ type: "setOverview", payload: "" });
             dispatch({ type: "setPoints", payload: "" });
-            dispatch({ type: "setLanguage", payload: "" });
             dispatch({ type: "setPosition", payload: "" });
             dispatch({ type: "setNumberOfPers", payload: "" });
             dispatch({ type: "setScale", payload: "" });
+            // dispatch({ type: "setLanguage", payload: "" });
             // dispatch({ type: "setRequirements", payload: false });
             // dispatch({ type: "setBasicDesign", payload: false });
             // dispatch({ type: "setDetailedDesign", payload: false });
@@ -332,6 +339,8 @@ const SSForm2State: React.FC = ({ children }) => {
           },
           setProjectDelete: (id: number) =>
             setProjects(Projects.filter((each: any) => each.id !== id)),
+          setLanguageDelete: (id: number) =>
+            setLanguages(Languages.filter((each: any) => each.languageId !== id)),
         }}
       >
         {children}

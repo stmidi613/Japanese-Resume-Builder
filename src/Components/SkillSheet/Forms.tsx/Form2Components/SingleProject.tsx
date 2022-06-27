@@ -11,18 +11,29 @@ interface Props {
 const SingleProject: React.FC<Props> = ({ item }) => {
   const { setProjectDelete } = useContext(ProjectsContext);
 
+  const languageList = item.languages
+    .map((language) => language.language)
+    .join(" ");
+
   return (
     <>
       <div className="input-div p-4">
-        <span>{item.workPlace}</span>
-        <span>{item.projName}</span>
-        <span>{item.projStart}</span>
-        <span>{item.projEnd}</span>
-        <span>{item.overview}</span>
-        <span>{item.points}</span>
-        <span>{item.languages}</span>
-        <span>{item.position}</span>
-        <span>{item.scale}</span>
+        <span>Work Place: {item.workPlace}</span>
+        <span>Project Name: {item.projName}</span>
+        <span>Start: {item.projStart}</span>
+        <span>End: {item.projEnd}</span>
+        <span>Overview: {item.overview}</span>
+        <span>Points: {item.points}</span>
+        <span>
+          Languages:{" "}
+          <span className="grid">
+            {languageList.split(" ").map((language) => (
+              <p>{language}</p>
+            ))}
+          </span>
+        </span>
+        <span>Position: {item.position}</span>
+        <span>Scale: {item.scale}</span>
         {item.projName ? (
           <>
             <span>Requirements: {item.requirements ? "Yes" : "No"}</span>

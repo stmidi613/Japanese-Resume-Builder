@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import DeleteButton from "../../../Buttons/DeleteButton";
+import LanguageDelete from "../../../Buttons/LanguageDelete";
 
 import { Languages, ProjectsContext } from "../../SkillSheetState/SSForm2State";
 
@@ -7,19 +9,18 @@ interface Props {
 }
 
 const SingleLanguage: React.FC<Props> = ({ item }) => {
-  //   const { setProjectDelete } = useContext(ProjectsContext);
+    const { setLanguageDelete } = useContext(ProjectsContext);
   return (
     <>
       <div className="input-div p-4">
-        {item.language ? (
+        {item ? (
           <>
             <span>{item.language}</span>
-            <span>{item.languageId}</span>
+            <DeleteButton item={item.languageId} change={setLanguageDelete} />
           </>
         ) : (
           ""
         )}
-        ;
       </div>
     </>
   );

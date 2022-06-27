@@ -10,6 +10,7 @@ import BackButton from "../../Buttons/BackButton";
 import SmallCircleButton from "../../Buttons/SmallCircleButton";
 
 import ProjectList from "./Form2Components/ProjectList";
+import LanguageList from "./Form2Components/LanguageList";
 
 import { ProjectsContext } from "../SkillSheetState/SSForm2State";
 
@@ -18,6 +19,7 @@ const SSForm2: React.FC = () => {
     workPlace,
     projName,
     language,
+    languages,
     position,
     numberOfPers,
     scale,
@@ -38,6 +40,7 @@ const SSForm2: React.FC = () => {
     setOverview,
     setPoints,
     setLanguage,
+    setLanguages,
     setPosition,
     setNumberOfPers,
     setScale,
@@ -57,6 +60,7 @@ const SSForm2: React.FC = () => {
     setNoMaintenance,
     setProjects,
     setProjectsClear,
+    setLanguagesClear,
   } = useContext(ProjectsContext);
 
   const onProjectAdd = (e: React.FormEvent) => {
@@ -64,6 +68,15 @@ const SSForm2: React.FC = () => {
     if (projName) {
       setProjects(() => {});
       setProjectsClear();
+      // setLanguageListClear(() => {})
+    }
+  };
+
+  const onLanguageAdd = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (language) {
+      setLanguages(() => {});
+      setLanguagesClear();
     }
   };
 
@@ -130,14 +143,18 @@ const SSForm2: React.FC = () => {
               />
             </div>
             <InputTitle fieldName="Language/Environment" />
+            
+
             <div className="input-div">
               <TextInput
                 max={1000}
                 value={language}
                 place="Language/Environment"
                 change={setLanguage}
-              />
+                />
             </div>
+            <button onClick={onLanguageAdd}>+</button>
+            <LanguageList Languages={languages} />
             <InputTitle fieldName="Role/Position" />
             <div className="input-div">
               <TextInput

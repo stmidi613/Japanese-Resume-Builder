@@ -24,11 +24,14 @@ const SkillSheetPage: React.FC = () => {
     projEnd,
     overview,
     points,
-    language,
+    languages,
     position,
     numberOfPers,
     scale,
   } = useContext(ProjectsContext);
+
+  const languageList = languages.map(item => item.language).join(" ");
+
 
   return (
     <>
@@ -58,7 +61,7 @@ const SkillSheetPage: React.FC = () => {
           {/* End of Title Section */}
           <section className="page-section px-3">
             <JobSummary />
-            {/* {Projects.map((item) => (
+            {Projects.map((item) => (
               <Project
                 key={item.id}
                 workPlace={item.workPlace}
@@ -67,7 +70,7 @@ const SkillSheetPage: React.FC = () => {
                 projEnd={item.projEnd}
                 overview={item.overview}
                 points={item.points}
-                language={item.language}
+                languages={languageList}
                 position={item.position}
                 numberOfPers={item.numberOfPers}
                 scale={item.scale}
@@ -79,19 +82,19 @@ const SkillSheetPage: React.FC = () => {
                 conclusionTest={item.conclusionTest}
                 maintenance={item.maintenance}
               />
-            ))} */}
-            {/* {Projects.length === 0 ? ( */}
+            ))}
+            {Projects.length === 0 ? (
             <Project
-              workPlace={workPlace}
-              projName={projName}
-              projStart={projStart}
-              projEnd={projEnd}
-              overview={overview}
-              points={points}
-              language={language}
-              position={position}
-              numberOfPers={numberOfPers}
-              scale={scale}
+              workPlace=""
+              projName=""
+              projStart=""
+              projEnd=""
+              overview=""
+              points=""
+              languages=""
+              position=""
+              numberOfPers=""
+              scale=""
               requirements={false}
               basicDesign={false}
               detailedDesign={false}
@@ -100,9 +103,9 @@ const SkillSheetPage: React.FC = () => {
               conclusionTest={false}
               maintenance={false}
             />
-            {/* ) : (
+             ) : (
               ""
-            )} */}
+            )}
             {Projects.length < 2 ? (
               <Project
                 workPlace=""
@@ -111,7 +114,7 @@ const SkillSheetPage: React.FC = () => {
                 projEnd=""
                 overview=""
                 points=""
-                language=""
+                languages=""
                 position=""
                 numberOfPers=""
                 scale=""
