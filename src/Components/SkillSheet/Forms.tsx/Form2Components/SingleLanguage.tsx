@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
+
 import DeleteButton from "../../../Buttons/DeleteButton";
-import LanguageDelete from "../../../Buttons/LanguageDelete";
 
 import { Languages, ProjectsContext } from "../../SkillSheetState/SSForm2State";
 
