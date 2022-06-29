@@ -143,7 +143,6 @@ const SSForm2: React.FC = () => {
               />
             </div>
             <InputTitle fieldName="Language/Environment" />
-            
 
             <div className="input-div">
               <TextInput
@@ -151,9 +150,16 @@ const SSForm2: React.FC = () => {
                 value={language}
                 place="Language/Environment"
                 change={setLanguage}
-                />
+              />
             </div>
-            <button onClick={onLanguageAdd}>+</button>
+            <div className="flex justify-end">
+              <button
+                className="circle-button button-animation"
+                onClick={onLanguageAdd}
+              >
+                +
+              </button>
+            </div>
             <LanguageList Languages={languages} />
             <InputTitle fieldName="Role/Position" />
             <div className="input-div">
