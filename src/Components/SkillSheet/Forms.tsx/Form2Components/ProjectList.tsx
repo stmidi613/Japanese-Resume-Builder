@@ -2,7 +2,7 @@ import React from 'react';
 
 import SingleProject from './SingleProject';
 
-import { Projects} from '../../SkillSheetState/SSForm2State';
+import { Projects, ProjLanguages } from '../../SkillSheetState/SSForm2State';
 
 interface Props {
     Projects: Projects[];

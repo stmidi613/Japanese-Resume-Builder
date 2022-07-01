@@ -5,6 +5,11 @@ export interface Languages {
   language: string;
 }
 
+export interface ProjLanguages{
+  PLid: number;
+  languages: Languages[]
+}
+
 export interface Projects {
   // Form2
   id: number;
@@ -15,6 +20,7 @@ export interface Projects {
   overview: string;
   points: string;
   languages:  Languages[];
+  ProjLanguages: ProjLanguages[];
   position: string;
   scale: string;
   numberOfPers: string;
@@ -38,7 +44,10 @@ export const projectValues = {
   languageId: Date.now(),
   language: "",
   languages: [{languageId: Date.now(),
-    language: "",},],
+    language: ""},],
+  PLid: Date.now(),
+  ProjLanguages: [{PLid: Date.now(), languages: [{languageId: Date.now(),
+    language: ""},],}],
   position: "",
   scale: "",
   numberOfPers: "",
@@ -59,7 +68,9 @@ export const projectValues = {
       overview: "",
       points: "",
       languages: [{languageId: Date.now(),
-        language: "",},],
+        language: ""},],
+      ProjLanguages: [{PLid: Date.now(), languages: [{languageId: Date.now(),
+        language: ""},],}],
       position: "",
       scale: "",
       numberOfPers: "",
@@ -98,6 +109,7 @@ export const projectValues = {
   setNoMaintenance: () => {},
   setLanguages: (e: React.Dispatch<React.SetStateAction<Languages[]>>) => {},
   setLanguagesClear: () => {},
+  setProjLanguages: (e: React.Dispatch<React.SetStateAction<ProjLanguages[]>>) => {},
   setLanguageDelete: (e: number) => {},
   setProjects: (e: React.Dispatch<React.SetStateAction<Projects[]>>) => {},
   setProjectsClear: () => {},
@@ -183,6 +195,7 @@ const SSForm2State: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, projectValues);
   const [Projects, setProjects] = useState<Projects[]>([]);
   const [Languages, setLanguages] = useState<Languages[]>([]);
+  const [ProjLanguages, setProjLanguages] = useState<ProjLanguages[]>([]);
 
   return (
     <>
@@ -196,6 +209,7 @@ const SSForm2State: React.FC = ({ children }) => {
           overview: state.overview,
           points: state.points,
           languageId: Date.now(),
+          PLid: Date.now(),
           language: state.language,
           position: state.position,
           scale: state.scale,
@@ -281,6 +295,7 @@ const SSForm2State: React.FC = ({ children }) => {
           },
           Projects: Projects,
           languages: Languages,
+          ProjLanguages: ProjLanguages,
           setLanguages: () => {
             setLanguages([
               ...Languages,
@@ -293,6 +308,18 @@ const SSForm2State: React.FC = ({ children }) => {
           setLanguagesClear: () => {
             dispatch({ type: "setLanguage", payload: "" });
           },
+          setProjLanguages: () => {
+            setProjLanguages([
+              ...ProjLanguages,
+              {
+                PLid: Date.now(),
+                languages: Languages,
+              }
+            ]);
+          },
+          // setLanguagesClear: () => {
+          //   dispatch({ type: "setLanguage", payload: "" });
+          // },
           setProjects: () => {
             setProjects([
               ...Projects,
@@ -304,7 +331,8 @@ const SSForm2State: React.FC = ({ children }) => {
                 projEnd: state.projEnd,
                 overview: state.overview,
                 points: state.points,
-                languages: Languages,
+                languages: state.languages,
+                ProjLanguages: ProjLanguages,
                 position: state.position,
                 scale: state.scale,
                 numberOfPers: state.numberOfPers,

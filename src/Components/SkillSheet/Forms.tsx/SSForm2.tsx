@@ -33,6 +33,7 @@ const SSForm2: React.FC = () => {
     conclusionTest,
     maintenance,
     Projects,
+    ProjLanguages,
     setWorkPlace,
     setProjName,
     setProjStart,
@@ -59,6 +60,7 @@ const SSForm2: React.FC = () => {
     setMaintenance,
     setNoMaintenance,
     setProjects,
+    setProjLanguages,
     setProjectsClear,
     setLanguagesClear,
   } = useContext(ProjectsContext);
@@ -67,7 +69,9 @@ const SSForm2: React.FC = () => {
     e.preventDefault();
     if (projName) {
       setProjects(() => {});
+      setProjLanguages(() => {});
       setProjectsClear();
+      console.log(ProjLanguages)
       // setLanguageListClear(() => {})
     }
   };
