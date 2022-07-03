@@ -71,15 +71,15 @@ const SSForm2: React.FC = () => {
       setProjects(() => {});
       setProjLanguages(() => {});
       setProjectsClear();
-      console.log(ProjLanguages)
       // setLanguageListClear(() => {})
     }
   };
-
+  
   const onLanguageAdd = (e: React.FormEvent) => {
     e.preventDefault();
     if (language) {
       setLanguages(() => {});
+      console.log(languages)
       setLanguagesClear();
     }
   };

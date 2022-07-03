@@ -310,16 +310,13 @@ const SSForm2State: React.FC = ({ children }) => {
           },
           setProjLanguages: () => {
             setProjLanguages([
-              ...ProjLanguages,
+              //  ...ProjLanguages,
               {
                 PLid: Date.now(),
                 languages: Languages,
               }
             ]);
           },
-          // setLanguagesClear: () => {
-          //   dispatch({ type: "setLanguage", payload: "" });
-          // },
           setProjects: () => {
             setProjects([
               ...Projects,

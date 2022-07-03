@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import DeleteButton from "../../../Buttons/DeleteButton";
 
 import { Projects, ProjectsContext } from "../../SkillSheetState/SSForm2State";
+import SingleLanguageList from "./SingleLanguageList";
 
 interface Props {
   item: Projects;
@@ -21,7 +22,7 @@ const SingleProject: React.FC<Props> = ({ item }) => {
         <span>Overview: {item.overview}</span>
         <span>Points: {item.points}</span>
         <span>
-          {/* Languages:{item.ProjLanguages.map(language => <SingleLanguageList key={language.PLid} language={language.languages} /> )} */}
+          Languages:{item.ProjLanguages.map(language => <SingleLanguageList key={language.PLid} language={language.languages} /> )}
           
         </span>
         <span>Position: {item.position}</span>
