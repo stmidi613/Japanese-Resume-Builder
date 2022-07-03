@@ -297,7 +297,7 @@ const SSForm2State: React.FC = ({ children }) => {
           languages: Languages,
           ProjLanguages: ProjLanguages,
           setLanguages: () => {
-            setLanguages([
+            setLanguages(() => [
               ...Languages,
               {
                 languageId: Date.now(),
@@ -328,7 +328,7 @@ const SSForm2State: React.FC = ({ children }) => {
                 projEnd: state.projEnd,
                 overview: state.overview,
                 points: state.points,
-                languages: state.languages,
+                languages: Languages,
                 ProjLanguages: ProjLanguages,
                 position: state.position,
                 scale: state.scale,

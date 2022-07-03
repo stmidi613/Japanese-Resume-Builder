@@ -68,8 +68,8 @@ const SSForm2: React.FC = () => {
   const onProjectAdd = (e: React.FormEvent) => {
     e.preventDefault();
     if (projName) {
-      setProjects(() => {});
       setProjLanguages(() => {});
+      setProjects(() => {});
       setProjectsClear();
       // setLanguageListClear(() => {})
     }
@@ -79,7 +79,7 @@ const SSForm2: React.FC = () => {
     e.preventDefault();
     if (language) {
       setLanguages(() => {});
-      console.log(languages)
+      console.log(languages);
       setLanguagesClear();
     }
   };
