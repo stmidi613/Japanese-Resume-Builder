@@ -13,6 +13,7 @@ import ProjectList from "./Form2Components/ProjectList";
 import LanguageList from "./Form2Components/LanguageList";
 
 import { ProjectsContext } from "../SkillSheetState/SSForm2State";
+import SingleLanguageList from "./Form2Components/SingleLanguageList";
 
 const SSForm2: React.FC = () => {
   const {
@@ -68,18 +69,20 @@ const SSForm2: React.FC = () => {
   const onProjectAdd = (e: React.FormEvent) => {
     e.preventDefault();
     if (projName) {
-      setProjLanguages(() => {});
       setProjects(() => {});
       setProjectsClear();
-      // setLanguageListClear(() => {})
     }
   };
-  
+
+  const onLanguageListAdd = (e: React.FormEvent) => {
+    e.preventDefault();
+    setProjLanguages(() => {});
+  };
+
   const onLanguageAdd = (e: React.FormEvent) => {
     e.preventDefault();
     if (language) {
       setLanguages(() => {});
-      console.log(languages);
       setLanguagesClear();
     }
   };
@@ -107,7 +110,7 @@ const SSForm2: React.FC = () => {
                 change={setWorkPlace}
               />
             </div>
-            <InputTitle fieldName="Project Name" />
+            <InputTitle fieldName="Project Name (Required)" />
             <div className="input-div">
               <NameInput
                 max={25}
@@ -147,7 +150,6 @@ const SSForm2: React.FC = () => {
               />
             </div>
             <InputTitle fieldName="Language/Environment" />
-
             <div className="input-div">
               <TextInput
                 max={1000}
@@ -155,8 +157,18 @@ const SSForm2: React.FC = () => {
                 place="Language/Environment"
                 change={setLanguage}
               />
+              <p className="text-red-500 pb-3">
+                Must click the "Create List" button after all items are
+                added!
+              </p>
             </div>
-            <div className="flex justify-end">
+            <div className="flex justify-between">
+              <button
+                className="p-1 button button-animation"
+                onClick={onLanguageListAdd}
+              >
+                Create List
+              </button>
               <button
                 className="circle-button button-animation"
                 onClick={onLanguageAdd}
@@ -164,6 +176,15 @@ const SSForm2: React.FC = () => {
                 +
               </button>
             </div>
+            <span className="text-red-500 mt-8">
+              Languages to be listed in Project:
+              {ProjLanguages.map((language) => (
+                <SingleLanguageList
+                  key={language.PLid}
+                  language={language.languages}
+                />
+              ))}
+            </span>
             <LanguageList Languages={languages} />
             <InputTitle fieldName="Role/Position" />
             <div className="input-div">

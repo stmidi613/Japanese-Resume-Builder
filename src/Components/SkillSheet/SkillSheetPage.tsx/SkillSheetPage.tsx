@@ -18,20 +18,8 @@ const SkillSheetPage: React.FC = () => {
   const { step } = useContext(AppContext);
   const {
     Projects,
-    workPlace,
-    projName,
-    projStart,
-    projEnd,
-    overview,
-    points,
-    languages,
-    position,
-    numberOfPers,
-    scale,
+    ProjLanguages,
   } = useContext(ProjectsContext);
-
-  const languageList = languages.map(item => item.language).join(" ");
-
 
   return (
     <>
@@ -70,7 +58,7 @@ const SkillSheetPage: React.FC = () => {
                 projEnd={item.projEnd}
                 overview={item.overview}
                 points={item.points}
-                languages={languageList}
+                ProjLanguages=""
                 position={item.position}
                 numberOfPers={item.numberOfPers}
                 scale={item.scale}
@@ -91,7 +79,7 @@ const SkillSheetPage: React.FC = () => {
               projEnd=""
               overview=""
               points=""
-              languages=""
+              ProjLanguages=""
               position=""
               numberOfPers=""
               scale=""
@@ -114,7 +102,7 @@ const SkillSheetPage: React.FC = () => {
                 projEnd=""
                 overview=""
                 points=""
-                languages=""
+                ProjLanguages=""
                 position=""
                 numberOfPers=""
                 scale=""
