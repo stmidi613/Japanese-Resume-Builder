@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 
 import DeleteButton from "../../../Buttons/DeleteButton";
 
-import { Projects, ProjectsContext } from "../../SkillSheetState/SSForm2State";
 import SingleLanguageList from "./SingleLanguageList";
+
+import { Projects, ProjectsContext } from "../../SkillSheetState/SSForm2State";
 
 interface Props {
   item: Projects;
@@ -26,6 +27,7 @@ const SingleProject: React.FC<Props> = ({ item }) => {
           
         </span>
         <span>Position: {item.position}</span>
+        <span>Number of Personnel: {item.numberOfPers}</span>
         <span>Scale: {item.scale}</span>
         {item.projName ? (
           <>

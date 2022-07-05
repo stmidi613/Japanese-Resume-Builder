@@ -58,7 +58,7 @@ const SkillSheetPage: React.FC = () => {
                 projEnd={item.projEnd}
                 overview={item.overview}
                 points={item.points}
-                ProjLanguages=""
+                ProjLanguages={item.ProjLanguages}
                 position={item.position}
                 numberOfPers={item.numberOfPers}
                 scale={item.scale}
@@ -79,7 +79,7 @@ const SkillSheetPage: React.FC = () => {
               projEnd=""
               overview=""
               points=""
-              ProjLanguages=""
+              ProjLanguages={[]}
               position=""
               numberOfPers=""
               scale=""
@@ -102,7 +102,7 @@ const SkillSheetPage: React.FC = () => {
                 projEnd=""
                 overview=""
                 points=""
-                ProjLanguages=""
+                ProjLanguages={[]}
                 position=""
                 numberOfPers=""
                 scale=""

@@ -1,5 +1,9 @@
 import React from "react";
 
+import SingleLanguageList from "../Forms.tsx/Form2Components/SingleLanguageList";
+
+import { ProjLanguages } from "../SkillSheetState/SSForm2State";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,7 +14,7 @@ interface Props {
   projEnd: string;
   overview: string;
   points: string;
-  ProjLanguages: string;
+  ProjLanguages: ProjLanguages[];
   position: string;
   numberOfPers: string;
   scale: string;
@@ -84,7 +88,7 @@ const Project: React.FC<Props> = ({
             <td className="bg-skillsheetgray text-xs short-cell">
               環境・<span className="break-before">言語</span>
             </td>
-            <td className="medium-cell text-sm">{ProjLanguages}</td>
+            <td className="medium-cell text-sm">{ProjLanguages.map(language => <SingleLanguageList key={language.PLid} language={language.languages} /> )}</td>
           </tr>
           <tr className="grid col-span-3 h-56">
             <td className="bg-skillsheetgray short-cell">役割・役職</td>
