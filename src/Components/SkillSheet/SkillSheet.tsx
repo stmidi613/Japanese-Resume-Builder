@@ -10,13 +10,17 @@ import SSForm4 from "./Forms.tsx/SSForm4";
 import SkillSheetState from "./SkillSheetState/SkillSheetState";
 import SSForm2State from "./SkillSheetState/SSForm2State";
 
+import TipBox from "../TipBoxes/TipBox";
+import SSMainTB from "./TipBox/SSMainTB";
+import ProjectTB from "./TipBox/ProjectTB";
+
 import { AppContext } from "../../AppState/AppState";
 
 import "../Resume/resume.css";
 import "../SkillSheet/skillsheet.css";
 
 const SkillSheet: React.FC = () => {
-  const { step } = useContext(AppContext);
+  const { step, showPopup } = useContext(AppContext);
 
   const headerTitle = [
     "Company/Skills",
@@ -36,7 +40,13 @@ const SkillSheet: React.FC = () => {
             {step === 2 ? <SSForm2 /> : ""}
             {step === 3 ? <SSForm3 /> : ""}
             {step === 4 ? <SSForm4 /> : ""}
-            <SkillSheetPage />
+            {!showPopup && step < 4 ? (
+              <SkillSheetPage />
+            ) : step < 4 ? (
+              <TipBox content={step === 2 ? <ProjectTB /> : <SSMainTB />} />
+            ) : (
+              <SkillSheetPage />
+            )}
           </div>
         </SSForm2State>
       </SkillSheetState>

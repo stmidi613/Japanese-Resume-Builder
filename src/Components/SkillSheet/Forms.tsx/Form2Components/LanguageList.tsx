@@ -11,7 +11,7 @@ const LanguageList: React.FC<Props> = ({Languages}) => {
     return (
         <>
         <div className="mt-4">
-        <span className="text-xl text-purple">Language List</span>
+        <span className="text-lg text-purple">Language List</span>
         {
           Languages.map((item) => 
           (<SingleLanguage

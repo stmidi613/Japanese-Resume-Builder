@@ -109,8 +109,9 @@ export const projectValues = {
   setNoMaintenance: () => {},
   setLanguages: (e: React.Dispatch<React.SetStateAction<Languages[]>>) => {},
   setLanguagesClear: () => {},
-  setProjLanguages: (e: React.Dispatch<React.SetStateAction<ProjLanguages[]>>) => {},
   setLanguageDelete: (e: number) => {},
+  setProjLanguages: (e: React.Dispatch<React.SetStateAction<ProjLanguages[]>>) => {},
+  setProjLanguagesClear: (e: React.Dispatch<React.SetStateAction<ProjLanguages[]>>) => {},
   setProjects: (e: React.Dispatch<React.SetStateAction<Projects[]>>) => {},
   setProjectsClear: () => {},
   setProjectDelete: (e: number) => {},
@@ -310,12 +311,19 @@ const SSForm2State: React.FC = ({ children }) => {
           },
           setProjLanguages: () => {
             setProjLanguages([
-              //  ...ProjLanguages,
               {
                 PLid: Date.now(),
                 languages: Languages,
               }
             ]);
+          },
+          setProjLanguagesClear: () => {
+            setProjLanguages([
+              {
+                PLid: Date.now(),
+                languages: [],
+              }
+            ])
           },
           setProjects: () => {
             setProjects([

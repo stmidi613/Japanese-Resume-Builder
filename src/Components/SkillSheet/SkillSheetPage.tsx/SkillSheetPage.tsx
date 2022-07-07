@@ -18,7 +18,6 @@ const SkillSheetPage: React.FC = () => {
   const { step } = useContext(AppContext);
   const {
     Projects,
-    ProjLanguages,
   } = useContext(ProjectsContext);
 
   return (

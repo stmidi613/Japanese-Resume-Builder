@@ -26,7 +26,7 @@ const SSForm1: React.FC = () => {
     <>
       <form onSubmit={onSubmitHandler} className="w-full mb-5 xl:w-1/2 h-fit">
         <section className="section">
-          <InputTitle fieldName="Company Name (Furigana)" />
+          <InputTitle fieldName="Company Name" />
           <div className="input-div">
             <NameInput
               value={nameFurigana}
@@ -34,7 +34,7 @@ const SSForm1: React.FC = () => {
               change={setNameFurigana}
               max={26}
             />
-            <NameInput value={name} place="Name" change={setName} max={45} />
+            <NameInput value={name} place="Name" change={setName} max={26} />
           </div>
           <InputTitle fieldName="Work Summary" />
           <div className="input-div">
@@ -43,7 +43,7 @@ const SSForm1: React.FC = () => {
               cols={5}
               rows={5}
               name="Work Summary"
-              maxLength={26}
+              maxLength={48}
               placeholder="Type a Short Job Description"
               onChange={setWorkSummary}
             />
@@ -67,7 +67,7 @@ const SSForm1: React.FC = () => {
               cols={5}
               rows={5}
               name="Technology"
-              maxLength={50}
+              maxLength={45}
               placeholder="Technology"
               onChange={setTechnology}
             />
@@ -79,7 +79,7 @@ const SSForm1: React.FC = () => {
               cols={5}
               rows={5}
               name="Other Information"
-              maxLength={50}
+              maxLength={45}
               placeholder="Other Information"
               onChange={setOtherInfo}
             />

@@ -12,7 +12,7 @@ import Form6 from "./ResumeForms/Form6/Form6";
 import ResumePage1 from "./ResumePages/Page1/ResumePage1";
 import ResumePage2 from "./ResumePages/Page2/ResumePage2";
 
-import TipBox from "./ResumeForms/TipBox";
+import TipBox from "../TipBoxes/TipBox";
 import Form1Tips from "./ResumeForms/Form1/Form1Tips";
 import Form2Tips from "./ResumeForms/Form2/Form2Tips";
 import Form3Tips from "./ResumeForms/Form3/Form3Tips";

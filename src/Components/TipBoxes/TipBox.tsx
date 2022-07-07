@@ -1,5 +1,5 @@
 import React, { ReactFragment } from "react";
-import CloseButton from "../../Buttons/CloseButton";
+import CloseButton from "../Buttons/CloseButton";
 
 interface Props {
   content: ReactFragment;

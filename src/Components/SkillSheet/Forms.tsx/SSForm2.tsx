@@ -62,6 +62,7 @@ const SSForm2: React.FC = () => {
     setNoMaintenance,
     setProjects,
     setProjLanguages,
+    setProjLanguagesClear,
     setProjectsClear,
     setLanguagesClear,
   } = useContext(ProjectsContext);
@@ -71,8 +72,16 @@ const SSForm2: React.FC = () => {
     if (projName) {
       setProjects(() => {});
       setProjectsClear();
+      setProjLanguagesClear(() => {});
     }
   };
+
+  const onProjLanguagesClear = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (languages) {
+      setProjLanguagesClear(() => {});
+    }
+  }
 
   const onLanguageListAdd = (e: React.FormEvent) => {
     e.preventDefault();
@@ -104,7 +113,7 @@ const SSForm2: React.FC = () => {
             <InputTitle fieldName="Work Place" />
             <div className="input-div">
               <TextInput
-                max={45}
+                max={40}
                 value={workPlace}
                 place="Work Place"
                 change={setWorkPlace}
@@ -170,13 +179,19 @@ const SSForm2: React.FC = () => {
                 Create List
               </button>
               <button
+                className="p-1 button button-animation"
+                onClick={onProjLanguagesClear}
+              >
+                Reset List
+              </button>
+              <button
                 className="circle-button button-animation"
                 onClick={onLanguageAdd}
               >
                 +
               </button>
             </div>
-            <span className="text-red-500 mt-8">
+            <span className="text-purple text-xl mt-8">
               Languages to be listed in Project:
               {ProjLanguages.map((language) => (
                 <SingleLanguageList
@@ -203,7 +218,7 @@ const SSForm2: React.FC = () => {
                 name="Number of Personnel"
                 type="number"
                 min="0"
-                max="100"
+                max="1000"
                 value={numberOfPers}
                 onChange={setNumberOfPers}
               />
@@ -215,7 +230,7 @@ const SSForm2: React.FC = () => {
                 name="scale"
                 type="number"
                 min="0"
-                max="100"
+                max="1000"
                 value={scale}
                 onChange={setScale}
               />
