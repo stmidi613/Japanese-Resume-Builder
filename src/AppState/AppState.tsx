@@ -13,6 +13,7 @@ export const defaultValues = {
     step: 1,
     setStep: () => {},
     setBackStep: () => {},
+    setResetStep: () => {},
     setShowPopup: () => {},
     setHidePopup: () => {},
 }
@@ -22,12 +23,14 @@ export const AppContext = createContext(defaultValues);
 const AppState: React.FC = ({children}) => {
   const [showPopup, setPopup] = useState<boolean>(false);
   const [step, setStep] = useState<number>(1);
+
   return (
     <AppContext.Provider value={{
         step,
         showPopup,
         setStep: () => {setStep(step+1)},
         setBackStep: () => {setStep(step-1)},
+        setResetStep: () => {setStep(1)},
         setShowPopup: () => {setPopup(true)},
         setHidePopup: () => {setPopup(false)},
     }}>

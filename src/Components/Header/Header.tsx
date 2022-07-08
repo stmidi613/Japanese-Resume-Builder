@@ -7,6 +7,7 @@ import LanguageButton from "../Buttons/LanguageButton";
 import USF from "../../images/USflag.png";
 
 import { AppContext } from "../../AppState/AppState";
+import { Link } from "react-router-dom";
 
 interface Props {
     width: string[];
@@ -39,7 +40,9 @@ const Header: React.FC<Props> = ({width, headerTitle}) => {
             {step < 6 ? <TipsHeader /> : ""}
           </div>
           <div className="grid place-content-center">
+            <Link to="/">
             <HomeButton />
+            </Link>
           </div>
         </div>
       </header>

@@ -1,10 +1,14 @@
 import { useContext, useEffect } from "react";
-import { AppContext } from "../../../AppState/AppState";
-import resume from "../../../images/resume.png";
-import skillsheet from "../../../images/skillsheet.png";
+
 import CloseButton from "../../Buttons/CloseButton";
 import ResumeButton from "../../Buttons/ResumeButton";
 import SkillSheetButton from "../../Buttons/SkillSheetButton";
+
+import resume from "../../../images/resume.png";
+import skillsheet from "../../../images/skillsheet.png";
+
+import { AppContext } from "../../../AppState/AppState";
+import { Link } from "react-router-dom";
 
 interface Props {
   resumeButtonText: string;
@@ -33,11 +37,15 @@ const Popup: React.FC<Props> = ({
         <div className="flex justify-evenly flex-col md:flex-row items-center">
           <div className="p-2 h-1/3">
             <img className="w-7/8 pb-2" src={resume} alt="resume" />
+            <Link to="Resume">
             <ResumeButton resumeButtonText={resumeButtonText} />
+            </Link>
           </div>
           <div className="h-1/3 px-5">
             <img className="w-7/8 pb-2" src={skillsheet} alt="skillsheet" />
+            <Link to="SkillSheet">
             <SkillSheetButton skillSheetButtonText={skillSheetButtonText} />
+            </Link>
           </div>
         </div>
       </div>
