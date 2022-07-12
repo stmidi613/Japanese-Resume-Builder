@@ -8,7 +8,7 @@ const SSForm4: React.FC = () => {
     <>
       <div
         id="skillsheet-button-group"
-        className="grid grid-flow-row md:grid-flow-col xl:grid-flow-row md:justify-evenly md:w-full xl:w-1/2"
+        className="grid grid-flow-row md:grid-flow-col xl:grid-flow-row md:justify-evenly w-full"
       >
         <BackButton />
         <p className="flex items-center justify-center text-red-500 text:lg xl:text-xl">

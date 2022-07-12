@@ -27,7 +27,7 @@ const SkillSheetPage: React.FC = () => {
         className={
           step < 4
             ? `hidden xl:w-1/2 bg-gray bg-opacity-30 md:block h-full pb-3`
-            : `block xl:w-1/2 md:min-w-0 min-w-[725px] pb-5 h-full bg-gray bg-opacity-30`
+            : `block xl:w-full md:min-w-0 min-w-[725px] pb-5 h-full bg-gray bg-opacity-30`
         }
       >
         <p
@@ -37,16 +37,16 @@ const SkillSheetPage: React.FC = () => {
           Skill Sheet Will Appear Differently When Printed
         </p>
         {/* This is the page containter div */}
-        <div id="skillsheet-page-1" className="page-section drop-shadow-lg">
+        <div id="skillsheet-page-1" className={`page-section ${step < 4 ? `drop-shadow-lg` : ""}`}>
           {/* Start Title Section */}
-          <section className="grid w-full pt-5 px-7">
+          <section className="grid w-full pt-5 px-6">
             <p className="flex justify-end w-full">
               作成日 令和　{year - 2018}年{month}月{date}日
             </p>
             <p className="flex justify-center w-full">スキルツート</p>
           </section>
           {/* End of Title Section */}
-          <section className="page-section px-3">
+          <section className="page-section px-4">
             <JobSummary />
             {Projects.map((item) => (
               <Project

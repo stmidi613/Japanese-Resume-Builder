@@ -4,8 +4,9 @@ import CloseButton from "../../Buttons/CloseButton";
 import ResumeButton from "../../Buttons/ResumeButton";
 import SkillSheetButton from "../../Buttons/SkillSheetButton";
 
-import resume from "../../../images/resume.png";
-import skillsheet from "../../../images/skillsheet.png";
+import resumepage1 from "../../../images/resumepage1.png";
+import resumepage2 from "../../../images/resumepage2.png";
+import skillsheetpage from "../../../images/skillsheetpage.png";
 
 import { AppContext } from "../../../AppState/AppState";
 import { Link } from "react-router-dom";
@@ -15,17 +16,13 @@ interface Props {
   skillSheetButtonText: string;
 }
 
-const Popup: React.FC<Props> = ({
-  resumeButtonText,
-  skillSheetButtonText,
-}) => {
-  const {showPopup} = useContext(AppContext)
+const Popup: React.FC<Props> = ({ resumeButtonText, skillSheetButtonText }) => {
+  const { showPopup } = useContext(AppContext);
 
   useEffect(() => {
     let popup = document.getElementById(`popup`);
     if (popup) popup.style.boxShadow = "0 0 10px 1000px rgba(0, 0, 0, 0.6)";
   }, [showPopup]);
-
 
   return (
     <>
@@ -35,16 +32,25 @@ const Popup: React.FC<Props> = ({
       >
         <CloseButton />
         <div className="flex justify-evenly flex-col md:flex-row items-center">
-          <div className="p-2 h-1/3">
-            <img className="w-7/8 pb-2" src={resume} alt="resume" />
+          <div className="w-full md:w-1/2 p-2 h-1/3">
+            <div className="flex border-black border-2 mb-2">
+              <img className="w-1/2 pb-2" src={resumepage1} alt="resume" />
+              <img className="w-1/2 pb-2" src={resumepage2} alt="resume" />
+            </div>
             <Link to="Resume">
-            <ResumeButton resumeButtonText={resumeButtonText} />
+              <ResumeButton resumeButtonText={resumeButtonText} />
             </Link>
           </div>
-          <div className="h-1/3 px-5">
-            <img className="w-7/8 pb-2" src={skillsheet} alt="skillsheet" />
+          <div className="w-full md:w-1/2 h-1/3 px-5 my-1">
+            <div className="flex justify-center mb-2">
+              <img
+                className="border-black border-2 w-1/2 pb-2"
+                src={skillsheetpage}
+                alt="skillsheet"
+              />
+            </div>
             <Link to="SkillSheet">
-            <SkillSheetButton skillSheetButtonText={skillSheetButtonText} />
+              <SkillSheetButton skillSheetButtonText={skillSheetButtonText} />
             </Link>
           </div>
         </div>

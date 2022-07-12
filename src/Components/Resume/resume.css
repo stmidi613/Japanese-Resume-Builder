@@ -224,6 +224,7 @@
     #resume-page-1-bg, #resume-page-2-bg{
         margin: 0 !important;
         padding: 0 !important;
+        background-color: #fff;
     }
 
     #resume-page-1, #resume-page-2{

@@ -45,7 +45,9 @@ const SkillSheet: React.FC = () => {
             ) : step < 4 ? (
               <TipBox content={step === 2 ? <ProjectTB /> : <SSMainTB />} />
             ) : (
+              <div className="xl:flex grid ml-[20rem] md:ml-0 w-full">
               <SkillSheetPage />
+              </div>
             )}
           </div>
         </SSForm2State>
