@@ -81,7 +81,7 @@ const SSForm2: React.FC = () => {
     if (languages) {
       setProjLanguagesClear(() => {});
     }
-  }
+  };
 
   const onLanguageListAdd = (e: React.FormEvent) => {
     e.preventDefault();
@@ -103,13 +103,9 @@ const SSForm2: React.FC = () => {
 
   return (
     <>
-      <form
-        id="form"
-        onSubmit={onSubmitHandler}
-        className="w-full mb-7 xl:w-1/2 h-fit"
-      >
-        <div className="md:flex md:justify-evenly grid">
-          <section className="section">
+      <form id="form" onSubmit={onSubmitHandler} className="w-full mb-7 h-fit">
+        <div className="w-full md:flex flex-wrap justify-around grid">
+          <section className="section mx-5">
             <InputTitle fieldName="Work Place" />
             <div className="input-div">
               <TextInput
@@ -158,6 +154,8 @@ const SSForm2: React.FC = () => {
                 onChange={setPoints}
               />
             </div>
+          </section>
+          <section className="section mx-5">
             <InputTitle fieldName="Language/Environment" />
             <div className="input-div">
               <TextInput
@@ -167,8 +165,7 @@ const SSForm2: React.FC = () => {
                 change={setLanguage}
               />
               <p className="text-red-500 pb-3">
-                Must click the "Create List" button after all items are
-                added!
+                Must click the "Create List" button after all items are added!
               </p>
             </div>
             <div className="flex justify-between">
@@ -201,10 +198,12 @@ const SSForm2: React.FC = () => {
               ))}
             </span>
             <LanguageList Languages={languages} />
+          </section>
+          <section className="section mx-5">
             <InputTitle fieldName="Role/Position" />
             <div className="input-div">
               <TextInput
-                max={25}
+                max={23}
                 value={position}
                 place="Role/Position"
                 change={setPosition}
@@ -235,8 +234,6 @@ const SSForm2: React.FC = () => {
                 onChange={setScale}
               />
             </div>
-          </section>
-          <section className="section">
             <InputTitle fieldName="Processes Followed" />
             {/* First drop downs */}
             <div className="flex w-full">
@@ -378,10 +375,12 @@ const SSForm2: React.FC = () => {
               </div>
             </div>
             {/* Last drop down */}
-            <SmallCircleButton />
-            <ProjectList Projects={Projects} />
           </section>
         </div>
+          <section className="section mx-5">
+            <ProjectList Projects={Projects} />
+            <SmallCircleButton />
+          </section>
         <NextButton />
         <BackButton />
       </form>

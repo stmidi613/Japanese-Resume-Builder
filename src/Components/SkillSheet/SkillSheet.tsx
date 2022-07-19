@@ -35,7 +35,7 @@ const SkillSheet: React.FC = () => {
       <SkillSheetState>
         <SSForm2State>
           <Header headerTitle={headerTitle} width={width} />
-          <div className="grid place-content-center xl:flex">
+          <div className={step < 4 && step !== 2 ? `grid place-content-center xl:flex` : "grid place-content-center"}>
             {step === 1 ? <SSForm1 /> : ""}
             {step === 2 ? <SSForm2 /> : ""}
             {step === 3 ? <SSForm3 /> : ""}
@@ -45,7 +45,7 @@ const SkillSheet: React.FC = () => {
             ) : step < 4 ? (
               <TipBox content={step === 2 ? <ProjectTB /> : <SSMainTB />} />
             ) : (
-              <div className="xl:flex grid ml-[20rem] md:ml-0 w-full">
+              <div className="grid ml-[20rem] md:ml-0 w-full">
               <SkillSheetPage />
               </div>
             )}

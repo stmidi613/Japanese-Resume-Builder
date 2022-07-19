@@ -12,8 +12,8 @@ const ProjectList: React.FC<Props> = ({Projects}) => {
     
   return (
     <>
-    <div className="mt-4">
     <span className="text-xl text-purple">Projects List</span>
+    <div className="mt-4 flex justify-around flex-wrap">
     {
       Projects.map((item) => 
       (<SingleProject

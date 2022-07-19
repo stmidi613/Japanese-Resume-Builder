@@ -9,7 +9,7 @@ const TipBox: React.FC<Props> = ({ content }) => {
 
   return (
     <>
-      <section className="xl:w-1/2 bg-gray bg-opacity-30 block h-full">
+      <section className="xl:w-1/2 bg-gray bg-opacity-30 h-full">
         <div className="page-div drop-shadow-lg tipbox">
           <CloseButton />
           <div className="mb-4">{content}</div>

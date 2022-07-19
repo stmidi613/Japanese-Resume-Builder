@@ -53,6 +53,7 @@ const Project: React.FC<Props> = ({
 
   return (
     <>
+    <div className="project-tables">
       <table className="w-full">
         <tbody className="mt-5 table">
           <tr className="info-table-row">
@@ -88,7 +89,7 @@ const Project: React.FC<Props> = ({
             <td className="bg-skillsheetgray text-xs short-cell">
               環境・<span className="break-before">言語</span>
             </td>
-            <td className="medium-cell text-sm">{ProjLanguages.map(language => <SingleLanguageList key={language.PLid} language={language.languages} /> )}</td>
+            <td className="languages-cell text-sm">{ProjLanguages.map(language => <SingleLanguageList key={language.PLid} language={language.languages} /> )}</td>
           </tr>
           <tr className="grid col-span-3 h-56">
             <td className="bg-skillsheetgray short-cell">役割・役職</td>
@@ -179,6 +180,7 @@ const Project: React.FC<Props> = ({
           </tr>
         </tbody>
       </table>
+      </div>
     </>
   );
 };

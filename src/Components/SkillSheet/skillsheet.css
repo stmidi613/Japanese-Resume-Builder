@@ -1,8 +1,10 @@
-.page-section{
+#skillsheet-page-1{
+    display: grid;
+    place-content: center;
     margin: 0 .25rem 1rem .25rem;
     background-color: white;
     padding-bottom: 1.25rem;
-    min-width: 610px;
+    width: 210mm;
 }
 
 .table{
@@ -42,7 +44,17 @@
 .medium-cell{
     display: grid;
     place-content: center;
-    padding: 0.25rem;
+    padding: 0.2rem;
+    border-bottom-width: 2px;
+    font-size: 0.875rem/* 14px */;
+    line-height: 1.25rem/* 20px */;
+    word-break: break-all;
+}
+
+.languages-cell{
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.1rem;
     border-bottom-width: 2px;
     font-size: 0.875rem/* 14px */;
     line-height: 1.25rem/* 20px */;
@@ -130,15 +142,18 @@
         padding: 0 !important;
         margin: 0 !important;
         clear: both;
-        page-break-inside: avoid !important;
         opacity: 100%;
         font-weight: 100;
     }
-
+    
     .mini-table-td{
         text-align: center;
         font-size: 0.70rem/* 12px */;
         line-height: .8rem/* 16px */;
+    }
+
+    .project-tables{
+        page-break-inside: avoid !important;
     }
 
 }

@@ -32,7 +32,7 @@ const Form4: React.FC = () => {
             <textarea
               className="text-area"
               name="appeal"
-              maxLength={900}
+              maxLength={450}
               placeholder="Tell the reader about your hopes, special skills, interests, etc..."
               onChange={(e) => setAppealPoints(e.target.value)}
             />

@@ -152,11 +152,11 @@ const ResumePage2: React.FC = () => {
             </div>
           </section>
           <section className="mx-[5%] mt-3 border-2">
-            <div className="h-48">
+            <div>
               <p className="w-full px-1 border-b-2 border-double text-sm text-center">
                 本人希望記入欄（特に給料・職種・勤務時間・勤務地・その他についての希望などがあれば記入）
               </p>
-              <p className="m-2 text-xs">{additionalInfo}</p>
+              <p className="m-2 h-28 text-xs">{additionalInfo}</p>
             </div>
           </section>
         </div>

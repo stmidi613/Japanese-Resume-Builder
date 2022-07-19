@@ -6,7 +6,7 @@ const PR: React.FC = () => {
   const {PR} = useContext(SkillSheetContext);
 
   return (
-    <table className="w-full">
+    <table className="project-tables w-full">
       <tbody className="mt-5 w-full grid border-2 border-b-0">
 
       <tr className="w-full border-b-2">

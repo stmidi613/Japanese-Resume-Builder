@@ -26,8 +26,8 @@ const SkillSheetPage: React.FC = () => {
         id="skillsheet-page-1-bg"
         className={
           step < 4
-            ? `hidden xl:w-1/2 bg-gray bg-opacity-30 md:block h-full pb-3`
-            : `block xl:w-full md:min-w-0 min-w-[725px] pb-5 h-full bg-gray bg-opacity-30`
+            ? `hidden w-[%60] bg-gray bg-opacity-30 md:grid md:place-content-center h-full pb-3`
+            : `grid place-content-center w-[220mm] pb-5 h-full bg-gray bg-opacity-30`
         }
       >
         <p
