@@ -14,6 +14,7 @@ import LanguageList from "./Form2Components/LanguageList";
 
 import { ProjectsContext } from "../SkillSheetState/SSForm2State";
 import SingleLanguageList from "./Form2Components/SingleLanguageList";
+import ProjectButton from "../../Buttons/ProjectButton";
 
 const SSForm2: React.FC = () => {
   const {
@@ -104,6 +105,7 @@ const SSForm2: React.FC = () => {
   return (
     <>
       <form id="form" onSubmit={onSubmitHandler} className="w-full mb-7 h-fit">
+        <h3 className="grid place-content-center mt-5 mx-5 text-lg text-purple">Click on the Add Project button when all fields are completed to include the project in the skill sheet.</h3>
         <div className="w-full md:flex flex-wrap justify-around grid">
           <section className="section mx-5">
             <InputTitle fieldName="Work Place" />
@@ -182,10 +184,10 @@ const SSForm2: React.FC = () => {
                 Reset List
               </button>
               <button
-                className="circle-button button-animation"
+                className="p-1 button button-animation"
                 onClick={onLanguageAdd}
               >
-                +
+                Add Language
               </button>
             </div>
             <span className="text-purple text-xl mt-8">
@@ -379,7 +381,7 @@ const SSForm2: React.FC = () => {
         </div>
           <section className="section mx-5">
             <ProjectList Projects={Projects} />
-            <SmallCircleButton />
+            <ProjectButton />
           </section>
         <NextButton />
         <BackButton />

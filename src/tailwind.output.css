@@ -592,6 +592,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.5rem;
 }
 
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -623,12 +628,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.25rem;
 }
 
-.ml-\[20rem\] {
-  margin-left: 20rem;
+.ml-\[30rem\] {
+  margin-left: 30rem;
 }
 
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
 }
 
 .mb-2 {
@@ -643,20 +652,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.75rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .mt-5 {
   margin-top: 1.25rem;
 }
 
-.mt-1 {
-  margin-top: 0.25rem;
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.ml-\[20rem\] {
+  margin-left: 20rem;
 }
 
 .mt-0\.5 {
@@ -785,10 +794,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 112%;
 }
 
-.h-48 {
-  height: 12rem;
-}
-
 .w-12 {
   width: 3rem;
 }
@@ -853,6 +858,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[90\%\] {
   width: 90%;
+}
+
+.w-\[\%60\] {
+  width: %60;
 }
 
 .w-48 {
@@ -965,10 +974,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .gap-4 {
   gap: 1rem;
-}
-
-.gap-16 {
-  gap: 4rem;
 }
 
 .gap-8 {
@@ -1140,6 +1145,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 1.75rem;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -1150,10 +1159,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-3 {
   padding: 0.75rem;
-}
-
-.p-1 {
-  padding: 0.25rem;
 }
 
 .px-3 {
@@ -1615,10 +1620,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 100%;
   }
 
-  .md\:w-16 {
-    width: 4rem;
-  }
-
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -1639,16 +1640,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     flex-direction: row;
   }
 
+  .md\:place-content-center {
+    place-content: center;
+  }
+
   .md\:justify-start {
     justify-content: flex-start;
   }
 
   .md\:justify-evenly {
     justify-content: space-evenly;
-  }
-
-  .md\:gap-48 {
-    gap: 12rem;
   }
 
   .md\:gap-10 {
@@ -1705,10 +1706,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .xl\:w-1\/2 {
     width: 50%;
-  }
-
-  .xl\:w-full {
-    width: 100%;
   }
 
   .xl\:grid-flow-row {

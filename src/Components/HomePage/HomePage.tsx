@@ -16,6 +16,7 @@ const US = {
   text: "It's Simple, Fast, and Completely Free!",
   largeButtonText: "Try For Free",
   mobileButtonText: "Mobile App",
+  subText: "Get Tips",
   sub1Text: "Create",
   sub2Text: "Preview",
   sub3Text: "Print",
@@ -30,6 +31,7 @@ const JP = {
   text: "簡単で、速くて、無料で作りますよ！",
   largeButtonText: "無料で試す",
   mobileButtonText: "モバイルアプリ",
+  subText: "ヒントを得る",
   sub1Text: "創造する",
   sub2Text: "プレビュー",
   sub3Text: "印刷",
@@ -80,6 +82,7 @@ const HomePage: React.FC = () => {
         </div>
       </main>
       <HomeSubSection
+        subText={lang.subText}
         sub1Text={lang.sub1Text}
         sub2Text={lang.sub2Text}
         sub3Text={lang.sub3Text}

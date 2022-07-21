@@ -39,7 +39,7 @@ const ProjectTB: React.FC = () => {
         <p className="text-left">
           List every computer language you used for the project and the
           environment such as the software or tech stack used. Type a language
-          and click the Plus ("+") Button. Remember to Click the "Create List"
+          and click the Add Language Button. Remember to Click the "Create List"
           Button when finished! The langauges will not appear in the project
           unless you click this button and see the langauges appear in the
           "Languages to be listed in Project" section.
