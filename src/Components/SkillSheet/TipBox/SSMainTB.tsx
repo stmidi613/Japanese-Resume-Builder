@@ -19,7 +19,7 @@ const SSMainTB: React.FC = () => {
       <div className="mx-4">
         <h2 className="tips-h2">Work Summary:</h2>
         <p className="text-left">
-          Provide a very brief job summary or description of what you do with
+          Provide a very brief job summary or description of what you did at
           your last or current company.
         </p>
       </div>

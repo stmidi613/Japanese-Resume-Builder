@@ -8,7 +8,7 @@ const ProjectTB: React.FC = () => {
         <h2 className="tips-h2">Work Place:</h2>
         <p className="text-left">
           What company did you work for when doing this project? You can use
-          Freelance is there was no company.
+          "Freelance" if there was no company.
         </p>
       </div>
       <div className="mx-4">

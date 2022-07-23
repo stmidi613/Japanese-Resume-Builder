@@ -31,7 +31,7 @@ const Popup: React.FC<Props> = ({ resumeButtonText, skillSheetButtonText }) => {
         className="focus:outline-none z-30 p-3 absolute top-24 left-[5%] w-[90%] bg-white border-2 border-purple rounded-md"
       >
         <CloseButton />
-        <div className="flex justify-evenly flex-col md:flex-row items-center">
+        <div className="flex justify-around flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 p-2 h-1/3">
             <div className="flex border-black border-2 mb-2">
               <img className="w-1/2 pb-2" src={resumepage1} alt="resume" />
